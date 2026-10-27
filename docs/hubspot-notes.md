@@ -37,17 +37,21 @@ Source: [Authentication overview](https://developers.hubspot.com/docs/apps/devel
 - **Static auth app:** a developer-platform project app with `auth.type: static` and `distribution: private`. Its token is in the app settings and is also sent as a Bearer token. More setup (CLI, project files) than a service key. This is our fallback.
 - **OAuth:** needed only for multi-account or marketplace apps. Overkill here.
 
-### Scopes for the service key
-Source: [Scopes](https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/scopes)
-- `crm.objects.contacts.read` / `.write`
-- `crm.objects.companies.read` / `.write`
-- `crm.objects.deals.read` / `.write`
-- `crm.schemas.contacts.read` / `.write`, `crm.schemas.companies.read` / `.write`, `crm.schemas.deals.read` / `.write` (to create the `demo_kit_*` properties)
-- `sales-email-read` (for logged email activities)
-- **Confirmed live 2026-10-26:**
-  - The `crm.schemas.*` scopes alone let you create properties but **not read or write records**. Every records call (read, search, upsert) returned 403 `MISSING_SCOPES` until the `crm.objects.*` scopes were added.
-  - Creating properties on activities needs per-activity scopes. HubSpot's 403 named them `notes-write`, `calls-write`, `emails-write`, `meetings-write` and `tasks-write`. The upsert error lists `crm.objects.notes.read`, `crm.objects.calls.read` and so on, so add both read and write for each activity type.
-  - The `demo_kit_id` and `demo_kit_story` properties were created on companies, contacts and deals.
+### Scopes for the service key (final, confirmed live 2026-10-26)
+The kit needs exactly these 14 scopes:
+
+| For | Scopes |
+|---|---|
+| Records | `crm.objects.companies.read` `.write`, `crm.objects.contacts.read` `.write`, `crm.objects.deals.read` `.write` |
+| Properties (our `demo_kit_*` tags) | `crm.schemas.companies.read` `.write`, `crm.schemas.contacts.read` `.write`, `crm.schemas.deals.read` `.write` |
+| Record owner | `crm.objects.owners.read` |
+| Reading logged emails back | `sales-email-read` |
+
+What we learned getting there:
+- Notes, calls, meetings and tasks have **no scopes of their own**. They're covered by the contacts scopes ([create note reference](https://developers.hubspot.com/docs/api-reference/2026-03/crm/activities/notes/create-note.md)). Emails also need `sales-email-read` to be read or searched.
+- With only the `crm.schemas.*` scopes, properties can be created but records can't be read. With only `crm.objects.*`, it's the other way round. **Creating properties on activities needs both sets together.** With either set alone, HubSpot's 403 asked for `notes-write`, a scope that isn't in the picker.
+- **Reading** email property settings needs `connected-email-data-access`, which isn't offered either. The seeder never reads property settings. It creates them and treats 409 (already exists) as fine.
+- Scope changes can take a little while to apply after saving.
 
 ## 2. Which account to use
 Source: [HubSpot account types](https://developers.hubspot.com/docs/getting-started/account-types.md), [Configurable test accounts](https://developers.hubspot.com/docs/developer-tooling/local-development/configurable-test-accounts.md)
@@ -175,10 +179,12 @@ Source: [Pipelines guide](https://developers.hubspot.com/docs/api-reference/late
 |---|---|
 | Service key inside a test account? | Works. |
 | Scopes for records | `crm.objects.{companies,contacts,deals}.{read,write}`. Activities (notes, calls, emails, meetings, tasks) are covered by the contacts scopes ([create note reference](https://developers.hubspot.com/docs/api-reference/2026-03/crm/activities/notes/create-note.md)). The `crm.schemas.*` scopes are needed separately to read and create properties. A newly saved scope took a little while to take effect. |
-| Custom properties on activities | Refused with 403 asking for `notes-write` (and `calls-write`, etc.). No scope with that name exists in the picker. Still open. |
+| Custom properties on activities | Work once the key has both `crm.objects.*` and `crm.schemas.*` scopes. |
 | Emails on `.example` domains | **Rejected** (`INVALID_EMAIL`). Subdomains of `example.com/.org/.net` are accepted, so the kit uses `name.example.com`. |
 | Upsert by `demo_kit_id` twice | Same record both times (`new: true`, then `new: false`). |
 | Associate the same pair twice | No duplicate, still one association. |
 | Search lag after a write | About 4 seconds. Reset also looks records up by `demo_kit_id` (batch read), which sees them at once. |
 | Past `hs_timestamp` on a note | Accepted (30 days back). |
+| Meetings need an owner | Creating a meeting without `hubspot_owner_id` fails (`required properties were missing`). The seeder sets the owner on every record. |
+| Task status `IN_PROGRESS`, meeting outcome `COMPLETED`/`SCHEDULED` (uppercase) | Accepted. |
 | Re-create after archive | Works. Upsert with the same `demo_kit_id` makes a new record once the old one is archived. |
