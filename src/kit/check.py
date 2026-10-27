@@ -90,6 +90,8 @@ class CompanyView:
 class PipelineDeal:
     stage: str
     close_date: datetime | None
+    # HubSpot's own "next activity date" (from upcoming tasks and meetings); empty shows as "No upcoming".
+    next_activity: datetime | None = None
 
 
 @dataclass
@@ -194,9 +196,11 @@ def gather(hubspot, fixtures: FixtureSet, owner_id: str, now: datetime) -> Snaps
 
     # The whole pipeline, as the rep's deals board shows it (not just kit records).
     pipeline = [
-        PipelineDeal(stage=r["properties"].get("dealstage") or "", close_date=parse_time(r["properties"].get("closedate")))
+        PipelineDeal(stage=r["properties"].get("dealstage") or "",
+                     close_date=parse_time(r["properties"].get("closedate")),
+                     next_activity=parse_time(r["properties"].get("notes_next_activity_date")))
         for r in hubspot.search("deals", [{"propertyName": "pipeline", "operator": "EQ", "value": DEFAULT_PIPELINE}],
-                                ["dealstage", "closedate"])
+                                ["dealstage", "closedate", "notes_next_activity_date"])
     ]
 
     # The rep's own activities from the last 30 days and anything scheduled after that.
@@ -279,11 +283,17 @@ def no_overdue_open_deals(pipeline: list[PipelineDeal], a: Assertion, now: datet
     return not overdue, f"{len(overdue)} open deals past their close date"
 
 
+def open_deals_have_next_step(pipeline: list[PipelineDeal], a: Assertion, now: datetime):
+    missing = [d for d in pipeline if d.stage in OPEN_DEAL_STAGES and not (d.next_activity and d.next_activity > now)]
+    return not missing, f"{len(missing)} open deals with no upcoming task or meeting"
+
+
 ASSERTIONS: dict[str, dict[str, Callable]] = {
     "hero_deals": {f.__name__: f for f in [stage_matches_story, close_date_in_future, min_contacts,
                                             min_recent_activities, newest_activity_within]},
     "hero_companies": {f.__name__: f for f in [min_contacts, min_deals, newest_activity_within]},
-    "pipeline": {f.__name__: f for f in [min_open_deals, min_open_stages, no_overdue_open_deals]},
+    "pipeline": {f.__name__: f for f in [min_open_deals, min_open_stages, no_overdue_open_deals,
+                                          open_deals_have_next_step]},
     "rep_feed": {f.__name__: f for f in [min_recent_activities, min_upcoming]},
 }
 
@@ -299,6 +309,7 @@ DESCRIPTIONS = {
     "min_open_deals": "at least {min} open deals",
     "min_open_stages": "open deals in at least {min} stages",
     "no_overdue_open_deals": "no open deal past its close date",
+    "open_deals_have_next_step": "every open deal has an upcoming task or meeting",
 }
 
 

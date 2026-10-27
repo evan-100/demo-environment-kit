@@ -7,7 +7,7 @@
       "mf-kilnbrook-blocker",
       "mf-kilnbrook-it-lead"
     ],
-    "name": "Kilnbrook Castings - Predictive Maintenance Platform, Plant 1 Furnace Lines",
+    "name": "Kilnbrook Furnace Line Predictive Maintenance Platform",
     "stage": "presentationscheduled",
     "amount": 310000,
     "close_date": {
@@ -21,7 +21,7 @@
       "mf-marrowfield-champion",
       "mf-marrowfield-exec"
     ],
-    "name": "Marrowfield Packaging - Four-Plant Predictive Maintenance Expansion",
+    "name": "Marrowfield Four-Plant Expansion",
     "stage": "contractsent",
     "amount": 128000,
     "close_date": {
@@ -34,11 +34,11 @@
     "contact_ids": [
       "mf-f01-contact-01"
     ],
-    "name": "Alderpoint - Extruder line condition monitoring",
+    "name": "Vantrellis - Press line vibration monitoring",
     "stage": "qualifiedtobuy",
-    "amount": 68400,
+    "amount": 78400,
     "close_date": {
-      "days_from_now": 64
+      "days_from_now": 65
     }
   },
   {
@@ -47,9 +47,9 @@
     "contact_ids": [
       "mf-f01-contact-01"
     ],
-    "name": "Alderpoint - Press 3 vibration pilot",
-    "stage": "closedwon",
-    "amount": 23750,
+    "name": "Vantrellis - Furnace sensor add-on",
+    "stage": "closedlost",
+    "amount": 24900,
     "close_date": {
       "days_ago": 34
     }
@@ -60,11 +60,11 @@
     "contact_ids": [
       "mf-f02-contact-01"
     ],
-    "name": "Tessaline - Press fleet downtime analytics",
-    "stage": "presentationscheduled",
-    "amount": 54900,
+    "name": "Quillon - CNC spindle health pilot",
+    "stage": "appointmentscheduled",
+    "amount": 34200,
     "close_date": {
-      "days_from_now": 48
+      "days_from_now": 98
     }
   },
   {
@@ -73,11 +73,11 @@
     "contact_ids": [
       "mf-f02-contact-01"
     ],
-    "name": "Tessaline - Chiller sensor add-on",
-    "stage": "appointmentscheduled",
-    "amount": 17250,
+    "name": "Quillon - Gear hobbing downtime tracking",
+    "stage": "presentationscheduled",
+    "amount": 41750,
     "close_date": {
-      "days_from_now": 95
+      "days_from_now": 72
     }
   },
   {
@@ -86,11 +86,11 @@
     "contact_ids": [
       "mf-f03-contact-01"
     ],
-    "name": "Ridgeback - Header machine predictive alerts",
+    "name": "Zephyrine - Extruder gearbox analytics",
     "stage": "decisionmakerboughtin",
-    "amount": 38200,
+    "amount": 136500,
     "close_date": {
-      "days_from_now": 29
+      "days_from_now": 38
     }
   },
   {
@@ -99,11 +99,11 @@
     "contact_ids": [
       "mf-f03-contact-01"
     ],
-    "name": "Ridgeback - Plant-wide OEE dashboard",
-    "stage": "contractsent",
-    "amount": 26800,
+    "name": "Zephyrine - Pelletizer motor monitoring",
+    "stage": "closedwon",
+    "amount": 29800,
     "close_date": {
-      "days_from_now": 14
+      "days_ago": 18
     }
   },
   {
@@ -112,11 +112,11 @@
     "contact_ids": [
       "mf-f04-contact-01"
     ],
-    "name": "Copperhill - Wire draw motor health monitoring",
-    "stage": "presentationscheduled",
-    "amount": 112500,
+    "name": "Orrinwick - Compressor failure prediction",
+    "stage": "contractsent",
+    "amount": 92300,
     "close_date": {
-      "days_from_now": 77
+      "days_from_now": 21
     }
   },
   {
@@ -125,11 +125,11 @@
     "contact_ids": [
       "mf-f04-contact-01"
     ],
-    "name": "Copperhill - Spooler gearbox pilot",
-    "stage": "closedlost",
-    "amount": 29300,
+    "name": "Orrinwick - Packing line OEE dashboard",
+    "stage": "qualifiedtobuy",
+    "amount": 47100,
     "close_date": {
-      "days_ago": 52
+      "days_from_now": 84
     }
   },
   {
@@ -138,11 +138,11 @@
     "contact_ids": [
       "mf-f05-contact-01"
     ],
-    "name": "Northgate - Press brake and clutch analytics",
-    "stage": "contractsent",
-    "amount": 47650,
+    "name": "Tolvane - Press tonnage monitoring",
+    "stage": "presentationscheduled",
+    "amount": 56800,
     "close_date": {
-      "days_from_now": 11
+      "days_from_now": 55
     }
   },
   {
@@ -151,11 +151,11 @@
     "contact_ids": [
       "mf-f05-contact-01"
     ],
-    "name": "Northgate - Second plant rollout",
-    "stage": "qualifiedtobuy",
-    "amount": 59800,
+    "name": "Tolvane - Coil feed line sensors",
+    "stage": "closedlost",
+    "amount": 18600,
     "close_date": {
-      "days_from_now": 110
+      "days_ago": 52
     }
   },
   {
@@ -164,11 +164,11 @@
     "contact_ids": [
       "mf-f06-contact-01"
     ],
-    "name": "Pinewater - Dryer section bearing monitoring",
+    "name": "Brindlecott - Kiln temperature drift alerts",
     "stage": "appointmentscheduled",
-    "amount": 187300,
+    "amount": 21400,
     "close_date": {
-      "days_from_now": 102
+      "days_from_now": 110
     }
   },
   {
@@ -177,11 +177,11 @@
     "contact_ids": [
       "mf-f06-contact-01"
     ],
-    "name": "Pinewater - Pump condition pilot",
-    "stage": "closedwon",
-    "amount": 41900,
+    "name": "Brindlecott - Conveyor drive monitoring",
+    "stage": "qualifiedtobuy",
+    "amount": 13900,
     "close_date": {
-      "days_ago": 61
+      "days_from_now": 90
     }
   },
   {
@@ -190,11 +190,24 @@
     "contact_ids": [
       "mf-f07-contact-01"
     ],
-    "name": "Halvorsen - Spray dryer downtime analytics",
-    "stage": "qualifiedtobuy",
-    "amount": 43100,
+    "name": "Halvergate - Pump and agitator health program",
+    "stage": "decisionmakerboughtin",
+    "amount": 158900,
     "close_date": {
-      "days_from_now": 58
+      "days_from_now": 47
+    }
+  },
+  {
+    "kit_id": "mf-f07-deal-02",
+    "company_id": "mf-f07-company",
+    "contact_ids": [
+      "mf-f07-contact-01"
+    ],
+    "name": "Halvergate - Reactor batch cycle analytics",
+    "stage": "presentationscheduled",
+    "amount": 73250,
+    "close_date": {
+      "days_from_now": 79
     }
   },
   {
@@ -203,11 +216,11 @@
     "contact_ids": [
       "mf-f08-contact-01"
     ],
-    "name": "Sunmeadow - Filler and capper line monitoring",
-    "stage": "decisionmakerboughtin",
-    "amount": 96400,
+    "name": "Fenwraith - Robotic weld cell uptime tracking",
+    "stage": "contractsent",
+    "amount": 38700,
     "close_date": {
-      "days_from_now": 37
+      "days_from_now": 15
     }
   },
   {
@@ -216,11 +229,37 @@
     "contact_ids": [
       "mf-f08-contact-01"
     ],
-    "name": "Sunmeadow - Boiler room sensors",
-    "stage": "appointmentscheduled",
-    "amount": 21700,
+    "name": "Fenwraith - Plasma table monitoring",
+    "stage": "closedwon",
+    "amount": 16450,
     "close_date": {
-      "days_from_now": 84
+      "days_ago": 41
+    }
+  },
+  {
+    "kit_id": "mf-f09-deal-01",
+    "company_id": "mf-f09-company",
+    "contact_ids": [
+      "mf-f09-contact-01"
+    ],
+    "name": "Sundermoor - Converting line downtime analytics",
+    "stage": "qualifiedtobuy",
+    "amount": 112400,
+    "close_date": {
+      "days_from_now": 93
+    }
+  },
+  {
+    "kit_id": "mf-f09-deal-02",
+    "company_id": "mf-f09-company",
+    "contact_ids": [
+      "mf-f09-contact-01"
+    ],
+    "name": "Sundermoor - Bearing condition monitoring",
+    "stage": "appointmentscheduled",
+    "amount": 64300,
+    "close_date": {
+      "days_from_now": 118
     }
   },
   {
@@ -229,11 +268,11 @@
     "contact_ids": [
       "mf-f10-contact-01"
     ],
-    "name": "Lantern Bay - Rotating equipment monitoring",
+    "name": "Pellucorn - Press line condition monitoring",
     "stage": "presentationscheduled",
-    "amount": 164800,
+    "amount": 68400,
     "close_date": {
-      "days_from_now": 90
+      "days_from_now": 62
     }
   },
   {
@@ -242,11 +281,11 @@
     "contact_ids": [
       "mf-f10-contact-01"
     ],
-    "name": "Lantern Bay - Compressor pilot",
-    "stage": "closedwon",
-    "amount": 36450,
+    "name": "Pellucorn - Furnace and aging oven analytics",
+    "stage": "closedlost",
+    "amount": 29750,
     "close_date": {
-      "days_ago": 27
+      "days_ago": 34
     }
   },
   {
@@ -255,11 +294,11 @@
     "contact_ids": [
       "mf-f11-contact-01"
     ],
-    "name": "Quillon - CNC spindle health analytics",
-    "stage": "contractsent",
-    "amount": 71200,
+    "name": "Dravenholt - Die Cast Cell Monitoring",
+    "stage": "qualifiedtobuy",
+    "amount": 84600,
     "close_date": {
-      "days_from_now": 19
+      "days_from_now": 62
     }
   },
   {
@@ -268,11 +307,11 @@
     "contact_ids": [
       "mf-f11-contact-01"
     ],
-    "name": "Quillon - Coolant system monitoring",
-    "stage": "qualifiedtobuy",
-    "amount": 18900,
+    "name": "Dravenholt - Trim Press Add-on",
+    "stage": "appointmentscheduled",
+    "amount": 23900,
     "close_date": {
-      "days_from_now": 73
+      "days_from_now": 105
     }
   },
   {
@@ -281,11 +320,11 @@
     "contact_ids": [
       "mf-f12-contact-01"
     ],
-    "name": "Stonebridge - IS machine downtime analytics",
-    "stage": "appointmentscheduled",
-    "amount": 89700,
+    "name": "Pyrelle - Dryer and Conveyor Analytics",
+    "stage": "presentationscheduled",
+    "amount": 58250,
     "close_date": {
-      "days_from_now": 116
+      "days_from_now": 45
     }
   },
   {
@@ -294,11 +333,11 @@
     "contact_ids": [
       "mf-f12-contact-01"
     ],
-    "name": "Stonebridge - Annealing lehr sensors",
-    "stage": "presentationscheduled",
-    "amount": 33600,
+    "name": "Pyrelle - Packing Line OEE Dashboards",
+    "stage": "closedlost",
+    "amount": 31400,
     "close_date": {
-      "days_from_now": 56
+      "days_ago": 38
     }
   },
   {
@@ -307,11 +346,11 @@
     "contact_ids": [
       "mf-f13-contact-01"
     ],
-    "name": "Ironvale - Crane and cutter condition monitoring",
+    "name": "Tessaract - Press Fleet Predictive Maintenance",
     "stage": "decisionmakerboughtin",
-    "amount": 62300,
+    "amount": 212800,
     "close_date": {
-      "days_from_now": 41
+      "days_from_now": 38
     }
   },
   {
@@ -320,11 +359,11 @@
     "contact_ids": [
       "mf-f13-contact-01"
     ],
-    "name": "Ironvale - Welding cell uptime pilot",
-    "stage": "closedlost",
-    "amount": 19400,
+    "name": "Tessaract - Chiller Loop Monitoring",
+    "stage": "qualifiedtobuy",
+    "amount": 37700,
     "close_date": {
-      "days_ago": 73
+      "days_from_now": 78
     }
   },
   {
@@ -333,11 +372,11 @@
     "contact_ids": [
       "mf-f14-contact-01"
     ],
-    "name": "Meridian Ridge - Three-plant downtime analytics",
-    "stage": "qualifiedtobuy",
-    "amount": 248600,
+    "name": "Valdorrin - Drawing Line Downtime Analytics",
+    "stage": "contractsent",
+    "amount": 46900,
     "close_date": {
-      "days_from_now": 118
+      "days_from_now": 14
     }
   },
   {
@@ -346,11 +385,11 @@
     "contact_ids": [
       "mf-f14-contact-01"
     ],
-    "name": "Meridian Ridge - Freezer compressor monitoring",
-    "stage": "presentationscheduled",
-    "amount": 78350,
+    "name": "Valdorrin - Extruder Pilot",
+    "stage": "closedwon",
+    "amount": 18450,
     "close_date": {
-      "days_from_now": 69
+      "days_ago": 52
     }
   },
   {
@@ -359,11 +398,24 @@
     "contact_ids": [
       "mf-f15-contact-01"
     ],
-    "name": "Oakhaven - Router and edgebander alerts",
-    "stage": "appointmentscheduled",
-    "amount": 27450,
+    "name": "Omberly - Furnace and Annealing Lehr Monitoring",
+    "stage": "presentationscheduled",
+    "amount": 97300,
     "close_date": {
-      "days_from_now": 88
+      "days_from_now": 70
+    }
+  },
+  {
+    "kit_id": "mf-f15-deal-02",
+    "company_id": "mf-f15-company",
+    "contact_ids": [
+      "mf-f15-contact-01"
+    ],
+    "name": "Omberly - Forming Machine Pilot",
+    "stage": "appointmentscheduled",
+    "amount": 29800,
+    "close_date": {
+      "days_from_now": 96
     }
   },
   {
@@ -372,11 +424,11 @@
     "contact_ids": [
       "mf-f16-contact-01"
     ],
-    "name": "Tidewell - Machining center monitoring",
+    "name": "Caldwyn - Welding and Polishing Cell Analytics",
     "stage": "qualifiedtobuy",
-    "amount": 22150,
+    "amount": 19600,
     "close_date": {
-      "days_from_now": 97
+      "days_from_now": 84
     }
   },
   {
@@ -385,24 +437,11 @@
     "contact_ids": [
       "mf-f17-contact-01"
     ],
-    "name": "Cedar Flats - Tablet press predictive maintenance",
+    "name": "Strathmoor - Heat Treat Furnace Analytics",
     "stage": "contractsent",
-    "amount": 84900,
+    "amount": 138500,
     "close_date": {
-      "days_from_now": 23
-    }
-  },
-  {
-    "kit_id": "mf-f17-deal-02",
-    "company_id": "mf-f17-company",
-    "contact_ids": [
-      "mf-f17-contact-01"
-    ],
-    "name": "Cedar Flats - Blister line analytics",
-    "stage": "decisionmakerboughtin",
-    "amount": 46200,
-    "close_date": {
-      "days_from_now": 45
+      "days_from_now": 21
     }
   },
   {
@@ -411,24 +450,11 @@
     "contact_ids": [
       "mf-f18-contact-01"
     ],
-    "name": "Voltrane - Winding line downtime analytics",
-    "stage": "presentationscheduled",
-    "amount": 103700,
-    "close_date": {
-      "days_from_now": 52
-    }
-  },
-  {
-    "kit_id": "mf-f18-deal-02",
-    "company_id": "mf-f18-company",
-    "contact_ids": [
-      "mf-f18-contact-01"
-    ],
-    "name": "Voltrane - Machining cell pilot",
+    "name": "Ixelbrand - Loom Fleet Evaluation",
     "stage": "closedwon",
-    "amount": 31800,
+    "amount": 64200,
     "close_date": {
-      "days_ago": 45
+      "days_ago": 20
     }
   },
   {
@@ -437,24 +463,11 @@
     "contact_ids": [
       "mf-f19-contact-01"
     ],
-    "name": "Greywater - Curing press monitoring",
+    "name": "Ostravane - Blow Molder Downtime Tracking",
     "stage": "decisionmakerboughtin",
-    "amount": 36750,
+    "amount": 41300,
     "close_date": {
       "days_from_now": 33
-    }
-  },
-  {
-    "kit_id": "mf-f19-deal-02",
-    "company_id": "mf-f19-company",
-    "contact_ids": [
-      "mf-f19-contact-01"
-    ],
-    "name": "Greywater - Mixer motor health pilot",
-    "stage": "appointmentscheduled",
-    "amount": 15900,
-    "close_date": {
-      "days_from_now": 79
     }
   },
   {
@@ -463,24 +476,11 @@
     "contact_ids": [
       "mf-f20-contact-01"
     ],
-    "name": "Bluestem - Roller mill vibration analytics",
-    "stage": "qualifiedtobuy",
-    "amount": 51300,
+    "name": "Wexmoor Axiom - CNC Spindle Monitoring",
+    "stage": "presentationscheduled",
+    "amount": 68450,
     "close_date": {
-      "days_from_now": 86
-    }
-  },
-  {
-    "kit_id": "mf-f20-deal-02",
-    "company_id": "mf-f20-company",
-    "contact_ids": [
-      "mf-f20-contact-01"
-    ],
-    "name": "Bluestem - Packaging line sensors",
-    "stage": "closedlost",
-    "amount": 16800,
-    "close_date": {
-      "days_ago": 18
+      "days_from_now": 62
     }
   },
   {
@@ -489,11 +489,24 @@
     "contact_ids": [
       "mf-f21-contact-01"
     ],
-    "name": "Harlow - Die cast machine monitoring",
-    "stage": "presentationscheduled",
-    "amount": 29600,
+    "name": "Aldurex press line vibration monitoring",
+    "stage": "qualifiedtobuy",
+    "amount": 38400,
     "close_date": {
-      "days_from_now": 39
+      "days_from_now": 62
+    }
+  },
+  {
+    "kit_id": "mf-f22-deal-01",
+    "company_id": "mf-f22-company",
+    "contact_ids": [
+      "mf-f22-contact-01"
+    ],
+    "name": "Crennoway filler downtime analytics",
+    "stage": "presentationscheduled",
+    "amount": 91750,
+    "close_date": {
+      "days_from_now": 45
     }
   },
   {
@@ -502,24 +515,24 @@
     "contact_ids": [
       "mf-f23-contact-01"
     ],
-    "name": "Redfern - Loom drive predictive alerts",
-    "stage": "contractsent",
-    "amount": 57800,
+    "name": "Ophelion starter plan for molding presses",
+    "stage": "appointmentscheduled",
+    "amount": 17900,
     "close_date": {
-      "days_from_now": 8
+      "days_from_now": 95
     }
   },
   {
-    "kit_id": "mf-f23-deal-02",
-    "company_id": "mf-f23-company",
+    "kit_id": "mf-f24-deal-01",
+    "company_id": "mf-f24-company",
     "contact_ids": [
-      "mf-f23-contact-01"
+      "mf-f24-contact-01"
     ],
-    "name": "Redfern - Dye line downtime analytics",
-    "stage": "qualifiedtobuy",
-    "amount": 44250,
+    "name": "Trevanix spray dryer predictive maintenance",
+    "stage": "contractsent",
+    "amount": 128300,
     "close_date": {
-      "days_from_now": 101
+      "days_from_now": 18
     }
   },
   {
@@ -528,24 +541,11 @@
     "contact_ids": [
       "mf-f25-contact-01"
     ],
-    "name": "Westmark - Robotic weld cell analytics",
-    "stage": "decisionmakerboughtin",
-    "amount": 91250,
+    "name": "Bexhollow mill-wide downtime platform",
+    "stage": "closedlost",
+    "amount": 214500,
     "close_date": {
-      "days_from_now": 35
-    }
-  },
-  {
-    "kit_id": "mf-f25-deal-02",
-    "company_id": "mf-f25-company",
-    "contact_ids": [
-      "mf-f25-contact-01"
-    ],
-    "name": "Westmark - Assembly line downtime pilot",
-    "stage": "closedwon",
-    "amount": 27300,
-    "close_date": {
-      "days_ago": 9
+      "days_ago": 27
     }
   }
 ]

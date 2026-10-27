@@ -7,7 +7,7 @@
       "hc-acme-blocker",
       "hc-acme-it-lead"
     ],
-    "name": "Acme Regional Health - Digital Patient Intake (3 Hospitals)",
+    "name": "Acme Regional Health - Patient Intake Platform Rollout",
     "stage": "contractsent",
     "amount": 185000,
     "close_date": {
@@ -21,7 +21,7 @@
       "hc-northfield-champion",
       "hc-northfield-exec"
     ],
-    "name": "Northfield Family Clinics - Digital Intake Pilot (2 Clinics)",
+    "name": "Northfield Family Clinics - Two-Clinic Intake Pilot",
     "stage": "qualifiedtobuy",
     "amount": 42000,
     "close_date": {
@@ -34,11 +34,11 @@
     "contact_ids": [
       "hc-f01-contact-01"
     ],
-    "name": "Cedar Hollow - Patient Intake Platform",
-    "stage": "presentationscheduled",
-    "amount": 165400,
+    "name": "Velloraine Enterprise Intake Rollout",
+    "stage": "decisionmakerboughtin",
+    "amount": 486500,
     "close_date": {
-      "days_from_now": 45
+      "days_from_now": 75
     }
   },
   {
@@ -47,11 +47,11 @@
     "contact_ids": [
       "hc-f01-contact-01"
     ],
-    "name": "Cedar Hollow - Lobby Kiosk Add-on",
-    "stage": "appointmentscheduled",
-    "amount": 38750,
+    "name": "Velloraine Outpatient Kiosk Add-on",
+    "stage": "qualifiedtobuy",
+    "amount": 92400,
     "close_date": {
-      "days_from_now": 90
+      "days_from_now": 110
     }
   },
   {
@@ -60,11 +60,11 @@
     "contact_ids": [
       "hc-f02-contact-01"
     ],
-    "name": "Marrow Creek - Digital Intake Rollout",
-    "stage": "qualifiedtobuy",
-    "amount": 58200,
+    "name": "Quillspar Digital Intake Pilot",
+    "stage": "appointmentscheduled",
+    "amount": 38700,
     "close_date": {
-      "days_from_now": 60
+      "days_from_now": 95
     }
   },
   {
@@ -73,11 +73,11 @@
     "contact_ids": [
       "hc-f02-contact-01"
     ],
-    "name": "Marrow Creek - Insurance Card Capture Pilot",
+    "name": "Quillspar Telehealth Forms",
     "stage": "closedlost",
-    "amount": 21900,
+    "amount": 14800,
     "close_date": {
-      "days_ago": 34
+      "days_ago": 35
     }
   },
   {
@@ -86,11 +86,11 @@
     "contact_ids": [
       "hc-f03-contact-01"
     ],
-    "name": "Tallgrass - Enterprise Intake License",
-    "stage": "decisionmakerboughtin",
-    "amount": 132600,
+    "name": "Orbintree Imaging Check-in",
+    "stage": "presentationscheduled",
+    "amount": 167300,
     "close_date": {
-      "days_from_now": 30
+      "days_from_now": 60
     }
   },
   {
@@ -99,11 +99,11 @@
     "contact_ids": [
       "hc-f03-contact-01"
     ],
-    "name": "Tallgrass - Pre-Visit Text Reminders",
-    "stage": "appointmentscheduled",
-    "amount": 24300,
+    "name": "Orbintree Specialty Clinics Phase 2",
+    "stage": "contractsent",
+    "amount": 214900,
     "close_date": {
-      "days_from_now": 105
+      "days_from_now": 21
     }
   },
   {
@@ -112,11 +112,11 @@
     "contact_ids": [
       "hc-f04-contact-01"
     ],
-    "name": "Bluewater Bay - System-wide Intake Platform",
-    "stage": "contractsent",
-    "amount": 214800,
+    "name": "Tessamoor Registration Modernization",
+    "stage": "qualifiedtobuy",
+    "amount": 128600,
     "close_date": {
-      "days_from_now": 14
+      "days_from_now": 100
     }
   },
   {
@@ -125,11 +125,11 @@
     "contact_ids": [
       "hc-f04-contact-01"
     ],
-    "name": "Bluewater Bay - Outpatient Imaging Check-in",
-    "stage": "qualifiedtobuy",
-    "amount": 47250,
+    "name": "Tessamoor Satellite Clinic Tablets",
+    "stage": "closedwon",
+    "amount": 41250,
     "close_date": {
-      "days_from_now": 75
+      "days_ago": 48
     }
   },
   {
@@ -138,9 +138,22 @@
     "contact_ids": [
       "hc-f05-contact-01"
     ],
-    "name": "Pinecrest Valley - Intake Discovery",
+    "name": "Zenthrop New Patient Packet Automation",
+    "stage": "presentationscheduled",
+    "amount": 72900,
+    "close_date": {
+      "days_from_now": 45
+    }
+  },
+  {
+    "kit_id": "hc-f05-deal-02",
+    "company_id": "hc-f05-company",
+    "contact_ids": [
+      "hc-f05-contact-01"
+    ],
+    "name": "Zenthrop Pre-Visit Texting",
     "stage": "appointmentscheduled",
-    "amount": 28450,
+    "amount": 23400,
     "close_date": {
       "days_from_now": 80
     }
@@ -151,11 +164,24 @@
     "contact_ids": [
       "hc-f06-contact-01"
     ],
-    "name": "Ridgeline Ortho - Digital Forms Package",
-    "stage": "closedwon",
-    "amount": 17850,
+    "name": "Calderwyn Systemwide Intake Platform",
+    "stage": "decisionmakerboughtin",
+    "amount": 742000,
     "close_date": {
-      "days_ago": 22
+      "days_from_now": 115
+    }
+  },
+  {
+    "kit_id": "hc-f06-deal-02",
+    "company_id": "hc-f06-company",
+    "contact_ids": [
+      "hc-f06-contact-01"
+    ],
+    "name": "Calderwyn Emergency Dept Pre-Registration",
+    "stage": "closedlost",
+    "amount": 156000,
+    "close_date": {
+      "days_ago": 60
     }
   },
   {
@@ -164,11 +190,11 @@
     "contact_ids": [
       "hc-f07-contact-01"
     ],
-    "name": "Saltmarsh - Hospital Intake Expansion",
-    "stage": "presentationscheduled",
-    "amount": 96300,
+    "name": "Mirabend Check-in Starter",
+    "stage": "qualifiedtobuy",
+    "amount": 29850,
     "close_date": {
-      "days_from_now": 50
+      "days_from_now": 70
     }
   },
   {
@@ -177,11 +203,11 @@
     "contact_ids": [
       "hc-f07-contact-01"
     ],
-    "name": "Saltmarsh - Urgent Care Check-in",
-    "stage": "closedwon",
-    "amount": 31400,
+    "name": "Mirabend Insurance Verification",
+    "stage": "appointmentscheduled",
+    "amount": 17600,
     "close_date": {
-      "days_ago": 61
+      "days_from_now": 55
     }
   },
   {
@@ -190,11 +216,11 @@
     "contact_ids": [
       "hc-f08-contact-01"
     ],
-    "name": "Ironwood - Bilingual Intake Platform",
-    "stage": "qualifiedtobuy",
-    "amount": 148900,
+    "name": "Pellucid Pre-Op Forms Platform",
+    "stage": "contractsent",
+    "amount": 183700,
     "close_date": {
-      "days_from_now": 70
+      "days_from_now": 14
     }
   },
   {
@@ -203,11 +229,11 @@
     "contact_ids": [
       "hc-f08-contact-01"
     ],
-    "name": "Ironwood - ED Quick Registration",
-    "stage": "decisionmakerboughtin",
-    "amount": 36700,
+    "name": "Pellucid Consent eSignature",
+    "stage": "closedwon",
+    "amount": 46900,
     "close_date": {
-      "days_from_now": 28
+      "days_ago": 72
     }
   },
   {
@@ -216,11 +242,11 @@
     "contact_ids": [
       "hc-f09-contact-01"
     ],
-    "name": "Harborlight - Pre-Arrival Parent Forms",
-    "stage": "contractsent",
-    "amount": 44600,
+    "name": "Harrowgate Secure Intake Portal",
+    "stage": "presentationscheduled",
+    "amount": 98300,
     "close_date": {
-      "days_from_now": 12
+      "days_from_now": 65
     }
   },
   {
@@ -229,11 +255,11 @@
     "contact_ids": [
       "hc-f09-contact-01"
     ],
-    "name": "Harborlight - School Physicals Module",
-    "stage": "appointmentscheduled",
-    "amount": 12900,
+    "name": "Harrowgate Teletherapy Onboarding",
+    "stage": "decisionmakerboughtin",
+    "amount": 34200,
     "close_date": {
-      "days_from_now": 110
+      "days_from_now": 40
     }
   },
   {
@@ -242,11 +268,11 @@
     "contact_ids": [
       "hc-f10-contact-01"
     ],
-    "name": "Silver Prairie - Clinic Intake Standardization",
-    "stage": "presentationscheduled",
-    "amount": 71350,
+    "name": "Fenmoray Registration Overhaul",
+    "stage": "qualifiedtobuy",
+    "amount": 64800,
     "close_date": {
-      "days_from_now": 42
+      "days_from_now": 120
     }
   },
   {
@@ -255,11 +281,37 @@
     "contact_ids": [
       "hc-f10-contact-01"
     ],
-    "name": "Silver Prairie - Eligibility Check Bundle",
+    "name": "Fenmoray Patient Portal Forms",
     "stage": "closedlost",
-    "amount": 64800,
+    "amount": 19500,
     "close_date": {
-      "days_ago": 15
+      "days_ago": 22
+    }
+  },
+  {
+    "kit_id": "hc-f11-deal-01",
+    "company_id": "hc-f11-company",
+    "contact_ids": [
+      "hc-f11-contact-01"
+    ],
+    "name": "Kelvanta system-wide intake platform",
+    "stage": "presentationscheduled",
+    "amount": 684500,
+    "close_date": {
+      "days_from_now": 75
+    }
+  },
+  {
+    "kit_id": "hc-f11-deal-02",
+    "company_id": "hc-f11-company",
+    "contact_ids": [
+      "hc-f11-contact-01"
+    ],
+    "name": "Kelvanta kiosk add-on",
+    "stage": "qualifiedtobuy",
+    "amount": 142300,
+    "close_date": {
+      "days_from_now": 105
     }
   },
   {
@@ -268,11 +320,11 @@
     "contact_ids": [
       "hc-f12-contact-01"
     ],
-    "name": "Copperleaf - Online Queue and Intake",
-    "stage": "qualifiedtobuy",
-    "amount": 26750,
+    "name": "Dovemarrow digital intake pilot",
+    "stage": "appointmentscheduled",
+    "amount": 38900,
     "close_date": {
-      "days_from_now": 55
+      "days_from_now": 95
     }
   },
   {
@@ -281,11 +333,11 @@
     "contact_ids": [
       "hc-f12-contact-01"
     ],
-    "name": "Copperleaf - Payment Capture at Check-in",
-    "stage": "contractsent",
-    "amount": 18400,
+    "name": "Dovemarrow insurance verification module",
+    "stage": "closedlost",
+    "amount": 21700,
     "close_date": {
-      "days_from_now": 9
+      "days_ago": 34
     }
   },
   {
@@ -294,11 +346,11 @@
     "contact_ids": [
       "hc-f13-contact-01"
     ],
-    "name": "Lakeshore Valley - Registration Replacement",
-    "stage": "decisionmakerboughtin",
-    "amount": 248500,
+    "name": "Pyrelith patient access platform",
+    "stage": "contractsent",
+    "amount": 296800,
     "close_date": {
-      "days_from_now": 35
+      "days_from_now": 18
     }
   },
   {
@@ -307,11 +359,11 @@
     "contact_ids": [
       "hc-f13-contact-01"
     ],
-    "name": "Lakeshore Valley - Outpatient Clinic Rollout",
-    "stage": "presentationscheduled",
-    "amount": 52900,
+    "name": "Pyrelith imaging center forms",
+    "stage": "decisionmakerboughtin",
+    "amount": 74600,
     "close_date": {
-      "days_from_now": 65
+      "days_from_now": 50
     }
   },
   {
@@ -320,11 +372,24 @@
     "contact_ids": [
       "hc-f14-contact-01"
     ],
-    "name": "Redbud - Prenatal Intake Forms",
-    "stage": "appointmentscheduled",
-    "amount": 19650,
+    "name": "Wexlomere pre-registration portal",
+    "stage": "qualifiedtobuy",
+    "amount": 218400,
     "close_date": {
-      "days_from_now": 95
+      "days_from_now": 88
+    }
+  },
+  {
+    "kit_id": "hc-f14-deal-02",
+    "company_id": "hc-f14-company",
+    "contact_ids": [
+      "hc-f14-contact-01"
+    ],
+    "name": "Wexlomere guardian consent workflow",
+    "stage": "closedwon",
+    "amount": 57250,
+    "close_date": {
+      "days_ago": 27
     }
   },
   {
@@ -333,11 +398,11 @@
     "contact_ids": [
       "hc-f15-contact-01"
     ],
-    "name": "Granite Peak - Full Intake Suite",
-    "stage": "qualifiedtobuy",
-    "amount": 33800,
+    "name": "Ostrenvale ED and clinic check-in",
+    "stage": "presentationscheduled",
+    "amount": 167900,
     "close_date": {
-      "days_from_now": 58
+      "days_from_now": 64
     }
   },
   {
@@ -346,11 +411,11 @@
     "contact_ids": [
       "hc-f15-contact-01"
     ],
-    "name": "Granite Peak - Tablet Check-in Pilot",
-    "stage": "closedwon",
-    "amount": 14250,
+    "name": "Ostrenvale payment collection add-on",
+    "stage": "closedlost",
+    "amount": 48300,
     "close_date": {
-      "days_ago": 40
+      "days_ago": 58
     }
   },
   {
@@ -359,11 +424,24 @@
     "contact_ids": [
       "hc-f16-contact-01"
     ],
-    "name": "Sweetwater - Screening and Intake Forms",
-    "stage": "presentationscheduled",
-    "amount": 31200,
+    "name": "Thistlebrook tablet intake",
+    "stage": "appointmentscheduled",
+    "amount": 14800,
     "close_date": {
-      "days_from_now": 48
+      "days_from_now": 45
+    }
+  },
+  {
+    "kit_id": "hc-f17-deal-01",
+    "company_id": "hc-f17-company",
+    "contact_ids": [
+      "hc-f17-contact-01"
+    ],
+    "name": "Granulyth online check-in rollout",
+    "stage": "decisionmakerboughtin",
+    "amount": 112600,
+    "close_date": {
+      "days_from_now": 38
     }
   },
   {
@@ -372,24 +450,11 @@
     "contact_ids": [
       "hc-f18-contact-01"
     ],
-    "name": "Brookhaven - Multisite Intake Platform",
-    "stage": "contractsent",
-    "amount": 87450,
+    "name": "Brindlemoor registration modernization",
+    "stage": "closedwon",
+    "amount": 43700,
     "close_date": {
-      "days_from_now": 18
-    }
-  },
-  {
-    "kit_id": "hc-f18-deal-02",
-    "company_id": "hc-f18-company",
-    "contact_ids": [
-      "hc-f18-contact-01"
-    ],
-    "name": "Brookhaven - Referral Intake Module",
-    "stage": "qualifiedtobuy",
-    "amount": 22600,
-    "close_date": {
-      "days_from_now": 85
+      "days_ago": 14
     }
   },
   {
@@ -398,11 +463,11 @@
     "contact_ids": [
       "hc-f19-contact-01"
     ],
-    "name": "Ashgrove - Cooperative Intake License",
-    "stage": "closedlost",
-    "amount": 15900,
+    "name": "Cassivane pre-surgical intake",
+    "stage": "contractsent",
+    "amount": 93400,
     "close_date": {
-      "days_ago": 73
+      "days_from_now": 21
     }
   },
   {
@@ -411,24 +476,11 @@
     "contact_ids": [
       "hc-f20-contact-01"
     ],
-    "name": "Lowcountry Cardiology - Med History Intake",
-    "stage": "decisionmakerboughtin",
-    "amount": 16850,
+    "name": "Umbrelline multilingual intake",
+    "stage": "qualifiedtobuy",
+    "amount": 131200,
     "close_date": {
-      "days_from_now": 25
-    }
-  },
-  {
-    "kit_id": "hc-f20-deal-02",
-    "company_id": "hc-f20-company",
-    "contact_ids": [
-      "hc-f20-contact-01"
-    ],
-    "name": "Lowcountry Cardiology - Cath Lab Pre-Registration",
-    "stage": "appointmentscheduled",
-    "amount": 9750,
-    "close_date": {
-      "days_from_now": 100
+      "days_from_now": 110
     }
   },
   {
@@ -437,24 +489,11 @@
     "contact_ids": [
       "hc-f21-contact-01"
     ],
-    "name": "Highmeadow - Network Intake Platform",
-    "stage": "contractsent",
-    "amount": 189300,
+    "name": "Kovelthorne Enterprise Patient Intake Rollout",
+    "stage": "decisionmakerboughtin",
+    "amount": 687400,
     "close_date": {
-      "days_from_now": 21
-    }
-  },
-  {
-    "kit_id": "hc-f21-deal-02",
-    "company_id": "hc-f21-company",
-    "contact_ids": [
-      "hc-f21-contact-01"
-    ],
-    "name": "Highmeadow - Self-Service Kiosks Phase 2",
-    "stage": "presentationscheduled",
-    "amount": 44150,
-    "close_date": {
-      "days_from_now": 62
+      "days_from_now": 75
     }
   },
   {
@@ -463,24 +502,11 @@
     "contact_ids": [
       "hc-f22-contact-01"
     ],
-    "name": "Pelican Point - Hospital Intake Platform",
-    "stage": "qualifiedtobuy",
-    "amount": 82700,
+    "name": "Lumivane Digital Check-In Discovery",
+    "stage": "appointmentscheduled",
+    "amount": 38600,
     "close_date": {
-      "days_from_now": 66
-    }
-  },
-  {
-    "kit_id": "hc-f22-deal-02",
-    "company_id": "hc-f22-company",
-    "contact_ids": [
-      "hc-f22-contact-01"
-    ],
-    "name": "Pelican Point - Surgery Center Pre-Admit",
-    "stage": "closedwon",
-    "amount": 27600,
-    "close_date": {
-      "days_ago": 8
+      "days_from_now": 110
     }
   },
   {
@@ -489,24 +515,11 @@
     "contact_ids": [
       "hc-f23-contact-01"
     ],
-    "name": "Desert Willow - Recurring Consent Workflow",
-    "stage": "decisionmakerboughtin",
-    "amount": 49350,
+    "name": "Strivenmoor Bilingual Intake Platform",
+    "stage": "presentationscheduled",
+    "amount": 214900,
     "close_date": {
-      "days_from_now": 33
-    }
-  },
-  {
-    "kit_id": "hc-f23-deal-02",
-    "company_id": "hc-f23-company",
-    "contact_ids": [
-      "hc-f23-contact-01"
-    ],
-    "name": "Desert Willow - Insurance Update Reminders",
-    "stage": "appointmentscheduled",
-    "amount": 21450,
-    "close_date": {
-      "days_from_now": 115
+      "days_from_now": 58
     }
   },
   {
@@ -515,24 +528,11 @@
     "contact_ids": [
       "hc-f24-contact-01"
     ],
-    "name": "Cobblestone - Primary Care Intake",
-    "stage": "decisionmakerboughtin",
-    "amount": 29800,
+    "name": "Ravenquill Pre-Visit Forms Automation",
+    "stage": "contractsent",
+    "amount": 96250,
     "close_date": {
-      "days_from_now": 38
-    }
-  },
-  {
-    "kit_id": "hc-f24-deal-02",
-    "company_id": "hc-f24-company",
-    "contact_ids": [
-      "hc-f24-contact-01"
-    ],
-    "name": "Cobblestone - Eligibility Add-on",
-    "stage": "closedlost",
-    "amount": 11350,
-    "close_date": {
-      "days_ago": 52
+      "days_from_now": 19
     }
   },
   {
@@ -541,11 +541,11 @@
     "contact_ids": [
       "hc-f25-contact-01"
     ],
-    "name": "Riverbend - Caregiver-Assisted Intake",
-    "stage": "contractsent",
-    "amount": 38900,
+    "name": "Tamarisk Bay Intake Modernization",
+    "stage": "closedlost",
+    "amount": 142300,
     "close_date": {
-      "days_from_now": 7
+      "days_ago": 24
     }
   }
 ]

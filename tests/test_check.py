@@ -50,7 +50,13 @@ def snapshot_as_seeded(fixtures: FixtureSet, now: datetime) -> Snapshot:
                     activities=activities_where(lambda a, c=c: a.company_id == c))
         for c in hero_ids
     ]
-    pipeline = [PipelineDeal(stage=d.stage, close_date=resolve(d.close_date, d.kit_id, today)) for d in fixtures.deals]
+    def next_step(deal_id):
+        upcoming = [resolve(a.when, a.kit_id, today) for a in fixtures.activities
+                    if a.deal_id == deal_id and a.type in ("task", "meeting") and a.when.days_from_now]
+        return min(upcoming, default=None)
+
+    pipeline = [PipelineDeal(stage=d.stage, close_date=resolve(d.close_date, d.kit_id, today),
+                             next_activity=next_step(d.kit_id)) for d in fixtures.deals]
     return Snapshot(now=now, hero_deals=deals, hero_companies=companies, pipeline=pipeline,
                     rep_activities=activities_where(lambda a: True))
 
@@ -92,7 +98,9 @@ def test_broken_hero_deal_fails_deep_dive_and_pipeline(snapshot):
     acme = snapshot.hero_deals[0]
     broken = replace(acme, stage="appointmentscheduled", close_date=NOW - timedelta(days=5))
     snapshot.hero_deals[0] = broken
-    snapshot.pipeline.append(PipelineDeal(stage=broken.stage, close_date=broken.close_date))
+    # Breaking the deal doesn't touch its tasks, so it still has its upcoming next step.
+    snapshot.pipeline.append(PipelineDeal(stage=broken.stage, close_date=broken.close_date,
+                                          next_activity=NOW + timedelta(days=2)))
 
     deep_dive = run(snapshot, "deal-deep-dive")
     assert not deep_dive.passed
@@ -115,6 +123,11 @@ def test_stale_timeline_fails(snapshot):
     for deal in snapshot.hero_deals:
         deal.activities = [replace(a, at=a.at - timedelta(days=60)) for a in deal.activities]
     assert "hc-acme-deal-01: newest activity under 10 days old" in failures(run(snapshot, "deal-deep-dive"))
+
+
+def test_deals_without_a_next_step_fail(snapshot):
+    snapshot.pipeline[0].next_activity = None  # the first deal is open (Acme, contract sent)
+    assert "pipeline: every open deal has an upcoming task or meeting" in failures(run(snapshot, "pipeline-review"))
 
 
 def test_thin_pipeline_fails(snapshot):

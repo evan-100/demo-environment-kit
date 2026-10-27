@@ -6,7 +6,7 @@
 
 **Talk track:**
 > "Here's a typical regional sales book: about forty open opportunities across every stage, from first
-> meetings through contract. Nothing sits past its close date, because the forecast view flags those
-> automatically. Let me show you the deal that's closest to signature."
+> meetings through contract. Nothing sits past its close date, and every deal has its next step booked.
+> Let me show you the deal that's closest to signature."
 
 Then move to the deal deep-dive.

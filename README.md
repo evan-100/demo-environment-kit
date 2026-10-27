@@ -62,7 +62,7 @@ Each is a short YAML file in [`checks/`](checks), shared by every story:
 
 | Golden path | What the rep shows | Checked |
 |---|---|---|
-| Pipeline review | The deals board | ≥30 open deals, ≥4 stages, nothing overdue |
+| Pipeline review | The deals board | ≥30 open deals, ≥4 stages, nothing overdue, every open deal has a next step |
 | Deal deep-dive | Each hero deal | Story stage, future close date, ≥2 contacts, ≥3 activities in 30 days, newest under 10 days |
 | Account 360 | Each hero company | ≥2 contacts, ≥1 deal, activity under 10 days old |
 | Rep activity feed | The rep's own week | ≥5 activities in 14 days, ≥2 upcoming tasks or meetings |
@@ -91,13 +91,14 @@ uv sync
 cp .env.example .env                  # add HUBSPOT_TOKEN (and ANTHROPIC_API_KEY for generate)
 uv run kit ping                       # token works? lists your deal stages
 uv run kit seed healthcare --dry-run  # see what would be written
-uv run kit seed healthcare            # ~130 records
+uv run kit seed healthcare            # ~190 records
 uv run kit check healthcare           # all golden paths, with a report in reports/
 
 uv run kit break healthcare           # damage the hero deal on purpose
 uv run kit check healthcare --fix     # caught, fixed, checked again
 
 uv run kit reset healthcare           # remove only what the kit created
+uv run kit reset healthcare --reseed  # after `kit generate`: clears records the new fixtures no longer have
 uv run kit metrics                    # the table above, from the ledger
 uv run pytest                         # live HubSpot tests are skipped without a token
 ```

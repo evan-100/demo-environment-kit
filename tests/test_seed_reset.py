@@ -241,3 +241,18 @@ def test_live_seed_twice_then_reset(fixtures):
     assert len(ids["deals"]) == len(fixtures.deals)
     reset(live, "healthcare", fixtures)
     assert live.read_by_kit_ids("companies", [c.kit_id for c in fixtures.companies]) == []
+
+
+def test_deals_are_created_before_their_history(fixtures):
+    plan = build_plan(fixtures, NOW)
+    created = {r["kit_id"]: r["properties"]["createdate"] for r in plan.records["deals"]}
+    assert len(set(created.values())) > len(created) // 2  # spread out, not all one date
+    activity_times = [r["properties"]["hs_timestamp"] for t in ["notes", "calls", "emails", "meetings", "tasks"]
+                      for r in plan.records[t]]
+    for deal in fixtures.deals:
+        linked = [a.kit_id for a in fixtures.activities if a.deal_id == deal.kit_id]
+        times = [r["properties"]["hs_timestamp"] for t in ["notes", "calls", "emails", "meetings", "tasks"]
+                 for r in plan.records[t] if r["kit_id"] in linked]
+        assert all(created[deal.kit_id] < t for t in times), deal.kit_id
+        assert created[deal.kit_id] < NOW.strftime("%Y-%m-%dT%H:%M:%S")
+    assert activity_times  # the fixtures do have activities

@@ -5,31 +5,29 @@
     "when": {
       "days_ago": 35
     },
-    "title": "Inbound call after furnace line outage",
-    "body": "Marcus called us after Furnace Line 2 was down for 3 days. Failed blower bearing, no warning, and a rush order backlog on top of it. He estimates the outage cost well into six figures in lost output and expedited freight. Wants to know if vibration and thermal monitoring could have caught it. Agreed to a plant walk-through and sensor survey. Needs his OT network manager involved early.",
+    "title": "Inbound call after furnace line 2 outage",
+    "body": "Marcus called us after furnace line 2 was down for 3 days. Failed blower bearing, no warning, rush parts and overtime. He estimates the outage cost well into six figures in lost shipments. Wants to know if vibration and thermal sensing could have flagged it. Agreed to a plant walk-through and sensor survey.",
     "company_id": "mf-kilnbrook-company",
     "contact_ids": [
       "mf-kilnbrook-champion"
     ],
     "deal_id": "mf-kilnbrook-deal-01",
     "direction": "inbound",
-    "duration_minutes": 40
+    "duration_minutes": 35
   },
   {
     "kit_id": "mf-kilnbrook-act-02",
-    "type": "email",
+    "type": "note",
     "when": {
-      "days_ago": 34
+      "days_ago": 33
     },
-    "title": "Follow-up: survey logistics and security questions",
-    "body": "Sent recap of the call, a list of what we need for the survey (asset list, network diagrams, maintenance history) and a short OT security overview. Looped in Tom Brzezinski as the network contact.",
+    "title": "Discovery notes: current maintenance setup",
+    "body": "Kilnbrook is on calendar-based PM plus operator rounds. No condition monitoring on furnace blowers, pumps or the hydraulic presses. Three furnace lines, about 40 critical assets. Marcus is the pain owner but needs finance sign-off over $250K. Competing priority: a MES upgrade is on the capital list.",
     "company_id": "mf-kilnbrook-company",
     "contact_ids": [
-      "mf-kilnbrook-champion",
-      "mf-kilnbrook-it-lead"
+      "mf-kilnbrook-champion"
     ],
-    "deal_id": "mf-kilnbrook-deal-01",
-    "direction": "outbound"
+    "deal_id": "mf-kilnbrook-deal-01"
   },
   {
     "kit_id": "mf-kilnbrook-act-03",
@@ -38,37 +36,23 @@
       "days_ago": 21
     },
     "title": "Plant walk-through and sensor survey",
-    "body": "Walked Furnace Lines 1-3 and the molding area with Marcus and Tom. Identified about 140 critical assets for monitoring: blowers, pumps, hydraulic presses, gearboxes. Tom wants sensors on a segmented VLAN with no inbound path to the plant network, and gateway data going out only. Wi-Fi coverage is weak near the furnaces so we would use wired gateways. Tom is neutral but constructive; his main concern is not adding attack surface.",
+    "body": "Walked all three furnace lines and the machining cell with Marcus and Tobias. Mapped about 40 assets for sensors. Tobias flagged that the furnace area sits on a segmented OT network and wants all data kept on-prem or through a one-way gateway. We agreed a read-only gateway design is workable. Needs a written network architecture doc.",
     "company_id": "mf-kilnbrook-company",
     "contact_ids": [
       "mf-kilnbrook-champion",
       "mf-kilnbrook-it-lead"
     ],
     "deal_id": "mf-kilnbrook-deal-01",
-    "duration_minutes": 180
+    "duration_minutes": 150
   },
   {
     "kit_id": "mf-kilnbrook-act-04",
-    "type": "note",
-    "when": {
-      "days_ago": 20
-    },
-    "title": "Survey findings summary",
-    "body": "Scoped phase one to 3 furnace lines, 140 assets, roughly 22 gateways. Two of the last four unplanned stops were on assets with no condition data at all. Budget is likely owned by Finance, so we need an ROI case. Marcus says VP Finance has been burned by past software projects that never delivered savings.",
-    "company_id": "mf-kilnbrook-company",
-    "contact_ids": [
-      "mf-kilnbrook-champion"
-    ],
-    "deal_id": "mf-kilnbrook-deal-01"
-  },
-  {
-    "kit_id": "mf-kilnbrook-act-05",
     "type": "email",
     "when": {
-      "days_ago": 14
+      "days_ago": 19
     },
-    "title": "Security architecture doc sent to OT",
-    "body": "Sent Tom the network architecture diagram, data flow description and our SOC 2 report. He is reviewing with his security lead and will flag any gaps.",
+    "title": "Sent network architecture and security overview",
+    "body": "Sent Tobias the gateway reference design, data flow diagram and our patching policy. Confirmed no inbound connections to the plant network. He will review with his team and come back with questions.",
     "company_id": "mf-kilnbrook-company",
     "contact_ids": [
       "mf-kilnbrook-it-lead"
@@ -77,21 +61,36 @@
     "direction": "outbound"
   },
   {
-    "kit_id": "mf-kilnbrook-act-06",
+    "kit_id": "mf-kilnbrook-act-05",
     "type": "call",
     "when": {
-      "days_ago": 7
+      "days_ago": 12
     },
-    "title": "Finance asks for payback math",
-    "body": "Priya Hallworth joined a call with Marcus. She is skeptical: wants payback math tied to last year's actual downtime costs, not vendor benchmarks, and asked what happens if the savings do not show up. Also pushed on subscription pricing versus a one-time spend. We committed to a payback model before the executive presentation and to discussing a phased start with a pilot exit clause.",
+    "title": "Follow-up with OT on gateway questions",
+    "body": "Tobias is okay with the one-way gateway but wants the firewall rules reviewed by his vendor. Asked about sensor battery life on wireless units, we said about 3 years. No blockers from IT as long as the vendor review passes.",
     "company_id": "mf-kilnbrook-company",
     "contact_ids": [
-      "mf-kilnbrook-champion",
-      "mf-kilnbrook-blocker"
+      "mf-kilnbrook-it-lead"
     ],
     "deal_id": "mf-kilnbrook-deal-01",
     "direction": "outbound",
-    "duration_minutes": 30
+    "duration_minutes": 25
+  },
+  {
+    "kit_id": "mf-kilnbrook-act-06",
+    "type": "email",
+    "when": {
+      "days_ago": 7
+    },
+    "title": "Finance request for payback math",
+    "body": "Renata emailed asking for payback math measured against last year's downtime costs before she will support the $310K. She is skeptical that predictive tools deliver on the promised savings. Replied that we will build a model from Kilnbrook's own downtime data and walk her through assumptions.",
+    "company_id": "mf-kilnbrook-company",
+    "contact_ids": [
+      "mf-kilnbrook-blocker",
+      "mf-kilnbrook-champion"
+    ],
+    "deal_id": "mf-kilnbrook-deal-01",
+    "direction": "inbound"
   },
   {
     "kit_id": "mf-kilnbrook-act-07",
@@ -99,8 +98,8 @@
     "when": {
       "days_ago": 5
     },
-    "title": "Downtime logs received from Marcus",
-    "body": "Marcus sent 12 months of downtime logs: stop reasons, duration, lost units per line. Furnace Line 2 and the hydraulic presses account for the bulk of unplanned hours. Logs are messy in places, so we will confirm cost-per-hour assumptions with him before using them.",
+    "title": "Marcus shared downtime logs",
+    "body": "Marcus sent 12 months of downtime logs for the furnace lines and presses. Roughly 14 unplanned stops, with the line 2 outage as the largest. Maintenance labor and expedite costs are included but scrap cost is missing. Asked him to pull scrap figures too.",
     "company_id": "mf-kilnbrook-company",
     "contact_ids": [
       "mf-kilnbrook-champion"
@@ -114,8 +113,8 @@
     "when": {
       "days_from_now": 3
     },
-    "title": "Build payback model from downtime logs",
-    "body": "Build the payback model using Kilnbrook's own downtime data: unplanned hours by line, cost per hour confirmed by Marcus and Finance, conservative reduction scenarios, and break-even timing. Include a phased option with an exit clause. Share with Marcus for review the day before the presentation.",
+    "title": "Build payback model before executive presentation",
+    "body": "Build the payback model from the downtime logs: avoided outage hours, labor, expedite and scrap, with conservative and base cases. Include a sensitivity table for Renata. Review with Marcus a day before the presentation.",
     "company_id": "mf-kilnbrook-company",
     "contact_ids": [
       "mf-kilnbrook-champion",
@@ -131,7 +130,7 @@
       "days_from_now": 6
     },
     "title": "Executive presentation: predictive maintenance business case",
-    "body": "Presentation to plant leadership and Finance. Cover survey findings, the OT security architecture, payback model and the phased rollout proposal. Marcus will open with the Furnace Line 2 outage. Priya and Tom to attend.",
+    "body": "Present the plan to Renata, Marcus and plant leadership. Cover the payback model, the pilot scope on furnace line 2, and the gateway design. Expect finance pushback on the savings assumptions.",
     "company_id": "mf-kilnbrook-company",
     "contact_ids": [
       "mf-kilnbrook-champion",
@@ -145,10 +144,10 @@
     "kit_id": "mf-marrowfield-act-01",
     "type": "meeting",
     "when": {
-      "days_ago": 45
+      "days_ago": 42
     },
     "title": "Pilot kickoff on corrugator lines 1 and 2",
-    "body": "Onsite kickoff with Dennis and his maintenance leads. Sensors going on the two corrugators first: bearings, drive motors and the hot plate section. Baseline: roughly 9 unplanned stops per month on these lines. Agreed success metric is hours of avoided unplanned downtime over 6 weeks. Dennis wants alerts routed to his maintenance supervisors, not email blasts.",
+    "body": "Onsite kickoff with Delphine and her maintenance leads. Sensors going on the two corrugators, focusing on the bearing and drive motor vibration. Baseline unplanned downtime is around 9% of scheduled hours on these lines. Agreed on a six-week pilot with a readout at the end.",
     "company_id": "mf-marrowfield-company",
     "contact_ids": [
       "mf-marrowfield-champion"
@@ -160,10 +159,10 @@
     "kit_id": "mf-marrowfield-act-02",
     "type": "call",
     "when": {
-      "days_ago": 30
+      "days_ago": 28
     },
-    "title": "Mid-pilot check-in with Dennis",
-    "body": "Sensor data flowing on both lines. First alert caught a drive motor running hot on line 2, swapped during a planned changeover instead of failing mid-run. Dennis says the night shift trusts the alerts more than he expected. Open item: tune the vibration threshold on line 1, too many false positives. Our engineer to adjust this week.",
+    "title": "Mid-pilot check-in",
+    "body": "Delphine says the dashboards are being used on every shift. First alert flagged a gearbox running hot on line 2, maintenance swapped it during a planned stop. Her concern is that alert noise might wear out the night crew. We will tune the thresholds this week.",
     "company_id": "mf-marrowfield-company",
     "contact_ids": [
       "mf-marrowfield-champion"
@@ -174,12 +173,27 @@
   },
   {
     "kit_id": "mf-marrowfield-act-03",
+    "type": "task",
+    "when": {
+      "days_ago": 20
+    },
+    "title": "Tune alert thresholds for night shift",
+    "body": "Cut low-severity alerts on both lines and send Delphine the revised rules before the readout.",
+    "company_id": "mf-marrowfield-company",
+    "contact_ids": [
+      "mf-marrowfield-champion"
+    ],
+    "deal_id": "mf-marrowfield-deal-01",
+    "task_status": "completed"
+  },
+  {
+    "kit_id": "mf-marrowfield-act-04",
     "type": "meeting",
     "when": {
       "days_ago": 14
     },
-    "title": "Pilot readout with Dennis and COO",
-    "body": "Presented 6-week results: 11 hours of avoided downtime across the two corrugators, 3 early catches before failure, and about 40% fewer emergency maintenance calls. Rosalind asked about rollout effort at the other three plants and per-plant pricing. Dennis spoke strongly in favor. Rosalind said she would decide quickly if the numbers hold up for finance.",
+    "title": "Pilot readout with plant and COO",
+    "body": "Presented results. 11 hours of avoided downtime over six weeks across the two lines, with three early warnings that were acted on. Garrett asked about rollout effort at the other three plants and the cost per line. Delphine backed the results. Garrett said he would approve expanding to all four plants.",
     "company_id": "mf-marrowfield-company",
     "contact_ids": [
       "mf-marrowfield-champion",
@@ -189,13 +203,13 @@
     "duration_minutes": 60
   },
   {
-    "kit_id": "mf-marrowfield-act-04",
+    "kit_id": "mf-marrowfield-act-05",
     "type": "email",
     "when": {
-      "days_ago": 12
+      "days_ago": 9
     },
-    "title": "Follow-up: expansion scope and pricing for all four plants",
-    "body": "Sent Rosalind the four-plant scope, phased install schedule over two quarters, and pricing at $128K for year one. Included the pilot ROI summary with the downtime hours converted to dollars using Marrowfield's own cost-per-hour figure. Cc'd Dennis.",
+    "title": "Expansion proposal and rollout plan",
+    "body": "Sent the four-plant proposal at $128K with a phased install schedule, two plants per quarter. Included the pilot results summary for Garrett's file and the sensor count per plant.",
     "company_id": "mf-marrowfield-company",
     "contact_ids": [
       "mf-marrowfield-exec",
@@ -205,29 +219,13 @@
     "direction": "outbound"
   },
   {
-    "kit_id": "mf-marrowfield-act-05",
-    "type": "call",
-    "when": {
-      "days_ago": 8
-    },
-    "title": "COO verbal approval to expand",
-    "body": "Rosalind called back: approved expanding to all four plants. She asked us to keep the phased schedule so no plant goes through install during peak season. Wants the contract to go to legal right away. I confirmed we would send paper by end of week.",
-    "company_id": "mf-marrowfield-company",
-    "contact_ids": [
-      "mf-marrowfield-exec"
-    ],
-    "deal_id": "mf-marrowfield-deal-01",
-    "direction": "inbound",
-    "duration_minutes": 15
-  },
-  {
     "kit_id": "mf-marrowfield-act-06",
     "type": "email",
     "when": {
       "days_ago": 6
     },
     "title": "Expansion contract sent for signature",
-    "body": "Sent the four-plant expansion agreement to Rosalind and their legal contact. Term is 36 months, $128K year one, with the phased install schedule attached as an exhibit. Asked for any redlines by end of next week.",
+    "body": "Garrett approved the numbers and the contract went out to their legal team. Asked for signature within two weeks to hold the install slots for the first two plants.",
     "company_id": "mf-marrowfield-company",
     "contact_ids": [
       "mf-marrowfield-exec"
@@ -242,11 +240,10 @@
       "days_ago": 2
     },
     "title": "Legal redlines received",
-    "body": "Marrowfield legal sent redlines. Main asks: cap on liability tied to fees paid, data ownership language for sensor data, and a 60-day exit clause if install milestones slip. Liability and data ownership look workable. The exit clause needs a deal desk check. Dennis says legal is just being thorough and Rosalind still wants to sign this month.",
+    "body": "Marrowfield legal sent redlines. Main items are a cap on data liability, a request for a 30-day exit if uptime SLA is missed, and wording on who owns the sensor data. Delphine thinks these are routine and that Garrett is still on board. Need our legal to review before the call.",
     "company_id": "mf-marrowfield-company",
     "contact_ids": [
-      "mf-marrowfield-champion",
-      "mf-marrowfield-exec"
+      "mf-marrowfield-champion"
     ],
     "deal_id": "mf-marrowfield-deal-01"
   },
@@ -254,30 +251,1110 @@
     "kit_id": "mf-marrowfield-act-08",
     "type": "task",
     "when": {
-      "days_ago": 0
+      "days_from_now": 1
     },
-    "title": "Get deal desk sign-off on exit clause counter",
-    "body": "Draft counter on the 60-day exit clause: allow exit only if we miss an install milestone by more than 30 days after a cure period. Get deal desk and our counsel to approve before the redline call.",
+    "title": "Prep redline responses with our legal",
+    "body": "Agree on fallbacks for the liability cap, SLA exit and data ownership clauses before the call with Marrowfield.",
     "company_id": "mf-marrowfield-company",
     "contact_ids": [],
     "deal_id": "mf-marrowfield-deal-01",
-    "task_status": "in_progress"
+    "task_status": "not_started"
   },
   {
     "kit_id": "mf-marrowfield-act-09",
-    "type": "call",
+    "type": "meeting",
     "when": {
       "days_from_now": 2
     },
-    "title": "Redline resolution call with Marrowfield legal",
-    "body": "Scheduled call to walk through liability cap, data ownership and exit clause. Bring our counsel. Dennis joining to speak to the install schedule. Goal: agree final language so the contract can be signed within the week.",
+    "title": "Redline resolution call",
+    "body": "Walk through the open contract items with Marrowfield legal and Delphine. Goal is to agree on language and get to signature this week.",
     "company_id": "mf-marrowfield-company",
     "contact_ids": [
       "mf-marrowfield-champion",
       "mf-marrowfield-exec"
     ],
     "deal_id": "mf-marrowfield-deal-01",
-    "direction": "outbound",
     "duration_minutes": 45
+  },
+  {
+    "kit_id": "mf-f01-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 9
+    },
+    "title": "Discovery call with Lorna",
+    "body": "Two hydraulic presses caused about 31 hours of unplanned downtime last quarter. She wants a cost-per-hour number before involving finance.",
+    "company_id": "mf-f01-company",
+    "contact_ids": [
+      "mf-f01-contact-01"
+    ],
+    "deal_id": "mf-f01-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f01-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 5
+    },
+    "title": "Send downtime cost worksheet",
+    "body": "Send the blank downtime worksheet so Dev can fill in press stoppage hours for the last six months.",
+    "company_id": "mf-f01-company",
+    "contact_ids": [
+      "mf-f01-contact-01"
+    ],
+    "deal_id": "mf-f01-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f01-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 21
+    },
+    "title": "Lost: budget frozen",
+    "body": "Lorna said capex is frozen until the new furnace install is done. Asked us to check back in two quarters.",
+    "company_id": "mf-f01-company",
+    "contact_ids": [
+      "mf-f01-contact-01"
+    ],
+    "deal_id": "mf-f01-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f02-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 6
+    },
+    "title": "Intro reply from Harlan",
+    "body": "He replied to our outreach after a spindle failure took out a five-axis mill for nine days. Booked a demo slot.",
+    "company_id": "mf-f02-company",
+    "contact_ids": [
+      "mf-f02-contact-01"
+    ],
+    "deal_id": "mf-f02-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f02-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 8
+    },
+    "title": "Live demo of spindle dashboards",
+    "body": "Walk through spindle load and temperature alerts using sample data from a similar gear shop.",
+    "company_id": "mf-f02-company",
+    "contact_ids": [
+      "mf-f02-contact-01"
+    ],
+    "deal_id": "mf-f02-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f02-deal-02-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 12
+    },
+    "title": "Scoping notes",
+    "body": "Harlan runs 14 hobbing machines and logs stoppages on paper. Main objection is operator buy-in on tablets.",
+    "company_id": "mf-f02-company",
+    "contact_ids": [
+      "mf-f02-contact-01"
+    ],
+    "deal_id": "mf-f02-deal-02"
+  },
+  {
+    "kit_id": "mf-f02-deal-02-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 10
+    },
+    "title": "Proposal presentation",
+    "body": "Present to Harlan and two shift leads, focusing on automatic stoppage capture without operator entry.",
+    "company_id": "mf-f02-company",
+    "contact_ids": [
+      "mf-f02-contact-01"
+    ],
+    "deal_id": "mf-f02-deal-02",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f03-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 4
+    },
+    "title": "Exec alignment call",
+    "body": "Imani agreed gearbox failures are the top risk and wants a three-plant rollout quote. Piotr will validate the data feeds.",
+    "company_id": "mf-f03-company",
+    "contact_ids": [
+      "mf-f03-contact-01"
+    ],
+    "deal_id": "mf-f03-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f03-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Pricing review with procurement",
+    "body": "Review tiered pricing for three plants and discuss a two-year term.",
+    "company_id": "mf-f03-company",
+    "contact_ids": [
+      "mf-f03-contact-01"
+    ],
+    "deal_id": "mf-f03-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f03-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 15
+    },
+    "title": "Signed order form",
+    "body": "Piotr returned the signed order for 12 motor sensors on the pelletizer line. Install scheduled with their electricians.",
+    "company_id": "mf-f03-company",
+    "contact_ids": [
+      "mf-f03-contact-01"
+    ],
+    "deal_id": "mf-f03-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f04-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 3
+    },
+    "title": "Contract sent",
+    "body": "Sent the contract covering 40 ammonia compressor sensors. Bettina is routing it to legal this week.",
+    "company_id": "mf-f04-company",
+    "contact_ids": [
+      "mf-f04-contact-01"
+    ],
+    "deal_id": "mf-f04-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f04-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 4
+    },
+    "title": "Follow up on legal redlines",
+    "body": "Call Bettina to check whether legal has questions on data ownership language.",
+    "company_id": "mf-f04-company",
+    "contact_ids": [
+      "mf-f04-contact-01"
+    ],
+    "deal_id": "mf-f04-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f04-deal-02-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "OEE discovery",
+    "body": "Current OEE is tracked in spreadsheets and about 20 percent off from reality. Bettina wants this tied to the compressor project.",
+    "company_id": "mf-f04-company",
+    "contact_ids": [
+      "mf-f04-contact-01"
+    ],
+    "deal_id": "mf-f04-deal-02",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f04-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 9
+    },
+    "title": "Draft OEE scope",
+    "body": "Write a scope document for three packing lines and send for review.",
+    "company_id": "mf-f04-company",
+    "contact_ids": [
+      "mf-f04-contact-01"
+    ],
+    "deal_id": "mf-f04-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f05-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 10
+    },
+    "title": "Technical call with Neville",
+    "body": "Die crashes cost them roughly 60k last year. He wants tonnage signature alerts on the six largest presses.",
+    "company_id": "mf-f05-company",
+    "contact_ids": [
+      "mf-f05-contact-01"
+    ],
+    "deal_id": "mf-f05-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f05-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 7
+    },
+    "title": "Onsite presentation",
+    "body": "Present tonnage monitoring results and include Sasha for the ROI discussion.",
+    "company_id": "mf-f05-company",
+    "contact_ids": [
+      "mf-f05-contact-01"
+    ],
+    "deal_id": "mf-f05-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f05-deal-02-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 28
+    },
+    "title": "Went with in-house build",
+    "body": "Neville's team decided to wire their own sensors to the existing PLC. Left door open for analytics later.",
+    "company_id": "mf-f05-company",
+    "contact_ids": [
+      "mf-f05-contact-01"
+    ],
+    "deal_id": "mf-f05-deal-02"
+  },
+  {
+    "kit_id": "mf-f06-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 7
+    },
+    "title": "Intro call",
+    "body": "Odalys loses a few batches a month to kiln drift. She is skeptical about cost for a company her size.",
+    "company_id": "mf-f06-company",
+    "contact_ids": [
+      "mf-f06-contact-01"
+    ],
+    "deal_id": "mf-f06-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f06-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 12
+    },
+    "title": "Kiln walkthrough",
+    "body": "Visit the plant to look at thermocouple wiring and see what data is already available.",
+    "company_id": "mf-f06-company",
+    "contact_ids": [
+      "mf-f06-contact-01"
+    ],
+    "deal_id": "mf-f06-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f06-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 18
+    },
+    "title": "Sent conveyor case study",
+    "body": "Sent a short case study on drive monitoring at a small ceramics plant. Odalys asked for a price for four drives.",
+    "company_id": "mf-f06-company",
+    "contact_ids": [
+      "mf-f06-contact-01"
+    ],
+    "deal_id": "mf-f06-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f06-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Prepare four-drive quote",
+    "body": "Build a quote for four drive sensors with a monthly subscription option.",
+    "company_id": "mf-f06-company",
+    "contact_ids": [
+      "mf-f06-contact-01"
+    ],
+    "deal_id": "mf-f06-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f07-deal-01-act-1",
+    "type": "meeting",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "Site director review",
+    "body": "Yvette approved moving forward after seeing seal failure predictions on their sample data. Needs a safety review of wireless sensors.",
+    "company_id": "mf-f07-company",
+    "contact_ids": [
+      "mf-f07-contact-01"
+    ],
+    "deal_id": "mf-f07-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f07-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 8
+    },
+    "title": "Send hazardous area certifications",
+    "body": "Send sensor certification documents for Class I Division 2 areas to Cormac.",
+    "company_id": "mf-f07-company",
+    "contact_ids": [
+      "mf-f07-contact-01"
+    ],
+    "deal_id": "mf-f07-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f07-deal-02-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 11
+    },
+    "title": "Batch data call",
+    "body": "Cormac says cycle times vary 12 percent between shifts and nobody knows why. Historian export is possible.",
+    "company_id": "mf-f07-company",
+    "contact_ids": [
+      "mf-f07-contact-01"
+    ],
+    "deal_id": "mf-f07-deal-02",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f07-deal-02-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 13
+    },
+    "title": "Findings presentation",
+    "body": "Show cycle time variance analysis built from a sample historian export.",
+    "company_id": "mf-f07-company",
+    "contact_ids": [
+      "mf-f07-contact-01"
+    ],
+    "deal_id": "mf-f07-deal-02",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f08-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 2
+    },
+    "title": "Verbal yes",
+    "body": "Gideon gave a verbal yes for tracking on five weld cells. Contract went out right after the call.",
+    "company_id": "mf-f08-company",
+    "contact_ids": [
+      "mf-f08-contact-01"
+    ],
+    "deal_id": "mf-f08-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f08-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Check on signature",
+    "body": "Confirm Gideon received the contract and offer a quick call for any questions.",
+    "company_id": "mf-f08-company",
+    "contact_ids": [
+      "mf-f08-contact-01"
+    ],
+    "deal_id": "mf-f08-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f08-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 26
+    },
+    "title": "Kickoff confirmation",
+    "body": "Confirmed the plasma table sensors are installed and sending data. Gideon liked the consumable wear alerts.",
+    "company_id": "mf-f08-company",
+    "contact_ids": [
+      "mf-f08-contact-01"
+    ],
+    "deal_id": "mf-f08-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f09-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 8
+    },
+    "title": "Discovery with Ingrid",
+    "body": "Rewinder jams drive most of their 8 percent downtime. She wants root-cause data before the budget cycle next quarter.",
+    "company_id": "mf-f09-company",
+    "contact_ids": [
+      "mf-f09-contact-01"
+    ],
+    "deal_id": "mf-f09-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f09-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Request line data sample",
+    "body": "Ask Ingrid for two weeks of stoppage logs to build a sample analysis.",
+    "company_id": "mf-f09-company",
+    "contact_ids": [
+      "mf-f09-contact-01"
+    ],
+    "deal_id": "mf-f09-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f09-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 20
+    },
+    "title": "Intro to Rohan",
+    "body": "Ingrid looped in Rohan, who is interested in bearing monitoring across both mills. No budget yet.",
+    "company_id": "mf-f09-company",
+    "contact_ids": [
+      "mf-f09-contact-01"
+    ],
+    "deal_id": "mf-f09-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f09-deal-02-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 11
+    },
+    "title": "Intro meeting with Rohan",
+    "body": "Cover bearing monitoring options and how they would fit alongside the downtime project.",
+    "company_id": "mf-f09-company",
+    "contact_ids": [
+      "mf-f09-contact-01"
+    ],
+    "deal_id": "mf-f09-deal-02",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f10-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 6
+    },
+    "title": "Discovery follow-up with maintenance",
+    "body": "Philippa said the two main presses lose about 14 hours a month to unplanned stops, mostly hydraulic pump faults. She wants to see how we would flag pressure drift earlier.",
+    "company_id": "mf-f10-company",
+    "contact_ids": [
+      "mf-f10-contact-01"
+    ],
+    "deal_id": "mf-f10-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f10-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 8
+    },
+    "title": "Solution demo for plant leadership",
+    "body": "Walk Wendell and the ops team through downtime dashboards using their press data export. Bring a rough ROI model based on the 14 hours a month.",
+    "company_id": "mf-f10-company",
+    "contact_ids": [
+      "mf-f10-contact-01"
+    ],
+    "deal_id": "mf-f10-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f10-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 12
+    },
+    "title": "Loss confirmation from Wendell",
+    "body": "Wendell said budget got pulled for a furnace relining project this year and they will go with manual vibration rounds for now. Agreed to check back in two quarters.",
+    "company_id": "mf-f10-company",
+    "contact_ids": [
+      "mf-f10-contact-01"
+    ],
+    "deal_id": "mf-f10-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f11-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 9
+    },
+    "title": "Discovery call with maintenance",
+    "body": "Anouk says hydraulic press faults cost them about 14 hours of unplanned downtime a month. Wants to see vibration and pressure trend data on two presses.",
+    "company_id": "mf-f11-company",
+    "contact_ids": [
+      "mf-f11-contact-01"
+    ],
+    "deal_id": "mf-f11-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f11-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 5
+    },
+    "title": "Send sensor requirements sheet",
+    "body": "Send the sensor and gateway list so their controls tech can confirm cabinet space.",
+    "company_id": "mf-f11-company",
+    "contact_ids": [
+      "mf-f11-contact-01"
+    ],
+    "deal_id": "mf-f11-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f11-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 4
+    },
+    "title": "Intro email on trim presses",
+    "body": "Lucian asked whether the analytics could cover the trim presses too. Replied with a scope outline and offered a call after the first deal moves.",
+    "company_id": "mf-f11-company",
+    "contact_ids": [
+      "mf-f11-contact-01"
+    ],
+    "deal_id": "mf-f11-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f11-deal-02-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 11
+    },
+    "title": "Scoping call",
+    "body": "Thirty minute call to size the trim press add-on with Lucian.",
+    "company_id": "mf-f11-company",
+    "contact_ids": [
+      "mf-f11-contact-01"
+    ],
+    "deal_id": "mf-f11-deal-02",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f12-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 12
+    },
+    "title": "Call on dryer failures",
+    "body": "Two dryer bearing failures last season stopped the line during peak harvest. Calista wants a demo showing early warning on bearing temperature.",
+    "company_id": "mf-f12-company",
+    "contact_ids": [
+      "mf-f12-contact-01"
+    ],
+    "deal_id": "mf-f12-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f12-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 7
+    },
+    "title": "Platform demo for ops team",
+    "body": "Demo with Calista and two shift leads using sample dryer data.",
+    "company_id": "mf-f12-company",
+    "contact_ids": [
+      "mf-f12-contact-01"
+    ],
+    "deal_id": "mf-f12-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f12-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 26
+    },
+    "title": "Lost to in-house build",
+    "body": "Calista said their IT team will build OEE dashboards on their existing historian. Left the door open for a revisit next year.",
+    "company_id": "mf-f12-company",
+    "contact_ids": [
+      "mf-f12-contact-01"
+    ],
+    "deal_id": "mf-f12-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f13-deal-01-act-1",
+    "type": "meeting",
+    "when": {
+      "days_ago": 6
+    },
+    "title": "Exec review with Ephraim",
+    "body": "Ephraim agreed the fleet rollout is justified at roughly 3% scrap reduction. Needs a security review from IT before signing.",
+    "company_id": "mf-f13-company",
+    "contact_ids": [
+      "mf-f13-contact-01"
+    ],
+    "deal_id": "mf-f13-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f13-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 4
+    },
+    "title": "Send security questionnaire answers",
+    "body": "Return completed IT security questionnaire and data flow diagram.",
+    "company_id": "mf-f13-company",
+    "contact_ids": [
+      "mf-f13-contact-01"
+    ],
+    "deal_id": "mf-f13-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f13-deal-02-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "Chiller discussion with Kiara",
+    "body": "Kiara reports mold temperature drift traced to aging chillers. Interested in a smaller scope as a separate budget line.",
+    "company_id": "mf-f13-company",
+    "contact_ids": [
+      "mf-f13-contact-01"
+    ],
+    "deal_id": "mf-f13-deal-02",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f13-deal-02-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 9
+    },
+    "title": "Chiller data walkthrough",
+    "body": "Review two months of chiller logs with Kiara to size the use case.",
+    "company_id": "mf-f13-company",
+    "contact_ids": [
+      "mf-f13-contact-01"
+    ],
+    "deal_id": "mf-f13-deal-02",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f14-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 3
+    },
+    "title": "Contract questions",
+    "body": "Bartholomew asked about the termination clause and data ownership. Sent revised language to legal.",
+    "company_id": "mf-f14-company",
+    "contact_ids": [
+      "mf-f14-contact-01"
+    ],
+    "deal_id": "mf-f14-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f14-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Follow up on redlines",
+    "body": "Check that their counsel received the revised terms and get a signing date.",
+    "company_id": "mf-f14-company",
+    "contact_ids": [
+      "mf-f14-contact-01"
+    ],
+    "deal_id": "mf-f14-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f14-deal-02-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 28
+    },
+    "title": "Pilot wrapped, signed off",
+    "body": "Pilot caught a motor current anomaly on the extruder before a breakdown. Bartholomew signed the pilot invoice and wants to talk about the full lines.",
+    "company_id": "mf-f14-company",
+    "contact_ids": [
+      "mf-f14-contact-01"
+    ],
+    "deal_id": "mf-f14-deal-02"
+  },
+  {
+    "kit_id": "mf-f15-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 10
+    },
+    "title": "Furnace use case call",
+    "body": "Tamsin wants earlier warning on burner and lehr belt issues, since a bad batch scraps about 40 tons. Asked for a reference in glass.",
+    "company_id": "mf-f15-company",
+    "contact_ids": [
+      "mf-f15-contact-01"
+    ],
+    "deal_id": "mf-f15-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f15-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 8
+    },
+    "title": "Technical demo",
+    "body": "Demo with Tamsin and her controls lead, focused on thermal profile drift.",
+    "company_id": "mf-f15-company",
+    "contact_ids": [
+      "mf-f15-contact-01"
+    ],
+    "deal_id": "mf-f15-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f15-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "Pilot idea sent",
+    "body": "Sent a two-machine pilot outline at the request of Tamsin. She will raise it at the next budget meeting.",
+    "company_id": "mf-f15-company",
+    "contact_ids": [
+      "mf-f15-contact-01"
+    ],
+    "deal_id": "mf-f15-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f15-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 12
+    },
+    "title": "Check budget outcome",
+    "body": "Call Tamsin to find out whether the pilot made it into the budget.",
+    "company_id": "mf-f15-company",
+    "contact_ids": [
+      "mf-f15-contact-01"
+    ],
+    "deal_id": "mf-f15-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f16-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 18
+    },
+    "title": "Intro call",
+    "body": "Joaquin runs a small shop and worries about cost. Main pain is robotic welder downtime about once a month.",
+    "company_id": "mf-f16-company",
+    "contact_ids": [
+      "mf-f16-contact-01"
+    ],
+    "deal_id": "mf-f16-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f16-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Send entry pricing",
+    "body": "Send the small-plant package pricing with a single cell option.",
+    "company_id": "mf-f16-company",
+    "contact_ids": [
+      "mf-f16-contact-01"
+    ],
+    "deal_id": "mf-f16-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f17-deal-01-act-1",
+    "type": "meeting",
+    "when": {
+      "days_ago": 7
+    },
+    "title": "Final terms meeting",
+    "body": "Philomena and procurement reviewed pricing and a three-year term. They asked for a quarterly review clause, which we agreed to.",
+    "company_id": "mf-f17-company",
+    "contact_ids": [
+      "mf-f17-contact-01"
+    ],
+    "deal_id": "mf-f17-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f17-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 2
+    },
+    "title": "Send final order form",
+    "body": "Issue the updated order form with the quarterly review clause.",
+    "company_id": "mf-f17-company",
+    "contact_ids": [
+      "mf-f17-contact-01"
+    ],
+    "deal_id": "mf-f17-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f18-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 15
+    },
+    "title": "Verbal yes",
+    "body": "Rosalind confirmed budget approval for the loom monitoring rollout. Kickoff is planned for next month.",
+    "company_id": "mf-f18-company",
+    "contact_ids": [
+      "mf-f18-contact-01"
+    ],
+    "deal_id": "mf-f18-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f19-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 8
+    },
+    "title": "ROI summary sent",
+    "body": "Sent Matteo a one-page ROI estimate based on his stated 9% downtime on three blow molders. He forwarded it to the owner.",
+    "company_id": "mf-f19-company",
+    "contact_ids": [
+      "mf-f19-contact-01"
+    ],
+    "deal_id": "mf-f19-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f19-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Call with owner",
+    "body": "Join Matteo and the owner to answer questions on installation time and contract length.",
+    "company_id": "mf-f19-company",
+    "contact_ids": [
+      "mf-f19-contact-01"
+    ],
+    "deal_id": "mf-f19-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f20-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 9
+    },
+    "title": "Discovery call on spindle failures",
+    "body": "Corinna said three spindle failures last quarter cost about 40 hours of unplanned downtime each. Emeka wants to see vibration data from our sensors on their older Okuma machines.",
+    "company_id": "mf-f20-company",
+    "contact_ids": [
+      "mf-f20-contact-01"
+    ],
+    "deal_id": "mf-f20-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f20-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Demo for plant leadership",
+    "body": "Walk Corinna and Emeka through the downtime dashboard using sample spindle data. Bring the retrofit sensor spec sheet for the older machines.",
+    "company_id": "mf-f20-company",
+    "contact_ids": [
+      "mf-f20-contact-01"
+    ],
+    "deal_id": "mf-f20-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f21-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 9
+    },
+    "title": "Discovery call on press downtime",
+    "body": "Fiona said unplanned press stops cost them about 11 hours a month. Wants to know if sensors can be retrofitted on 2000s-era presses without a PLC rewrite.",
+    "company_id": "mf-f21-company",
+    "contact_ids": [
+      "mf-f21-contact-01"
+    ],
+    "deal_id": "mf-f21-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f21-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Walk the press floor",
+    "body": "On-site walkthrough with maintenance leads to pick candidate machines for a sensor survey.",
+    "company_id": "mf-f21-company",
+    "contact_ids": [
+      "mf-f21-contact-01"
+    ],
+    "deal_id": "mf-f21-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f22-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 6
+    },
+    "title": "Sent OEE benchmark sheet",
+    "body": "Shared a sample OEE breakdown from a similar filler line. Hollis wants to see capper jam patterns before the group demo.",
+    "company_id": "mf-f22-company",
+    "contact_ids": [
+      "mf-f22-contact-01"
+    ],
+    "deal_id": "mf-f22-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-f22-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 8
+    },
+    "title": "Demo for ops leadership",
+    "body": "Present downtime dashboard to Hollis and the shift supervisors using their anonymized line data.",
+    "company_id": "mf-f22-company",
+    "contact_ids": [
+      "mf-f22-contact-01"
+    ],
+    "deal_id": "mf-f22-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f23-deal-01-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 4
+    },
+    "title": "Inbound from trade show",
+    "body": "Dalton stopped by the booth. Runs 14 molding presses and tracks downtime on a whiteboard; budget is tight until next quarter.",
+    "company_id": "mf-f23-company",
+    "contact_ids": [
+      "mf-f23-contact-01"
+    ],
+    "deal_id": "mf-f23-deal-01"
+  },
+  {
+    "kit_id": "mf-f23-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Send intro deck and pricing range",
+    "body": "Email the small-plant package overview and a ballpark so Dalton can take it to his partner.",
+    "company_id": "mf-f23-company",
+    "contact_ids": [
+      "mf-f23-contact-01"
+    ],
+    "deal_id": "mf-f23-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f24-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 3
+    },
+    "title": "Contract redline review",
+    "body": "Saoirse's legal asked to cap data retention at 24 months. We agreed, and she expects sign-off after the plant council meets.",
+    "company_id": "mf-f24-company",
+    "contact_ids": [
+      "mf-f24-contact-01"
+    ],
+    "deal_id": "mf-f24-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-f24-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 5
+    },
+    "title": "Send revised order form",
+    "body": "Deliver updated order form with the retention clause and onboarding schedule.",
+    "company_id": "mf-f24-company",
+    "contact_ids": [
+      "mf-f24-contact-01"
+    ],
+    "deal_id": "mf-f24-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "mf-f25-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 12
+    },
+    "title": "Loss call with COO",
+    "body": "Cassius went with the analytics module bundled in their existing automation vendor's contract. Said price was fine but he did not want a second vendor; open to revisiting in a year.",
+    "company_id": "mf-f25-company",
+    "contact_ids": [
+      "mf-f25-contact-01"
+    ],
+    "deal_id": "mf-f25-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
   }
 ]

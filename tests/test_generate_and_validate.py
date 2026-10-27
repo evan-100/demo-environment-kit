@@ -13,6 +13,7 @@ from pydantic import ValidationError
 from kit.fixtures import load_fixtures, save_fixtures
 from kit.generate import (
     DraftActivity,
+    FillerActivity,
     DraftContact,
     DraftDealName,
     FillerCompany,
@@ -22,7 +23,7 @@ from kit.generate import (
     HeroDraft,
     generate_fixtures,
 )
-from kit.schemas import Story
+from kit.schemas import RelativeDate, Story
 from kit.validate import validate_fixtures
 
 STORY_FILE = Path(__file__).parent.parent / "stories" / "healthcare.yaml"
@@ -43,6 +44,13 @@ def activity(day: int, **changes) -> DraftActivity:
         duration_minutes=30, task_status=None,
     )
     return DraftActivity(**(values | changes))
+
+
+def history(is_open: bool = True) -> list[FillerActivity]:
+    """A background deal's light history: a past call, plus a next step for open deals."""
+    past = FillerActivity(type="call", day=-9, title="Intro call", body="Walked through intake pain points.")
+    upcoming = FillerActivity(type="task", day=4, title="Send pricing", body="Follow up with a quote.")
+    return [past, upcoming] if is_open else [past]
 
 
 def fake_llm(prompt: str, output_model):
@@ -72,8 +80,8 @@ def fake_llm(prompt: str, output_model):
                 description="Orthopedic group.", phone_area_code="312",
                 contacts=[FillerContact(first_name="Ana", last_name="Ruiz", job_title="Practice Manager")],
                 deals=[
-                    FillerDeal(name="Lakeshore - Intake", stage="qualifiedtobuy", amount=28500, close_in_days=45),
-                    FillerDeal(name="Lakeshore - Add-on", stage="closedwon", amount=9200, close_in_days=-20),
+                    FillerDeal(name="Lakeshore - Intake", stage="qualifiedtobuy", amount=28500, close_in_days=45, activities=history()),
+                    FillerDeal(name="Lakeshore - Add-on", stage="closedwon", amount=9200, close_in_days=-20, activities=history(False)),
                 ],
             ),
             FillerCompany(
@@ -81,8 +89,8 @@ def fake_llm(prompt: str, output_model):
                 description="Pediatric clinics.", phone_area_code="208",
                 contacts=[FillerContact(first_name="Sam", last_name="Lee", job_title="Office Director")],
                 deals=[
-                    FillerDeal(name="Pinecrest - Intake", stage="contractsent", amount=14750, close_in_days=12),
-                    FillerDeal(name="Pinecrest - Extra", stage="appointmentscheduled", amount=5000, close_in_days=30),
+                    FillerDeal(name="Pinecrest - Intake", stage="contractsent", amount=14750, close_in_days=12, activities=history()),
+                    FillerDeal(name="Pinecrest - Extra", stage="appointmentscheduled", amount=5000, close_in_days=30, activities=history()),
                 ],
             ),
         ]
@@ -115,7 +123,7 @@ def test_code_fills_in_ids_emails_and_phones(fixtures):
 
 
 def test_relative_days_become_relative_dates(fixtures):
-    first, _, task = fixtures.activities
+    first, _, task = [a for a in fixtures.activities if a.kit_id.startswith("hc-acme-")]
     assert first.when.days_ago == 42
     assert task.when.days_from_now == 2
 
@@ -210,7 +218,8 @@ def test_filler_is_requested_in_batches_that_add_up():
                 name=f"Filler Clinic {start + i}", city="Austin", state="TX", employees=50,
                 description="Clinic.", phone_area_code="512",
                 contacts=[FillerContact(first_name="Lee", last_name=f"Ng{start + i}", job_title="Manager")],
-                deals=[FillerDeal(name=f"Deal {start + i}-{d}", stage="qualifiedtobuy", amount=9000, close_in_days=30)
+                deals=[FillerDeal(name=f"Deal {start + i}-{d}", stage="qualifiedtobuy", amount=9000, close_in_days=30,
+                                  activities=history())
                        for d in range(count)],
             )
             for i, count in enumerate(slots)
@@ -220,3 +229,48 @@ def test_filler_is_requested_in_batches_that_add_up():
     assert len(filler_prompts) == 3  # 10 + 10 + 5 companies
     assert "Filler Clinic 100" in filler_prompts[1]  # later batches are told which names are taken
     assert validate_fixtures(fixtures, story) == []
+
+
+def test_background_deals_get_a_linked_history(fixtures):
+    deal = next(d for d in fixtures.deals if d.kit_id == "hc-f01-deal-01")
+    linked = [a for a in fixtures.activities if a.deal_id == deal.kit_id]
+    assert [a.kit_id for a in linked] == ["hc-f01-deal-01-act-1", "hc-f01-deal-01-act-2"]
+    past, upcoming = linked
+    assert past.when.days_ago == 9 and past.direction == "outbound"
+    assert upcoming.when.days_from_now == 4 and upcoming.task_status == "not_started"
+    assert upcoming.company_id == deal.company_id and upcoming.contact_ids == deal.contact_ids
+
+
+def test_open_deal_without_a_next_step_is_caught(story, fixtures):
+    fixtures.activities = [a for a in fixtures.activities if a.kit_id != "hc-f01-deal-01-act-2"]
+    assert "open deal 'hc-f01-deal-01' has no upcoming task or meeting" in validate_fixtures(fixtures, story)
+
+
+def test_fill_slots_matches_by_deal_count_and_asks_again_for_the_rest():
+    from kit.generate import fill_slots
+
+    def company(name, open_deals_with_step=0, open_deals_without_step=0):
+        deals = [FillerDeal(name=f"{name} {i}", stage="qualifiedtobuy", amount=9000, close_in_days=30,
+                            activities=history()) for i in range(open_deals_with_step)]
+        deals += [FillerDeal(name=f"{name} x{i}", stage="qualifiedtobuy", amount=9000, close_in_days=30,
+                             activities=history()[:1]) for i in range(open_deals_without_step)]
+        return FillerCompany(name=name, city="Austin", state="TX", employees=50, description="Clinic.",
+                             phone_area_code="512", contacts=[], deals=deals)
+
+    # Slots: two companies with 2 deals, one with 1. The LLM returned only two companies,
+    # and one open deal of "Beta" has no next step, so Beta can only fill the 1-deal slot.
+    matched, still_open = fill_slots([2, 2, 1], [company("Alpha", 3), company("Beta", 1, 1)])
+    assert [(c.name, len(c.deals)) for c in matched] == [("Alpha", 2), ("Beta", 1)]
+    assert still_open == [2]  # asked for again on the next try
+
+
+def test_same_person_at_two_companies_is_caught(story, fixtures):
+    other = next(c for c in fixtures.contacts if c.company_id != "hc-acme-company")
+    other.first_name, other.last_name = "Dana", "Okafor"  # the Acme champion's name
+    assert any("same person appears more than once" in e for e in validate_fixtures(fixtures, story))
+
+
+def test_overdue_task_is_caught(story, fixtures):
+    task = next(a for a in fixtures.activities if a.type == "task" and a.when.days_from_now)
+    task.when = RelativeDate(days_ago=2)
+    assert f"task '{task.kit_id}' is overdue (dated in the past but not completed)" in validate_fixtures(fixtures, story)

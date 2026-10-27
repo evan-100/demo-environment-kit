@@ -3,8 +3,8 @@
     "kit_id": "mf-kilnbrook-champion",
     "company_id": "mf-kilnbrook-company",
     "first_name": "Marcus",
-    "last_name": "Delaney",
-    "email": "marcus.delaney@kilnbrookcastings.example.com",
+    "last_name": "Delvecchio",
+    "email": "marcus.delvecchio@kilnbrookcastings.example.com",
     "job_title": "Director of Plant Reliability",
     "phone": "+1 419-555-0100",
     "persona": "champion"
@@ -12,9 +12,9 @@
   {
     "kit_id": "mf-kilnbrook-blocker",
     "company_id": "mf-kilnbrook-company",
-    "first_name": "Priya",
-    "last_name": "Hallworth",
-    "email": "priya.hallworth@kilnbrookcastings.example.com",
+    "first_name": "Renata",
+    "last_name": "Oskarsson",
+    "email": "renata.oskarsson@kilnbrookcastings.example.com",
     "job_title": "VP Finance",
     "phone": "+1 419-555-0101",
     "persona": "blocker"
@@ -22,9 +22,9 @@
   {
     "kit_id": "mf-kilnbrook-it-lead",
     "company_id": "mf-kilnbrook-company",
-    "first_name": "Tom",
-    "last_name": "Brzezinski",
-    "email": "tom.brzezinski@kilnbrookcastings.example.com",
+    "first_name": "Tobias",
+    "last_name": "Wrenfield",
+    "email": "tobias.wrenfield@kilnbrookcastings.example.com",
     "job_title": "OT Network Manager",
     "phone": "+1 419-555-0102",
     "persona": "it-lead"
@@ -32,9 +32,9 @@
   {
     "kit_id": "mf-marrowfield-champion",
     "company_id": "mf-marrowfield-company",
-    "first_name": "Dennis",
-    "last_name": "Kowalczyk",
-    "email": "dennis.kowalczyk@marrowfieldpkg.example.com",
+    "first_name": "Delphine",
+    "last_name": "Kowalczek",
+    "email": "delphine.kowalczek@marrowfieldpkg.example.com",
     "job_title": "Plant Manager",
     "phone": "+1 616-555-0103",
     "persona": "champion"
@@ -42,9 +42,9 @@
   {
     "kit_id": "mf-marrowfield-exec",
     "company_id": "mf-marrowfield-company",
-    "first_name": "Rosalind",
-    "last_name": "Verhoeven",
-    "email": "rosalind.verhoeven@marrowfieldpkg.example.com",
+    "first_name": "Garrett",
+    "last_name": "Ilvessalo",
+    "email": "garrett.ilvessalo@marrowfieldpkg.example.com",
     "job_title": "Chief Operating Officer",
     "phone": "+1 616-555-0104",
     "persona": "exec"
@@ -52,289 +52,325 @@
   {
     "kit_id": "mf-f01-contact-01",
     "company_id": "mf-f01-company",
-    "first_name": "Gwen",
-    "last_name": "Haskell",
-    "email": "gwen.haskell@alderpointextrusion.example.com",
+    "first_name": "Lorna",
+    "last_name": "Pickering",
+    "email": "lorna.pickering@vantrellisforgeworks.example.com",
     "job_title": "Plant Manager",
     "phone": "+1 330-555-0105"
   },
   {
     "kit_id": "mf-f01-contact-02",
     "company_id": "mf-f01-company",
-    "first_name": "Omar",
-    "last_name": "Defoe",
-    "email": "omar.defoe@alderpointextrusion.example.com",
-    "job_title": "Maintenance Supervisor",
+    "first_name": "Dev",
+    "last_name": "Anandakar",
+    "email": "dev.anandakar@vantrellisforgeworks.example.com",
+    "job_title": "Maintenance Superintendent",
     "phone": "+1 330-555-0106"
   },
   {
     "kit_id": "mf-f02-contact-01",
     "company_id": "mf-f02-company",
-    "first_name": "Lena",
-    "last_name": "Broussard",
-    "email": "lena.broussard@tessalineplastics.example.com",
-    "job_title": "Director of Operations",
-    "phone": "+1 864-555-0107"
+    "first_name": "Harlan",
+    "last_name": "Tesdall",
+    "email": "harlan.tesdall@quillonbevelgearworks.example.com",
+    "job_title": "Operations Director",
+    "phone": "+1 815-555-0107"
   },
   {
     "kit_id": "mf-f03-contact-01",
     "company_id": "mf-f03-company",
-    "first_name": "Calvin",
-    "last_name": "Oyelaran",
-    "email": "calvin.oyelaran@ridgebackfasteners.example.com",
-    "job_title": "VP Manufacturing",
-    "phone": "+1 815-555-0108"
+    "first_name": "Imani",
+    "last_name": "Brackett",
+    "email": "imani.brackett@zephyrinepolymercompounding.example.com",
+    "job_title": "VP of Manufacturing",
+    "phone": "+1 864-555-0108"
+  },
+  {
+    "kit_id": "mf-f03-contact-02",
+    "company_id": "mf-f03-company",
+    "first_name": "Piotr",
+    "last_name": "Nasgaard",
+    "email": "piotr.nasgaard@zephyrinepolymercompounding.example.com",
+    "job_title": "Reliability Engineer",
+    "phone": "+1 864-555-0109"
   },
   {
     "kit_id": "mf-f04-contact-01",
     "company_id": "mf-f04-company",
-    "first_name": "Bridget",
-    "last_name": "Nakamura",
-    "email": "bridget.nakamura@copperhillwirecable.example.com",
-    "job_title": "Reliability Engineering Manager",
-    "phone": "+1 828-555-0109"
-  },
-  {
-    "kit_id": "mf-f04-contact-02",
-    "company_id": "mf-f04-company",
-    "first_name": "Hollis",
-    "last_name": "Trent",
-    "email": "hollis.trent@copperhillwirecable.example.com",
-    "job_title": "Plant Controller",
-    "phone": "+1 828-555-0110"
+    "first_name": "Bettina",
+    "last_name": "Culhane",
+    "email": "bettina.culhane@orrinwickcoldchainfoods.example.com",
+    "job_title": "Director of Engineering",
+    "phone": "+1 559-555-0110"
   },
   {
     "kit_id": "mf-f05-contact-01",
     "company_id": "mf-f05-company",
-    "first_name": "Felix",
-    "last_name": "Abernathy",
-    "email": "felix.abernathy@northgatestamping.example.com",
-    "job_title": "Maintenance Manager",
-    "phone": "+1 937-555-0111"
+    "first_name": "Neville",
+    "last_name": "Aldergrove",
+    "email": "neville.aldergrove@tolvanestampingtooling.example.com",
+    "job_title": "Continuous Improvement Manager",
+    "phone": "+1 616-555-0111"
+  },
+  {
+    "kit_id": "mf-f05-contact-02",
+    "company_id": "mf-f05-company",
+    "first_name": "Sasha",
+    "last_name": "Pellegrom",
+    "email": "sasha.pellegrom@tolvanestampingtooling.example.com",
+    "job_title": "Controller",
+    "phone": "+1 616-555-0112"
   },
   {
     "kit_id": "mf-f06-contact-01",
     "company_id": "mf-f06-company",
-    "first_name": "Margit",
-    "last_name": "Solheim",
-    "email": "margit.solheim@pinewaterpapermills.example.com",
-    "job_title": "Mill Reliability Lead",
-    "phone": "+1 920-555-0112"
-  },
-  {
-    "kit_id": "mf-f06-contact-02",
-    "company_id": "mf-f06-company",
-    "first_name": "Dwight",
-    "last_name": "Parrish",
-    "email": "dwight.parrish@pinewaterpapermills.example.com",
-    "job_title": "Director of Engineering",
-    "phone": "+1 920-555-0113"
+    "first_name": "Odalys",
+    "last_name": "Verhoeven",
+    "email": "odalys.verhoeven@brindlecottceramics.example.com",
+    "job_title": "Owner and General Manager",
+    "phone": "+1 918-555-0113"
   },
   {
     "kit_id": "mf-f07-contact-01",
     "company_id": "mf-f07-company",
-    "first_name": "Tessa",
-    "last_name": "Granger",
-    "email": "tessa.granger@halvorsendairyingredients.example.com",
-    "job_title": "Operations Manager",
-    "phone": "+1 208-555-0114"
+    "first_name": "Cormac",
+    "last_name": "Rydelle",
+    "email": "cormac.rydelle@halvergatespecialtychemicals.example.com",
+    "job_title": "Reliability Manager",
+    "phone": "+1 225-555-0114"
+  },
+  {
+    "kit_id": "mf-f07-contact-02",
+    "company_id": "mf-f07-company",
+    "first_name": "Yvette",
+    "last_name": "Santangelo",
+    "email": "yvette.santangelo@halvergatespecialtychemicals.example.com",
+    "job_title": "Site Operations Director",
+    "phone": "+1 225-555-0115"
   },
   {
     "kit_id": "mf-f08-contact-01",
     "company_id": "mf-f08-company",
-    "first_name": "Ignacio",
-    "last_name": "Velarde",
-    "email": "ignacio.velarde@sunmeadowbeverageco.example.com",
-    "job_title": "Plant Engineering Manager",
-    "phone": "+1 559-555-0115"
+    "first_name": "Gideon",
+    "last_name": "Marchetti-Lowe",
+    "email": "gideon.marchettilowe@fenwraithmetalfabrication.example.com",
+    "job_title": "Production Manager",
+    "phone": "+1 402-555-0116"
   },
   {
     "kit_id": "mf-f09-contact-01",
     "company_id": "mf-f09-company",
-    "first_name": "Rhett",
-    "last_name": "Kowalczyk",
-    "email": "rhett.kowalczyk@brightforgetooldie.example.com",
-    "job_title": "Owner and General Manager",
-    "phone": "+1 814-555-0116"
+    "first_name": "Ingrid",
+    "last_name": "Tallowby",
+    "email": "ingrid.tallowby@sundermoorpaperconverting.example.com",
+    "job_title": "Maintenance Director",
+    "phone": "+1 920-555-0117"
+  },
+  {
+    "kit_id": "mf-f09-contact-02",
+    "company_id": "mf-f09-company",
+    "first_name": "Rohan",
+    "last_name": "Quisenberry",
+    "email": "rohan.quisenberry@sundermoorpaperconverting.example.com",
+    "job_title": "Director of Operations",
+    "phone": "+1 920-555-0118"
   },
   {
     "kit_id": "mf-f10-contact-01",
     "company_id": "mf-f10-company",
-    "first_name": "Corinne",
-    "last_name": "Duplessis",
-    "email": "corinne.duplessis@lanternbaychemicals.example.com",
-    "job_title": "Head of Asset Reliability",
-    "phone": "+1 225-555-0117"
+    "first_name": "Wendell",
+    "last_name": "Aspinall",
+    "email": "wendell.aspinall@pellucornextrusions.example.com",
+    "job_title": "Plant Manager",
+    "phone": "+1 864-555-0119"
   },
   {
     "kit_id": "mf-f10-contact-02",
     "company_id": "mf-f10-company",
-    "first_name": "Wendell",
-    "last_name": "Aguirre",
-    "email": "wendell.aguirre@lanternbaychemicals.example.com",
-    "job_title": "Operations Director",
-    "phone": "+1 225-555-0118"
+    "first_name": "Philippa",
+    "last_name": "Drummond",
+    "email": "philippa.drummond@pellucornextrusions.example.com",
+    "job_title": "Maintenance Engineering Lead",
+    "phone": "+1 864-555-0120"
   },
   {
     "kit_id": "mf-f11-contact-01",
     "company_id": "mf-f11-company",
-    "first_name": "Daphne",
-    "last_name": "Reinholt",
-    "email": "daphne.reinholt@quillonaerospacecomponents.example.com",
-    "job_title": "Manufacturing Engineering Manager",
-    "phone": "+1 316-555-0119"
+    "first_name": "Lucian",
+    "last_name": "Beckmire",
+    "email": "lucian.beckmire@dravenholtalloys.example.com",
+    "job_title": "Plant Manager",
+    "phone": "+1 419-555-0121"
+  },
+  {
+    "kit_id": "mf-f11-contact-02",
+    "company_id": "mf-f11-company",
+    "first_name": "Anouk",
+    "last_name": "Strothers",
+    "email": "anouk.strothers@dravenholtalloys.example.com",
+    "job_title": "Maintenance Superintendent",
+    "phone": "+1 419-555-0122"
   },
   {
     "kit_id": "mf-f12-contact-01",
     "company_id": "mf-f12-company",
-    "first_name": "Albert",
-    "last_name": "Szymanski",
-    "email": "albert.szymanski@stonebridgeglassworks.example.com",
-    "job_title": "Plant Manager",
-    "phone": "+1 419-555-0120"
+    "first_name": "Calista",
+    "last_name": "Reddenbaugh",
+    "email": "calista.reddenbaugh@pyrellefoodsprocessing.example.com",
+    "job_title": "Director of Operations",
+    "phone": "+1 559-555-0123"
   },
   {
     "kit_id": "mf-f13-contact-01",
     "company_id": "mf-f13-company",
-    "first_name": "Noelle",
-    "last_name": "Tamblyn",
-    "email": "noelle.tamblyn@ironvalesteelfabrication.example.com",
-    "job_title": "Maintenance Director",
-    "phone": "+1 205-555-0121"
+    "first_name": "Ephraim",
+    "last_name": "Novotny",
+    "email": "ephraim.novotny@tessaractmolding.example.com",
+    "job_title": "VP Manufacturing",
+    "phone": "+1 864-555-0124"
+  },
+  {
+    "kit_id": "mf-f13-contact-02",
+    "company_id": "mf-f13-company",
+    "first_name": "Kiara",
+    "last_name": "Lindqvist",
+    "email": "kiara.lindqvist@tessaractmolding.example.com",
+    "job_title": "Reliability Engineer",
+    "phone": "+1 864-555-0125"
   },
   {
     "kit_id": "mf-f14-contact-01",
     "company_id": "mf-f14-company",
-    "first_name": "Lucille",
-    "last_name": "Beaumont",
-    "email": "lucille.beaumont@meridianridgefoods.example.com",
-    "job_title": "VP of Operations",
-    "phone": "+1 402-555-0122"
-  },
-  {
-    "kit_id": "mf-f14-contact-02",
-    "company_id": "mf-f14-company",
-    "first_name": "Jasper",
-    "last_name": "Kline",
-    "email": "jasper.kline@meridianridgefoods.example.com",
-    "job_title": "Corporate Reliability Manager",
-    "phone": "+1 402-555-0123"
+    "first_name": "Bartholomew",
+    "last_name": "Yarrowby",
+    "email": "bartholomew.yarrowby@valdorrinwirecable.example.com",
+    "job_title": "Operations Manager",
+    "phone": "+1 815-555-0126"
   },
   {
     "kit_id": "mf-f15-contact-01",
     "company_id": "mf-f15-company",
-    "first_name": "Beatrix",
-    "last_name": "Lindqvist",
-    "email": "beatrix.lindqvist@oakhavencabinetry.example.com",
-    "job_title": "Production Manager",
-    "phone": "+1 574-555-0124"
+    "first_name": "Tamsin",
+    "last_name": "Okonjo-Reyes",
+    "email": "tamsin.okonjoreyes@omberlyglassworks.example.com",
+    "job_title": "Engineering Director",
+    "phone": "+1 607-555-0127"
   },
   {
     "kit_id": "mf-f16-contact-01",
     "company_id": "mf-f16-company",
-    "first_name": "Garrett",
-    "last_name": "Pelletier",
-    "email": "garrett.pelletier@tidewellmarinecomponents.example.com",
-    "job_title": "Operations Manager",
-    "phone": "+1 251-555-0125"
+    "first_name": "Joaquin",
+    "last_name": "Fenstermacher",
+    "email": "joaquin.fenstermacher@caldwynbrewingsupply.example.com",
+    "job_title": "Plant Supervisor",
+    "phone": "+1 414-555-0128"
   },
   {
     "kit_id": "mf-f17-contact-01",
     "company_id": "mf-f17-company",
-    "first_name": "Yvonne",
-    "last_name": "Castellanos",
-    "email": "yvonne.castellanos@cedarflatscontractpharma.example.com",
-    "job_title": "Director of Engineering",
-    "phone": "+1 317-555-0126"
+    "first_name": "Philomena",
+    "last_name": "Grayhurst",
+    "email": "philomena.grayhurst@strathmoorfasteners.example.com",
+    "job_title": "Director of Maintenance",
+    "phone": "+1 216-555-0129"
+  },
+  {
+    "kit_id": "mf-f17-contact-02",
+    "company_id": "mf-f17-company",
+    "first_name": "Anders",
+    "last_name": "Kolbeck",
+    "email": "anders.kolbeck@strathmoorfasteners.example.com",
+    "job_title": "Continuous Improvement Lead",
+    "phone": "+1 216-555-0130"
   },
   {
     "kit_id": "mf-f18-contact-01",
     "company_id": "mf-f18-company",
-    "first_name": "Stuart",
-    "last_name": "Mbeki",
-    "email": "stuart.mbeki@voltranemotorworks.example.com",
-    "job_title": "Plant Operations Director",
-    "phone": "+1 260-555-0127"
-  },
-  {
-    "kit_id": "mf-f18-contact-02",
-    "company_id": "mf-f18-company",
-    "first_name": "Paloma",
-    "last_name": "Rizzo",
-    "email": "paloma.rizzo@voltranemotorworks.example.com",
-    "job_title": "Continuous Improvement Lead",
-    "phone": "+1 260-555-0128"
+    "first_name": "Rosalind",
+    "last_name": "Tegethoff",
+    "email": "rosalind.tegethoff@ixelbrandtextiles.example.com",
+    "job_title": "Plant Engineer",
+    "phone": "+1 704-555-0131"
   },
   {
     "kit_id": "mf-f19-contact-01",
     "company_id": "mf-f19-company",
-    "first_name": "Marguerite",
-    "last_name": "Oduya",
-    "email": "marguerite.oduya@greywaterrubberseal.example.com",
-    "job_title": "Engineering Manager",
-    "phone": "+1 865-555-0129"
+    "first_name": "Matteo",
+    "last_name": "Sabatier",
+    "email": "matteo.sabatier@ostravaneplastics.example.com",
+    "job_title": "General Manager",
+    "phone": "+1 208-555-0132"
   },
   {
     "kit_id": "mf-f20-contact-01",
     "company_id": "mf-f20-company",
-    "first_name": "Dominic",
-    "last_name": "Farragut",
-    "email": "dominic.farragut@bluestemgrainmilling.example.com",
-    "job_title": "Mill Superintendent",
-    "phone": "+1 816-555-0130"
+    "first_name": "Corinna",
+    "last_name": "Haldeman",
+    "email": "corinna.haldeman@wexmooraxiomdrivetrains.example.com",
+    "job_title": "Plant Manager",
+    "phone": "+1 815-555-0133"
+  },
+  {
+    "kit_id": "mf-f20-contact-02",
+    "company_id": "mf-f20-company",
+    "first_name": "Emeka",
+    "last_name": "Torvaldsen",
+    "email": "emeka.torvaldsen@wexmooraxiomdrivetrains.example.com",
+    "job_title": "Reliability Engineering Lead",
+    "phone": "+1 815-555-0134"
   },
   {
     "kit_id": "mf-f21-contact-01",
     "company_id": "mf-f21-company",
-    "first_name": "Kenneth",
-    "last_name": "Aldrich",
-    "email": "kenneth.aldrich@harlowdiecasting.example.com",
-    "job_title": "Maintenance Lead",
-    "phone": "+1 414-555-0131"
+    "first_name": "Fiona",
+    "last_name": "Brackenridge",
+    "email": "fiona.brackenridge@aldurexmillcontrols.example.com",
+    "job_title": "Plant Maintenance Manager",
+    "phone": "+1 937-555-0135"
   },
   {
     "kit_id": "mf-f22-contact-01",
     "company_id": "mf-f22-company",
-    "first_name": "Imogen",
-    "last_name": "Fairweather",
-    "email": "imogen.fairweather@summitpeakcomposites.example.com",
-    "job_title": "Director of Manufacturing",
-    "phone": "+1 801-555-0132"
+    "first_name": "Hollis",
+    "last_name": "Vandersloot",
+    "email": "hollis.vandersloot@crennowaybottlingsystems.example.com",
+    "job_title": "Director of Operations",
+    "phone": "+1 559-555-0136"
+  },
+  {
+    "kit_id": "mf-f22-contact-02",
+    "company_id": "mf-f22-company",
+    "first_name": "Mireille",
+    "last_name": "Tazewell",
+    "email": "mireille.tazewell@crennowaybottlingsystems.example.com",
+    "job_title": "Reliability Engineer",
+    "phone": "+1 559-555-0137"
   },
   {
     "kit_id": "mf-f23-contact-01",
     "company_id": "mf-f23-company",
-    "first_name": "Thaddeus",
-    "last_name": "Winslow",
-    "email": "thaddeus.winslow@redferntextilemills.example.com",
-    "job_title": "VP of Plant Operations",
-    "phone": "+1 336-555-0133"
+    "first_name": "Dalton",
+    "last_name": "Eversleigh",
+    "email": "dalton.eversleigh@opheliongasketworks.example.com",
+    "job_title": "Owner and General Manager",
+    "phone": "+1 864-555-0138"
   },
   {
     "kit_id": "mf-f24-contact-01",
     "company_id": "mf-f24-company",
-    "first_name": "Nadine",
-    "last_name": "Prewitt",
-    "email": "nadine.prewitt@callowaybrewingbottling.example.com",
-    "job_title": "Head of Production",
-    "phone": "+1 303-555-0134"
+    "first_name": "Saoirse",
+    "last_name": "Lindgaard",
+    "email": "saoirse.lindgaard@trevanixdairyingredients.example.com",
+    "job_title": "VP of Manufacturing",
+    "phone": "+1 608-555-0139"
   },
   {
     "kit_id": "mf-f25-contact-01",
     "company_id": "mf-f25-company",
-    "first_name": "Rafael",
-    "last_name": "Montoya",
-    "email": "rafael.montoya@westmarkapplianceparts.example.com",
-    "job_title": "Plant Manager",
-    "phone": "+1 918-555-0135"
-  },
-  {
-    "kit_id": "mf-f25-contact-02",
-    "company_id": "mf-f25-company",
-    "first_name": "Shirin",
-    "last_name": "Aldous",
-    "email": "shirin.aldous@westmarkapplianceparts.example.com",
-    "job_title": "Maintenance Engineering Lead",
-    "phone": "+1 918-555-0136"
+    "first_name": "Cassius",
+    "last_name": "Orrington",
+    "email": "cassius.orrington@bexhollowtubepipe.example.com",
+    "job_title": "Chief Operating Officer",
+    "phone": "+1 918-555-0140"
   }
 ]

@@ -187,4 +187,6 @@ Source: [Pipelines guide](https://developers.hubspot.com/docs/api-reference/late
 | Past `hs_timestamp` on a note | Accepted (30 days back). |
 | Meetings need an owner | Creating a meeting without `hubspot_owner_id` fails (`required properties were missing`). The seeder sets the owner on every record. |
 | Task status `IN_PROGRESS`, meeting outcome `COMPLETED`/`SCHEDULED` (uppercase) | Accepted. |
+| Backdated `createdate` (2026-10-27) | **Deals: accepted**, and re-sending the same value is fine. **Companies and contacts: rejected** (`READ_ONLY_VALUE`). The seeder backdates deals only. |
+| What drives the board's "No upcoming" badge | The deal property `notes_next_activity_date`, which HubSpot fills in from upcoming tasks and meetings linked to the deal. A future scheduled call isn't relied on for this (unverified), so fixtures use tasks or meetings for next steps. |
 | Re-create after archive | Works. Upsert with the same `demo_kit_id` makes a new record once the old one is archived. |

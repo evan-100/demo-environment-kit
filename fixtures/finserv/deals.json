@@ -7,7 +7,7 @@
       "fs-quillstone-blocker",
       "fs-quillstone-it-lead"
     ],
-    "name": "Quillstone Digital Account Opening and KYC Automation",
+    "name": "Quillstone Digital Account Opening & KYC Automation",
     "stage": "decisionmakerboughtin",
     "amount": 240000,
     "close_date": {
@@ -21,7 +21,7 @@
       "fs-fernhollow-champion",
       "fs-fernhollow-exec"
     ],
-    "name": "Fernhollow CU - Digital Account Opening & KYC Platform",
+    "name": "Fernhollow CU - Digital Account Opening & KYC",
     "stage": "presentationscheduled",
     "amount": 68000,
     "close_date": {
@@ -34,11 +34,11 @@
     "contact_ids": [
       "fs-f01-contact-01"
     ],
-    "name": "Harborview - Digital Account Opening",
+    "name": "Velmora - Digital Account Opening",
     "stage": "presentationscheduled",
-    "amount": 47800,
+    "amount": 68400,
     "close_date": {
-      "days_from_now": 45
+      "days_from_now": 62
     }
   },
   {
@@ -47,11 +47,11 @@
     "contact_ids": [
       "fs-f01-contact-01"
     ],
-    "name": "Harborview - KYC Document Verification Add-on",
+    "name": "Velmora - KYC Automation Add-on",
     "stage": "qualifiedtobuy",
-    "amount": 18650,
+    "amount": 31750,
     "close_date": {
-      "days_from_now": 85
+      "days_from_now": 95
     }
   },
   {
@@ -60,11 +60,11 @@
     "contact_ids": [
       "fs-f02-contact-01"
     ],
-    "name": "Prairie Crossing - Onboarding Platform",
-    "stage": "contractsent",
-    "amount": 96400,
+    "name": "Zentrova - Mobile Onboarding Platform",
+    "stage": "decisionmakerboughtin",
+    "amount": 112900,
     "close_date": {
-      "days_from_now": 14
+      "days_from_now": 34
     }
   },
   {
@@ -73,11 +73,11 @@
     "contact_ids": [
       "fs-f02-contact-01"
     ],
-    "name": "Prairie Crossing - Pilot for Auto Loan Members",
-    "stage": "closedlost",
-    "amount": 22300,
+    "name": "Zentrova - Business Member Onboarding",
+    "stage": "appointmentscheduled",
+    "amount": 47200,
     "close_date": {
-      "days_ago": 48
+      "days_from_now": 110
     }
   },
   {
@@ -86,11 +86,11 @@
     "contact_ids": [
       "fs-f03-contact-01"
     ],
-    "name": "Bluff City - KYC Automation",
-    "stage": "decisionmakerboughtin",
-    "amount": 134900,
+    "name": "Brindlewick - Account Opening Suite",
+    "stage": "contractsent",
+    "amount": 54300,
     "close_date": {
-      "days_from_now": 38
+      "days_from_now": 14
     }
   },
   {
@@ -99,11 +99,11 @@
     "contact_ids": [
       "fs-f03-contact-01"
     ],
-    "name": "Bluff City - Business Account Onboarding",
-    "stage": "appointmentscheduled",
-    "amount": 41200,
+    "name": "Brindlewick - Document Verification Pilot",
+    "stage": "closedlost",
+    "amount": 18600,
     "close_date": {
-      "days_from_now": 110
+      "days_ago": 40
     }
   },
   {
@@ -112,11 +112,11 @@
     "contact_ids": [
       "fs-f04-contact-01"
     ],
-    "name": "Cascade Timber - Mobile Membership Application",
+    "name": "Orrinhaven - KYC Automation",
     "stage": "qualifiedtobuy",
-    "amount": 28750,
+    "amount": 73800,
     "close_date": {
-      "days_from_now": 70
+      "days_from_now": 78
     }
   },
   {
@@ -125,11 +125,11 @@
     "contact_ids": [
       "fs-f04-contact-01"
     ],
-    "name": "Cascade Timber - ID Verification Starter",
-    "stage": "closedwon",
-    "amount": 9400,
+    "name": "Orrinhaven - Core Integration Scoping",
+    "stage": "appointmentscheduled",
+    "amount": 22400,
     "close_date": {
-      "days_ago": 33
+      "days_from_now": 55
     }
   },
   {
@@ -138,11 +138,11 @@
     "contact_ids": [
       "fs-f05-contact-01"
     ],
-    "name": "Red Mesa - Digital Onboarding Rollout",
-    "stage": "presentationscheduled",
-    "amount": 72300,
+    "name": "Kestrelbine - Digital Onboarding",
+    "stage": "closedwon",
+    "amount": 59900,
     "close_date": {
-      "days_from_now": 52
+      "days_ago": 22
     }
   },
   {
@@ -151,11 +151,11 @@
     "contact_ids": [
       "fs-f05-contact-01"
     ],
-    "name": "Red Mesa - Sanctions Screening Module",
-    "stage": "contractsent",
-    "amount": 23900,
+    "name": "Kestrelbine - Ag Loan Applicant Verification",
+    "stage": "presentationscheduled",
+    "amount": 38250,
     "close_date": {
-      "days_from_now": 21
+      "days_from_now": 70
     }
   },
   {
@@ -164,11 +164,11 @@
     "contact_ids": [
       "fs-f06-contact-01"
     ],
-    "name": "Great Lakes Teachers - Account Opening Automation",
-    "stage": "appointmentscheduled",
-    "amount": 88500,
+    "name": "Taliesmere - Onboarding & KYC Platform",
+    "stage": "decisionmakerboughtin",
+    "amount": 148500,
     "close_date": {
-      "days_from_now": 95
+      "days_from_now": 45
     }
   },
   {
@@ -177,11 +177,11 @@
     "contact_ids": [
       "fs-f06-contact-01"
     ],
-    "name": "Great Lakes Teachers - Fraud Screening Add-on",
-    "stage": "qualifiedtobuy",
-    "amount": 31400,
+    "name": "Taliesmere - Mortgage Applicant ID Checks",
+    "stage": "closedlost",
+    "amount": 41200,
     "close_date": {
-      "days_from_now": 75
+      "days_ago": 60
     }
   },
   {
@@ -190,9 +190,9 @@
     "contact_ids": [
       "fs-f07-contact-01"
     ],
-    "name": "Magnolia Ridge - KYC Automation",
-    "stage": "qualifiedtobuy",
-    "amount": 36200,
+    "name": "Pellucid Valley - Online Membership Opening",
+    "stage": "appointmentscheduled",
+    "amount": 36800,
     "close_date": {
       "days_from_now": 100
     }
@@ -203,11 +203,11 @@
     "contact_ids": [
       "fs-f07-contact-01"
     ],
-    "name": "Magnolia Ridge - Core Integration Assessment",
-    "stage": "closedlost",
-    "amount": 8900,
+    "name": "Pellucid Valley - Fraud Screening Add-on",
+    "stage": "qualifiedtobuy",
+    "amount": 19450,
     "close_date": {
-      "days_ago": 62
+      "days_from_now": 85
     }
   },
   {
@@ -216,11 +216,11 @@
     "contact_ids": [
       "fs-f08-contact-01"
     ],
-    "name": "Summit Peak - Enterprise Onboarding Platform",
-    "stage": "decisionmakerboughtin",
-    "amount": 158700,
+    "name": "Harrowgate - Enterprise Account Opening",
+    "stage": "contractsent",
+    "amount": 186200,
     "close_date": {
-      "days_from_now": 30
+      "days_from_now": 21
     }
   },
   {
@@ -229,9 +229,9 @@
     "contact_ids": [
       "fs-f08-contact-01"
     ],
-    "name": "Summit Peak - Digital Lending Intake",
+    "name": "Harrowgate - Wealth Client Onboarding",
     "stage": "presentationscheduled",
-    "amount": 64100,
+    "amount": 57300,
     "close_date": {
       "days_from_now": 90
     }
@@ -242,11 +242,11 @@
     "contact_ids": [
       "fs-f09-contact-01"
     ],
-    "name": "Keystone Mill - Onboarding and KYC Suite",
-    "stage": "contractsent",
-    "amount": 112600,
+    "name": "Sundrift - Digital Account Opening",
+    "stage": "closedwon",
+    "amount": 82600,
     "close_date": {
-      "days_from_now": 17
+      "days_ago": 15
     }
   },
   {
@@ -255,11 +255,11 @@
     "contact_ids": [
       "fs-f09-contact-01"
     ],
-    "name": "Keystone Mill - Small Business Account Pilot",
-    "stage": "closedwon",
-    "amount": 19800,
+    "name": "Sundrift - Youth Account Onboarding",
+    "stage": "qualifiedtobuy",
+    "amount": 16900,
     "close_date": {
-      "days_ago": 21
+      "days_from_now": 66
     }
   },
   {
@@ -268,11 +268,11 @@
     "contact_ids": [
       "fs-f10-contact-01"
     ],
-    "name": "Gulf Pines - Online Membership Platform",
-    "stage": "presentationscheduled",
-    "amount": 53900,
+    "name": "Drumlinger - Starter Onboarding Package",
+    "stage": "appointmentscheduled",
+    "amount": 27300,
     "close_date": {
-      "days_from_now": 60
+      "days_from_now": 120
     }
   },
   {
@@ -281,11 +281,11 @@
     "contact_ids": [
       "fs-f10-contact-01"
     ],
-    "name": "Gulf Pines - Compliance Review Workflow",
-    "stage": "appointmentscheduled",
-    "amount": 27350,
+    "name": "Drumlinger - Nonprofit Account KYC",
+    "stage": "closedlost",
+    "amount": 12800,
     "close_date": {
-      "days_from_now": 115
+      "days_ago": 33
     }
   },
   {
@@ -294,11 +294,11 @@
     "contact_ids": [
       "fs-f11-contact-01"
     ],
-    "name": "Digital account opening and KYC rollout",
-    "stage": "decisionmakerboughtin",
-    "amount": 86400,
+    "name": "Calderwyn - Digital Account Opening",
+    "stage": "presentationscheduled",
+    "amount": 68400,
     "close_date": {
-      "days_from_now": 28
+      "days_from_now": 52
     }
   },
   {
@@ -307,11 +307,11 @@
     "contact_ids": [
       "fs-f11-contact-01"
     ],
-    "name": "Business account onboarding add-on",
-    "stage": "qualifiedtobuy",
-    "amount": 23750,
+    "name": "Calderwyn - Business Account Add-on",
+    "stage": "appointmentscheduled",
+    "amount": 21750,
     "close_date": {
-      "days_from_now": 85
+      "days_from_now": 105
     }
   },
   {
@@ -320,11 +320,11 @@
     "contact_ids": [
       "fs-f12-contact-01"
     ],
-    "name": "Online membership and KYC platform",
-    "stage": "presentationscheduled",
-    "amount": 61200,
+    "name": "Vantrelle - KYC Automation",
+    "stage": "decisionmakerboughtin",
+    "amount": 186500,
     "close_date": {
-      "days_from_now": 45
+      "days_from_now": 38
     }
   },
   {
@@ -333,11 +333,11 @@
     "contact_ids": [
       "fs-f12-contact-01"
     ],
-    "name": "Identity verification module",
-    "stage": "appointmentscheduled",
-    "amount": 18900,
+    "name": "Vantrelle - Core Integration Pilot",
+    "stage": "qualifiedtobuy",
+    "amount": 47200,
     "close_date": {
-      "days_from_now": 110
+      "days_from_now": 84
     }
   },
   {
@@ -346,11 +346,11 @@
     "contact_ids": [
       "fs-f13-contact-01"
     ],
-    "name": "Automated KYC review workflow",
+    "name": "Osterlund - Account Opening Platform",
     "stage": "contractsent",
-    "amount": 38500,
+    "amount": 54900,
     "close_date": {
-      "days_from_now": 12
+      "days_from_now": 14
     }
   },
   {
@@ -359,11 +359,11 @@
     "contact_ids": [
       "fs-f13-contact-01"
     ],
-    "name": "Document capture add-on",
-    "stage": "closedwon",
-    "amount": 9400,
+    "name": "Osterlund - Online Loan Intake",
+    "stage": "closedlost",
+    "amount": 29300,
     "close_date": {
-      "days_ago": 34
+      "days_ago": 45
     }
   },
   {
@@ -372,11 +372,11 @@
     "contact_ids": [
       "fs-f14-contact-01"
     ],
-    "name": "Digital onboarding platform with core integration",
+    "name": "Pryntwood - Mobile Onboarding",
     "stage": "qualifiedtobuy",
-    "amount": 132000,
+    "amount": 97800,
     "close_date": {
-      "days_from_now": 95
+      "days_from_now": 71
     }
   },
   {
@@ -385,11 +385,11 @@
     "contact_ids": [
       "fs-f14-contact-01"
     ],
-    "name": "Fraud screening at account opening",
-    "stage": "closedlost",
-    "amount": 27800,
+    "name": "Pryntwood - Joint Account Workflow",
+    "stage": "closedwon",
+    "amount": 18600,
     "close_date": {
-      "days_ago": 52
+      "days_ago": 33
     }
   },
   {
@@ -398,11 +398,11 @@
     "contact_ids": [
       "fs-f15-contact-01"
     ],
-    "name": "Remote member onboarding",
+    "name": "Haldenmoor - Periodic KYC Refresh",
     "stage": "presentationscheduled",
-    "amount": 54300,
+    "amount": 142300,
     "close_date": {
-      "days_from_now": 60
+      "days_from_now": 66
     }
   },
   {
@@ -411,11 +411,11 @@
     "contact_ids": [
       "fs-f15-contact-01"
     ],
-    "name": "Compliance case management seats",
-    "stage": "decisionmakerboughtin",
-    "amount": 21600,
+    "name": "Haldenmoor - Wealth Client Onboarding",
+    "stage": "appointmentscheduled",
+    "amount": 63100,
     "close_date": {
-      "days_from_now": 38
+      "days_from_now": 110
     }
   },
   {
@@ -424,11 +424,11 @@
     "contact_ids": [
       "fs-f16-contact-01"
     ],
-    "name": "Digital checking account opening",
-    "stage": "appointmentscheduled",
-    "amount": 42900,
+    "name": "Tessaly Ridge - Digital Onboarding",
+    "stage": "decisionmakerboughtin",
+    "amount": 112600,
     "close_date": {
-      "days_from_now": 104
+      "days_from_now": 45
     }
   },
   {
@@ -437,11 +437,11 @@
     "contact_ids": [
       "fs-f17-contact-01"
     ],
-    "name": "KYC automation starter package",
-    "stage": "closedwon",
-    "amount": 24800,
+    "name": "Burnaby Lane - Starter Onboarding Package",
+    "stage": "qualifiedtobuy",
+    "amount": 31400,
     "close_date": {
-      "days_ago": 21
+      "days_from_now": 93
     }
   },
   {
@@ -450,11 +450,11 @@
     "contact_ids": [
       "fs-f18-contact-01"
     ],
-    "name": "Onboarding and CIP documentation platform",
-    "stage": "qualifiedtobuy",
-    "amount": 71650,
+    "name": "Meridwell - Account Opening Replacement",
+    "stage": "contractsent",
+    "amount": 128750,
     "close_date": {
-      "days_from_now": 72
+      "days_from_now": 21
     }
   },
   {
@@ -463,11 +463,11 @@
     "contact_ids": [
       "fs-f19-contact-01"
     ],
-    "name": "Digital account opening evaluation",
-    "stage": "closedlost",
-    "amount": 47200,
+    "name": "Cobblestay - Bilingual Digital Onboarding",
+    "stage": "presentationscheduled",
+    "amount": 59200,
     "close_date": {
-      "days_ago": 67
+      "days_from_now": 58
     }
   },
   {
@@ -476,11 +476,11 @@
     "contact_ids": [
       "fs-f20-contact-01"
     ],
-    "name": "Business onboarding and beneficial ownership automation",
-    "stage": "presentationscheduled",
-    "amount": 58300,
+    "name": "Rooksmeade - KYC Automation",
+    "stage": "closedlost",
+    "amount": 44800,
     "close_date": {
-      "days_from_now": 50
+      "days_ago": 22
     }
   },
   {
@@ -489,11 +489,11 @@
     "contact_ids": [
       "fs-f21-contact-01"
     ],
-    "name": "Willowmere digital account opening",
-    "stage": "qualifiedtobuy",
-    "amount": 38400,
+    "name": "Wrenvale - Digital Account Opening",
+    "stage": "presentationscheduled",
+    "amount": 48600,
     "close_date": {
-      "days_from_now": 75
+      "days_from_now": 64
     }
   },
   {
@@ -502,11 +502,11 @@
     "contact_ids": [
       "fs-f22-contact-01"
     ],
-    "name": "Sandhill KYC automation pilot",
-    "stage": "presentationscheduled",
-    "amount": 61750,
+    "name": "Plinthora - Onboarding and KYC Automation",
+    "stage": "contractsent",
+    "amount": 187500,
     "close_date": {
-      "days_from_now": 48
+      "days_from_now": 21
     }
   },
   {
@@ -515,11 +515,11 @@
     "contact_ids": [
       "fs-f23-contact-01"
     ],
-    "name": "Orchard Point onboarding platform",
-    "stage": "contractsent",
-    "amount": 29900,
+    "name": "Alderquist - Account Opening Pilot",
+    "stage": "appointmentscheduled",
+    "amount": 27400,
     "close_date": {
-      "days_from_now": 14
+      "days_from_now": 105
     }
   },
   {
@@ -528,11 +528,11 @@
     "contact_ids": [
       "fs-f24-contact-01"
     ],
-    "name": "Cedar Basin account opening and KYC",
-    "stage": "appointmentscheduled",
-    "amount": 54200,
+    "name": "Mosswick - KYC Automation",
+    "stage": "qualifiedtobuy",
+    "amount": 72300,
     "close_date": {
-      "days_from_now": 104
+      "days_from_now": 88
     }
   },
   {
@@ -541,11 +541,11 @@
     "contact_ids": [
       "fs-f25-contact-01"
     ],
-    "name": "Maple Run digital onboarding",
+    "name": "Tarnbury - Digital Onboarding",
     "stage": "closedlost",
-    "amount": 87300,
+    "amount": 94800,
     "close_date": {
-      "days_ago": 34
+      "days_ago": 28
     }
   }
 ]

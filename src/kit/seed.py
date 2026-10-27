@@ -23,7 +23,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 
 from kit.hubspot import KIT_ID, KIT_STORY
-from kit.schemas import ActivityFixture, FixtureSet, RelativeDate
+from kit.schemas import CLOSED_DEAL_STAGES, ActivityFixture, DealFixture, FixtureSet, RelativeDate
 
 # Write order matters: companies before the contacts and deals that link to them.
 RECORD_OBJECT_TYPES = ["companies", "contacts", "deals"]
@@ -55,6 +55,17 @@ ACTIVITY_LINK_TYPES = {  # activity object -> {target object: type id}
 }
 
 DEFAULT_PIPELINE = "default"
+
+# Roughly how many days ago a deal at each open stage was created, so the board
+# doesn't show every deal as "created today". HubSpot lets us set this on deals
+# only; for companies and contacts `createdate` is read-only.
+MIN_DEAL_AGE_DAYS = {
+    "appointmentscheduled": 3,
+    "qualifiedtobuy": 10,
+    "presentationscheduled": 20,
+    "decisionmakerboughtin": 30,
+    "contractsent": 40,
+}
 
 
 @dataclass
@@ -113,6 +124,21 @@ def resolve(when: RelativeDate, kit_id: str, today: datetime) -> datetime:
 def hubspot_time(moment: datetime) -> str:
     """HubSpot accepts UTC timestamps like 2026-10-26T15:30:00.000Z."""
     return moment.strftime("%Y-%m-%dT%H:%M:%S.000Z")
+
+
+def deal_age_days(deal: DealFixture, activities: list[ActivityFixture]) -> int:
+    """How many days ago the deal was created: fits its stage, and comes before its first activity.
+
+    A small spread derived from the kit ID keeps deals from all sharing one date,
+    while keeping the value identical on every seed.
+    """
+    spread = zlib.crc32(deal.kit_id.encode()) % 15
+    if deal.stage in CLOSED_DEAL_STAGES:
+        age = (deal.close_date.days_ago or 0) + 30 + spread  # about a month before it closed
+    else:
+        age = MIN_DEAL_AGE_DAYS[deal.stage] + spread
+    oldest_activity = max((a.when.days_ago or 0 for a in activities if a.deal_id == deal.kit_id), default=0)
+    return max(age, oldest_activity + 1 + spread % 5)
 
 
 # --- Building the plan --------------------------------------------------------------------
@@ -201,6 +227,8 @@ def build_plan(fixtures: FixtureSet, now: datetime, owner_id: str | None = None)
             "dealstage": deal.stage,
             "amount": str(deal.amount),
             "closedate": hubspot_time(resolve(deal.close_date, deal.kit_id, today)),
+            "createdate": hubspot_time(resolve(
+                RelativeDate(days_ago=deal_age_days(deal, fixtures.activities)), deal.kit_id, today)),
         } | owner | tags(deal.kit_id, story)})
         plan.links.append(Link("deals", deal.kit_id, "companies", deal.company_id, DEAL_TO_PRIMARY_COMPANY))
         for contact_id in deal.contact_ids:

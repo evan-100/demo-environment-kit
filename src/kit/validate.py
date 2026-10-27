@@ -8,7 +8,7 @@ messages to a list; an empty list means the fixtures are good.
 
 import re
 
-from kit.schemas import FixtureSet, Story, find_duplicates
+from kit.schemas import OPEN_DEAL_STAGES, FixtureSet, Story, find_duplicates
 
 # Absolute dates make demo data go stale, so none may appear in any text.
 # Catches "2026-10-12" and "October 12".
@@ -28,6 +28,9 @@ def validate_fixtures(
     check_emails(fixtures, errors)
     check_heroes(fixtures, story, errors)
     check_volume(fixtures, story, errors)
+    check_next_steps(fixtures, errors)
+    check_people(fixtures, errors)
+    check_no_overdue_tasks(fixtures, errors)
     check_no_absolute_dates(fixtures, errors)
     check_not_reused_across_stories(fixtures, other_stories or [], errors)
     return errors
@@ -119,6 +122,31 @@ def check_volume(fixtures: FixtureSet, story: Story, errors: list[str]) -> None:
         errors.append(f"expected {story.volume.filler_accounts} filler accounts, found {len(filler_companies)}")
     if len(filler_deals) != story.volume.filler_deals:
         errors.append(f"expected {story.volume.filler_deals} filler deals, found {len(filler_deals)}")
+
+
+def check_next_steps(fixtures: FixtureSet, errors: list[str]) -> None:
+    """Every open deal needs an upcoming task or meeting, or the deals board shows it as "No upcoming"."""
+    has_next_step = {
+        a.deal_id for a in fixtures.activities
+        if a.deal_id and a.type in ("task", "meeting") and a.when.days_from_now
+    }
+    for deal in fixtures.deals:
+        if deal.stage in OPEN_DEAL_STAGES and deal.kit_id not in has_next_step:
+            errors.append(f"open deal '{deal.kit_id}' has no upcoming task or meeting")
+
+
+def check_people(fixtures: FixtureSet, errors: list[str]) -> None:
+    """No two contacts may share a full name: one person can't work at two companies in the story."""
+    names = [f"{c.first_name} {c.last_name}" for c in fixtures.contacts]
+    if duplicates := find_duplicates(names):
+        errors.append(f"the same person appears more than once: {duplicates}")
+
+
+def check_no_overdue_tasks(fixtures: FixtureSet, errors: list[str]) -> None:
+    """A task dated in the past must be completed; otherwise HubSpot shows it as overdue."""
+    for activity in fixtures.activities:
+        if activity.type == "task" and activity.when.days_ago is not None and activity.task_status != "completed":
+            errors.append(f"task '{activity.kit_id}' is overdue (dated in the past but not completed)")
 
 
 def check_no_absolute_dates(fixtures: FixtureSet, errors: list[str]) -> None:

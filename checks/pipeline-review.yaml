@@ -7,5 +7,6 @@ assertions:
   - { check: min_open_deals, min: 30 }
   - { check: min_open_stages, min: 4 }
   - { check: no_overdue_open_deals }
+  - { check: open_deals_have_next_step }   # otherwise the board shows "No upcoming"
 fallback: fallbacks/{story}/pipeline-review.md
 remediation: reseed       # what `kit check --fix` does when this fails

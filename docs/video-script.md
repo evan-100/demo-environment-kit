@@ -20,7 +20,7 @@ Screen recording, terminal on the left, HubSpot on the right. Times are targets.
 > and committed, and every date in it is relative, so it never goes stale."
 
 **0:35–0:50 · Seed** *(run `uv run kit seed healthcare`; switch to HubSpot, open the Acme deal timeline)*
-> "Seeding loads about 130 records into HubSpot in around fifteen seconds. Every record is tagged, so seeding
+> "Seeding loads about 190 records into HubSpot in around fifteen seconds. Every record is tagged, so seeding
 > twice changes nothing and reset never touches anything else. Here's the Acme deal: contract sent,
 > CFO pushing back on price last week, champion asking for an ROI summary three days ago."
 

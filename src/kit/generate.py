@@ -21,6 +21,7 @@ from pydantic import BaseModel
 
 from kit.schemas import (
     DEAL_STAGES,
+    OPEN_DEAL_STAGES,
     ActivityFixture,
     CompanyFixture,
     ContactFixture,
@@ -82,12 +83,22 @@ class FillerContact(BaseModel):
     job_title: str
 
 
+class FillerActivity(BaseModel):
+    type: Literal["note", "call", "email", "meeting", "task"]
+    # Days relative to today: negative in the past, positive for an upcoming next step.
+    day: int
+    title: str
+    body: str
+
+
 class FillerDeal(BaseModel):
     name: str
     stage: Literal[*DEAL_STAGES]
     amount: int
     # Days until close. Negative for deals that are already closed won or lost.
     close_in_days: int
+    # A light history, so no deal on the board looks abandoned (see filler_prompt).
+    activities: list[FillerActivity]
 
 
 class FillerCompany(BaseModel):
@@ -113,6 +124,10 @@ You write realistic but entirely fictional CRM demo data for a B2B sales demo.
 Rules:
 - Every company and person is invented. Never use a real company, hospital,
   brand or well-known person's name, and avoid names that closely resemble one.
+- Make company names distinctive: coined or unusual words. Avoid the common
+  pattern of a region or landmark plus an industry word (such as "Harbor
+  Savings Bank" or "Great Lakes Credit Union"), because real businesses often
+  have exactly those names.
 - Write like a real sales rep's CRM: specific, plain, a little terse. Notes and
   call summaries mention concrete pains, numbers, objections and next steps.
 - Never write a calendar date (no "October 12", no "2026-10-12"). Say
@@ -147,7 +162,9 @@ Timeline to turn into 6 to 10 activities (notes, calls, emails, meetings, tasks)
 
 For each activity:
 - day: negative for the past (-21 = three weeks ago), positive only for things
-  scheduled in the future (a booked meeting, a task due date).
+  scheduled in the future. Anything in the future must be a task or a meeting
+  (CRMs only show those as a deal's next step). A task dated in the past is
+  completed; an open task is due in the future (an overdue task looks neglected).
 - contact_personas: the persona keys involved.
 - deal_key: the deal it's about, or null.
 - direction: for calls and emails only (from the seller's side), else null.
@@ -161,11 +178,42 @@ def avoid_names(names_taken: list[str]) -> str:
     # Each LLM call starts fresh, so tell it which names earlier calls already used.
     if not names_taken:
         return ""
-    return f"Other accounts already use these first names, so pick different ones: {', '.join(names_taken)}.\n"
+    return (f"These people already exist at other accounts: {', '.join(names_taken)}. "
+            "Give every new person a different first name and a different last name.\n")
 
 
-# Long lists are where LLMs lose count, so filler is requested in batches of this many companies.
+# Long lists are where LLMs lose count, so filler is requested in batches of this many companies,
+# and a batch's missing companies are asked for again up to FILLER_TRIES times in total.
 FILLER_BATCH_SIZE = 10
+FILLER_TRIES = 3
+
+
+def usable_deals(company: FillerCompany) -> list[FillerDeal]:
+    """Deals that will pass validation: open deals need an upcoming task or meeting."""
+    return [
+        d for d in company.deals
+        if d.stage not in OPEN_DEAL_STAGES
+        or any(a.day > 0 and a.type in ("task", "meeting") for a in d.activities)
+    ]
+
+
+def fill_slots(slots: list[int], companies: list[FillerCompany]) -> tuple[list[FillerCompany], list[int]]:
+    """Match returned companies to slots by deal count. Returns (matched companies, slots still open).
+
+    A company fills the largest open slot it has enough usable deals for; extra deals are dropped.
+    A company with too few usable deals for any open slot is skipped.
+    """
+    open_slots = list(slots)
+    matched = []
+    for company in companies:
+        deals = usable_deals(company)
+        fitting = [slot for slot in open_slots if slot <= len(deals)]
+        if not fitting:
+            continue
+        slot = max(fitting)
+        open_slots.remove(slot)
+        matched.append(company.model_copy(update={"deals": deals[:slot]}))
+    return matched, open_slots
 
 
 def deals_per_company(companies: int, deals: int) -> list[int]:
@@ -191,6 +239,11 @@ Return exactly {len(deal_counts)} companies in this industry, varied in size and
   appointmentscheduled, qualifiedtobuy, presentationscheduled, decisionmakerboughtin, contractsent.
   Open deals have close_in_days between 7 and 120.
 - The rest are closedwon or closedlost with close_in_days between -90 and -1.
+- Each deal gets a light history in `activities`:
+  - one past touchpoint (call, email or note), day between -30 and -2;
+  - open deals also get exactly one upcoming next step (a task or a meeting), day between 1 and 14;
+  - closed deals get no upcoming step; their past touchpoint fits the outcome.
+  One or two sentences per body, specific to that deal.
 - Amounts fit the company size and are not round thousands every time.
 - Descriptions are one sentence.
 {avoid_names(names_taken)}"""
@@ -330,7 +383,7 @@ def build_hero(story: Story, account: HeroAccount, draft: HeroDraft, phones: Pho
 
 
 def build_filler(story: Story, draft: FillerDraft, phones: PhoneBook) -> FixtureSet:
-    companies, contacts, deals = [], [], []
+    companies, contacts, deals, activities = [], [], [], []
     deals_left = story.volume.filler_deals
 
     # The LLM is asked for exact counts; if it writes extra, drop the extras.
@@ -367,9 +420,10 @@ def build_filler(story: Story, draft: FillerDraft, phones: PhoneBook) -> Fixture
             )
 
         for deal_number, deal in enumerate(item.deals[:deals_left], start=1):
+            deal_id = f"{prefix}-deal-{deal_number:02d}"
             deals.append(
                 DealFixture(
-                    kit_id=f"{prefix}-deal-{deal_number:02d}",
+                    kit_id=deal_id,
                     company_id=company_id,
                     contact_ids=contact_ids[:1],
                     name=deal.name,
@@ -378,9 +432,31 @@ def build_filler(story: Story, draft: FillerDraft, phones: PhoneBook) -> Fixture
                     close_date=to_relative(deal.close_in_days),
                 )
             )
+            for activity_number, item_activity in enumerate(sorted(deal.activities, key=lambda a: a.day), start=1):
+                activities.append(filler_activity(f"{deal_id}-act-{activity_number}", item_activity,
+                                                  company_id, contact_ids[:1], deal_id))
         deals_left = story.volume.filler_deals - len(deals)
 
-    return FixtureSet(story_id=story.id, companies=companies, contacts=contacts, deals=deals, activities=[])
+    return FixtureSet(story_id=story.id, companies=companies, contacts=contacts, deals=deals, activities=activities)
+
+
+def filler_activity(kit_id: str, item: FillerActivity, company_id: str, contact_ids: list[str],
+                    deal_id: str) -> ActivityFixture:
+    """A background deal's activity, with plain defaults for the fields the LLM isn't asked for."""
+    upcoming = item.day > 0
+    return ActivityFixture(
+        kit_id=kit_id,
+        type=item.type,
+        when=to_relative(item.day),
+        title=item.title,
+        body=item.body,
+        company_id=company_id,
+        contact_ids=contact_ids,
+        deal_id=deal_id,
+        direction="outbound" if item.type in ("call", "email") else None,
+        duration_minutes=30 if item.type in ("call", "meeting") else None,
+        task_status=("not_started" if upcoming else "completed") if item.type == "task" else None,
+    )
 
 
 def generate_fixtures(story: Story, ask: AskFunction = ask_claude) -> FixtureSet:
@@ -391,16 +467,22 @@ def generate_fixtures(story: Story, ask: AskFunction = ask_claude) -> FixtureSet
     for account in story.accounts:
         draft = ask(hero_prompt(story, account, names_taken), HeroDraft)
         parts.append(build_hero(story, account, draft, phones))
-        names_taken += [c.first_name for c in draft.contacts]
-    # Filler in batches, each told which company names earlier batches used.
+        names_taken += [f"{c.first_name} {c.last_name}" for c in draft.contacts]
+    # Filler in batches. Each batch is a list of slots ("a company with 2 deals");
+    # slots the LLM leaves unfilled are asked for again (see fill_slots).
     counts = deals_per_company(story.volume.filler_accounts, story.volume.filler_deals)
     filler = FillerDraft(companies=[])
     for start in range(0, len(counts), FILLER_BATCH_SIZE):
-        batch_counts = counts[start : start + FILLER_BATCH_SIZE]
-        companies_taken = [c.name for c in filler.companies]
-        draft = ask(filler_prompt(story, batch_counts, names_taken, companies_taken), FillerDraft)
-        filler.companies += draft.companies[: len(batch_counts)]  # drop extras the LLM added
-        names_taken += [p.first_name for c in draft.companies for p in c.contacts]
+        open_slots = counts[start : start + FILLER_BATCH_SIZE]
+        for _ in range(FILLER_TRIES):
+            if not open_slots:
+                break
+            companies_taken = [c.name for c in filler.companies]
+            draft = ask(filler_prompt(story, open_slots, names_taken, companies_taken), FillerDraft)
+            matched, open_slots = fill_slots(open_slots, draft.companies)
+            filler.companies += matched
+            names_taken += [f"{p.first_name} {p.last_name}" for c in matched for p in c.contacts]
+    # If slots are still open after every try, validation reports the shortfall.
     parts.append(build_filler(story, filler, phones))
 
     return FixtureSet(

@@ -5,8 +5,8 @@
     "when": {
       "days_ago": 42
     },
-    "title": "Discovery call - check-in bottlenecks",
-    "body": "Danielle walked through intake at their three hospitals. Avg check-in at the main campus ED-adjacent registration is 14-18 min; peaks at 25+ on Monday mornings. Front desk re-keys demographics and insurance from paper forms into the EHR, so roughly 6% of claims kick back for registration errors. She owns the patient experience scores and they dropped two quarters in a row. Wants mobile pre-registration plus kiosk/tablet at the desk. Mentioned another vendor is already piloting at one outpatient clinic. Next step: technical session with Priya on EHR integration.",
+    "title": "Discovery call with Danielle on check-in wait times",
+    "body": "Danielle walked through check-in pain at all three hospitals. Average wait at the main campus ER and outpatient registration is around 17 minutes, and front desk staff re-key paper forms into the EHR. Two hospitals have turnover above 30% at registration. She wants a pilot at one site this year. Next step: technical session with IT to scope EHR integration.",
     "company_id": "hc-acme-company",
     "contact_ids": [
       "hc-acme-champion"
@@ -17,19 +17,17 @@
   },
   {
     "kit_id": "hc-acme-act-02",
-    "type": "email",
+    "type": "note",
     "when": {
-      "days_ago": 40
+      "days_ago": 41
     },
-    "title": "Recap + intro to Clinical Applications",
-    "body": "Sent Danielle recap of discovery: 3 sites, ~1,100 registrations/day combined, target cut check-in time in half. Asked her to loop in Priya Venkataraman for the integration review. She replied same day and cc'd Priya.",
+    "title": "Discovery summary and stakeholders",
+    "body": "Danielle is the sponsor and owns the budget request. CFO Raymond Teague will need to sign off above $150K, and Danielle expects pushback on cost. Priya Venkataraman runs clinical apps and controls the integration timeline. Competitor is already running a small pilot at one of their clinics.",
     "company_id": "hc-acme-company",
     "contact_ids": [
-      "hc-acme-champion",
-      "hc-acme-it-lead"
+      "hc-acme-champion"
     ],
-    "deal_id": "hc-acme-deal-01",
-    "direction": "outbound"
+    "deal_id": "hc-acme-deal-01"
   },
   {
     "kit_id": "hc-acme-act-03",
@@ -37,14 +35,14 @@
     "when": {
       "days_ago": 21
     },
-    "title": "Technical deep-dive - EHR integration",
-    "body": "90 min with Priya and two of her analysts. Covered HL7 ADT feeds, FHIR patient/coverage resources, insurance card OCR, and write-back of consent forms to the chart. Her concerns: interface engine capacity, who owns the interface build, and SSO with their identity provider. We confirmed our team builds and tests the interfaces; she estimates 6-8 weeks of her team's partial time. She's neutral - said the competitor pilot hasn't touched the EHR yet, it's standalone. Wants security questionnaire and BAA template.",
+    "title": "Technical deep-dive: EHR integration",
+    "body": "Walked Priya and her team through our HL7/FHIR interface and the demographics and insurance write-back. She is comfortable with the approach but wants a security review and a sandbox test before go-live. Estimated 8 to 10 weeks for integration. Open question on single sign-on for front-desk kiosks.",
     "company_id": "hc-acme-company",
     "contact_ids": [
       "hc-acme-it-lead"
     ],
     "deal_id": "hc-acme-deal-01",
-    "duration_minutes": 90
+    "duration_minutes": 60
   },
   {
     "kit_id": "hc-acme-act-04",
@@ -52,8 +50,8 @@
     "when": {
       "days_ago": 14
     },
-    "title": "Proposal sent - Digital Patient Intake",
-    "body": "Sent proposal to Danielle, cc Priya: 3 hospitals, mobile pre-reg, desk tablets, EHR integration, 3-year term. $185K year one including implementation. Attached security questionnaire responses and BAA. Asked for 30 min to walk through with finance.",
+    "title": "Proposal sent: $185K, three-hospital rollout",
+    "body": "Sent proposal to Danielle with copy to Priya. Covers three hospitals, kiosk and tablet intake, EHR integration and year-one support at $185,000. Included a phased option starting with the main campus. Asked for feedback within a week.",
     "company_id": "hc-acme-company",
     "contact_ids": [
       "hc-acme-champion",
@@ -64,36 +62,34 @@
   },
   {
     "kit_id": "hc-acme-act-05",
+    "type": "task",
+    "when": {
+      "days_ago": 10
+    },
+    "title": "Send security questionnaire and SOC 2 report to Priya",
+    "body": "Priya asked for our SOC 2 report and the completed security questionnaire ahead of the sandbox test. Sent both.",
+    "company_id": "hc-acme-company",
+    "contact_ids": [
+      "hc-acme-it-lead"
+    ],
+    "deal_id": "hc-acme-deal-01",
+    "task_status": "completed"
+  },
+  {
+    "kit_id": "hc-acme-act-06",
     "type": "call",
     "when": {
       "days_ago": 7
     },
-    "title": "Pricing call with CFO",
-    "body": "Gregory joined with Danielle. He pushed hard on price - says the competitor pilot is running at roughly 40% less per site and wants to know why he shouldn't just expand that. Our answer: their pilot has no EHR write-back, so staff still re-key data; savings come from the integration. He wasn't convinced, wants hard numbers on FTE hours and denial reduction, not vendor case studies. Also asked about phasing payments by site. Skeptical but didn't say no.",
+    "title": "CFO call: pricing objection and competitor pilot",
+    "body": "Raymond said $185K is well above what he expected and pointed to the competitor's pilot, which he says is priced at roughly a third for one site. He questioned whether check-in savings are real or just soft time. Wants hard numbers on staffing and no-show impact before he will sign. Did not rule us out. Agreed to review an ROI summary.",
     "company_id": "hc-acme-company",
     "contact_ids": [
-      "hc-acme-blocker",
-      "hc-acme-champion"
+      "hc-acme-blocker"
     ],
     "deal_id": "hc-acme-deal-01",
     "direction": "outbound",
-    "duration_minutes": 35
-  },
-  {
-    "kit_id": "hc-acme-act-06",
-    "type": "note",
-    "when": {
-      "days_ago": 6
-    },
-    "title": "Deal strategy after CFO call",
-    "body": "Risk: CFO anchoring on competitor pilot pricing. Plan: build ROI off Acme's own numbers (1,100 regs/day, ~6% registration denials, front-desk overtime). Consider phased go-live by hospital to spread year-one cost. Need Priya to confirm in writing the competitor has no EHR integration roadmap for their pilot.",
-    "company_id": "hc-acme-company",
-    "contact_ids": [
-      "hc-acme-blocker",
-      "hc-acme-champion",
-      "hc-acme-it-lead"
-    ],
-    "deal_id": "hc-acme-deal-01"
+    "duration_minutes": 30
   },
   {
     "kit_id": "hc-acme-act-07",
@@ -101,8 +97,8 @@
     "when": {
       "days_ago": 3
     },
-    "title": "Champion request - ROI summary for CFO",
-    "body": "Danielle emailed asking for a one-page ROI summary she can bring to Gregory before their budget review. Wants: front-desk hours saved, denial reduction in dollars, payback period, and a side-by-side vs. the pilot. She said contract is otherwise ready to go once finance signs off.",
+    "title": "Danielle asks for ROI summary for the CFO",
+    "body": "Danielle emailed asking for a one-page ROI summary she can take to Raymond. She wants it to cover registration labor hours, reduced data-entry errors and claim denials tied to bad intake data, plus a comparison against a single-site pilot approach. Said the timing matters because contract review is next.",
     "company_id": "hc-acme-company",
     "contact_ids": [
       "hc-acme-champion"
@@ -114,33 +110,33 @@
     "kit_id": "hc-acme-act-08",
     "type": "task",
     "when": {
-      "days_from_now": 1
+      "days_from_now": 2
     },
     "title": "Send ROI summary to Danielle for CFO review",
-    "body": "One-pager: FTE hours saved at 3 sites, registration denial reduction ($), payback period, phased payment option, comparison vs. competitor pilot (no EHR write-back). Get finance to validate denial assumptions before sending.",
+    "body": "Build one-page ROI using their 17-minute wait and registration headcount. Include labor savings, denial reduction and a phased-rollout cost option to answer the competitor pilot comparison. Send to Danielle before her next meeting with Raymond.",
     "company_id": "hc-acme-company",
     "contact_ids": [
       "hc-acme-champion",
       "hc-acme-blocker"
     ],
     "deal_id": "hc-acme-deal-01",
-    "task_status": "in_progress"
+    "task_status": "not_started"
   },
   {
     "kit_id": "hc-acme-act-09",
     "type": "meeting",
     "when": {
-      "days_from_now": 8
+      "days_from_now": 9
     },
-    "title": "ROI review with CFO and VP Patient Ops",
-    "body": "Tentatively booked 30 min with Gregory and Danielle to walk through ROI summary and answer pricing questions ahead of contract signature.",
+    "title": "Pricing and ROI review with Danielle and Raymond",
+    "body": "Walk through the ROI summary and phased pricing option with the CFO. Goal is to resolve the pricing objection and get the contract signed before close.",
     "company_id": "hc-acme-company",
     "contact_ids": [
-      "hc-acme-blocker",
-      "hc-acme-champion"
+      "hc-acme-champion",
+      "hc-acme-blocker"
     ],
     "deal_id": "hc-acme-deal-01",
-    "duration_minutes": 30
+    "duration_minutes": 45
   },
   {
     "kit_id": "hc-northfield-act-01",
@@ -148,12 +144,13 @@
     "when": {
       "days_ago": 10
     },
-    "title": "Inbound demo request after intake webinar",
-    "body": "Rachel Lindqvist submitted a demo request after attending our 'Cutting Check-In Time in Half' webinar. Form notes: 11 clinics, paper intake packets, front desk re-keys insurance info into the EHR. Asked about tablet and text-to-patient options. Routed to me; good ICP fit for the mid-size network segment.",
+    "title": "Inbound demo request after webinar",
+    "body": "Marguerite submitted a demo request right after our digital intake webinar. Form says 11 clinics, paper clipboards at most front desks, staff re-key everything into the EHR. Routed to me, qualified as worth a call.",
     "company_id": "hc-northfield-company",
     "contact_ids": [
       "hc-northfield-champion"
-    ]
+    ],
+    "deal_id": "hc-northfield-deal-01"
   },
   {
     "kit_id": "hc-northfield-act-02",
@@ -161,12 +158,13 @@
     "when": {
       "days_ago": 9
     },
-    "title": "Re: Your Brightwell demo request",
-    "body": "Thanked Rachel for attending the webinar, sent the 3-minute patient-side walkthrough video and offered intro call times. Asked her to bring rough numbers on daily visit volume and average check-in time if she has them.",
+    "title": "Reply to demo request, propose intro call",
+    "body": "Thanked her for attending the webinar, sent two time options for a 30 minute intro call and a short pre-call questionnaire on visit volume and current intake steps.",
     "company_id": "hc-northfield-company",
     "contact_ids": [
       "hc-northfield-champion"
     ],
+    "deal_id": "hc-northfield-deal-01",
     "direction": "outbound"
   },
   {
@@ -175,8 +173,8 @@
     "when": {
       "days_ago": 7
     },
-    "title": "Intro/discovery call with Rachel (Ops)",
-    "body": "Good call. Pains: average check-in runs 12-14 min at busiest sites, waiting room backs up Monday mornings. Front desk staff spend ~2 hrs/day scanning and re-keying paper forms. Two clinics (East Washington and Fitchburg) had overtime spikes last quarter. Rachel wants to pilot at those two of the eleven clinics first, then expand if numbers hold. Concerns: EHR integration effort and older patient adoption of text links. Budget would need COO sign-off; she thinks low $40Ks for a pilot is workable. Next step: get COO Thomas Brennecke in a meeting.",
+    "title": "Intro call with Practice Ops Manager",
+    "body": "Marguerite says check-in averages about 11 minutes and front desk staff spend roughly a third of the day on forms and data entry. Turnover at the desk is high. She wants to pilot at two of the eleven clinics first, one busy urgent care and one smaller family site. Needs to confirm EHR integration and get COO buy-in. Budget is not set; she thinks it sits with the COO.",
     "company_id": "hc-northfield-company",
     "contact_ids": [
       "hc-northfield-champion"
@@ -191,8 +189,8 @@
     "when": {
       "days_ago": 6
     },
-    "title": "Pilot outline + EHR integration summary",
-    "body": "Sent Rachel a one-page pilot outline for the two clinics: 90-day pilot, kiosk + SMS pre-registration, insurance card capture, success metrics (check-in time, forms re-keyed per day, front desk overtime). Attached EHR integration summary and an accessibility note on in-clinic tablet fallback for patients who don't use text.",
+    "title": "Follow-up with pilot outline and EHR integration sheet",
+    "body": "Sent recap, a one-page two-clinic pilot outline (8 week timeline) and our EHR integration sheet. Asked for clinic names and monthly visit counts so I can size pricing around the $42K range we discussed.",
     "company_id": "hc-northfield-company",
     "contact_ids": [
       "hc-northfield-champion"
@@ -202,46 +200,47 @@
   },
   {
     "kit_id": "hc-northfield-act-05",
-    "type": "email",
+    "type": "task",
     "when": {
       "days_ago": 4
     },
-    "title": "Re: Pilot outline - COO meeting",
-    "body": "Rachel replied that she shared the outline with Thomas and he agreed to a 45-min meeting next week. He wants to see cost per clinic at full rollout, not just the pilot price, and how long before front desk staff are trained. She'll pull baseline check-in data from the two pilot sites before the meeting.",
+    "title": "Build pilot ROI sketch for COO",
+    "body": "Rough model: minutes saved per check-in times visits at the two pilot clinics, plus reduced re-keying hours. Keep it to one page.",
     "company_id": "hc-northfield-company",
     "contact_ids": [
-      "hc-northfield-champion",
-      "hc-northfield-exec"
+      "hc-northfield-champion"
     ],
     "deal_id": "hc-northfield-deal-01",
-    "direction": "inbound"
+    "task_status": "completed"
   },
   {
     "kit_id": "hc-northfield-act-06",
-    "type": "task",
+    "type": "call",
     "when": {
       "days_ago": 2
     },
-    "title": "Build 11-clinic rollout pricing and ROI model",
-    "body": "Prepare pilot price ($42K) plus full 11-clinic rollout pricing. ROI based on Rachel's numbers: ~2 hrs/day re-keying per site, overtime at two pilot clinics. Include training timeline (target under one week per site).",
+    "title": "Quick call to prep for COO meeting",
+    "body": "Marguerite sent visit volumes. Urgent care site sees about 140 patients a day. She warned Thaddeus cares most about no added IT burden and wait-time scores. Suggested leading with integration and the pilot's low commitment. She will send him the one-pager beforehand.",
     "company_id": "hc-northfield-company",
     "contact_ids": [
-      "hc-northfield-exec"
+      "hc-northfield-champion"
     ],
     "deal_id": "hc-northfield-deal-01",
-    "task_status": "in_progress"
+    "direction": "outbound",
+    "duration_minutes": 15
   },
   {
     "kit_id": "hc-northfield-act-07",
     "type": "task",
     "when": {
-      "days_from_now": 3
+      "days_from_now": 4
     },
-    "title": "Prep call with Rachel before COO meeting",
-    "body": "Quick 15-min sync to review baseline data and confirm what Thomas cares about most (cost vs. staff time). Confirm who else might join from IT.",
+    "title": "Send agenda and ROI one-pager ahead of COO meeting",
+    "body": "Email agenda, one-page ROI sketch and security overview to Marguerite and Thaddeus the day before the meeting.",
     "company_id": "hc-northfield-company",
     "contact_ids": [
-      "hc-northfield-champion"
+      "hc-northfield-champion",
+      "hc-northfield-exec"
     ],
     "deal_id": "hc-northfield-deal-01",
     "task_status": "not_started"
@@ -250,16 +249,1081 @@
     "kit_id": "hc-northfield-act-08",
     "type": "meeting",
     "when": {
-      "days_from_now": 5
+      "days_from_now": 6
     },
-    "title": "Pilot review with COO Thomas Brennecke",
-    "body": "Agenda: Rachel's baseline check-in data, 2-clinic pilot scope and success metrics, full rollout cost per clinic, EHR integration and training plan. Goal: COO agreement on pilot scope and path to paperwork.",
+    "title": "Pilot discussion with COO",
+    "body": "Intro meeting with Thaddeus Brennigan and Marguerite. Goals: confirm priorities, walk through pilot scope and ROI sketch, ask about budget process and approval path.",
     "company_id": "hc-northfield-company",
     "contact_ids": [
-      "hc-northfield-champion",
-      "hc-northfield-exec"
+      "hc-northfield-exec",
+      "hc-northfield-champion"
     ],
     "deal_id": "hc-northfield-deal-01",
     "duration_minutes": 45
+  },
+  {
+    "kit_id": "hc-f01-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 6
+    },
+    "title": "Ops champion sync",
+    "body": "Lorelei wants check-in under 4 minutes, currently around 11. Casimir is worried about the payback period and a rival pilot at two sites.",
+    "company_id": "hc-f01-company",
+    "contact_ids": [
+      "hc-f01-contact-01"
+    ],
+    "deal_id": "hc-f01-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f01-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 9
+    },
+    "title": "CFO ROI walkthrough",
+    "body": "Present a 3-year cost model with front-desk labor savings to Casimir and his finance team.",
+    "company_id": "hc-f01-company",
+    "contact_ids": [
+      "hc-f01-contact-01"
+    ],
+    "deal_id": "hc-f01-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f01-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 12
+    },
+    "title": "Kiosk specs sent",
+    "body": "Sent kiosk hardware options and ADA requirements. Lorelei will review with facilities.",
+    "company_id": "hc-f01-company",
+    "contact_ids": [
+      "hc-f01-contact-01"
+    ],
+    "deal_id": "hc-f01-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f01-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 5
+    },
+    "title": "Draft kiosk pricing",
+    "body": "Build a pricing tier for 14 outpatient lobbies and send to Lorelei.",
+    "company_id": "hc-f01-company",
+    "contact_ids": [
+      "hc-f01-contact-01"
+    ],
+    "deal_id": "hc-f01-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f02-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 8
+    },
+    "title": "Discovery intro",
+    "body": "Tobias says patients fill out clipboards that staff retype, about 20 hours a week. Wants a demo for his two busiest clinics.",
+    "company_id": "hc-f02-company",
+    "contact_ids": [
+      "hc-f02-contact-01"
+    ],
+    "deal_id": "hc-f02-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f02-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Product demo",
+    "body": "Show tablet check-in and insurance card scan to Tobias and the front desk leads.",
+    "company_id": "hc-f02-company",
+    "contact_ids": [
+      "hc-f02-contact-01"
+    ],
+    "deal_id": "hc-f02-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f02-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 28
+    },
+    "title": "Lost to existing vendor",
+    "body": "Tobias said they will stay with the forms module in their current EHR for now. Revisit next year.",
+    "company_id": "hc-f02-company",
+    "contact_ids": [
+      "hc-f02-contact-01"
+    ],
+    "deal_id": "hc-f02-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f03-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "Requirements call",
+    "body": "Ingrid cites 9% claim denials from bad insurance data at intake. Dominic needs HL7 integration details.",
+    "company_id": "hc-f03-company",
+    "contact_ids": [
+      "hc-f03-contact-01"
+    ],
+    "deal_id": "hc-f03-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f03-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 8
+    },
+    "title": "Technical presentation",
+    "body": "Walk Dominic's team through the integration architecture and security review.",
+    "company_id": "hc-f03-company",
+    "contact_ids": [
+      "hc-f03-contact-01"
+    ],
+    "deal_id": "hc-f03-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f03-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 3
+    },
+    "title": "Contract redlines",
+    "body": "Legal returned minor redlines on data terms. Ingrid expects signature soon.",
+    "company_id": "hc-f03-company",
+    "contact_ids": [
+      "hc-f03-contact-01"
+    ],
+    "deal_id": "hc-f03-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f03-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 4
+    },
+    "title": "Follow up with legal",
+    "body": "Confirm revised BAA language with their counsel.",
+    "company_id": "hc-f03-company",
+    "contact_ids": [
+      "hc-f03-contact-01"
+    ],
+    "deal_id": "hc-f03-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f04-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "Discovery call",
+    "body": "Rosalind says registration lines hit 25 minutes on Monday mornings. Budget decisions happen next quarter.",
+    "company_id": "hc-f04-company",
+    "contact_ids": [
+      "hc-f04-contact-01"
+    ],
+    "deal_id": "hc-f04-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f04-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 7
+    },
+    "title": "Send case study",
+    "body": "Email a case study from a similar-size hospital with wait time results.",
+    "company_id": "hc-f04-company",
+    "contact_ids": [
+      "hc-f04-contact-01"
+    ],
+    "deal_id": "hc-f04-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f04-deal-02-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 20
+    },
+    "title": "Signed verbal approval",
+    "body": "Rosalind confirmed approval for tablets at both satellite clinics. Go-live planned within the month.",
+    "company_id": "hc-f04-company",
+    "contact_ids": [
+      "hc-f04-contact-01"
+    ],
+    "deal_id": "hc-f04-deal-02",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f05-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 9
+    },
+    "title": "Follow-up after demo",
+    "body": "Matilda liked the guardian consent flow but asked about Spanish language support.",
+    "company_id": "hc-f05-company",
+    "contact_ids": [
+      "hc-f05-contact-01"
+    ],
+    "deal_id": "hc-f05-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f05-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 11
+    },
+    "title": "Spanish workflow review",
+    "body": "Show bilingual forms and consent capture to Matilda and two office managers.",
+    "company_id": "hc-f05-company",
+    "contact_ids": [
+      "hc-f05-contact-01"
+    ],
+    "deal_id": "hc-f05-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f05-deal-02-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 4
+    },
+    "title": "Inbound inquiry",
+    "body": "Matilda asked about text-based pre-visit forms to cut no-shows, currently near 14%.",
+    "company_id": "hc-f05-company",
+    "contact_ids": [
+      "hc-f05-contact-01"
+    ],
+    "deal_id": "hc-f05-deal-02"
+  },
+  {
+    "kit_id": "hc-f05-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Schedule intro call",
+    "body": "Book a 30-minute scoping call with Matilda.",
+    "company_id": "hc-f05-company",
+    "contact_ids": [
+      "hc-f05-contact-01"
+    ],
+    "deal_id": "hc-f05-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f06-deal-01-act-1",
+    "type": "meeting",
+    "when": {
+      "days_ago": 7
+    },
+    "title": "Executive review",
+    "body": "Leopold presented our proposal to his leadership team. Procurement wants a competitive bid and references.",
+    "company_id": "hc-f06-company",
+    "contact_ids": [
+      "hc-f06-contact-01"
+    ],
+    "deal_id": "hc-f06-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f06-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 10
+    },
+    "title": "Prepare references",
+    "body": "Line up three hospital references for Beatrix's procurement packet.",
+    "company_id": "hc-f06-company",
+    "contact_ids": [
+      "hc-f06-contact-01"
+    ],
+    "deal_id": "hc-f06-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f06-deal-02-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 25
+    },
+    "title": "Project shelved",
+    "body": "Leopold said the ED project lost funding this year after an EHR upgrade took priority.",
+    "company_id": "hc-f06-company",
+    "contact_ids": [
+      "hc-f06-contact-01"
+    ],
+    "deal_id": "hc-f06-deal-02",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f07-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 10
+    },
+    "title": "Needs discovery",
+    "body": "Evander is concerned about cost and grant-funded budget. Needs a low-priced tier and offline mode.",
+    "company_id": "hc-f07-company",
+    "contact_ids": [
+      "hc-f07-contact-01"
+    ],
+    "deal_id": "hc-f07-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f07-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Send grant-friendly quote",
+    "body": "Prepare a quote with a phased rollout he can attach to a grant application.",
+    "company_id": "hc-f07-company",
+    "contact_ids": [
+      "hc-f07-contact-01"
+    ],
+    "deal_id": "hc-f07-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f07-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 6
+    },
+    "title": "Intro email reply",
+    "body": "Evander replied that eligibility checks eat up front desk time. Open to a short call.",
+    "company_id": "hc-f07-company",
+    "contact_ids": [
+      "hc-f07-contact-01"
+    ],
+    "deal_id": "hc-f07-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f07-deal-02-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 2
+    },
+    "title": "Intro call",
+    "body": "Cover eligibility verification workflow and pricing basics.",
+    "company_id": "hc-f07-company",
+    "contact_ids": [
+      "hc-f07-contact-01"
+    ],
+    "deal_id": "hc-f07-deal-02",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f08-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 4
+    },
+    "title": "Contract check-in",
+    "body": "Cordelia is reviewing the order form with legal. She wants a 60-day implementation window.",
+    "company_id": "hc-f08-company",
+    "contact_ids": [
+      "hc-f08-contact-01"
+    ],
+    "deal_id": "hc-f08-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f08-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Confirm implementation plan",
+    "body": "Send a 60-day implementation timeline for her sign-off.",
+    "company_id": "hc-f08-company",
+    "contact_ids": [
+      "hc-f08-contact-01"
+    ],
+    "deal_id": "hc-f08-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f08-deal-02-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 27
+    },
+    "title": "Closed and kickoff",
+    "body": "Signed after a two-center pilot cut consent paper handling by half. Kickoff scheduled with Cordelia's team.",
+    "company_id": "hc-f08-company",
+    "contact_ids": [
+      "hc-f08-contact-01"
+    ],
+    "deal_id": "hc-f08-deal-02"
+  },
+  {
+    "kit_id": "hc-f09-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 11
+    },
+    "title": "Privacy requirements",
+    "body": "Septimus needs 42 CFR Part 2 handling and granular consent controls. Wants security documentation first.",
+    "company_id": "hc-f09-company",
+    "contact_ids": [
+      "hc-f09-contact-01"
+    ],
+    "deal_id": "hc-f09-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f09-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 12
+    },
+    "title": "Security review",
+    "body": "Walk Septimus through our SOC 2 report and consent model.",
+    "company_id": "hc-f09-company",
+    "contact_ids": [
+      "hc-f09-contact-01"
+    ],
+    "deal_id": "hc-f09-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f09-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "Proposal sent",
+    "body": "Sent a proposal for remote onboarding forms. Septimus is taking it to the clinical director.",
+    "company_id": "hc-f09-company",
+    "contact_ids": [
+      "hc-f09-contact-01"
+    ],
+    "deal_id": "hc-f09-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f09-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 8
+    },
+    "title": "Follow up on director feedback",
+    "body": "Call Septimus to hear the clinical director's questions.",
+    "company_id": "hc-f09-company",
+    "contact_ids": [
+      "hc-f09-contact-01"
+    ],
+    "deal_id": "hc-f09-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f10-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 18
+    },
+    "title": "Initial scoping",
+    "body": "Gideon says staffing is thin and patients drive hours, so pre-arrival forms matter. Broadband at some sites is unreliable.",
+    "company_id": "hc-f10-company",
+    "contact_ids": [
+      "hc-f10-contact-01"
+    ],
+    "deal_id": "hc-f10-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f10-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 13
+    },
+    "title": "Research connectivity options",
+    "body": "Confirm offline sync capability and send technical notes to Gideon.",
+    "company_id": "hc-f10-company",
+    "contact_ids": [
+      "hc-f10-contact-01"
+    ],
+    "deal_id": "hc-f10-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f10-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 16
+    },
+    "title": "Went with in-house build",
+    "body": "Gideon said their IT contractor will build basic forms internally. Left the door open for later.",
+    "company_id": "hc-f10-company",
+    "contact_ids": [
+      "hc-f10-contact-01"
+    ],
+    "deal_id": "hc-f10-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f11-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 6
+    },
+    "title": "Ops champion sync",
+    "body": "Naomi says average check-in runs 14 minutes and wants it under 5. A competitor pilot is live at two campuses, so she asked for a side-by-side metrics comparison.",
+    "company_id": "hc-f11-company",
+    "contact_ids": [
+      "hc-f11-contact-01"
+    ],
+    "deal_id": "hc-f11-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f11-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 8
+    },
+    "title": "CFO ROI walkthrough",
+    "body": "Present the cost model to Warren, who doubts the savings claims. Bring front-desk labor numbers from the ED pilot site.",
+    "company_id": "hc-f11-company",
+    "contact_ids": [
+      "hc-f11-contact-01"
+    ],
+    "deal_id": "hc-f11-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f11-deal-02-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 12
+    },
+    "title": "Kiosk scope discussion",
+    "body": "Naomi wants lobby kiosks at the four busiest clinics, contingent on the main platform decision. Budget not yet approved.",
+    "company_id": "hc-f11-company",
+    "contact_ids": [
+      "hc-f11-contact-01"
+    ],
+    "deal_id": "hc-f11-deal-02"
+  },
+  {
+    "kit_id": "hc-f11-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 5
+    },
+    "title": "Send kiosk pricing sheet",
+    "body": "Draft per-kiosk pricing with a three-site pilot option and send to Naomi.",
+    "company_id": "hc-f11-company",
+    "contact_ids": [
+      "hc-f11-contact-01"
+    ],
+    "deal_id": "hc-f11-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f12-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 9
+    },
+    "title": "Discovery call",
+    "body": "Jocelyn's staff re-key paper forms for about 120 patients a day. She is open to a pilot at two clinics.",
+    "company_id": "hc-f12-company",
+    "contact_ids": [
+      "hc-f12-contact-01"
+    ],
+    "deal_id": "hc-f12-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f12-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Workflow mapping session",
+    "body": "Walk through front-desk process at the busiest urgent care with two receptionists.",
+    "company_id": "hc-f12-company",
+    "contact_ids": [
+      "hc-f12-contact-01"
+    ],
+    "deal_id": "hc-f12-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f12-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 22
+    },
+    "title": "Lost notice received",
+    "body": "Jocelyn chose to stay with their billing vendor's built-in eligibility checks. Revisit next year if denial rates stay high.",
+    "company_id": "hc-f12-company",
+    "contact_ids": [
+      "hc-f12-contact-01"
+    ],
+    "deal_id": "hc-f12-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f13-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 4
+    },
+    "title": "Contract redlines",
+    "body": "Hollis returned redlines on the SLA uptime clause, asking for 99.9%. Legal reviewing on our side.",
+    "company_id": "hc-f13-company",
+    "contact_ids": [
+      "hc-f13-contact-01"
+    ],
+    "deal_id": "hc-f13-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f13-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Return revised MSA",
+    "body": "Get security addendum and updated uptime terms back to Hollis.",
+    "company_id": "hc-f13-company",
+    "contact_ids": [
+      "hc-f13-contact-01"
+    ],
+    "deal_id": "hc-f13-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f13-deal-02-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 10
+    },
+    "title": "CIO alignment call",
+    "body": "Seraphina is on board if the EHR integration holds up in testing. She wants a reference from another ortho group.",
+    "company_id": "hc-f13-company",
+    "contact_ids": [
+      "hc-f13-contact-01"
+    ],
+    "deal_id": "hc-f13-deal-02",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f13-deal-02-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 9
+    },
+    "title": "Integration technical review",
+    "body": "IT team and our engineer review the HL7 interface and sandbox plan.",
+    "company_id": "hc-f13-company",
+    "contact_ids": [
+      "hc-f13-contact-01"
+    ],
+    "deal_id": "hc-f13-deal-02",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f14-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "Needs review",
+    "body": "Peregrine says parents fill out the same forms at every specialty visit. Wants one pre-visit portal in English and Spanish.",
+    "company_id": "hc-f14-company",
+    "contact_ids": [
+      "hc-f14-contact-01"
+    ],
+    "deal_id": "hc-f14-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f14-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 7
+    },
+    "title": "Share Spanish-language demo",
+    "body": "Record a short demo of the bilingual form flow and send to Peregrine.",
+    "company_id": "hc-f14-company",
+    "contact_ids": [
+      "hc-f14-contact-01"
+    ],
+    "deal_id": "hc-f14-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f14-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 18
+    },
+    "title": "Signed order form",
+    "body": "Peregrine returned the signed order. Kickoff set with registration leads for the consent workflow.",
+    "company_id": "hc-f14-company",
+    "contact_ids": [
+      "hc-f14-contact-01"
+    ],
+    "deal_id": "hc-f14-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f15-deal-01-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 8
+    },
+    "title": "Stakeholder map",
+    "body": "Lucian is sponsor, but nursing leadership worries about added triage steps. Need an ED nurse in the demo.",
+    "company_id": "hc-f15-company",
+    "contact_ids": [
+      "hc-f15-contact-01"
+    ],
+    "deal_id": "hc-f15-deal-01"
+  },
+  {
+    "kit_id": "hc-f15-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 11
+    },
+    "title": "Product demo for leadership",
+    "body": "Demo to Lucian and the nursing directors, focused on ED registration time.",
+    "company_id": "hc-f15-company",
+    "contact_ids": [
+      "hc-f15-contact-01"
+    ],
+    "deal_id": "hc-f15-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f15-deal-02-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 28
+    },
+    "title": "Declined add-on",
+    "body": "Lucian said copay collection is handled by a separate vendor under contract for two more years.",
+    "company_id": "hc-f15-company",
+    "contact_ids": [
+      "hc-f15-contact-01"
+    ],
+    "deal_id": "hc-f15-deal-02",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f16-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "First conversation",
+    "body": "Odalys wants to drop clipboards. Concerned about older patients and tablets, so asked about text-link options.",
+    "company_id": "hc-f16-company",
+    "contact_ids": [
+      "hc-f16-contact-01"
+    ],
+    "deal_id": "hc-f16-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f16-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 4
+    },
+    "title": "Send small-practice pricing",
+    "body": "Email the per-provider pricing tier and a two-week trial offer.",
+    "company_id": "hc-f16-company",
+    "contact_ids": [
+      "hc-f16-contact-01"
+    ],
+    "deal_id": "hc-f16-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f17-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 3
+    },
+    "title": "Pricing discussion",
+    "body": "Fitzgerald confirmed the CEO supports the rollout. He is pushing for a discount on all fourteen sites signed together.",
+    "company_id": "hc-f17-company",
+    "contact_ids": [
+      "hc-f17-contact-01"
+    ],
+    "deal_id": "hc-f17-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f17-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 10
+    },
+    "title": "Executive review",
+    "body": "Meet Fitzgerald and the CEO to finalize scope and rollout phasing.",
+    "company_id": "hc-f17-company",
+    "contact_ids": [
+      "hc-f17-contact-01"
+    ],
+    "deal_id": "hc-f17-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f18-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 9
+    },
+    "title": "Order confirmed",
+    "body": "Tamsin signed after the grant funding came through. Go-live targeted for early next quarter.",
+    "company_id": "hc-f18-company",
+    "contact_ids": [
+      "hc-f18-contact-01"
+    ],
+    "deal_id": "hc-f18-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f19-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 2
+    },
+    "title": "Proposal follow-up",
+    "body": "Barnaby said the surgeons like the pre-op questionnaire flow. Purchasing needs final pricing by end of month.",
+    "company_id": "hc-f19-company",
+    "contact_ids": [
+      "hc-f19-contact-01"
+    ],
+    "deal_id": "hc-f19-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f19-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 2
+    },
+    "title": "Confirm implementation timeline",
+    "body": "Send Barnaby a six-week go-live plan with training dates.",
+    "company_id": "hc-f19-company",
+    "contact_ids": [
+      "hc-f19-contact-01"
+    ],
+    "deal_id": "hc-f19-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f20-deal-01-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 16
+    },
+    "title": "Funding and needs",
+    "body": "Rhiannon needs multilingual forms and a low-bandwidth option. Purchase depends on a grant decision next quarter.",
+    "company_id": "hc-f20-company",
+    "contact_ids": [
+      "hc-f20-contact-01"
+    ],
+    "deal_id": "hc-f20-deal-01"
+  },
+  {
+    "kit_id": "hc-f20-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 13
+    },
+    "title": "Site visit planning call",
+    "body": "Plan a visit to the two largest clinics to observe the front-desk flow.",
+    "company_id": "hc-f20-company",
+    "contact_ids": [
+      "hc-f20-contact-01"
+    ],
+    "deal_id": "hc-f20-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f21-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "Pilot comparison call with Annelise",
+    "body": "Annelise says average check-in is 14 minutes and a rival is already piloting at two sites. She wants a side-by-side on kiosk and tablet intake before the CFO review.",
+    "company_id": "hc-f21-company",
+    "contact_ids": [
+      "hc-f21-contact-01"
+    ],
+    "deal_id": "hc-f21-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f21-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 9
+    },
+    "title": "CFO ROI review",
+    "body": "Walk Mortimer through the payback model, which assumes 6 minutes saved per visit and 18 fewer front-desk FTE hours per clinic. Expect pushback on implementation cost.",
+    "company_id": "hc-f21-company",
+    "contact_ids": [
+      "hc-f21-contact-01"
+    ],
+    "deal_id": "hc-f21-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f22-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 8
+    },
+    "title": "Intro email after webinar",
+    "body": "Corvin replied after our intake webinar. Staff spend about two hours a day re-keying forms into the EHR and he wants to see a demo.",
+    "company_id": "hc-f22-company",
+    "contact_ids": [
+      "hc-f22-contact-01"
+    ],
+    "deal_id": "hc-f22-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f22-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Discovery call",
+    "body": "Map current intake workflow across all five sites and confirm which EHR they use. Ask about budget timing for next fiscal year.",
+    "company_id": "hc-f22-company",
+    "contact_ids": [
+      "hc-f22-contact-01"
+    ],
+    "deal_id": "hc-f22-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f23-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 12
+    },
+    "title": "Requirements call",
+    "body": "Ximena needs Spanish-language forms and insurance card scanning. Wait times in the ER lobby are the main complaint, with a target of under 8 minutes at check-in.",
+    "company_id": "hc-f23-company",
+    "contact_ids": [
+      "hc-f23-contact-01"
+    ],
+    "deal_id": "hc-f23-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "hc-f23-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 4
+    },
+    "title": "Prep tailored demo",
+    "body": "Build a demo using Spanish-first intake flow and send the sandbox login to Ximena before the presentation.",
+    "company_id": "hc-f23-company",
+    "contact_ids": [
+      "hc-f23-contact-01"
+    ],
+    "deal_id": "hc-f23-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f24-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 3
+    },
+    "title": "Contract sent for signature",
+    "body": "Sent the order form with the 3-year term. Dashiell is asking legal to review the data-retention clause and wants go-live before the spring surgery rush.",
+    "company_id": "hc-f24-company",
+    "contact_ids": [
+      "hc-f24-contact-01"
+    ],
+    "deal_id": "hc-f24-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "hc-f24-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 5
+    },
+    "title": "Follow up on legal redlines",
+    "body": "Check in with Dashiell on contract redlines and offer a call with our security team if needed.",
+    "company_id": "hc-f24-company",
+    "contact_ids": [
+      "hc-f24-contact-01"
+    ],
+    "deal_id": "hc-f24-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "hc-f25-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "Loss call with Vesper",
+    "body": "They chose to stay with their current EHR portal module because grant funding covers it this year. Vesper asked us to check back next budget cycle.",
+    "company_id": "hc-f25-company",
+    "contact_ids": [
+      "hc-f25-contact-01"
+    ],
+    "deal_id": "hc-f25-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
   }
 ]

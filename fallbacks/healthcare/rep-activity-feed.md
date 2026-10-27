@@ -5,5 +5,5 @@
 **Show instead:** `screenshots/rep-activity-feed.png` (activities filtered to the rep: last two weeks plus upcoming). *To be captured.*
 
 **Talk track:**
-> "This is my week: ten touches across two active deals in the last fortnight, and my next steps are
-> already scheduled: the ROI summary for Acme and the COO meeting at Northfield."
+> "This is my week. Every open deal in my book has had a touch in the last few weeks and has its next
+> step on the calendar, including the ROI summary for Acme and the COO meeting at Northfield."
