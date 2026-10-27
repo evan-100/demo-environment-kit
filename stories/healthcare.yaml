@@ -1,0 +1,59 @@
+# Healthcare demo story. Everything here is fictional (SPEC §3.5).
+# This is the one file a human writes. `kit generate healthcare` turns it into fixtures.
+
+id: healthcare
+id_prefix: hc          # every record gets a demo_kit_id like "hc-acme-deal-01"
+industry: Healthcare provider network
+narrative: >
+  Regional hospital groups evaluating a patient-intake platform to cut
+  check-in times and front-desk paperwork. The seller is mid-cycle with one
+  large system (champion in Ops, skeptical CFO, competitor already in a pilot)
+  and early in discovery with a smaller clinic network.
+
+seller_company:
+  name: Brightwell Health Software
+  domain: brightwell.example
+
+accounts:
+  - key: acme
+    name: Acme Regional Health
+    domain: acmeregional.example
+    size: 4200
+    city: Columbus
+    state: OH
+    personas:
+      - { key: champion, title: VP Patient Operations, attitude: champion }
+      - { key: blocker, title: Chief Financial Officer, attitude: skeptical }
+      - { key: it-lead, title: Director of Clinical Applications, attitude: neutral }
+    deals:
+      - { key: deal-01, stage: contractsent, amount: 185000, close_in_days: 21 }
+    activity_story: >
+      Discovery call with the champion 6 weeks ago about long check-in lines at
+      three hospitals. Technical deep-dive with the IT lead 3 weeks ago covering
+      the EHR integration. Proposal sent 2 weeks ago. CFO raised a pricing
+      objection on a call last week and compared us to the competitor's pilot.
+      Champion emailed 3 days ago asking for an ROI summary to take to the CFO,
+      and there's an open task to send it.
+
+  - key: northfield
+    name: Northfield Family Clinics
+    domain: northfieldclinics.example
+    size: 650
+    city: Madison
+    state: WI
+    personas:
+      - { key: champion, title: Practice Operations Manager, attitude: supporter }
+      - { key: exec, title: Chief Operating Officer, attitude: neutral }
+    deals:
+      - { key: deal-01, stage: qualifiedtobuy, amount: 42000, close_in_days: 60 }
+    activity_story: >
+      Inbound demo request 10 days ago after a webinar. Intro call with the
+      operations manager a week ago; she wants to pilot at two of the eleven
+      clinics. Meeting with the COO booked for next week.
+
+# Background data so pipeline views look like a real sales team's book.
+volume:
+  filler_accounts: 25
+  filler_deals: 40
+
+golden_paths: [pipeline-review, deal-deep-dive, account-360, rep-activity-feed]
