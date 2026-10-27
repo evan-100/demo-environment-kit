@@ -41,25 +41,23 @@ KEY_PATTERN = r"^[a-z0-9]+(-[a-z0-9]+)*$"
 PHONE_PATTERN = r"^\+1 \d{3}-555-01\d{2}$"
 
 # Domains reserved for examples, so they can never belong to a real company (RFC 2606).
+# Bare ".example" is reserved too, but HubSpot rejects it in email addresses, so we use these.
 RESERVED_SECOND_LEVEL = {"example.com", "example.org", "example.net"}
 
 
 def is_reserved_domain(domain: str) -> bool:
     """True if the domain can never belong to a real company.
 
-    Allowed: anything ending in ".example" (e.g. "brightwell.example"),
-    and example.com / .org / .net or their subdomains.
+    Allowed: example.com / .org / .net and their subdomains (e.g. "brightwell.example.com").
     """
     domain = domain.lower()
-    if domain == "example" or domain.endswith(".example"):
-        return True
     return any(domain == d or domain.endswith("." + d) for d in RESERVED_SECOND_LEVEL)
 
 
 def check_reserved_domain(domain: str) -> str:
     if not is_reserved_domain(domain):
         raise ValueError(
-            f"'{domain}' is not a reserved domain. Use something like 'acme.example' (SPEC §3.5)."
+            f"'{domain}' is not a reserved domain. Use something like 'acme.example.com' (SPEC §3.5)."
         )
     return domain.lower()
 

@@ -109,9 +109,9 @@ def test_generated_fixtures_pass_validation(story, fixtures):
 def test_code_fills_in_ids_emails_and_phones(fixtures):
     champion = next(c for c in fixtures.contacts if c.persona == "champion")
     assert champion.kit_id == "hc-acme-champion"
-    assert champion.email == "dana.okafor@acmeregional.example"
+    assert champion.email == "dana.okafor@acmeregional.example.com"
     assert champion.phone == "+1 614-555-0100"
-    assert fixtures.companies[1].domain == "lakeshoreorthopedicpartners.example"
+    assert fixtures.companies[1].domain == "lakeshoreorthopedicpartners.example.com"
 
 
 def test_relative_days_become_relative_dates(fixtures):
@@ -141,7 +141,7 @@ def test_save_and_load_round_trip(tmp_path, fixtures):
 
 
 def test_email_on_wrong_company_domain_is_caught(story, fixtures):
-    fixtures.contacts[0].email = "dana.okafor@pinecrestpediatrics.example"
+    fixtures.contacts[0].email = "dana.okafor@pinecrestpediatrics.example.com"
     assert any("email is on" in e for e in validate_fixtures(fixtures, story))
 
 
@@ -171,7 +171,7 @@ def test_company_reused_by_another_story_is_caught(story, fixtures):
 def test_broken_fixture_file_is_rejected_on_load(tmp_path, fixtures):
     save_fixtures(fixtures, tmp_path)
     contacts_file = tmp_path / "healthcare" / "contacts.json"
-    contacts_file.write_text(contacts_file.read_text().replace("acmeregional.example", "acmeregional.com"))
+    contacts_file.write_text(contacts_file.read_text().replace("acmeregional.example.com", "acmeregional.com"))
     with pytest.raises(ValidationError, match="not a reserved domain"):
         load_fixtures("healthcare", tmp_path)
 

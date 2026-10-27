@@ -114,7 +114,7 @@ def add_real_customer_data(hubspot: FakeHubSpot) -> list[tuple[str, str]]:
     """Records the kit did NOT create: a real customer and another story's demo."""
     return [
         ("companies", hubspot.add("companies", {"name": "A Real Customer Inc"})),
-        ("contacts", hubspot.add("contacts", {"email": "buyer@realcustomer.example"})),
+        ("contacts", hubspot.add("contacts", {"email": "buyer@realcustomer.example.com"})),
         ("deals", hubspot.add("deals", {"dealname": "Real renewal", KIT_ID: "looks-like-ours"})),
         ("companies", hubspot.add("companies", {"name": "Other Demo", KIT_ID: "fs-x", KIT_STORY: "finserv"})),
     ]

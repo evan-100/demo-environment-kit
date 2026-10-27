@@ -72,7 +72,8 @@ def test_typo_in_field_name_is_rejected():
 @pytest.mark.parametrize(
     "domain, allowed",
     [
-        ("brightwell.example", True),
+        ("brightwell.example.com", True),
+        ("brightwell.example", False),  # reserved, but HubSpot rejects it in emails
         ("example.com", True),
         ("mail.example.org", True),
         ("acme.com", False),
@@ -93,7 +94,7 @@ def make_contact(**changes) -> dict:
         "company_id": "hc-acme-company",
         "first_name": "Dana",
         "last_name": "Okafor",
-        "email": "dana.okafor@acmeregional.example",
+        "email": "dana.okafor@acmeregional.example.com",
         "job_title": "VP Patient Operations",
         "phone": "+1 614-555-0142",
         "persona": "champion",

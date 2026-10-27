@@ -2,7 +2,7 @@
   {
     "kit_id": "hc-acme-company",
     "name": "Acme Regional Health",
-    "domain": "acmeregional.example",
+    "domain": "acmeregional.example.com",
     "city": "Columbus",
     "state": "OH",
     "employees": 4200,
@@ -12,7 +12,7 @@
   {
     "kit_id": "hc-northfield-company",
     "name": "Northfield Family Clinics",
-    "domain": "northfieldclinics.example",
+    "domain": "northfieldclinics.example.com",
     "city": "Madison",
     "state": "WI",
     "employees": 650,
@@ -22,7 +22,7 @@
   {
     "kit_id": "hc-f01-company",
     "name": "Cedar Hollow Health Partners",
-    "domain": "cedarhollowhealthpartners.example",
+    "domain": "cedarhollowhealthpartners.example.com",
     "city": "Spokane",
     "state": "WA",
     "employees": 2400,
@@ -32,7 +32,7 @@
   {
     "kit_id": "hc-f02-company",
     "name": "Marrow Creek Medical Group",
-    "domain": "marrowcreekmedicalgroup.example",
+    "domain": "marrowcreekmedicalgroup.example.com",
     "city": "Boise",
     "state": "ID",
     "employees": 640,
@@ -42,7 +42,7 @@
   {
     "kit_id": "hc-f03-company",
     "name": "Tallgrass Community Hospitals",
-    "domain": "tallgrasscommunityhospitals.example",
+    "domain": "tallgrasscommunityhospitals.example.com",
     "city": "Wichita",
     "state": "KS",
     "employees": 1850,
@@ -52,7 +52,7 @@
   {
     "kit_id": "hc-f04-company",
     "name": "Bluewater Bay Health System",
-    "domain": "bluewaterbayhealthsystem.example",
+    "domain": "bluewaterbayhealthsystem.example.com",
     "city": "Mobile",
     "state": "AL",
     "employees": 3100,
@@ -62,7 +62,7 @@
   {
     "kit_id": "hc-f05-company",
     "name": "Pinecrest Valley Clinics",
-    "domain": "pinecrestvalleyclinics.example",
+    "domain": "pinecrestvalleyclinics.example.com",
     "city": "Asheville",
     "state": "NC",
     "employees": 310,
@@ -72,7 +72,7 @@
   {
     "kit_id": "hc-f06-company",
     "name": "Ridgeline Orthopedic Associates",
-    "domain": "ridgelineorthopedicassociates.example",
+    "domain": "ridgelineorthopedicassociates.example.com",
     "city": "Chattanooga",
     "state": "TN",
     "employees": 180,
@@ -82,7 +82,7 @@
   {
     "kit_id": "hc-f07-company",
     "name": "Saltmarsh Coastal Health",
-    "domain": "saltmarshcoastalhealth.example",
+    "domain": "saltmarshcoastalhealth.example.com",
     "city": "Savannah",
     "state": "GA",
     "employees": 1450,
@@ -92,7 +92,7 @@
   {
     "kit_id": "hc-f08-company",
     "name": "Ironwood Regional Medical Center",
-    "domain": "ironwoodregionalmedicalcenter.example",
+    "domain": "ironwoodregionalmedicalcenter.example.com",
     "city": "Tucson",
     "state": "AZ",
     "employees": 2050,
@@ -102,7 +102,7 @@
   {
     "kit_id": "hc-f09-company",
     "name": "Harborlight Pediatric Network",
-    "domain": "harborlightpediatricnetwork.example",
+    "domain": "harborlightpediatricnetwork.example.com",
     "city": "Portland",
     "state": "ME",
     "employees": 420,
@@ -112,7 +112,7 @@
   {
     "kit_id": "hc-f10-company",
     "name": "Silver Prairie Health",
-    "domain": "silverprairiehealth.example",
+    "domain": "silverprairiehealth.example.com",
     "city": "Sioux Falls",
     "state": "SD",
     "employees": 980,
@@ -122,7 +122,7 @@
   {
     "kit_id": "hc-f11-company",
     "name": "Three Rivers Family Medicine",
-    "domain": "threeriversfamilymedicine.example",
+    "domain": "threeriversfamilymedicine.example.com",
     "city": "Johnstown",
     "state": "PA",
     "employees": 150,
@@ -132,7 +132,7 @@
   {
     "kit_id": "hc-f12-company",
     "name": "Copperleaf Urgent Care",
-    "domain": "copperleafurgentcare.example",
+    "domain": "copperleafurgentcare.example.com",
     "city": "Albuquerque",
     "state": "NM",
     "employees": 260,
@@ -142,7 +142,7 @@
   {
     "kit_id": "hc-f13-company",
     "name": "Lakeshore Valley Hospital Group",
-    "domain": "lakeshorevalleyhospitalgroup.example",
+    "domain": "lakeshorevalleyhospitalgroup.example.com",
     "city": "Grand Rapids",
     "state": "MI",
     "employees": 3600,
@@ -152,7 +152,7 @@
   {
     "kit_id": "hc-f14-company",
     "name": "Redbud Women's Health Partners",
-    "domain": "redbudwomenshealthpartners.example",
+    "domain": "redbudwomenshealthpartners.example.com",
     "city": "Tulsa",
     "state": "OK",
     "employees": 210,
@@ -162,7 +162,7 @@
   {
     "kit_id": "hc-f15-company",
     "name": "Granite Peak Medical Associates",
-    "domain": "granitepeakmedicalassociates.example",
+    "domain": "granitepeakmedicalassociates.example.com",
     "city": "Manchester",
     "state": "NH",
     "employees": 340,
@@ -172,7 +172,7 @@
   {
     "kit_id": "hc-f16-company",
     "name": "Sweetwater Behavioral Health",
-    "domain": "sweetwaterbehavioralhealth.example",
+    "domain": "sweetwaterbehavioralhealth.example.com",
     "city": "Fresno",
     "state": "CA",
     "employees": 380,
@@ -182,7 +182,7 @@
   {
     "kit_id": "hc-f17-company",
     "name": "Mesa Verde Community Clinics",
-    "domain": "mesaverdecommunityclinics.example",
+    "domain": "mesaverdecommunityclinics.example.com",
     "city": "Grand Junction",
     "state": "CO",
     "employees": 230,
@@ -192,7 +192,7 @@
   {
     "kit_id": "hc-f18-company",
     "name": "Brookhaven Multispecialty Group",
-    "domain": "brookhavenmultispecialtygroup.example",
+    "domain": "brookhavenmultispecialtygroup.example.com",
     "city": "Columbus",
     "state": "OH",
     "employees": 870,
@@ -202,7 +202,7 @@
   {
     "kit_id": "hc-f19-company",
     "name": "Ashgrove Rural Health Cooperative",
-    "domain": "ashgroveruralhealthcooperative.example",
+    "domain": "ashgroveruralhealthcooperative.example.com",
     "city": "Bismarck",
     "state": "ND",
     "employees": 190,
@@ -212,7 +212,7 @@
   {
     "kit_id": "hc-f20-company",
     "name": "Lowcountry Cardiology Partners",
-    "domain": "lowcountrycardiologypartners.example",
+    "domain": "lowcountrycardiologypartners.example.com",
     "city": "Charleston",
     "state": "SC",
     "employees": 120,
@@ -222,7 +222,7 @@
   {
     "kit_id": "hc-f21-company",
     "name": "Highmeadow Health Network",
-    "domain": "highmeadowhealthnetwork.example",
+    "domain": "highmeadowhealthnetwork.example.com",
     "city": "Madison",
     "state": "WI",
     "employees": 2700,
@@ -232,7 +232,7 @@
   {
     "kit_id": "hc-f22-company",
     "name": "Pelican Point Medical Center",
-    "domain": "pelicanpointmedicalcenter.example",
+    "domain": "pelicanpointmedicalcenter.example.com",
     "city": "Lafayette",
     "state": "LA",
     "employees": 1100,
@@ -242,7 +242,7 @@
   {
     "kit_id": "hc-f23-company",
     "name": "Desert Willow Dialysis Centers",
-    "domain": "desertwillowdialysiscenters.example",
+    "domain": "desertwillowdialysiscenters.example.com",
     "city": "Las Vegas",
     "state": "NV",
     "employees": 520,
@@ -252,7 +252,7 @@
   {
     "kit_id": "hc-f24-company",
     "name": "Cobblestone Primary Care",
-    "domain": "cobblestoneprimarycare.example",
+    "domain": "cobblestoneprimarycare.example.com",
     "city": "Lexington",
     "state": "KY",
     "employees": 290,
@@ -262,7 +262,7 @@
   {
     "kit_id": "hc-f25-company",
     "name": "Riverbend Senior Health",
-    "domain": "riverbendseniorhealth.example",
+    "domain": "riverbendseniorhealth.example.com",
     "city": "Des Moines",
     "state": "IA",
     "employees": 450,

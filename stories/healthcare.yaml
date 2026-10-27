@@ -12,12 +12,12 @@ narrative: >
 
 seller_company:
   name: Brightwell Health Software
-  domain: brightwell.example
+  domain: brightwell.example.com
 
 accounts:
   - key: acme
     name: Acme Regional Health
-    domain: acmeregional.example
+    domain: acmeregional.example.com
     size: 4200
     city: Columbus
     state: OH
@@ -37,7 +37,7 @@ accounts:
 
   - key: northfield
     name: Northfield Family Clinics
-    domain: northfieldclinics.example
+    domain: northfieldclinics.example.com
     size: 650
     city: Madison
     state: WI

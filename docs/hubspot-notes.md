@@ -170,10 +170,15 @@ Source: [Pipelines guide](https://developers.hubspot.com/docs/api-reference/late
 - List deal pipelines and their stages: `GET /crm/pipelines/2026-09/0-3` (`0-3` = deals). One pipeline's stages: `GET /crm/pipelines/2026-09/0-3/{pipelineId}/stages`.
 - The docs don't list the default stage IDs. The story example uses `contractsent`, from memory of older accounts. **`kit ping` prints the real pipeline and stage IDs from the account**, and story files must use those.
 
-## Open questions to settle with live calls
-1. ~~Can a service key be created inside a developer test account?~~ Yes, confirmed in M0.
-2. Which scopes do notes/calls/meetings/tasks and pipeline reads need? (M0/M3)
-3. Do activity objects accept the custom `demo_kit_*` properties? (M3)
-4. Are past `hs_timestamp` values accepted and shown in timeline order? (M3)
-5. Is re-associating an existing pair a no-op? (M3)
-6. How long after a write until search sees the record? (M3/M4)
+## Answers from live probes (2026-10-26)
+| Question | Answer |
+|---|---|
+| Service key inside a test account? | Works. |
+| Scopes for records | `crm.objects.{companies,contacts,deals}.{read,write}`. Activities (notes, calls, emails, meetings, tasks) are covered by the contacts scopes ([create note reference](https://developers.hubspot.com/docs/api-reference/2026-03/crm/activities/notes/create-note.md)). The `crm.schemas.*` scopes are needed separately to read and create properties. A newly saved scope took a little while to take effect. |
+| Custom properties on activities | Refused with 403 asking for `notes-write` (and `calls-write`, etc.). No scope with that name exists in the picker. Still open. |
+| Emails on `.example` domains | **Rejected** (`INVALID_EMAIL`). Subdomains of `example.com/.org/.net` are accepted, so the kit uses `name.example.com`. |
+| Upsert by `demo_kit_id` twice | Same record both times (`new: true`, then `new: false`). |
+| Associate the same pair twice | No duplicate, still one association. |
+| Search lag after a write | About 4 seconds. Reset also looks records up by `demo_kit_id` (batch read), which sees them at once. |
+| Past `hs_timestamp` on a note | Accepted (30 days back). |
+| Re-create after archive | Works. Upsert with the same `demo_kit_id` makes a new record once the old one is archived. |

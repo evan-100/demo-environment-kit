@@ -325,7 +325,7 @@ def build_filler(story: Story, draft: FillerDraft, phones: PhoneBook) -> Fixture
     for number, item in enumerate(draft.companies[: story.volume.filler_accounts], start=1):
         prefix = f"{story.id_prefix}-f{number:02d}"
         company_id = f"{prefix}-company"
-        domain = f"{slug(item.name)}.example"
+        domain = f"{slug(item.name)}.example.com"
         companies.append(
             CompanyFixture(
                 kit_id=company_id,
