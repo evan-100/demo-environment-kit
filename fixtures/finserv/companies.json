@@ -1,0 +1,272 @@
+[
+  {
+    "kit_id": "fs-quillstone-company",
+    "name": "Quillstone Community Bank",
+    "domain": "quillstonebank.example.com",
+    "city": "Raleigh",
+    "state": "NC",
+    "employees": 1300,
+    "description": "Quillstone Community Bank is a Raleigh-based community bank with about 1,300 employees and branches across the Carolinas. It is evaluating digital account opening and KYC automation to shorten onboarding and reduce manual compliance review.",
+    "is_hero": true
+  },
+  {
+    "kit_id": "fs-fernhollow-company",
+    "name": "Fernhollow Credit Union",
+    "domain": "fernhollowcu.example.com",
+    "city": "Boise",
+    "state": "ID",
+    "employees": 420,
+    "description": "Member-owned credit union serving about 62,000 members across the Treasure Valley in southwest Idaho, with 11 branches and a growing mobile base. Leadership is pushing to cut account-opening time and win younger members who currently open accounts at fintech apps.",
+    "is_hero": true
+  },
+  {
+    "kit_id": "fs-f01-company",
+    "name": "Harborview Savings Bank",
+    "domain": "harborviewsavingsbank.example.com",
+    "city": "Portland",
+    "state": "ME",
+    "employees": 140,
+    "description": "Family-run savings bank with six branches along the Maine coast, still opening most accounts on paper in-branch.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f02-company",
+    "name": "Prairie Crossing Federal Credit Union",
+    "domain": "prairiecrossingfederalcreditunion.example.com",
+    "city": "Wichita",
+    "state": "KS",
+    "employees": 210,
+    "description": "Member-owned credit union serving aerospace workers, with a 9-day backlog on new membership reviews.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f03-company",
+    "name": "Bluff City Trust & Savings",
+    "domain": "bluffcitytrustsavings.example.com",
+    "city": "Memphis",
+    "state": "TN",
+    "employees": 320,
+    "description": "Mid-size community bank with 14 branches that is wary of replacing manual CIP checks before its next exam.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f04-company",
+    "name": "Cascade Timber Credit Union",
+    "domain": "cascadetimbercreditunion.example.com",
+    "city": "Eugene",
+    "state": "OR",
+    "employees": 95,
+    "description": "Small credit union serving forestry and mill workers, looking to let members join from their phones.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f05-company",
+    "name": "Red Mesa Community Bank",
+    "domain": "redmesacommunitybank.example.com",
+    "city": "Albuquerque",
+    "state": "NM",
+    "employees": 175,
+    "description": "Regional bank with eight branches that wants to cut its average account-opening time from 40 minutes.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f06-company",
+    "name": "Great Lakes Teachers Credit Union",
+    "domain": "greatlakesteacherscreditunion.example.com",
+    "city": "Lansing",
+    "state": "MI",
+    "employees": 260,
+    "description": "Credit union for school employees, evaluating automation to handle a seasonal surge of new members each fall.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f07-company",
+    "name": "Magnolia Ridge Bank",
+    "domain": "magnoliaridgebank.example.com",
+    "city": "Jackson",
+    "state": "MS",
+    "employees": 88,
+    "description": "Rural community bank with five branches and one compliance analyst reviewing every new account by hand.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f08-company",
+    "name": "Summit Peak Federal Credit Union",
+    "domain": "summitpeakfederalcreditunion.example.com",
+    "city": "Boise",
+    "state": "ID",
+    "employees": 410,
+    "description": "Fast-growing credit union with 11 branches whose IT team is concerned about integration with its core processor.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f09-company",
+    "name": "Keystone Mill Bank",
+    "domain": "keystonemillbank.example.com",
+    "city": "Scranton",
+    "state": "PA",
+    "employees": 230,
+    "description": "Century-old community bank in northeast Pennsylvania modernizing its deposit onboarding before a planned branch consolidation.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f10-company",
+    "name": "Gulf Pines Credit Union",
+    "domain": "gulfpinescreditunion.example.com",
+    "city": "Mobile",
+    "state": "AL",
+    "employees": 135,
+    "description": "Credit union serving shipyard and port employees, comparing three vendors for online membership and ID checks.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f11-company",
+    "name": "Tallgrass Valley Bank",
+    "domain": "tallgrassvalleybank.example.com",
+    "city": "Wichita",
+    "state": "KS",
+    "employees": 210,
+    "description": "Family-owned community bank with 14 branches across south-central Kansas, still opening most accounts on paper in branch.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f12-company",
+    "name": "Lantern Bay Federal Credit Union",
+    "domain": "lanternbayfederalcreditunion.example.com",
+    "city": "Tampa",
+    "state": "FL",
+    "employees": 165,
+    "description": "Member-owned credit union serving healthcare and school employees, running a pilot comparison of three onboarding vendors.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f13-company",
+    "name": "Ironwood Savings & Loan",
+    "domain": "ironwoodsavingsloan.example.com",
+    "city": "Duluth",
+    "state": "MN",
+    "employees": 78,
+    "description": "Small savings institution with four branches that loses applicants to a 10-day manual account review backlog.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f14-company",
+    "name": "Copper Canyon Community Bank",
+    "domain": "coppercanyoncommunitybank.example.com",
+    "city": "Tucson",
+    "state": "AZ",
+    "employees": 320,
+    "description": "Regional community bank with 22 branches whose core conversion last year left integration teams stretched thin.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f15-company",
+    "name": "Riverbend Employees Credit Union",
+    "domain": "riverbendemployeescreditunion.example.com",
+    "city": "Columbus",
+    "state": "OH",
+    "employees": 134,
+    "description": "Credit union for municipal and utility workers trying to cut new-member setup from two visits to one.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f16-company",
+    "name": "Stonebridge Farmers Bank",
+    "domain": "stonebridgefarmersbank.example.com",
+    "city": "Des Moines",
+    "state": "IA",
+    "employees": 96,
+    "description": "Agricultural lender adding digital checking to keep younger farm families from moving to larger banks.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f17-company",
+    "name": "Pinecrest Heritage Credit Union",
+    "domain": "pinecrestheritagecreditunion.example.com",
+    "city": "Asheville",
+    "state": "NC",
+    "employees": 57,
+    "description": "Small credit union with a two-person compliance team buried in manual CIP checks.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f18-company",
+    "name": "Bayou Oaks Bank & Trust",
+    "domain": "bayouoaksbanktrust.example.com",
+    "city": "Lafayette",
+    "state": "LA",
+    "employees": 188,
+    "description": "Parish-based community bank evaluating onboarding automation after an exam finding on inconsistent CIP documentation.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f19-company",
+    "name": "Alder Creek Federal Credit Union",
+    "domain": "aldercreekfederalcreditunion.example.com",
+    "city": "Spokane",
+    "state": "WA",
+    "employees": 112,
+    "description": "Mid-sized credit union comparing vendors but leaning toward staying with its current in-house form process.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f20-company",
+    "name": "Granite Harbor Bank",
+    "domain": "graniteharborbank.example.com",
+    "city": "Portland",
+    "state": "ME",
+    "employees": 142,
+    "description": "Coastal community bank with seven branches seeking faster small business account opening.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f21-company",
+    "name": "Willowmere Community Bank",
+    "domain": "willowmerecommunitybank.example.com",
+    "city": "Dubuque",
+    "state": "IA",
+    "employees": 112,
+    "description": "Family-run community bank with six branches in eastern Iowa still opening most accounts on paper in the branch.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f22-company",
+    "name": "Sandhill Federal Credit Union",
+    "domain": "sandhillfederalcreditunion.example.com",
+    "city": "Albuquerque",
+    "state": "NM",
+    "employees": 240,
+    "description": "Credit union serving utility and public-works employees, with about 41,000 members and a backlog of manual ID review.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f23-company",
+    "name": "Orchard Point Savings Bank",
+    "domain": "orchardpointsavingsbank.example.com",
+    "city": "Rochester",
+    "state": "NY",
+    "employees": 78,
+    "description": "Small savings bank wanting to cut new-account approval time from two days to same-day without adding compliance headcount.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f24-company",
+    "name": "Cedar Basin Credit Union",
+    "domain": "cedarbasincreditunion.example.com",
+    "city": "Boise",
+    "state": "ID",
+    "employees": 165,
+    "description": "Regional credit union growing fast through online membership and struggling with manual KYC exceptions.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "fs-f25-company",
+    "name": "Maple Run Trust Bank",
+    "domain": "mapleruntrustbank.example.com",
+    "city": "Greenville",
+    "state": "SC",
+    "employees": 330,
+    "description": "Community bank with 14 branches that went with a competitor after core integration concerns on their legacy system.",
+    "is_hero": false
+  }
+]

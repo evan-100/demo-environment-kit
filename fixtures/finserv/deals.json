@@ -1,0 +1,551 @@
+[
+  {
+    "kit_id": "fs-quillstone-deal-01",
+    "company_id": "fs-quillstone-company",
+    "contact_ids": [
+      "fs-quillstone-champion",
+      "fs-quillstone-blocker",
+      "fs-quillstone-it-lead"
+    ],
+    "name": "Quillstone Digital Account Opening and KYC Automation",
+    "stage": "decisionmakerboughtin",
+    "amount": 240000,
+    "close_date": {
+      "days_from_now": 30
+    }
+  },
+  {
+    "kit_id": "fs-fernhollow-deal-01",
+    "company_id": "fs-fernhollow-company",
+    "contact_ids": [
+      "fs-fernhollow-champion",
+      "fs-fernhollow-exec"
+    ],
+    "name": "Fernhollow CU - Digital Account Opening & KYC Platform",
+    "stage": "presentationscheduled",
+    "amount": 68000,
+    "close_date": {
+      "days_from_now": 75
+    }
+  },
+  {
+    "kit_id": "fs-f01-deal-01",
+    "company_id": "fs-f01-company",
+    "contact_ids": [
+      "fs-f01-contact-01"
+    ],
+    "name": "Harborview - Digital Account Opening",
+    "stage": "presentationscheduled",
+    "amount": 47800,
+    "close_date": {
+      "days_from_now": 45
+    }
+  },
+  {
+    "kit_id": "fs-f01-deal-02",
+    "company_id": "fs-f01-company",
+    "contact_ids": [
+      "fs-f01-contact-01"
+    ],
+    "name": "Harborview - KYC Document Verification Add-on",
+    "stage": "qualifiedtobuy",
+    "amount": 18650,
+    "close_date": {
+      "days_from_now": 85
+    }
+  },
+  {
+    "kit_id": "fs-f02-deal-01",
+    "company_id": "fs-f02-company",
+    "contact_ids": [
+      "fs-f02-contact-01"
+    ],
+    "name": "Prairie Crossing - Onboarding Platform",
+    "stage": "contractsent",
+    "amount": 96400,
+    "close_date": {
+      "days_from_now": 14
+    }
+  },
+  {
+    "kit_id": "fs-f02-deal-02",
+    "company_id": "fs-f02-company",
+    "contact_ids": [
+      "fs-f02-contact-01"
+    ],
+    "name": "Prairie Crossing - Pilot for Auto Loan Members",
+    "stage": "closedlost",
+    "amount": 22300,
+    "close_date": {
+      "days_ago": 48
+    }
+  },
+  {
+    "kit_id": "fs-f03-deal-01",
+    "company_id": "fs-f03-company",
+    "contact_ids": [
+      "fs-f03-contact-01"
+    ],
+    "name": "Bluff City - KYC Automation",
+    "stage": "decisionmakerboughtin",
+    "amount": 134900,
+    "close_date": {
+      "days_from_now": 38
+    }
+  },
+  {
+    "kit_id": "fs-f03-deal-02",
+    "company_id": "fs-f03-company",
+    "contact_ids": [
+      "fs-f03-contact-01"
+    ],
+    "name": "Bluff City - Business Account Onboarding",
+    "stage": "appointmentscheduled",
+    "amount": 41200,
+    "close_date": {
+      "days_from_now": 110
+    }
+  },
+  {
+    "kit_id": "fs-f04-deal-01",
+    "company_id": "fs-f04-company",
+    "contact_ids": [
+      "fs-f04-contact-01"
+    ],
+    "name": "Cascade Timber - Mobile Membership Application",
+    "stage": "qualifiedtobuy",
+    "amount": 28750,
+    "close_date": {
+      "days_from_now": 70
+    }
+  },
+  {
+    "kit_id": "fs-f04-deal-02",
+    "company_id": "fs-f04-company",
+    "contact_ids": [
+      "fs-f04-contact-01"
+    ],
+    "name": "Cascade Timber - ID Verification Starter",
+    "stage": "closedwon",
+    "amount": 9400,
+    "close_date": {
+      "days_ago": 33
+    }
+  },
+  {
+    "kit_id": "fs-f05-deal-01",
+    "company_id": "fs-f05-company",
+    "contact_ids": [
+      "fs-f05-contact-01"
+    ],
+    "name": "Red Mesa - Digital Onboarding Rollout",
+    "stage": "presentationscheduled",
+    "amount": 72300,
+    "close_date": {
+      "days_from_now": 52
+    }
+  },
+  {
+    "kit_id": "fs-f05-deal-02",
+    "company_id": "fs-f05-company",
+    "contact_ids": [
+      "fs-f05-contact-01"
+    ],
+    "name": "Red Mesa - Sanctions Screening Module",
+    "stage": "contractsent",
+    "amount": 23900,
+    "close_date": {
+      "days_from_now": 21
+    }
+  },
+  {
+    "kit_id": "fs-f06-deal-01",
+    "company_id": "fs-f06-company",
+    "contact_ids": [
+      "fs-f06-contact-01"
+    ],
+    "name": "Great Lakes Teachers - Account Opening Automation",
+    "stage": "appointmentscheduled",
+    "amount": 88500,
+    "close_date": {
+      "days_from_now": 95
+    }
+  },
+  {
+    "kit_id": "fs-f06-deal-02",
+    "company_id": "fs-f06-company",
+    "contact_ids": [
+      "fs-f06-contact-01"
+    ],
+    "name": "Great Lakes Teachers - Fraud Screening Add-on",
+    "stage": "qualifiedtobuy",
+    "amount": 31400,
+    "close_date": {
+      "days_from_now": 75
+    }
+  },
+  {
+    "kit_id": "fs-f07-deal-01",
+    "company_id": "fs-f07-company",
+    "contact_ids": [
+      "fs-f07-contact-01"
+    ],
+    "name": "Magnolia Ridge - KYC Automation",
+    "stage": "qualifiedtobuy",
+    "amount": 36200,
+    "close_date": {
+      "days_from_now": 100
+    }
+  },
+  {
+    "kit_id": "fs-f07-deal-02",
+    "company_id": "fs-f07-company",
+    "contact_ids": [
+      "fs-f07-contact-01"
+    ],
+    "name": "Magnolia Ridge - Core Integration Assessment",
+    "stage": "closedlost",
+    "amount": 8900,
+    "close_date": {
+      "days_ago": 62
+    }
+  },
+  {
+    "kit_id": "fs-f08-deal-01",
+    "company_id": "fs-f08-company",
+    "contact_ids": [
+      "fs-f08-contact-01"
+    ],
+    "name": "Summit Peak - Enterprise Onboarding Platform",
+    "stage": "decisionmakerboughtin",
+    "amount": 158700,
+    "close_date": {
+      "days_from_now": 30
+    }
+  },
+  {
+    "kit_id": "fs-f08-deal-02",
+    "company_id": "fs-f08-company",
+    "contact_ids": [
+      "fs-f08-contact-01"
+    ],
+    "name": "Summit Peak - Digital Lending Intake",
+    "stage": "presentationscheduled",
+    "amount": 64100,
+    "close_date": {
+      "days_from_now": 90
+    }
+  },
+  {
+    "kit_id": "fs-f09-deal-01",
+    "company_id": "fs-f09-company",
+    "contact_ids": [
+      "fs-f09-contact-01"
+    ],
+    "name": "Keystone Mill - Onboarding and KYC Suite",
+    "stage": "contractsent",
+    "amount": 112600,
+    "close_date": {
+      "days_from_now": 17
+    }
+  },
+  {
+    "kit_id": "fs-f09-deal-02",
+    "company_id": "fs-f09-company",
+    "contact_ids": [
+      "fs-f09-contact-01"
+    ],
+    "name": "Keystone Mill - Small Business Account Pilot",
+    "stage": "closedwon",
+    "amount": 19800,
+    "close_date": {
+      "days_ago": 21
+    }
+  },
+  {
+    "kit_id": "fs-f10-deal-01",
+    "company_id": "fs-f10-company",
+    "contact_ids": [
+      "fs-f10-contact-01"
+    ],
+    "name": "Gulf Pines - Online Membership Platform",
+    "stage": "presentationscheduled",
+    "amount": 53900,
+    "close_date": {
+      "days_from_now": 60
+    }
+  },
+  {
+    "kit_id": "fs-f10-deal-02",
+    "company_id": "fs-f10-company",
+    "contact_ids": [
+      "fs-f10-contact-01"
+    ],
+    "name": "Gulf Pines - Compliance Review Workflow",
+    "stage": "appointmentscheduled",
+    "amount": 27350,
+    "close_date": {
+      "days_from_now": 115
+    }
+  },
+  {
+    "kit_id": "fs-f11-deal-01",
+    "company_id": "fs-f11-company",
+    "contact_ids": [
+      "fs-f11-contact-01"
+    ],
+    "name": "Digital account opening and KYC rollout",
+    "stage": "decisionmakerboughtin",
+    "amount": 86400,
+    "close_date": {
+      "days_from_now": 28
+    }
+  },
+  {
+    "kit_id": "fs-f11-deal-02",
+    "company_id": "fs-f11-company",
+    "contact_ids": [
+      "fs-f11-contact-01"
+    ],
+    "name": "Business account onboarding add-on",
+    "stage": "qualifiedtobuy",
+    "amount": 23750,
+    "close_date": {
+      "days_from_now": 85
+    }
+  },
+  {
+    "kit_id": "fs-f12-deal-01",
+    "company_id": "fs-f12-company",
+    "contact_ids": [
+      "fs-f12-contact-01"
+    ],
+    "name": "Online membership and KYC platform",
+    "stage": "presentationscheduled",
+    "amount": 61200,
+    "close_date": {
+      "days_from_now": 45
+    }
+  },
+  {
+    "kit_id": "fs-f12-deal-02",
+    "company_id": "fs-f12-company",
+    "contact_ids": [
+      "fs-f12-contact-01"
+    ],
+    "name": "Identity verification module",
+    "stage": "appointmentscheduled",
+    "amount": 18900,
+    "close_date": {
+      "days_from_now": 110
+    }
+  },
+  {
+    "kit_id": "fs-f13-deal-01",
+    "company_id": "fs-f13-company",
+    "contact_ids": [
+      "fs-f13-contact-01"
+    ],
+    "name": "Automated KYC review workflow",
+    "stage": "contractsent",
+    "amount": 38500,
+    "close_date": {
+      "days_from_now": 12
+    }
+  },
+  {
+    "kit_id": "fs-f13-deal-02",
+    "company_id": "fs-f13-company",
+    "contact_ids": [
+      "fs-f13-contact-01"
+    ],
+    "name": "Document capture add-on",
+    "stage": "closedwon",
+    "amount": 9400,
+    "close_date": {
+      "days_ago": 34
+    }
+  },
+  {
+    "kit_id": "fs-f14-deal-01",
+    "company_id": "fs-f14-company",
+    "contact_ids": [
+      "fs-f14-contact-01"
+    ],
+    "name": "Digital onboarding platform with core integration",
+    "stage": "qualifiedtobuy",
+    "amount": 132000,
+    "close_date": {
+      "days_from_now": 95
+    }
+  },
+  {
+    "kit_id": "fs-f14-deal-02",
+    "company_id": "fs-f14-company",
+    "contact_ids": [
+      "fs-f14-contact-01"
+    ],
+    "name": "Fraud screening at account opening",
+    "stage": "closedlost",
+    "amount": 27800,
+    "close_date": {
+      "days_ago": 52
+    }
+  },
+  {
+    "kit_id": "fs-f15-deal-01",
+    "company_id": "fs-f15-company",
+    "contact_ids": [
+      "fs-f15-contact-01"
+    ],
+    "name": "Remote member onboarding",
+    "stage": "presentationscheduled",
+    "amount": 54300,
+    "close_date": {
+      "days_from_now": 60
+    }
+  },
+  {
+    "kit_id": "fs-f15-deal-02",
+    "company_id": "fs-f15-company",
+    "contact_ids": [
+      "fs-f15-contact-01"
+    ],
+    "name": "Compliance case management seats",
+    "stage": "decisionmakerboughtin",
+    "amount": 21600,
+    "close_date": {
+      "days_from_now": 38
+    }
+  },
+  {
+    "kit_id": "fs-f16-deal-01",
+    "company_id": "fs-f16-company",
+    "contact_ids": [
+      "fs-f16-contact-01"
+    ],
+    "name": "Digital checking account opening",
+    "stage": "appointmentscheduled",
+    "amount": 42900,
+    "close_date": {
+      "days_from_now": 104
+    }
+  },
+  {
+    "kit_id": "fs-f17-deal-01",
+    "company_id": "fs-f17-company",
+    "contact_ids": [
+      "fs-f17-contact-01"
+    ],
+    "name": "KYC automation starter package",
+    "stage": "closedwon",
+    "amount": 24800,
+    "close_date": {
+      "days_ago": 21
+    }
+  },
+  {
+    "kit_id": "fs-f18-deal-01",
+    "company_id": "fs-f18-company",
+    "contact_ids": [
+      "fs-f18-contact-01"
+    ],
+    "name": "Onboarding and CIP documentation platform",
+    "stage": "qualifiedtobuy",
+    "amount": 71650,
+    "close_date": {
+      "days_from_now": 72
+    }
+  },
+  {
+    "kit_id": "fs-f19-deal-01",
+    "company_id": "fs-f19-company",
+    "contact_ids": [
+      "fs-f19-contact-01"
+    ],
+    "name": "Digital account opening evaluation",
+    "stage": "closedlost",
+    "amount": 47200,
+    "close_date": {
+      "days_ago": 67
+    }
+  },
+  {
+    "kit_id": "fs-f20-deal-01",
+    "company_id": "fs-f20-company",
+    "contact_ids": [
+      "fs-f20-contact-01"
+    ],
+    "name": "Business onboarding and beneficial ownership automation",
+    "stage": "presentationscheduled",
+    "amount": 58300,
+    "close_date": {
+      "days_from_now": 50
+    }
+  },
+  {
+    "kit_id": "fs-f21-deal-01",
+    "company_id": "fs-f21-company",
+    "contact_ids": [
+      "fs-f21-contact-01"
+    ],
+    "name": "Willowmere digital account opening",
+    "stage": "qualifiedtobuy",
+    "amount": 38400,
+    "close_date": {
+      "days_from_now": 75
+    }
+  },
+  {
+    "kit_id": "fs-f22-deal-01",
+    "company_id": "fs-f22-company",
+    "contact_ids": [
+      "fs-f22-contact-01"
+    ],
+    "name": "Sandhill KYC automation pilot",
+    "stage": "presentationscheduled",
+    "amount": 61750,
+    "close_date": {
+      "days_from_now": 48
+    }
+  },
+  {
+    "kit_id": "fs-f23-deal-01",
+    "company_id": "fs-f23-company",
+    "contact_ids": [
+      "fs-f23-contact-01"
+    ],
+    "name": "Orchard Point onboarding platform",
+    "stage": "contractsent",
+    "amount": 29900,
+    "close_date": {
+      "days_from_now": 14
+    }
+  },
+  {
+    "kit_id": "fs-f24-deal-01",
+    "company_id": "fs-f24-company",
+    "contact_ids": [
+      "fs-f24-contact-01"
+    ],
+    "name": "Cedar Basin account opening and KYC",
+    "stage": "appointmentscheduled",
+    "amount": 54200,
+    "close_date": {
+      "days_from_now": 104
+    }
+  },
+  {
+    "kit_id": "fs-f25-deal-01",
+    "company_id": "fs-f25-company",
+    "contact_ids": [
+      "fs-f25-contact-01"
+    ],
+    "name": "Maple Run digital onboarding",
+    "stage": "closedlost",
+    "amount": 87300,
+    "close_date": {
+      "days_ago": 34
+    }
+  }
+]

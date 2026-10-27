@@ -138,6 +138,19 @@ def stories() -> None:
 
 
 @app.command()
+def metrics(batch: str = typer.Option(None, help="Batch label (KIT_BATCH). Default: the latest batch.")) -> None:
+    """Print the README metrics table, computed from runs/ledger.jsonl."""
+    from kit import metrics as kit_metrics
+    from kit.ledger import read_entries
+
+    entries = read_entries()
+    batch = batch or kit_metrics.latest_batch(entries)
+    if not batch:
+        fail(KitError("no labelled runs in the ledger yet. Run scripts/measure.py first."))
+    typer.echo(kit_metrics.markdown_table(batch, kit_metrics.compute(entries, batch)))
+
+
+@app.command()
 def mcp() -> None:
     """Run the MCP server (stdio), so an agent can drive the kit."""
     from kit.mcp_server import run

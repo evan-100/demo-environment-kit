@@ -188,3 +188,35 @@ def test_later_calls_are_told_which_names_are_taken():
     generate_fixtures(Story.model_validate(data), ask=recording_llm)
     assert "Dana" not in prompts[0]
     assert "Dana" in prompts[1] and "Dana" in prompts[2]  # second hero call and filler call
+
+
+def test_filler_is_requested_in_batches_that_add_up():
+    import re
+
+    data = yaml.safe_load(STORY_FILE.read_text())
+    data["accounts"] = data["accounts"][:1]  # volume stays at 25 companies / 40 deals
+    story = Story.model_validate(data)
+    filler_prompts = []
+
+    def counting_llm(prompt, output_model):
+        if output_model is HeroDraft:
+            return fake_llm(prompt, output_model)
+        filler_prompts.append(prompt)
+        # Answer each numbered slot ("3. a company with 2 deals") with exactly that many deals.
+        slots = [int(n) for n in re.findall(r"a company with (\d+) deal", prompt)]
+        start = len(filler_prompts) * 100
+        return FillerDraft(companies=[
+            FillerCompany(
+                name=f"Filler Clinic {start + i}", city="Austin", state="TX", employees=50,
+                description="Clinic.", phone_area_code="512",
+                contacts=[FillerContact(first_name="Lee", last_name=f"Ng{start + i}", job_title="Manager")],
+                deals=[FillerDeal(name=f"Deal {start + i}-{d}", stage="qualifiedtobuy", amount=9000, close_in_days=30)
+                       for d in range(count)],
+            )
+            for i, count in enumerate(slots)
+        ])
+
+    fixtures = generate_fixtures(story, ask=counting_llm)
+    assert len(filler_prompts) == 3  # 10 + 10 + 5 companies
+    assert "Filler Clinic 100" in filler_prompts[1]  # later batches are told which names are taken
+    assert validate_fixtures(fixtures, story) == []

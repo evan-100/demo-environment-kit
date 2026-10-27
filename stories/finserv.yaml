@@ -1,0 +1,59 @@
+# Financial services demo story. Everything here is fictional (SPEC §3.5).
+
+id: finserv
+id_prefix: fs
+industry: Community banking and credit unions
+narrative: >
+  Community banks and credit unions evaluating a digital account-opening and
+  KYC automation platform to cut onboarding time and manual compliance review.
+  The seller is close to a decision at one bank (operations champion, cautious
+  chief compliance officer, core-banking integration under scrutiny) and in an
+  active evaluation with a credit union.
+
+seller_company:
+  name: Ledgerline Onboarding Cloud
+  domain: ledgerline.example.com
+
+accounts:
+  - key: quillstone
+    name: Quillstone Community Bank
+    domain: quillstonebank.example.com
+    size: 1300
+    city: Raleigh
+    state: NC
+    personas:
+      - { key: champion, title: SVP Retail Operations, attitude: champion }
+      - { key: blocker, title: Chief Compliance Officer, attitude: skeptical }
+      - { key: it-lead, title: VP Core Systems, attitude: neutral }
+    deals:
+      - { key: deal-01, stage: decisionmakerboughtin, amount: 240000, close_in_days: 30 }
+    activity_story: >
+      Discovery call with the champion 7 weeks ago: new accounts take 3 days and
+      a third of applications are abandoned. Core-systems integration workshop
+      4 weeks ago. Compliance officer joined a call 2 weeks ago and asked for
+      the audit-trail and BSA/AML evidence pack. Security questionnaire returned
+      last week. Champion confirmed budget 4 days ago; a compliance review
+      meeting is booked for next week.
+
+  - key: fernhollow
+    name: Fernhollow Credit Union
+    domain: fernhollowcu.example.com
+    size: 420
+    city: Boise
+    state: ID
+    personas:
+      - { key: champion, title: Director of Member Experience, attitude: supporter }
+      - { key: exec, title: Chief Lending Officer, attitude: neutral }
+    deals:
+      - { key: deal-01, stage: presentationscheduled, amount: 68000, close_in_days: 75 }
+    activity_story: >
+      Referral from another credit union 3 weeks ago. Discovery call 2 weeks ago
+      about mobile account opening for younger members. Demo for the member
+      experience team last week went well; the lending chief wants to see loan
+      pre-qualification next. Follow-up demo is scheduled in 8 days.
+
+volume:
+  filler_accounts: 25
+  filler_deals: 40
+
+golden_paths: [pipeline-review, deal-deep-dive, account-360, rep-activity-feed]

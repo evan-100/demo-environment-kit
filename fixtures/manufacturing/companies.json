@@ -1,0 +1,272 @@
+[
+  {
+    "kit_id": "mf-kilnbrook-company",
+    "name": "Kilnbrook Precision Castings",
+    "domain": "kilnbrookcastings.example.com",
+    "city": "Toledo",
+    "state": "OH",
+    "employees": 2100,
+    "description": "Kilnbrook Precision Castings is a Toledo-based foundry and machining company producing precision aluminum and iron castings for automotive, heavy equipment and energy customers. About 2,100 employees across two plants running furnace, molding and finishing lines around the clock.",
+    "is_hero": true
+  },
+  {
+    "kit_id": "mf-marrowfield-company",
+    "name": "Marrowfield Packaging Group",
+    "domain": "marrowfieldpkg.example.com",
+    "city": "Grand Rapids",
+    "state": "MI",
+    "employees": 900,
+    "description": "Marrowfield Packaging Group is a 900-employee corrugated and folding-carton packaging manufacturer headquartered in Grand Rapids, MI, running four plants across West Michigan and northern Indiana. Corrugator uptime and changeover waste are their biggest cost levers.",
+    "is_hero": true
+  },
+  {
+    "kit_id": "mf-f01-company",
+    "name": "Alderpoint Extrusion",
+    "domain": "alderpointextrusion.example.com",
+    "city": "Akron",
+    "state": "OH",
+    "employees": 420,
+    "description": "Aluminum and polymer extrusion shop running 14 lines with frequent die-change downtime.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f02-company",
+    "name": "Tessaline Plastics",
+    "domain": "tessalineplastics.example.com",
+    "city": "Greenville",
+    "state": "SC",
+    "employees": 310,
+    "description": "Injection molder for automotive interior parts with aging presses and a thin maintenance team.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f03-company",
+    "name": "Ridgeback Fasteners",
+    "domain": "ridgebackfasteners.example.com",
+    "city": "Rockford",
+    "state": "IL",
+    "employees": 180,
+    "description": "Cold-forming fastener manufacturer with unplanned header failures eating into on-time delivery.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f04-company",
+    "name": "Copperhill Wire & Cable",
+    "domain": "copperhillwirecable.example.com",
+    "city": "Hickory",
+    "state": "NC",
+    "employees": 640,
+    "description": "Wire and fiber cable producer with continuous draw lines where a single stoppage scraps hours of product.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f05-company",
+    "name": "Northgate Stamping",
+    "domain": "northgatestamping.example.com",
+    "city": "Dayton",
+    "state": "OH",
+    "employees": 275,
+    "description": "Metal stamping supplier to appliance makers running mechanical presses on two shifts.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f06-company",
+    "name": "Pinewater Paper Mills",
+    "domain": "pinewaterpapermills.example.com",
+    "city": "Green Bay",
+    "state": "WI",
+    "employees": 900,
+    "description": "Tissue and specialty paper mill with large rotating equipment and costly wet-end breaks.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f07-company",
+    "name": "Halvorsen Dairy Ingredients",
+    "domain": "halvorsendairyingredients.example.com",
+    "city": "Boise",
+    "state": "ID",
+    "employees": 230,
+    "description": "Powdered milk and whey processor with spray dryers that are hard to restart after a trip.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f08-company",
+    "name": "Sunmeadow Beverage Co",
+    "domain": "sunmeadowbeverageco.example.com",
+    "city": "Fresno",
+    "state": "CA",
+    "employees": 520,
+    "description": "Juice and bottled tea producer with high-speed filling lines and seasonal volume spikes.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f09-company",
+    "name": "Brightforge Tool & Die",
+    "domain": "brightforgetooldie.example.com",
+    "city": "Erie",
+    "state": "PA",
+    "employees": 95,
+    "description": "Small tool and die shop with a handful of CNC machines and one maintenance tech.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f10-company",
+    "name": "Lantern Bay Chemicals",
+    "domain": "lanternbaychemicals.example.com",
+    "city": "Baton Rouge",
+    "state": "LA",
+    "employees": 780,
+    "description": "Specialty chemical blender with pumps, agitators and compressors running around the clock.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f11-company",
+    "name": "Quillon Aerospace Components",
+    "domain": "quillonaerospacecomponents.example.com",
+    "city": "Wichita",
+    "state": "KS",
+    "employees": 350,
+    "description": "Machines titanium and aluminum brackets for aircraft makers and needs spindle uptime data for audits.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f12-company",
+    "name": "Stonebridge Glassworks",
+    "domain": "stonebridgeglassworks.example.com",
+    "city": "Toledo",
+    "state": "OH",
+    "employees": 460,
+    "description": "Container glass maker where furnace and forming machine faults cause long scrap runs.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f13-company",
+    "name": "Ironvale Steel Fabrication",
+    "domain": "ironvalesteelfabrication.example.com",
+    "city": "Birmingham",
+    "state": "AL",
+    "employees": 560,
+    "description": "Structural steel fabricator with plasma cutters, welding cells and overhead cranes.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f14-company",
+    "name": "Meridian Ridge Foods",
+    "domain": "meridianridgefoods.example.com",
+    "city": "Omaha",
+    "state": "NE",
+    "employees": 1100,
+    "description": "Frozen and prepared foods manufacturer across three plants with heavy refrigeration load.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f15-company",
+    "name": "Oakhaven Cabinetry",
+    "domain": "oakhavencabinetry.example.com",
+    "city": "Elkhart",
+    "state": "IN",
+    "employees": 210,
+    "description": "Kitchen cabinet manufacturer with CNC routers and edgebanders that jam during peak orders.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f16-company",
+    "name": "Tidewell Marine Components",
+    "domain": "tidewellmarinecomponents.example.com",
+    "city": "Mobile",
+    "state": "AL",
+    "employees": 140,
+    "description": "Makes bronze and stainless fittings for boat builders using older foundry and machining equipment.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f17-company",
+    "name": "Cedar Flats Contract Pharma",
+    "domain": "cedarflatscontractpharma.example.com",
+    "city": "Indianapolis",
+    "state": "IN",
+    "employees": 380,
+    "description": "Contract maker of tablets and capsules where line stoppages put batch release dates at risk.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f18-company",
+    "name": "Voltrane Motor Works",
+    "domain": "voltranemotorworks.example.com",
+    "city": "Fort Wayne",
+    "state": "IN",
+    "employees": 670,
+    "description": "Builds electric motor housings and stators with automated winding and machining lines.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f19-company",
+    "name": "Greywater Rubber & Seal",
+    "domain": "greywaterrubberseal.example.com",
+    "city": "Knoxville",
+    "state": "TN",
+    "employees": 250,
+    "description": "Molded rubber seals and gaskets supplier with curing presses that drift out of spec before failing.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f20-company",
+    "name": "Bluestem Grain Milling",
+    "domain": "bluestemgrainmilling.example.com",
+    "city": "Kansas City",
+    "state": "MO",
+    "employees": 330,
+    "description": "Flour and cereal miller with roller mills and pneumatic conveying that need better vibration tracking.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f21-company",
+    "name": "Harlow Die Casting",
+    "domain": "harlowdiecasting.example.com",
+    "city": "Milwaukee",
+    "state": "WI",
+    "employees": 120,
+    "description": "Zinc and aluminum die caster with older machines and no formal condition monitoring today.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f22-company",
+    "name": "Summit Peak Composites",
+    "domain": "summitpeakcomposites.example.com",
+    "city": "Salt Lake City",
+    "state": "UT",
+    "employees": 200,
+    "description": "Carbon fiber layup and autoclave shop supplying sporting goods and drone makers.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f23-company",
+    "name": "Redfern Textile Mills",
+    "domain": "redferntextilemills.example.com",
+    "city": "Greensboro",
+    "state": "NC",
+    "employees": 430,
+    "description": "Woven fabric mill with looms and dye lines that lose output whenever a drive fails.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f24-company",
+    "name": "Calloway Brewing & Bottling",
+    "domain": "callowaybrewingbottling.example.com",
+    "city": "Golden",
+    "state": "CO",
+    "employees": 85,
+    "description": "Regional craft brewer and contract bottler with one packaging line and a small maintenance crew.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "mf-f25-company",
+    "name": "Westmark Appliance Parts",
+    "domain": "westmarkapplianceparts.example.com",
+    "city": "Tulsa",
+    "state": "OK",
+    "employees": 590,
+    "description": "Produces washer and dryer components with automated assembly and robotic welding cells.",
+    "is_hero": false
+  }
+]

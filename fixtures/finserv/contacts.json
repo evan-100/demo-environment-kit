@@ -1,0 +1,376 @@
+[
+  {
+    "kit_id": "fs-quillstone-champion",
+    "company_id": "fs-quillstone-company",
+    "first_name": "Dana",
+    "last_name": "Whitfield",
+    "email": "dana.whitfield@quillstonebank.example.com",
+    "job_title": "SVP Retail Operations",
+    "phone": "+1 919-555-0100",
+    "persona": "champion"
+  },
+  {
+    "kit_id": "fs-quillstone-blocker",
+    "company_id": "fs-quillstone-company",
+    "first_name": "Gerald",
+    "last_name": "Okafor",
+    "email": "gerald.okafor@quillstonebank.example.com",
+    "job_title": "Chief Compliance Officer",
+    "phone": "+1 919-555-0101",
+    "persona": "blocker"
+  },
+  {
+    "kit_id": "fs-quillstone-it-lead",
+    "company_id": "fs-quillstone-company",
+    "first_name": "Priya",
+    "last_name": "Lindqvist",
+    "email": "priya.lindqvist@quillstonebank.example.com",
+    "job_title": "VP Core Systems",
+    "phone": "+1 919-555-0102",
+    "persona": "it-lead"
+  },
+  {
+    "kit_id": "fs-fernhollow-champion",
+    "company_id": "fs-fernhollow-company",
+    "first_name": "Marisol",
+    "last_name": "Thackeray",
+    "email": "marisol.thackeray@fernhollowcu.example.com",
+    "job_title": "Director of Member Experience",
+    "phone": "+1 208-555-0103",
+    "persona": "champion"
+  },
+  {
+    "kit_id": "fs-fernhollow-exec",
+    "company_id": "fs-fernhollow-company",
+    "first_name": "Everett",
+    "last_name": "Lindqvist",
+    "email": "everett.lindqvist@fernhollowcu.example.com",
+    "job_title": "Chief Lending Officer",
+    "phone": "+1 208-555-0104",
+    "persona": "exec"
+  },
+  {
+    "kit_id": "fs-f01-contact-01",
+    "company_id": "fs-f01-company",
+    "first_name": "Linnea",
+    "last_name": "Thorsen",
+    "email": "linnea.thorsen@harborviewsavingsbank.example.com",
+    "job_title": "VP of Retail Operations",
+    "phone": "+1 207-555-0105"
+  },
+  {
+    "kit_id": "fs-f01-contact-02",
+    "company_id": "fs-f01-company",
+    "first_name": "Curtis",
+    "last_name": "Abernathy",
+    "email": "curtis.abernathy@harborviewsavingsbank.example.com",
+    "job_title": "BSA Officer",
+    "phone": "+1 207-555-0106"
+  },
+  {
+    "kit_id": "fs-f02-contact-01",
+    "company_id": "fs-f02-company",
+    "first_name": "Tobias",
+    "last_name": "Nakamura",
+    "email": "tobias.nakamura@prairiecrossingfederalcreditunion.example.com",
+    "job_title": "Chief Operating Officer",
+    "phone": "+1 316-555-0107"
+  },
+  {
+    "kit_id": "fs-f03-contact-01",
+    "company_id": "fs-f03-company",
+    "first_name": "Renata",
+    "last_name": "Okafor",
+    "email": "renata.okafor@bluffcitytrustsavings.example.com",
+    "job_title": "Chief Compliance Officer",
+    "phone": "+1 901-555-0108"
+  },
+  {
+    "kit_id": "fs-f03-contact-02",
+    "company_id": "fs-f03-company",
+    "first_name": "Wesley",
+    "last_name": "Pruitt",
+    "email": "wesley.pruitt@bluffcitytrustsavings.example.com",
+    "job_title": "Director of Digital Banking",
+    "phone": "+1 901-555-0109"
+  },
+  {
+    "kit_id": "fs-f04-contact-01",
+    "company_id": "fs-f04-company",
+    "first_name": "Odalys",
+    "last_name": "Brennan",
+    "email": "odalys.brennan@cascadetimbercreditunion.example.com",
+    "job_title": "Member Services Manager",
+    "phone": "+1 541-555-0110"
+  },
+  {
+    "kit_id": "fs-f05-contact-01",
+    "company_id": "fs-f05-company",
+    "first_name": "Dominic",
+    "last_name": "Valdez",
+    "email": "dominic.valdez@redmesacommunitybank.example.com",
+    "job_title": "SVP, Deposit Operations",
+    "phone": "+1 505-555-0111"
+  },
+  {
+    "kit_id": "fs-f05-contact-02",
+    "company_id": "fs-f05-company",
+    "first_name": "Hana",
+    "last_name": "Lindqvist",
+    "email": "hana.lindqvist@redmesacommunitybank.example.com",
+    "job_title": "Compliance Manager",
+    "phone": "+1 505-555-0112"
+  },
+  {
+    "kit_id": "fs-f06-contact-01",
+    "company_id": "fs-f06-company",
+    "first_name": "Bernadette",
+    "last_name": "Quill",
+    "email": "bernadette.quill@greatlakesteacherscreditunion.example.com",
+    "job_title": "VP of Member Experience",
+    "phone": "+1 517-555-0113"
+  },
+  {
+    "kit_id": "fs-f07-contact-01",
+    "company_id": "fs-f07-company",
+    "first_name": "Josiah",
+    "last_name": "Fontaine",
+    "email": "josiah.fontaine@magnoliaridgebank.example.com",
+    "job_title": "President and CEO",
+    "phone": "+1 601-555-0114"
+  },
+  {
+    "kit_id": "fs-f08-contact-01",
+    "company_id": "fs-f08-company",
+    "first_name": "Ingrid",
+    "last_name": "Castellano",
+    "email": "ingrid.castellano@summitpeakfederalcreditunion.example.com",
+    "job_title": "Chief Information Officer",
+    "phone": "+1 208-555-0115"
+  },
+  {
+    "kit_id": "fs-f08-contact-02",
+    "company_id": "fs-f08-company",
+    "first_name": "Malcolm",
+    "last_name": "Reyes",
+    "email": "malcolm.reyes@summitpeakfederalcreditunion.example.com",
+    "job_title": "Director of Lending Operations",
+    "phone": "+1 208-555-0116"
+  },
+  {
+    "kit_id": "fs-f09-contact-01",
+    "company_id": "fs-f09-company",
+    "first_name": "Francesca",
+    "last_name": "Doyle",
+    "email": "francesca.doyle@keystonemillbank.example.com",
+    "job_title": "Chief Risk Officer",
+    "phone": "+1 570-555-0117"
+  },
+  {
+    "kit_id": "fs-f10-contact-01",
+    "company_id": "fs-f10-company",
+    "first_name": "Terrence",
+    "last_name": "Boudreaux",
+    "email": "terrence.boudreaux@gulfpinescreditunion.example.com",
+    "job_title": "VP of Operations",
+    "phone": "+1 251-555-0118"
+  },
+  {
+    "kit_id": "fs-f11-contact-01",
+    "company_id": "fs-f11-company",
+    "first_name": "Lorraine",
+    "last_name": "Pruitt",
+    "email": "lorraine.pruitt@tallgrassvalleybank.example.com",
+    "job_title": "VP of Retail Operations",
+    "phone": "+1 316-555-0119"
+  },
+  {
+    "kit_id": "fs-f11-contact-02",
+    "company_id": "fs-f11-company",
+    "first_name": "Cormac",
+    "last_name": "Estrada",
+    "email": "cormac.estrada@tallgrassvalleybank.example.com",
+    "job_title": "Chief Compliance Officer",
+    "phone": "+1 316-555-0120"
+  },
+  {
+    "kit_id": "fs-f12-contact-01",
+    "company_id": "fs-f12-company",
+    "first_name": "Rafael",
+    "last_name": "Okonkwo",
+    "email": "rafael.okonkwo@lanternbayfederalcreditunion.example.com",
+    "job_title": "Director of Member Experience",
+    "phone": "+1 813-555-0121"
+  },
+  {
+    "kit_id": "fs-f12-contact-02",
+    "company_id": "fs-f12-company",
+    "first_name": "Shannon",
+    "last_name": "Whitlock",
+    "email": "shannon.whitlock@lanternbayfederalcreditunion.example.com",
+    "job_title": "BSA Officer",
+    "phone": "+1 813-555-0122"
+  },
+  {
+    "kit_id": "fs-f13-contact-01",
+    "company_id": "fs-f13-company",
+    "first_name": "Beatrix",
+    "last_name": "Lindqvist",
+    "email": "beatrix.lindqvist@ironwoodsavingsloan.example.com",
+    "job_title": "COO",
+    "phone": "+1 218-555-0123"
+  },
+  {
+    "kit_id": "fs-f14-contact-01",
+    "company_id": "fs-f14-company",
+    "first_name": "Matthias",
+    "last_name": "Orozco",
+    "email": "matthias.orozco@coppercanyoncommunitybank.example.com",
+    "job_title": "SVP of Digital Banking",
+    "phone": "+1 520-555-0124"
+  },
+  {
+    "kit_id": "fs-f14-contact-02",
+    "company_id": "fs-f14-company",
+    "first_name": "Yvonne",
+    "last_name": "Castellanos",
+    "email": "yvonne.castellanos@coppercanyoncommunitybank.example.com",
+    "job_title": "Head of IT Integration",
+    "phone": "+1 520-555-0125"
+  },
+  {
+    "kit_id": "fs-f15-contact-01",
+    "company_id": "fs-f15-company",
+    "first_name": "Nadia",
+    "last_name": "Brennan",
+    "email": "nadia.brennan@riverbendemployeescreditunion.example.com",
+    "job_title": "VP of Lending and Membership",
+    "phone": "+1 614-555-0126"
+  },
+  {
+    "kit_id": "fs-f16-contact-01",
+    "company_id": "fs-f16-company",
+    "first_name": "Garrett",
+    "last_name": "Halvorsen",
+    "email": "garrett.halvorsen@stonebridgefarmersbank.example.com",
+    "job_title": "President",
+    "phone": "+1 515-555-0127"
+  },
+  {
+    "kit_id": "fs-f17-contact-01",
+    "company_id": "fs-f17-company",
+    "first_name": "Celeste",
+    "last_name": "Abernathy",
+    "email": "celeste.abernathy@pinecrestheritagecreditunion.example.com",
+    "job_title": "Compliance Manager",
+    "phone": "+1 828-555-0128"
+  },
+  {
+    "kit_id": "fs-f18-contact-01",
+    "company_id": "fs-f18-company",
+    "first_name": "Desmond",
+    "last_name": "Thibodeaux",
+    "email": "desmond.thibodeaux@bayouoaksbanktrust.example.com",
+    "job_title": "Chief Risk Officer",
+    "phone": "+1 337-555-0129"
+  },
+  {
+    "kit_id": "fs-f18-contact-02",
+    "company_id": "fs-f18-company",
+    "first_name": "Paloma",
+    "last_name": "Reyes",
+    "email": "paloma.reyes@bayouoaksbanktrust.example.com",
+    "job_title": "Branch Operations Manager",
+    "phone": "+1 337-555-0130"
+  },
+  {
+    "kit_id": "fs-f19-contact-01",
+    "company_id": "fs-f19-company",
+    "first_name": "Silas",
+    "last_name": "Moreau",
+    "email": "silas.moreau@aldercreekfederalcreditunion.example.com",
+    "job_title": "Chief Operating Officer",
+    "phone": "+1 509-555-0131"
+  },
+  {
+    "kit_id": "fs-f20-contact-01",
+    "company_id": "fs-f20-company",
+    "first_name": "Willa",
+    "last_name": "Fitzgerald",
+    "email": "willa.fitzgerald@graniteharborbank.example.com",
+    "job_title": "Director of Commercial Operations",
+    "phone": "+1 207-555-0132"
+  },
+  {
+    "kit_id": "fs-f21-contact-01",
+    "company_id": "fs-f21-company",
+    "first_name": "Judith",
+    "last_name": "Halvorsen",
+    "email": "judith.halvorsen@willowmerecommunitybank.example.com",
+    "job_title": "VP of Retail Operations",
+    "phone": "+1 563-555-0133"
+  },
+  {
+    "kit_id": "fs-f21-contact-02",
+    "company_id": "fs-f21-company",
+    "first_name": "Calvin",
+    "last_name": "Reyes",
+    "email": "calvin.reyes@willowmerecommunitybank.example.com",
+    "job_title": "BSA/Compliance Officer",
+    "phone": "+1 563-555-0134"
+  },
+  {
+    "kit_id": "fs-f22-contact-01",
+    "company_id": "fs-f22-company",
+    "first_name": "Marcus",
+    "last_name": "Delgado",
+    "email": "marcus.delgado@sandhillfederalcreditunion.example.com",
+    "job_title": "Chief Operating Officer",
+    "phone": "+1 505-555-0135"
+  },
+  {
+    "kit_id": "fs-f23-contact-01",
+    "company_id": "fs-f23-company",
+    "first_name": "Theodora",
+    "last_name": "Wilkes",
+    "email": "theodora.wilkes@orchardpointsavingsbank.example.com",
+    "job_title": "Chief Compliance Officer",
+    "phone": "+1 585-555-0136"
+  },
+  {
+    "kit_id": "fs-f23-contact-02",
+    "company_id": "fs-f23-company",
+    "first_name": "Andre",
+    "last_name": "Boucher",
+    "email": "andre.boucher@orchardpointsavingsbank.example.com",
+    "job_title": "Director of Digital Banking",
+    "phone": "+1 585-555-0137"
+  },
+  {
+    "kit_id": "fs-f24-contact-01",
+    "company_id": "fs-f24-company",
+    "first_name": "Philip",
+    "last_name": "Nakamura",
+    "email": "philip.nakamura@cedarbasincreditunion.example.com",
+    "job_title": "Head of Member Experience",
+    "phone": "+1 208-555-0138"
+  },
+  {
+    "kit_id": "fs-f25-contact-01",
+    "company_id": "fs-f25-company",
+    "first_name": "Rosalind",
+    "last_name": "Pruitt",
+    "email": "rosalind.pruitt@mapleruntrustbank.example.com",
+    "job_title": "SVP, Operations",
+    "phone": "+1 864-555-0139"
+  },
+  {
+    "kit_id": "fs-f25-contact-02",
+    "company_id": "fs-f25-company",
+    "first_name": "Dwight",
+    "last_name": "Ammons",
+    "email": "dwight.ammons@mapleruntrustbank.example.com",
+    "job_title": "IT Integration Manager",
+    "phone": "+1 864-555-0140"
+  }
+]

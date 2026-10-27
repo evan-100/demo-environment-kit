@@ -1,0 +1,59 @@
+# Manufacturing demo story. Everything here is fictional (SPEC §3.5).
+
+id: manufacturing
+id_prefix: mf
+industry: Discrete and process manufacturing
+narrative: >
+  Mid-size manufacturers evaluating a predictive-maintenance and downtime
+  analytics platform for their plant floors. The seller is in a technical
+  evaluation with a castings maker after an expensive line outage, and has
+  a signed pilot with a packaging company that is deciding whether to expand.
+
+seller_company:
+  name: Gearwise Plant Analytics
+  domain: gearwise.example.com
+
+accounts:
+  - key: kilnbrook
+    name: Kilnbrook Precision Castings
+    domain: kilnbrookcastings.example.com
+    size: 2100
+    city: Toledo
+    state: OH
+    personas:
+      - { key: champion, title: Director of Plant Reliability, attitude: champion }
+      - { key: blocker, title: VP Finance, attitude: skeptical }
+      - { key: it-lead, title: OT Network Manager, attitude: neutral }
+    deals:
+      - { key: deal-01, stage: presentationscheduled, amount: 310000, close_in_days: 45 }
+    activity_story: >
+      Inbound call 5 weeks ago after a furnace line went down for 3 days.
+      Plant walk-through and sensor survey 3 weeks ago with the OT network
+      manager. Finance asked last week for payback math against last year's
+      downtime costs. Champion shared downtime logs 5 days ago; the executive
+      presentation is booked in 6 days, and there's an open task to build the
+      payback model before it.
+
+  - key: marrowfield
+    name: Marrowfield Packaging Group
+    domain: marrowfieldpkg.example.com
+    size: 900
+    city: Grand Rapids
+    state: MI
+    personas:
+      - { key: champion, title: Plant Manager, attitude: champion }
+      - { key: exec, title: COO, attitude: supporter }
+    deals:
+      - { key: deal-01, stage: contractsent, amount: 128000, close_in_days: 14 }
+    activity_story: >
+      Pilot on two corrugator lines started 6 weeks ago. Pilot readout 2 weeks
+      ago showed 11 hours of avoided downtime. The COO approved expanding to
+      all four plants; the expansion contract went out 6 days ago and legal
+      sent redlines 2 days ago. A call to resolve the redlines is set for
+      the day after tomorrow.
+
+volume:
+  filler_accounts: 25
+  filler_deals: 40
+
+golden_paths: [pipeline-review, deal-deep-dive, account-360, rep-activity-feed]

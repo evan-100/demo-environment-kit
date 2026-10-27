@@ -1,0 +1,283 @@
+[
+  {
+    "kit_id": "mf-kilnbrook-act-01",
+    "type": "call",
+    "when": {
+      "days_ago": 35
+    },
+    "title": "Inbound call after furnace line outage",
+    "body": "Marcus called us after Furnace Line 2 was down for 3 days. Failed blower bearing, no warning, and a rush order backlog on top of it. He estimates the outage cost well into six figures in lost output and expedited freight. Wants to know if vibration and thermal monitoring could have caught it. Agreed to a plant walk-through and sensor survey. Needs his OT network manager involved early.",
+    "company_id": "mf-kilnbrook-company",
+    "contact_ids": [
+      "mf-kilnbrook-champion"
+    ],
+    "deal_id": "mf-kilnbrook-deal-01",
+    "direction": "inbound",
+    "duration_minutes": 40
+  },
+  {
+    "kit_id": "mf-kilnbrook-act-02",
+    "type": "email",
+    "when": {
+      "days_ago": 34
+    },
+    "title": "Follow-up: survey logistics and security questions",
+    "body": "Sent recap of the call, a list of what we need for the survey (asset list, network diagrams, maintenance history) and a short OT security overview. Looped in Tom Brzezinski as the network contact.",
+    "company_id": "mf-kilnbrook-company",
+    "contact_ids": [
+      "mf-kilnbrook-champion",
+      "mf-kilnbrook-it-lead"
+    ],
+    "deal_id": "mf-kilnbrook-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-kilnbrook-act-03",
+    "type": "meeting",
+    "when": {
+      "days_ago": 21
+    },
+    "title": "Plant walk-through and sensor survey",
+    "body": "Walked Furnace Lines 1-3 and the molding area with Marcus and Tom. Identified about 140 critical assets for monitoring: blowers, pumps, hydraulic presses, gearboxes. Tom wants sensors on a segmented VLAN with no inbound path to the plant network, and gateway data going out only. Wi-Fi coverage is weak near the furnaces so we would use wired gateways. Tom is neutral but constructive; his main concern is not adding attack surface.",
+    "company_id": "mf-kilnbrook-company",
+    "contact_ids": [
+      "mf-kilnbrook-champion",
+      "mf-kilnbrook-it-lead"
+    ],
+    "deal_id": "mf-kilnbrook-deal-01",
+    "duration_minutes": 180
+  },
+  {
+    "kit_id": "mf-kilnbrook-act-04",
+    "type": "note",
+    "when": {
+      "days_ago": 20
+    },
+    "title": "Survey findings summary",
+    "body": "Scoped phase one to 3 furnace lines, 140 assets, roughly 22 gateways. Two of the last four unplanned stops were on assets with no condition data at all. Budget is likely owned by Finance, so we need an ROI case. Marcus says VP Finance has been burned by past software projects that never delivered savings.",
+    "company_id": "mf-kilnbrook-company",
+    "contact_ids": [
+      "mf-kilnbrook-champion"
+    ],
+    "deal_id": "mf-kilnbrook-deal-01"
+  },
+  {
+    "kit_id": "mf-kilnbrook-act-05",
+    "type": "email",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "Security architecture doc sent to OT",
+    "body": "Sent Tom the network architecture diagram, data flow description and our SOC 2 report. He is reviewing with his security lead and will flag any gaps.",
+    "company_id": "mf-kilnbrook-company",
+    "contact_ids": [
+      "mf-kilnbrook-it-lead"
+    ],
+    "deal_id": "mf-kilnbrook-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-kilnbrook-act-06",
+    "type": "call",
+    "when": {
+      "days_ago": 7
+    },
+    "title": "Finance asks for payback math",
+    "body": "Priya Hallworth joined a call with Marcus. She is skeptical: wants payback math tied to last year's actual downtime costs, not vendor benchmarks, and asked what happens if the savings do not show up. Also pushed on subscription pricing versus a one-time spend. We committed to a payback model before the executive presentation and to discussing a phased start with a pilot exit clause.",
+    "company_id": "mf-kilnbrook-company",
+    "contact_ids": [
+      "mf-kilnbrook-champion",
+      "mf-kilnbrook-blocker"
+    ],
+    "deal_id": "mf-kilnbrook-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "mf-kilnbrook-act-07",
+    "type": "email",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "Downtime logs received from Marcus",
+    "body": "Marcus sent 12 months of downtime logs: stop reasons, duration, lost units per line. Furnace Line 2 and the hydraulic presses account for the bulk of unplanned hours. Logs are messy in places, so we will confirm cost-per-hour assumptions with him before using them.",
+    "company_id": "mf-kilnbrook-company",
+    "contact_ids": [
+      "mf-kilnbrook-champion"
+    ],
+    "deal_id": "mf-kilnbrook-deal-01",
+    "direction": "inbound"
+  },
+  {
+    "kit_id": "mf-kilnbrook-act-08",
+    "type": "task",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Build payback model from downtime logs",
+    "body": "Build the payback model using Kilnbrook's own downtime data: unplanned hours by line, cost per hour confirmed by Marcus and Finance, conservative reduction scenarios, and break-even timing. Include a phased option with an exit clause. Share with Marcus for review the day before the presentation.",
+    "company_id": "mf-kilnbrook-company",
+    "contact_ids": [
+      "mf-kilnbrook-champion",
+      "mf-kilnbrook-blocker"
+    ],
+    "deal_id": "mf-kilnbrook-deal-01",
+    "task_status": "in_progress"
+  },
+  {
+    "kit_id": "mf-kilnbrook-act-09",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Executive presentation: predictive maintenance business case",
+    "body": "Presentation to plant leadership and Finance. Cover survey findings, the OT security architecture, payback model and the phased rollout proposal. Marcus will open with the Furnace Line 2 outage. Priya and Tom to attend.",
+    "company_id": "mf-kilnbrook-company",
+    "contact_ids": [
+      "mf-kilnbrook-champion",
+      "mf-kilnbrook-blocker",
+      "mf-kilnbrook-it-lead"
+    ],
+    "deal_id": "mf-kilnbrook-deal-01",
+    "duration_minutes": 60
+  },
+  {
+    "kit_id": "mf-marrowfield-act-01",
+    "type": "meeting",
+    "when": {
+      "days_ago": 45
+    },
+    "title": "Pilot kickoff on corrugator lines 1 and 2",
+    "body": "Onsite kickoff with Dennis and his maintenance leads. Sensors going on the two corrugators first: bearings, drive motors and the hot plate section. Baseline: roughly 9 unplanned stops per month on these lines. Agreed success metric is hours of avoided unplanned downtime over 6 weeks. Dennis wants alerts routed to his maintenance supervisors, not email blasts.",
+    "company_id": "mf-marrowfield-company",
+    "contact_ids": [
+      "mf-marrowfield-champion"
+    ],
+    "deal_id": "mf-marrowfield-deal-01",
+    "duration_minutes": 90
+  },
+  {
+    "kit_id": "mf-marrowfield-act-02",
+    "type": "call",
+    "when": {
+      "days_ago": 30
+    },
+    "title": "Mid-pilot check-in with Dennis",
+    "body": "Sensor data flowing on both lines. First alert caught a drive motor running hot on line 2, swapped during a planned changeover instead of failing mid-run. Dennis says the night shift trusts the alerts more than he expected. Open item: tune the vibration threshold on line 1, too many false positives. Our engineer to adjust this week.",
+    "company_id": "mf-marrowfield-company",
+    "contact_ids": [
+      "mf-marrowfield-champion"
+    ],
+    "deal_id": "mf-marrowfield-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 25
+  },
+  {
+    "kit_id": "mf-marrowfield-act-03",
+    "type": "meeting",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "Pilot readout with Dennis and COO",
+    "body": "Presented 6-week results: 11 hours of avoided downtime across the two corrugators, 3 early catches before failure, and about 40% fewer emergency maintenance calls. Rosalind asked about rollout effort at the other three plants and per-plant pricing. Dennis spoke strongly in favor. Rosalind said she would decide quickly if the numbers hold up for finance.",
+    "company_id": "mf-marrowfield-company",
+    "contact_ids": [
+      "mf-marrowfield-champion",
+      "mf-marrowfield-exec"
+    ],
+    "deal_id": "mf-marrowfield-deal-01",
+    "duration_minutes": 60
+  },
+  {
+    "kit_id": "mf-marrowfield-act-04",
+    "type": "email",
+    "when": {
+      "days_ago": 12
+    },
+    "title": "Follow-up: expansion scope and pricing for all four plants",
+    "body": "Sent Rosalind the four-plant scope, phased install schedule over two quarters, and pricing at $128K for year one. Included the pilot ROI summary with the downtime hours converted to dollars using Marrowfield's own cost-per-hour figure. Cc'd Dennis.",
+    "company_id": "mf-marrowfield-company",
+    "contact_ids": [
+      "mf-marrowfield-exec",
+      "mf-marrowfield-champion"
+    ],
+    "deal_id": "mf-marrowfield-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-marrowfield-act-05",
+    "type": "call",
+    "when": {
+      "days_ago": 8
+    },
+    "title": "COO verbal approval to expand",
+    "body": "Rosalind called back: approved expanding to all four plants. She asked us to keep the phased schedule so no plant goes through install during peak season. Wants the contract to go to legal right away. I confirmed we would send paper by end of week.",
+    "company_id": "mf-marrowfield-company",
+    "contact_ids": [
+      "mf-marrowfield-exec"
+    ],
+    "deal_id": "mf-marrowfield-deal-01",
+    "direction": "inbound",
+    "duration_minutes": 15
+  },
+  {
+    "kit_id": "mf-marrowfield-act-06",
+    "type": "email",
+    "when": {
+      "days_ago": 6
+    },
+    "title": "Expansion contract sent for signature",
+    "body": "Sent the four-plant expansion agreement to Rosalind and their legal contact. Term is 36 months, $128K year one, with the phased install schedule attached as an exhibit. Asked for any redlines by end of next week.",
+    "company_id": "mf-marrowfield-company",
+    "contact_ids": [
+      "mf-marrowfield-exec"
+    ],
+    "deal_id": "mf-marrowfield-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "mf-marrowfield-act-07",
+    "type": "note",
+    "when": {
+      "days_ago": 2
+    },
+    "title": "Legal redlines received",
+    "body": "Marrowfield legal sent redlines. Main asks: cap on liability tied to fees paid, data ownership language for sensor data, and a 60-day exit clause if install milestones slip. Liability and data ownership look workable. The exit clause needs a deal desk check. Dennis says legal is just being thorough and Rosalind still wants to sign this month.",
+    "company_id": "mf-marrowfield-company",
+    "contact_ids": [
+      "mf-marrowfield-champion",
+      "mf-marrowfield-exec"
+    ],
+    "deal_id": "mf-marrowfield-deal-01"
+  },
+  {
+    "kit_id": "mf-marrowfield-act-08",
+    "type": "task",
+    "when": {
+      "days_ago": 0
+    },
+    "title": "Get deal desk sign-off on exit clause counter",
+    "body": "Draft counter on the 60-day exit clause: allow exit only if we miss an install milestone by more than 30 days after a cure period. Get deal desk and our counsel to approve before the redline call.",
+    "company_id": "mf-marrowfield-company",
+    "contact_ids": [],
+    "deal_id": "mf-marrowfield-deal-01",
+    "task_status": "in_progress"
+  },
+  {
+    "kit_id": "mf-marrowfield-act-09",
+    "type": "call",
+    "when": {
+      "days_from_now": 2
+    },
+    "title": "Redline resolution call with Marrowfield legal",
+    "body": "Scheduled call to walk through liability cap, data ownership and exit clause. Bring our counsel. Dennis joining to speak to the install schedule. Goal: agree final language so the contract can be signed within the week.",
+    "company_id": "mf-marrowfield-company",
+    "contact_ids": [
+      "mf-marrowfield-champion",
+      "mf-marrowfield-exec"
+    ],
+    "deal_id": "mf-marrowfield-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 45
+  }
+]

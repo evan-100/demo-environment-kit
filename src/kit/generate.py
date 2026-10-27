@@ -164,17 +164,29 @@ def avoid_names(names_taken: list[str]) -> str:
     return f"Other accounts already use these first names, so pick different ones: {', '.join(names_taken)}.\n"
 
 
-def filler_prompt(story: Story, names_taken: list[str]) -> str:
-    hero_names = ", ".join(a.name for a in story.accounts)
+# Long lists are where LLMs lose count, so filler is requested in batches of this many companies.
+FILLER_BATCH_SIZE = 10
+
+
+def deals_per_company(companies: int, deals: int) -> list[int]:
+    """Spread deals over companies as evenly as possible, e.g. 25 companies / 40 deals -> [2, 2, ..., 1, 1]."""
+    return [deals // companies + (1 if i < deals % companies else 0) for i in range(companies)]
+
+
+def filler_prompt(story: Story, deal_counts: list[int], names_taken: list[str], companies_taken: list[str]) -> str:
+    """Ask for one batch of filler companies; `deal_counts` has one entry per company wanted."""
+    taken = [a.name for a in story.accounts] + companies_taken
+    slots = "\n".join(f"  {n}. a company with {c} deal{'s' if c != 1 else ''}" for n, c in enumerate(deal_counts, 1))
     return f"""\
 Story: {story.industry}. {story.narrative}
 Seller: {story.seller_company.name}.
 
 Write background accounts so the seller's pipeline looks like a real sales team's.
-- Exactly {story.volume.filler_accounts} companies in this industry, varied in size and location.
-  Do not reuse or resemble these hero accounts: {hero_names}.
+Return exactly {len(deal_counts)} companies in this industry, varied in size and location, in this order:
+{slots}
+
+- Do not reuse or resemble these company names: {", ".join(taken)}.
 - 1 or 2 contacts per company (buyers or evaluators for this kind of product).
-- Exactly {story.volume.filler_deals} deals in total, spread over the companies (some have none, some two).
 - About 80% of deals are open, spread across all of these stages:
   appointmentscheduled, qualifiedtobuy, presentationscheduled, decisionmakerboughtin, contractsent.
   Open deals have close_in_days between 7 and 120.
@@ -380,7 +392,16 @@ def generate_fixtures(story: Story, ask: AskFunction = ask_claude) -> FixtureSet
         draft = ask(hero_prompt(story, account, names_taken), HeroDraft)
         parts.append(build_hero(story, account, draft, phones))
         names_taken += [c.first_name for c in draft.contacts]
-    parts.append(build_filler(story, ask(filler_prompt(story, names_taken), FillerDraft), phones))
+    # Filler in batches, each told which company names earlier batches used.
+    counts = deals_per_company(story.volume.filler_accounts, story.volume.filler_deals)
+    filler = FillerDraft(companies=[])
+    for start in range(0, len(counts), FILLER_BATCH_SIZE):
+        batch_counts = counts[start : start + FILLER_BATCH_SIZE]
+        companies_taken = [c.name for c in filler.companies]
+        draft = ask(filler_prompt(story, batch_counts, names_taken, companies_taken), FillerDraft)
+        filler.companies += draft.companies[: len(batch_counts)]  # drop extras the LLM added
+        names_taken += [p.first_name for c in draft.companies for p in c.contacts]
+    parts.append(build_filler(story, filler, phones))
 
     return FixtureSet(
         story_id=story.id,

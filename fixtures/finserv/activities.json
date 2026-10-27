@@ -1,0 +1,292 @@
+[
+  {
+    "kit_id": "fs-quillstone-act-01",
+    "type": "call",
+    "when": {
+      "days_ago": 49
+    },
+    "title": "Discovery call with Dana Whitfield",
+    "body": "Dana walked through current onboarding. New consumer accounts take about 3 days end to end, and roughly a third of online applications are abandoned before completion. Staff re-key ID data into the core and chase missing documents by phone. She wants onboarding under one day. Agreed to a technical workshop with core systems.",
+    "company_id": "fs-quillstone-company",
+    "contact_ids": [
+      "fs-quillstone-champion"
+    ],
+    "deal_id": "fs-quillstone-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 45
+  },
+  {
+    "kit_id": "fs-quillstone-act-02",
+    "type": "note",
+    "when": {
+      "days_ago": 48
+    },
+    "title": "Discovery summary and internal notes",
+    "body": "Pain: 3-day onboarding, about 33% abandonment, heavy manual KYC review queue. Dana owns the problem and has exec sponsor support. Compliance will need to sign off, so we should bring Gerald in early. Core platform integration is the likely sticking point.",
+    "company_id": "fs-quillstone-company",
+    "contact_ids": [
+      "fs-quillstone-champion"
+    ],
+    "deal_id": "fs-quillstone-deal-01"
+  },
+  {
+    "kit_id": "fs-quillstone-act-03",
+    "type": "meeting",
+    "when": {
+      "days_ago": 28
+    },
+    "title": "Core-systems integration workshop",
+    "body": "Whiteboard session with Priya and her team on the core banking integration. Covered API patterns, account-creation write-back, and batch fallback if the core is down. Priya's concerns were the nightly batch window and the effort for a custom connector. We will send an integration architecture doc and sandbox access.",
+    "company_id": "fs-quillstone-company",
+    "contact_ids": [
+      "fs-quillstone-it-lead",
+      "fs-quillstone-champion"
+    ],
+    "deal_id": "fs-quillstone-deal-01",
+    "duration_minutes": 90
+  },
+  {
+    "kit_id": "fs-quillstone-act-04",
+    "type": "email",
+    "when": {
+      "days_ago": 26
+    },
+    "title": "Sent integration architecture doc and sandbox details",
+    "body": "Followed up the workshop with the architecture diagram, the core write-back flow, and the sandbox request form. Priya to confirm which environment to use.",
+    "company_id": "fs-quillstone-company",
+    "contact_ids": [
+      "fs-quillstone-it-lead"
+    ],
+    "deal_id": "fs-quillstone-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "fs-quillstone-act-05",
+    "type": "call",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "Pricing and compliance call with Gerald Okafor joining",
+    "body": "Gerald joined Dana's call and was skeptical of automated KYC decisions. He asked for the audit-trail documentation and a BSA/AML evidence pack, including how exceptions and overrides are logged for examiners. He did not object to the pilot scope. We committed to sending the pack and a reference from a similar-size bank.",
+    "company_id": "fs-quillstone-company",
+    "contact_ids": [
+      "fs-quillstone-champion",
+      "fs-quillstone-blocker"
+    ],
+    "deal_id": "fs-quillstone-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 40
+  },
+  {
+    "kit_id": "fs-quillstone-act-06",
+    "type": "email",
+    "when": {
+      "days_ago": 10
+    },
+    "title": "Sent audit-trail and BSA/AML evidence pack",
+    "body": "Sent Gerald the evidence pack covering audit-trail design, CIP and OFAC screening workflow, exception handling, and exam-readiness reporting. Offered a working session with our compliance lead.",
+    "company_id": "fs-quillstone-company",
+    "contact_ids": [
+      "fs-quillstone-blocker"
+    ],
+    "deal_id": "fs-quillstone-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "fs-quillstone-act-07",
+    "type": "email",
+    "when": {
+      "days_ago": 7
+    },
+    "title": "Security questionnaire returned",
+    "body": "Returned the completed vendor security questionnaire to Priya's team, with SOC 2 report and pen-test summary attached. Flagged two items on data residency we answered in detail. Awaiting questions from their infosec reviewer.",
+    "company_id": "fs-quillstone-company",
+    "contact_ids": [
+      "fs-quillstone-it-lead"
+    ],
+    "deal_id": "fs-quillstone-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "fs-quillstone-act-08",
+    "type": "call",
+    "when": {
+      "days_ago": 4
+    },
+    "title": "Dana confirms budget",
+    "body": "Dana confirmed the $240K is approved in this year's operations budget. She will push for signature if compliance is comfortable. Main risk is Gerald's review and the core integration timeline. Agreed to prep for next week's compliance meeting.",
+    "company_id": "fs-quillstone-company",
+    "contact_ids": [
+      "fs-quillstone-champion"
+    ],
+    "deal_id": "fs-quillstone-deal-01",
+    "direction": "inbound",
+    "duration_minutes": 25
+  },
+  {
+    "kit_id": "fs-quillstone-act-09",
+    "type": "task",
+    "when": {
+      "days_from_now": 4
+    },
+    "title": "Prep compliance review: reference call and Q&A",
+    "body": "Line up reference call with a comparable bank and draft answers to Gerald's likely questions on exceptions and examiner access.",
+    "company_id": "fs-quillstone-company",
+    "contact_ids": [
+      "fs-quillstone-champion"
+    ],
+    "deal_id": "fs-quillstone-deal-01",
+    "task_status": "in_progress"
+  },
+  {
+    "kit_id": "fs-quillstone-act-10",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Compliance review meeting",
+    "body": "Booked session with Gerald, Dana and our compliance lead. Agenda: walk through the evidence pack, decision rules, override logging, and exam readiness. Goal is to resolve open compliance questions before contract.",
+    "company_id": "fs-quillstone-company",
+    "contact_ids": [
+      "fs-quillstone-blocker",
+      "fs-quillstone-champion"
+    ],
+    "deal_id": "fs-quillstone-deal-01",
+    "duration_minutes": 60
+  },
+  {
+    "kit_id": "fs-fernhollow-act-01",
+    "type": "note",
+    "when": {
+      "days_ago": 21
+    },
+    "title": "Referral received from peer credit union",
+    "body": "Referred by the CEO of a credit union we closed last year. Said Fernhollow is losing under-30 members to app-based banks and their branch account opening runs about 35 minutes. Asked for intro to Marisol Thackeray. Intro email going out today.",
+    "company_id": "fs-fernhollow-company",
+    "contact_ids": [],
+    "deal_id": "fs-fernhollow-deal-01"
+  },
+  {
+    "kit_id": "fs-fernhollow-act-02",
+    "type": "email",
+    "when": {
+      "days_ago": 20
+    },
+    "title": "Intro email to Marisol after referral",
+    "body": "Sent short intro referencing the mutual credit union and our mobile account opening results (onboarding down from roughly 30 minutes to under 8). Proposed 30 min discovery call. She replied within a day and offered two slots.",
+    "company_id": "fs-fernhollow-company",
+    "contact_ids": [
+      "fs-fernhollow-champion"
+    ],
+    "deal_id": "fs-fernhollow-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "fs-fernhollow-act-03",
+    "type": "call",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "Discovery call - mobile account opening for younger members",
+    "body": "Marisol walked through current process: paper-heavy, manual ID checks, about 22% of mobile applications abandoned mid-flow. Goal is open-to-funded in under 10 minutes for members 18-30. Current core vendor offers a basic form only. Budget is approved for this fiscal year, she owns the project but needs lending and IT buy-in. Agreed to demo for her team.",
+    "company_id": "fs-fernhollow-company",
+    "contact_ids": [
+      "fs-fernhollow-champion"
+    ],
+    "deal_id": "fs-fernhollow-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 40
+  },
+  {
+    "kit_id": "fs-fernhollow-act-04",
+    "type": "email",
+    "when": {
+      "days_ago": 13
+    },
+    "title": "Discovery recap and demo scheduling",
+    "body": "Sent recap of pains (abandonment, manual ID review, no mobile funding step) and a one-page overview of KYC automation. Asked her to list attendees for the demo. She named 5 people from member experience and the contact center.",
+    "company_id": "fs-fernhollow-company",
+    "contact_ids": [
+      "fs-fernhollow-champion"
+    ],
+    "deal_id": "fs-fernhollow-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "fs-fernhollow-act-05",
+    "type": "meeting",
+    "when": {
+      "days_ago": 6
+    },
+    "title": "Demo for member experience team",
+    "body": "Showed mobile account opening, ID verification and automated screening flow. Team liked the document capture and the live status tracker. Marisol said it beat the two other tools she had seen. Questions on core integration and on the ability to pre-qualify loans at account opening. Marisol will loop in Everett Lindqvist, who wants to see lending.",
+    "company_id": "fs-fernhollow-company",
+    "contact_ids": [
+      "fs-fernhollow-champion"
+    ],
+    "deal_id": "fs-fernhollow-deal-01",
+    "duration_minutes": 60
+  },
+  {
+    "kit_id": "fs-fernhollow-act-06",
+    "type": "note",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "Internal debrief - lending angle",
+    "body": "Everett is neutral and focused on loan growth, not onboarding speed. Need to tie pre-qualification and cross-sell of auto and personal loans at account opening to his numbers. Pull a case study with loan attach rate uplift. Marisol is supportive but cautious about overselling to him.",
+    "company_id": "fs-fernhollow-company",
+    "contact_ids": [
+      "fs-fernhollow-champion",
+      "fs-fernhollow-exec"
+    ],
+    "deal_id": "fs-fernhollow-deal-01"
+  },
+  {
+    "kit_id": "fs-fernhollow-act-07",
+    "type": "email",
+    "when": {
+      "days_ago": 3
+    },
+    "title": "Confirm follow-up demo with Everett",
+    "body": "Sent Marisol and Everett a note confirming the follow-up session focused on loan pre-qualification. Included a short agenda and asked Everett to share two or three lending scenarios he cares about. Marisol confirmed.",
+    "company_id": "fs-fernhollow-company",
+    "contact_ids": [
+      "fs-fernhollow-champion",
+      "fs-fernhollow-exec"
+    ],
+    "deal_id": "fs-fernhollow-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "fs-fernhollow-act-08",
+    "type": "task",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Build loan pre-qualification demo scenario",
+    "body": "Set up a demo flow with soft-pull pre-qualification and instant loan offers inside account opening. Include attach rate stats from the case study for Everett.",
+    "company_id": "fs-fernhollow-company",
+    "contact_ids": [
+      "fs-fernhollow-exec"
+    ],
+    "deal_id": "fs-fernhollow-deal-01",
+    "task_status": "in_progress"
+  },
+  {
+    "kit_id": "fs-fernhollow-act-09",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 8
+    },
+    "title": "Follow-up demo - loan pre-qualification",
+    "body": "Scheduled demo for Everett and Marisol covering pre-qualification, loan offers at account opening and reporting on conversion. Plan to discuss pricing structure and next steps toward a proposal.",
+    "company_id": "fs-fernhollow-company",
+    "contact_ids": [
+      "fs-fernhollow-champion",
+      "fs-fernhollow-exec"
+    ],
+    "deal_id": "fs-fernhollow-deal-01",
+    "duration_minutes": 60
+  }
+]
