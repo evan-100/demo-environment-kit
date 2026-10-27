@@ -1,0 +1,272 @@
+[
+  {
+    "kit_id": "hc-acme-company",
+    "name": "Acme Regional Health",
+    "domain": "acmeregional.example",
+    "city": "Columbus",
+    "state": "OH",
+    "employees": 4200,
+    "description": "Acme Regional Health is a nonprofit hospital system headquartered in Columbus, OH, with roughly 4,200 employees across three acute-care hospitals and a ring of outpatient clinics in central Ohio. Front-desk check-in is still largely paper and clipboard-based, and patient operations leadership is under pressure to cut wait times and registration errors.",
+    "is_hero": true
+  },
+  {
+    "kit_id": "hc-northfield-company",
+    "name": "Northfield Family Clinics",
+    "domain": "northfieldclinics.example",
+    "city": "Madison",
+    "state": "WI",
+    "employees": 650,
+    "description": "Northfield Family Clinics is a primary and family care network of eleven outpatient clinics across Madison and south-central Wisconsin, with about 650 employees. Front desks still rely heavily on paper intake packets and manual insurance entry, and leadership is looking to shorten check-in times and reduce staff overtime.",
+    "is_hero": true
+  },
+  {
+    "kit_id": "hc-f01-company",
+    "name": "Cedar Hollow Health Partners",
+    "domain": "cedarhollowhealthpartners.example",
+    "city": "Spokane",
+    "state": "WA",
+    "employees": 2400,
+    "description": "Four-hospital regional system in eastern Washington consolidating front-desk workflows after a recent EHR migration.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f02-company",
+    "name": "Marrow Creek Medical Group",
+    "domain": "marrowcreekmedicalgroup.example",
+    "city": "Boise",
+    "state": "ID",
+    "employees": 640,
+    "description": "Multispecialty physician group with 14 clinics struggling with paper consent forms and long check-in lines.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f03-company",
+    "name": "Tallgrass Community Hospitals",
+    "domain": "tallgrasscommunityhospitals.example",
+    "city": "Wichita",
+    "state": "KS",
+    "employees": 1850,
+    "description": "Nonprofit hospital network serving south-central Kansas with a high share of walk-in ED volume.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f04-company",
+    "name": "Bluewater Bay Health System",
+    "domain": "bluewaterbayhealthsystem.example",
+    "city": "Mobile",
+    "state": "AL",
+    "employees": 3100,
+    "description": "Gulf Coast health system with three acute-care hospitals and 30 outpatient sites standardizing registration.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f05-company",
+    "name": "Pinecrest Valley Clinics",
+    "domain": "pinecrestvalleyclinics.example",
+    "city": "Asheville",
+    "state": "NC",
+    "employees": 310,
+    "description": "Rural primary care network in western North Carolina still running clipboard intake at most sites.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f06-company",
+    "name": "Ridgeline Orthopedic Associates",
+    "domain": "ridgelineorthopedicassociates.example",
+    "city": "Chattanooga",
+    "state": "TN",
+    "employees": 180,
+    "description": "Orthopedic and sports medicine practice with high new-patient volume and lengthy history questionnaires.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f07-company",
+    "name": "Saltmarsh Coastal Health",
+    "domain": "saltmarshcoastalhealth.example",
+    "city": "Savannah",
+    "state": "GA",
+    "employees": 1450,
+    "description": "Coastal Georgia hospital group expanding urgent care footprint and chasing faster door-to-room times.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f08-company",
+    "name": "Ironwood Regional Medical Center",
+    "domain": "ironwoodregionalmedicalcenter.example",
+    "city": "Tucson",
+    "state": "AZ",
+    "employees": 2050,
+    "description": "Independent regional medical center with bilingual patient population and heavy front-desk rework on demographics.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f09-company",
+    "name": "Harborlight Pediatric Network",
+    "domain": "harborlightpediatricnetwork.example",
+    "city": "Portland",
+    "state": "ME",
+    "employees": 420,
+    "description": "Pediatric practice network across southern Maine wanting parents to complete forms before arrival.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f10-company",
+    "name": "Silver Prairie Health",
+    "domain": "silverprairiehealth.example",
+    "city": "Sioux Falls",
+    "state": "SD",
+    "employees": 980,
+    "description": "Regional health provider with a hospital and 22 clinics across the Dakotas focused on reducing registration errors.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f11-company",
+    "name": "Three Rivers Family Medicine",
+    "domain": "threeriversfamilymedicine.example",
+    "city": "Johnstown",
+    "state": "PA",
+    "employees": 150,
+    "description": "Small family medicine group in western Pennsylvania with aging staff and limited IT support.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f12-company",
+    "name": "Copperleaf Urgent Care",
+    "domain": "copperleafurgentcare.example",
+    "city": "Albuquerque",
+    "state": "NM",
+    "employees": 260,
+    "description": "Urgent care chain with nine locations losing walkouts when waits exceed 45 minutes.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f13-company",
+    "name": "Lakeshore Valley Hospital Group",
+    "domain": "lakeshorevalleyhospitalgroup.example",
+    "city": "Grand Rapids",
+    "state": "MI",
+    "employees": 3600,
+    "description": "Five-hospital West Michigan system replacing a homegrown registration tool before its support contract lapses.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f14-company",
+    "name": "Redbud Women's Health Partners",
+    "domain": "redbudwomenshealthpartners.example",
+    "city": "Tulsa",
+    "state": "OK",
+    "employees": 210,
+    "description": "OB-GYN group with four offices drowning in repeat intake packets for prenatal visits.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f15-company",
+    "name": "Granite Peak Medical Associates",
+    "domain": "granitepeakmedicalassociates.example",
+    "city": "Manchester",
+    "state": "NH",
+    "employees": 340,
+    "description": "Physician-owned multispecialty group in southern New Hampshire tightening front-desk staffing.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f16-company",
+    "name": "Sweetwater Behavioral Health",
+    "domain": "sweetwaterbehavioralhealth.example",
+    "city": "Fresno",
+    "state": "CA",
+    "employees": 380,
+    "description": "Outpatient behavioral health provider needing confidential screening questionnaires completed before sessions.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f17-company",
+    "name": "Mesa Verde Community Clinics",
+    "domain": "mesaverdecommunityclinics.example",
+    "city": "Grand Junction",
+    "state": "CO",
+    "employees": 230,
+    "description": "Federally qualified health center network on Colorado's Western Slope with sliding-fee paperwork overhead.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f18-company",
+    "name": "Brookhaven Multispecialty Group",
+    "domain": "brookhavenmultispecialtygroup.example",
+    "city": "Columbus",
+    "state": "OH",
+    "employees": 870,
+    "description": "Central Ohio specialty group with 18 sites aiming to cut check-in from eleven minutes to under four.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f19-company",
+    "name": "Ashgrove Rural Health Cooperative",
+    "domain": "ashgroveruralhealthcooperative.example",
+    "city": "Bismarck",
+    "state": "ND",
+    "employees": 190,
+    "description": "Cooperative of critical access hospitals and clinics in central North Dakota with tight capital budgets.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f20-company",
+    "name": "Lowcountry Cardiology Partners",
+    "domain": "lowcountrycardiologypartners.example",
+    "city": "Charleston",
+    "state": "SC",
+    "employees": 120,
+    "description": "Cardiology practice with two offices and a cath lab scheduling desk buried in medication history forms.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f21-company",
+    "name": "Highmeadow Health Network",
+    "domain": "highmeadowhealthnetwork.example",
+    "city": "Madison",
+    "state": "WI",
+    "employees": 2700,
+    "description": "South-central Wisconsin network of two hospitals and 40 clinics targeting a 30 percent cut in front-desk overtime.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f22-company",
+    "name": "Pelican Point Medical Center",
+    "domain": "pelicanpointmedicalcenter.example",
+    "city": "Lafayette",
+    "state": "LA",
+    "employees": 1100,
+    "description": "Acadiana regional medical center with a busy ED and outpatient surgery center chasing cleaner insurance capture.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f23-company",
+    "name": "Desert Willow Dialysis Centers",
+    "domain": "desertwillowdialysiscenters.example",
+    "city": "Las Vegas",
+    "state": "NV",
+    "employees": 520,
+    "description": "Dialysis provider with 16 centers needing recurring consent and insurance updates for chair-time patients.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f24-company",
+    "name": "Cobblestone Primary Care",
+    "domain": "cobblestoneprimarycare.example",
+    "city": "Lexington",
+    "state": "KY",
+    "employees": 290,
+    "description": "Central Kentucky primary care group with eleven offices and high Medicaid volume requiring frequent re-verification.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "hc-f25-company",
+    "name": "Riverbend Senior Health",
+    "domain": "riverbendseniorhealth.example",
+    "city": "Des Moines",
+    "state": "IA",
+    "employees": 450,
+    "description": "Geriatric care provider with clinics and home-visit teams needing caregiver-friendly intake on paper and tablet.",
+    "is_hero": false
+  }
+]

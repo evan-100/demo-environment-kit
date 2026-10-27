@@ -263,6 +263,16 @@ class DealFixture(FixtureRecord):
     amount: int = Field(gt=0)
     close_date: RelativeDate
 
+    @model_validator(mode="after")
+    def open_deals_close_in_future(self):
+        # Same rule as StoryDeal: nothing in the pipeline review may look overdue.
+        closes_in_future = bool(self.close_date.days_from_now)
+        if self.stage in OPEN_DEAL_STAGES and not closes_in_future:
+            raise ValueError(f"deal '{self.kit_id}' is open, so its close date must be in the future")
+        if self.stage in CLOSED_DEAL_STAGES and closes_in_future:
+            raise ValueError(f"deal '{self.kit_id}' is closed, so its close date can't be in the future")
+        return self
+
 
 class ActivityFixture(FixtureRecord):
     """One timeline entry: a note, call, email, meeting or task."""
