@@ -1,0 +1,29 @@
+[project]
+name = "demo-readiness-kit"
+version = "0.1.0"
+description = "Keeps demo environments realistic, current and verified before every call."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.12",
+    "httpx>=0.27",
+    "pydantic>=2.7",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+kit = "kit.cli:app"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: calls the real HubSpot API (skipped when HUBSPOT_TOKEN is not set)"]
