@@ -1,6 +1,7 @@
 """The `kit` command line. Subcommands are added milestone by milestone (see SPEC §7)."""
 
 import time
+from datetime import datetime, timezone
 
 import typer
 from dotenv import load_dotenv
@@ -10,7 +11,9 @@ from kit import ledger
 from kit.fixtures import load_fixtures, load_other_fixture_sets, save_fixtures
 from kit.generate import GenerateError, generate_fixtures
 from kit.hubspot import HubSpotClient, HubSpotError
+from kit.reset import reset as reset_records
 from kit.schemas import FixtureSet, load_story
+from kit.seed import apply_plan, build_plan
 from kit.validate import validate_fixtures
 
 app = typer.Typer(help="Demo readiness kit: generate, seed, check and reset HubSpot demo data.")
@@ -103,3 +106,95 @@ def validate(story: str) -> None:
         print_errors(errors)
         raise typer.Exit(code=1)
     typer.echo(f"OK: fixtures for '{story}' are valid {counts_of(fixtures)}")
+
+
+def load_valid_fixtures(story: str) -> FixtureSet:
+    """Load a story's fixtures and refuse to continue if they don't pass validation."""
+    try:
+        story_file = load_story(f"stories/{story}.yaml")
+        fixtures = load_fixtures(story)
+    except (FileNotFoundError, ValidationError) as error:
+        fail(str(error))
+    errors = validate_fixtures(fixtures, story_file, load_other_fixture_sets(story))
+    if errors:
+        print_errors(errors)
+        fail("fixtures did not pass validation. Fix them or run `kit generate` again.")
+    return fixtures
+
+
+def run_seed(story: str, hubspot: HubSpotClient) -> None:
+    started = time.monotonic()
+    plan = build_plan(load_valid_fixtures(story), datetime.now(timezone.utc))
+    typer.echo(f"Seeding '{story}': {plan.counts()}")
+    try:
+        result = apply_plan(plan, hubspot)
+    except HubSpotError as error:
+        ledger.record("seed", story, started, ok=False, counts=plan.counts(), error=str(error)[:500])
+        fail(f"{error}\nEverything written so far is tagged, so `kit seed` again or `kit reset` is safe.")
+
+    ledger.record("seed", story, started, ok=not result.errors, counts=result.counts,
+                  error=f"{len(result.errors)} partial failures" if result.errors else None)
+    if result.errors:
+        print_errors(result.errors)
+        fail("some records or links failed (listed above). Rerunning `kit seed` is safe.")
+    typer.echo(f"OK: seeded in {time.monotonic() - started:.1f}s")
+
+
+@app.command()
+def seed(
+    story: str,
+    dry_run: bool = typer.Option(False, "--dry-run", help="Print the plan without calling HubSpot."),
+) -> None:
+    """Load stories/<story> fixtures into HubSpot. Safe to run again."""
+    if dry_run:
+        plan = build_plan(load_valid_fixtures(story), datetime.now(timezone.utc))
+        typer.echo(f"Dry run for '{story}', nothing is sent to HubSpot.\n")
+        for object_type, records in plan.records.items():
+            if records:
+                typer.echo(f"{object_type}: {len(records)} to create or update")
+                for record in records[:3]:
+                    typer.echo(f"    {record['kit_id']}: {record['properties']}")
+                if len(records) > 3:
+                    typer.echo(f"    ... and {len(records) - 3} more")
+        typer.echo(f"links: {len(plan.links)}")
+        return
+    run_seed(story, HubSpotClient())
+
+
+@app.command()
+def reset(
+    story: str = typer.Argument(None, help="Story to remove. Leave out and use --all for every story."),
+    all_stories: bool = typer.Option(False, "--all", help="Remove the records of every story."),
+    reseed: bool = typer.Option(False, "--reseed", help="Seed the story again afterwards."),
+    yes: bool = typer.Option(False, "--yes", help="Don't ask for confirmation."),
+) -> None:
+    """Delete the records the kit created (and only those)."""
+    if all_stories == bool(story):
+        fail("give a story name, or --all (not both)")
+    if reseed and all_stories:
+        fail("--reseed needs a single story")
+
+    target = "every story" if all_stories else f"story '{story}'"
+    if not yes:
+        typer.confirm(f"Delete all kit records of {target} from HubSpot?", abort=True)
+
+    started = time.monotonic()
+    hubspot = HubSpotClient()
+    fixtures = None
+    if story:
+        try:
+            fixtures = load_fixtures(story)
+        except (FileNotFoundError, ValidationError):
+            pass  # search alone still finds the records
+    try:
+        result = reset_records(hubspot, story, fixtures)
+    except HubSpotError as error:
+        ledger.record("reset", story, started, ok=False, error=str(error)[:500])
+        fail(str(error))
+
+    ledger.record("reset", story, started, ok=True, counts=result.deleted)
+    typer.echo(f"OK: deleted {result.deleted or 'nothing'} in {time.monotonic() - started:.1f}s")
+    if result.skipped:
+        typer.echo(f"Left alone {result.skipped} record(s) that weren't tagged for {target}.")
+    if reseed:
+        run_seed(story, hubspot)

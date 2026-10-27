@@ -22,8 +22,31 @@ MAX_RETRIES = 5
 FIRST_WAIT_SECONDS = 1.0
 
 
+# Most batch endpoints take at most 100 records per call; search returns at most 200 per page.
+BATCH_SIZE = 100
+SEARCH_PAGE_SIZE = 200
+
+# The custom properties every kit record carries (SPEC §3.3).
+KIT_ID = "demo_kit_id"
+KIT_STORY = "demo_kit_story"
+
+
 class HubSpotError(Exception):
     """Raised when HubSpot returns an error we can't recover from by retrying."""
+
+    def __init__(self, message: str, status_code: int | None = None):
+        super().__init__(message)
+        self.status_code = status_code
+
+
+def chunks(items: list, size: int = BATCH_SIZE) -> list[list]:
+    """Split a list into pieces of at most `size` items."""
+    return [items[i : i + size] for i in range(0, len(items), size)]
+
+
+def batch_errors(response: dict) -> list[str]:
+    """Batch calls can partly succeed (HTTP 207). Pull out the messages for the parts that failed."""
+    return [error.get("message", str(error)) for error in response.get("errors", [])]
 
 
 def load_token() -> str:
@@ -59,7 +82,9 @@ class HubSpotClient:
 
             if response.status_code >= 400:
                 # HubSpot error bodies explain the problem (e.g. a missing scope), so show them.
-                raise HubSpotError(f"{method} {path} -> {response.status_code}: {response.text}")
+                raise HubSpotError(
+                    f"{method} {path} -> {response.status_code}: {response.text}", response.status_code
+                )
 
             return response.json() if response.content else {}
 
@@ -76,3 +101,87 @@ class HubSpotClient:
     def deal_pipelines(self) -> list[dict]:
         """All deal pipelines with their stages. Story files must use these stage IDs."""
         return self.get(f"/crm/pipelines/{API_VERSION}/0-3")["results"]
+
+    # The methods below are what seed.py and reset.py use. Tests replace this
+    # class with an in-memory fake that has the same methods.
+
+    def property_exists(self, object_type: str, name: str) -> bool:
+        try:
+            self.get(f"/crm/properties/{API_VERSION}/{object_type}/{name}")
+            return True
+        except HubSpotError as error:
+            if error.status_code == 404:
+                return False
+            raise
+
+    def create_property(self, object_type: str, definition: dict) -> None:
+        self.post(f"/crm/properties/{API_VERSION}/{object_type}", definition)
+
+    def batch_upsert(self, object_type: str, records: list[dict]) -> list[str]:
+        """Create or update records matched on demo_kit_id.
+
+        Each record is {"kit_id": ..., "properties": {...}}. Returns error messages (empty = all good).
+        """
+        errors = []
+        for chunk in chunks(records):
+            inputs = [{"idProperty": KIT_ID, "id": r["kit_id"], "properties": r["properties"]} for r in chunk]
+            response = self.post(f"/crm/objects/{API_VERSION}/{object_type}/batch/upsert", {"inputs": inputs})
+            errors += batch_errors(response)
+        return errors
+
+    def read_by_kit_ids(self, object_type: str, kit_ids: list[str]) -> list[dict]:
+        """Look records up by demo_kit_id. Unlike search, this sees records the moment they're written.
+
+        Returns [{"id": hubspot id, "kit_id": ..., "story": ...}]. Kit IDs that don't exist are skipped.
+        """
+        found = []
+        for chunk in chunks(kit_ids):
+            response = self.post(
+                f"/crm/objects/{API_VERSION}/{object_type}/batch/read",
+                {"idProperty": KIT_ID, "inputs": [{"id": k} for k in chunk], "properties": [KIT_ID, KIT_STORY]},
+            )
+            found += [simplify(record) for record in response.get("results", [])]
+        return found
+
+    def find_by_story(self, object_type: str, story: str | None) -> list[dict]:
+        """Search for kit records of one story (or of every story when `story` is None).
+
+        Note: search can lag a few seconds behind writes, so reset also uses read_by_kit_ids.
+        """
+        if story is None:
+            kit_filter = {"propertyName": KIT_STORY, "operator": "HAS_PROPERTY"}
+        else:
+            kit_filter = {"propertyName": KIT_STORY, "operator": "EQ", "value": story}
+        body = {"filterGroups": [{"filters": [kit_filter]}], "properties": [KIT_ID, KIT_STORY], "limit": SEARCH_PAGE_SIZE}
+
+        found = []
+        while True:
+            response = self.post(f"/crm/objects/{API_VERSION}/{object_type}/search", body)
+            found += [simplify(record) for record in response["results"]]
+            next_page = response.get("paging", {}).get("next", {}).get("after")
+            if not next_page:
+                return found
+            body["after"] = next_page
+
+    def associate(self, from_type: str, to_type: str, links: list[tuple[str, str, int]]) -> list[str]:
+        """Link records. Each link is (from HubSpot id, to HubSpot id, association type id)."""
+        errors = []
+        for chunk in chunks(links):
+            inputs = [
+                {"from": {"id": from_id}, "to": {"id": to_id},
+                 "types": [{"associationCategory": "HUBSPOT_DEFINED", "associationTypeId": type_id}]}
+                for from_id, to_id, type_id in chunk
+            ]
+            response = self.post(f"/crm/associations/{API_VERSION}/{from_type}/{to_type}/batch/create", {"inputs": inputs})
+            errors += batch_errors(response)
+        return errors
+
+    def archive(self, object_type: str, ids: list[str]) -> None:
+        """Delete records (HubSpot moves them to its recycle bin)."""
+        for chunk in chunks(ids):
+            self.post(f"/crm/objects/{API_VERSION}/{object_type}/batch/archive", {"inputs": [{"id": i} for i in chunk]})
+
+
+def simplify(record: dict) -> dict:
+    properties = record.get("properties", {})
+    return {"id": record["id"], "kit_id": properties.get(KIT_ID), "story": properties.get(KIT_STORY)}

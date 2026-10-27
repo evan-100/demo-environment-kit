@@ -44,7 +44,10 @@ Source: [Scopes](https://developers.hubspot.com/docs/apps/developer-platform/bui
 - `crm.objects.deals.read` / `.write`
 - `crm.schemas.contacts.read` / `.write`, `crm.schemas.companies.read` / `.write`, `crm.schemas.deals.read` / `.write` (to create the `demo_kit_*` properties)
 - `sales-email-read` (for logged email activities)
-- The scopes page doesn't list scopes for notes, calls, meetings and tasks, or for reading deal pipelines **(unverified)**. If an activity call returns 403, the error body names the missing scope. Add it to the key.
+- **Confirmed live 2026-10-26:**
+  - The `crm.schemas.*` scopes alone let you create properties but **not read or write records**. Every records call (read, search, upsert) returned 403 `MISSING_SCOPES` until the `crm.objects.*` scopes were added.
+  - Creating properties on activities needs per-activity scopes. HubSpot's 403 named them `notes-write`, `calls-write`, `emails-write`, `meetings-write` and `tasks-write`. The upsert error lists `crm.objects.notes.read`, `crm.objects.calls.read` and so on, so add both read and write for each activity type.
+  - The `demo_kit_id` and `demo_kit_story` properties were created on companies, contacts and deals.
 
 ## 2. Which account to use
 Source: [HubSpot account types](https://developers.hubspot.com/docs/getting-started/account-types.md), [Configurable test accounts](https://developers.hubspot.com/docs/developer-tooling/local-development/configurable-test-accounts.md)
