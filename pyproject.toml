@@ -11,6 +11,7 @@ dependencies = [
     "python-dotenv>=1.0",
     "pyyaml>=6.0.3",
     "anthropic>=2.3.0",
+    "mcp>=2.3.0",
 ]
 
 [project.scripts]
