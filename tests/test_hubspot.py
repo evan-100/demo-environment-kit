@@ -33,6 +33,30 @@ def test_retries_after_rate_limit(monkeypatch):
     assert len(calls) == 3
 
 
+def test_retries_after_dropped_connection(monkeypatch):
+    monkeypatch.setattr(hubspot.time, "sleep", lambda seconds: None)
+    calls = []
+
+    def handler(request):
+        calls.append(request)
+        if len(calls) == 1:
+            raise httpx.RemoteProtocolError("Server disconnected without sending a response.")
+        return httpx.Response(200, json={"results": []})
+
+    assert make_client(handler).deal_pipelines() == []
+    assert len(calls) == 2
+
+
+def test_connection_that_keeps_failing_becomes_a_hubspot_error(monkeypatch):
+    monkeypatch.setattr(hubspot.time, "sleep", lambda seconds: None)
+
+    def handler(request):
+        raise httpx.ConnectError("no route to host")
+
+    with pytest.raises(HubSpotError, match="connection failed"):
+        make_client(handler).deal_pipelines()
+
+
 def test_client_error_is_not_retried():
     calls = []
 

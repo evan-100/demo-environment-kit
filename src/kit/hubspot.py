@@ -69,10 +69,22 @@ class HubSpotClient:
         )
 
     def request(self, method: str, path: str, json: dict | None = None) -> dict:
-        """Send one request, retrying on rate limits and server errors."""
+        """Send one request, retrying on rate limits, server errors and dropped connections.
+
+        Retrying is safe for every call the kit makes: upserts, links, reads and
+        deletes all end in the same state if they run twice.
+        """
         wait = FIRST_WAIT_SECONDS
         for attempt in range(MAX_RETRIES + 1):
-            response = self.http.request(method, path, json=json)
+            try:
+                response = self.http.request(method, path, json=json)
+            except httpx.TransportError as error:
+                # Connection dropped, timed out, or never opened (seen live: "Server disconnected").
+                if attempt < MAX_RETRIES:
+                    time.sleep(wait)
+                    wait *= 2
+                    continue
+                raise HubSpotError(f"{method} {path} -> connection failed after {MAX_RETRIES} retries: {error}")
 
             retryable = response.status_code == 429 or response.status_code >= 500
             if retryable and attempt < MAX_RETRIES:
