@@ -30,7 +30,7 @@ Source: [Make API requests using a service key](https://developers.hubspot.com/d
 - **Rotation:** "Rotate and expire later" keeps the old key working for 7 days. HubSpot recommends rotating every 6 months.
 - **Limits:** same as privately distributed apps. 100 apps + service keys + MCP connectors per account.
 - **Can't** be used for webhooks or UI extensions. We don't need either.
-- Whether a service key can be created *inside a developer test account* isn't stated **(unverified, Evan checks this during account setup)**. Fallback: a developer-platform app with `auth.type: static` and `distribution: private` (see below), installed in the test account.
+- **Confirmed 2026-10-26:** a service key *can* be created inside a developer test account. Ours lives in a test account created from Evan's main account, and `kit ping` works with it. (The docs don't say this.) Fallback if that ever changes: a developer-platform app with `auth.type: static` and `distribution: private` (see below).
 
 ### Other options (not used)
 Source: [Authentication overview](https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview)
@@ -168,7 +168,7 @@ Source: [Pipelines guide](https://developers.hubspot.com/docs/api-reference/late
 - The docs don't list the default stage IDs. The story example uses `contractsent`, from memory of older accounts. **`kit ping` prints the real pipeline and stage IDs from the account**, and story files must use those.
 
 ## Open questions to settle with live calls
-1. Can a service key be created inside a developer test account? (M0, during account setup)
+1. ~~Can a service key be created inside a developer test account?~~ Yes, confirmed in M0.
 2. Which scopes do notes/calls/meetings/tasks and pipeline reads need? (M0/M3)
 3. Do activity objects accept the custom `demo_kit_*` properties? (M3)
 4. Are past `hs_timestamp` values accepted and shown in timeline order? (M3)
