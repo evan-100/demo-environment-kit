@@ -23,18 +23,19 @@ This kit treats a demo environment like software:
 Live HubSpot test account, 2026-10-27. Each story ran 10 times: reset, seed from scratch, run all four golden-path checks.
 Numbers are exactly what `kit metrics` reports from the ledger ([`runs/ledger.sample.jsonl`](runs/ledger.sample.jsonl)), not rounded.
 
-Batch `readme-2026-10-27b`:
+Batch `readme-2026-10-27c`:
 
 | Story | Runs | Records (+links) | Seed p50 | Seed p95 | Reset p50 | Checks passing on fresh seed |
 |---|---|---|---|---|---|---|
-| finserv | 10 | 129 (+190) | 14.53 s | 16.76 s | 6.24 s | 10/10 (100%) |
-| healthcare | 10 | 128 (+187) | 14.73 s | 16.85 s | 6.08 s | 10/10 (100%) |
-| manufacturing | 10 | 124 (+187) | 14.37 s | 15.38 s | 6.24 s | 10/10 (100%) |
+| finserv | 10 | 197 (+395) | 13.8 s | 15.73 s | 5.99 s | 10/10 (100%) |
+| healthcare | 10 | 192 (+389) | 13.79 s | 16.32 s | 5.92 s | 10/10 (100%) |
+| manufacturing | 10 | 199 (+402) | 13.32 s | 14.2 s | 5.92 s | 10/10 (100%) |
 
 p95 uses the nearest-rank method, so with 10 runs it is the slowest run. Checks ran after a 15 s pause for
 HubSpot search to catch up; the pause is not counted in any time. An earlier batch stopped after 22 runs
-when HubSpot dropped a connection mid-seed. That exposed a missing retry, which is now fixed, and this
-batch was then run from the start.
+when HubSpot dropped a connection mid-seed. That exposed a missing retry, which is now fixed. The batch shown
+here was run in full afterwards, once background deals had their own histories and next steps
+(about 50% more records per story than at first).
 <!-- METRICS:END -->
 
 ## How it works
