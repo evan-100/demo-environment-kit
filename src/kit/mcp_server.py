@@ -25,7 +25,7 @@ from kit.actions import KitError
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 INSTRUCTIONS = """\
-Demo readiness kit: keeps HubSpot demo environments realistic, current and
+Demo environment kit: keeps HubSpot demo environments realistic, current and
 verified before a sales call. Each "story" (e.g. healthcare) is a demo scenario
 with hero accounts and golden paths (the screens a rep will show).
 
@@ -40,7 +40,7 @@ reset_story deletes the story's demo records and needs confirm=true.
 """
 
 # Warnings only: the agent's terminal shouldn't fill up with a log line per HubSpot request.
-server = MCPServer(name="demo-readiness-kit", instructions=INSTRUCTIONS, log_level="WARNING")
+server = MCPServer(name="demo-environment-kit", instructions=INSTRUCTIONS, log_level="WARNING")
 
 
 def explain(error: KitError) -> ToolError:

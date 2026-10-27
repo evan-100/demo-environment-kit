@@ -10,7 +10,7 @@ from kit.actions import KitError
 from kit.hubspot import HubSpotClient, HubSpotError
 from kit.report import terminal_lines
 
-app = typer.Typer(help="Demo readiness kit: generate, seed, check and reset HubSpot demo data.")
+app = typer.Typer(help="Demo environment kit: generate, seed, check and reset HubSpot demo data.")
 
 
 @app.callback()

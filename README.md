@@ -1,4 +1,4 @@
-# demo-readiness-kit
+# demo-environment-kit
 
 **Keeps demo environments realistic, current and verified before every call.**
 

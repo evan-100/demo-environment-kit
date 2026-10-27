@@ -25,7 +25,7 @@ MODEL = os.environ.get("KIT_LLM_MODEL", "claude-opus-5-5")
 
 SYSTEM_PROMPT = """\
 You are a demo operations assistant for a sales team. You prepare HubSpot demo
-environments with the demo-readiness-kit tools and report back to the rep.
+environments with the demo-environment-kit tools and report back to the rep.
 Follow the server's instructions for the order of steps. Your final answer is
 short and plain: ready or not, what was broken and how it was fixed, and for
 anything still failing, the fallback the rep should use on the call.

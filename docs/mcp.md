@@ -9,9 +9,9 @@ Most MCP clients take a server entry like this (use your own path to the repo):
 ```json
 {
   "mcpServers": {
-    "demo-readiness-kit": {
+    "demo-environment-kit": {
       "command": "uv",
-      "args": ["run", "--directory", "/path/to/demo-readiness-kit", "kit", "mcp"]
+      "args": ["run", "--directory", "/path/to/demo-environment-kit", "kit", "mcp"]
     }
   }
 }

@@ -1,5 +1,5 @@
 [project]
-name = "demo-readiness-kit"
+name = "demo-environment-kit"
 version = "0.1.0"
 description = "Keeps demo environments realistic, current and verified before every call."
 readme = "README.md"
