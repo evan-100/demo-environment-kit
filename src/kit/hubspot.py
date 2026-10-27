@@ -180,6 +180,48 @@ class HubSpotClient:
             errors += batch_errors(response)
         return errors
 
+    # --- Reads used by the readiness checks (check.py) ---------------------------------
+
+    def read_by_ids(self, object_type: str, ids: list[str], properties: list[str], id_property: str | None = None) -> list[dict]:
+        """Read records with chosen properties, by HubSpot id (or by demo_kit_id if id_property=KIT_ID).
+
+        Returns [{"id": ..., "properties": {...}}]. Missing records are skipped.
+        """
+        found = []
+        for chunk in chunks(ids):
+            body = {"inputs": [{"id": i} for i in chunk], "properties": properties}
+            if id_property:
+                body["idProperty"] = id_property
+            response = self.post(f"/crm/objects/{API_VERSION}/{object_type}/batch/read", body)
+            found += [{"id": r["id"], "properties": r.get("properties", {})} for r in response.get("results", [])]
+        return found
+
+    def linked_ids(self, from_type: str, ids: list[str], to_type: str) -> dict[str, list[str]]:
+        """For each record id, the ids of the `to_type` records linked to it."""
+        linked = {i: [] for i in ids}
+        for chunk in chunks(ids):
+            response = self.post(
+                f"/crm/associations/{API_VERSION}/{from_type}/{to_type}/batch/read",
+                {"inputs": [{"id": i} for i in chunk]},
+            )
+            for result in response.get("results", []):
+                targets = {str(t["toObjectId"]) for t in result.get("to", [])}
+                linked[str(result["from"]["id"])] = sorted(targets)
+        return linked
+
+    def search(self, object_type: str, filters: list[dict], properties: list[str]) -> list[dict]:
+        """All records matching every filter (paged). Returns [{"id": ..., "properties": {...}}]."""
+        body = {"filterGroups": [{"filters": filters}] if filters else [], "properties": properties,
+                "limit": SEARCH_PAGE_SIZE}
+        found = []
+        while True:
+            response = self.post(f"/crm/objects/{API_VERSION}/{object_type}/search", body)
+            found += [{"id": r["id"], "properties": r.get("properties", {})} for r in response["results"]]
+            next_page = response.get("paging", {}).get("next", {}).get("after")
+            if not next_page:
+                return found
+            body["after"] = next_page
+
     def archive(self, object_type: str, ids: list[str]) -> None:
         """Delete records (HubSpot moves them to its recycle bin)."""
         for chunk in chunks(ids):

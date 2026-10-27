@@ -13,7 +13,9 @@ from kit.generate import GenerateError, generate_fixtures
 from kit.hubspot import HubSpotClient, HubSpotError
 from kit.reset import reset as reset_records
 from kit.schemas import FixtureSet, load_story
-from kit.seed import SeedError, apply_plan, build_plan, pick_owner
+from kit.check import run_checks
+from kit.report import terminal_lines, write_reports
+from kit.seed import SeedError, apply_plan, break_hero_deal, build_plan, pick_owner
 from kit.validate import validate_fixtures
 
 app = typer.Typer(help="Demo readiness kit: generate, seed, check and reset HubSpot demo data.")
@@ -203,3 +205,67 @@ def reset(
         typer.echo(f"Left alone {result.skipped} record(s) that weren't tagged for {target}.")
     if reseed:
         run_seed(story, hubspot)
+
+
+# How long to wait for HubSpot search to catch up after `--fix` reseeds, and how often to retry.
+SEARCH_SETTLE_SECONDS = 10
+FIX_RECHECKS = 3
+
+
+@app.command()
+def check(
+    story: str,
+    fix: bool = typer.Option(False, "--fix", help="Run the remediation for failing paths, then check again."),
+) -> None:
+    """Check every golden path of a story against HubSpot and write a report."""
+    started = time.monotonic()
+    story_file = load_story(f"stories/{story}.yaml")
+    fixtures = load_valid_fixtures(story)
+    hubspot = HubSpotClient()
+    try:
+        owner = pick_owner(hubspot)
+        results = run_checks(hubspot, fixtures, story_file.golden_paths, owner)
+    except (HubSpotError, SeedError) as error:
+        ledger.record("check", story, started, ok=False, error=str(error)[:500])
+        fail(str(error))
+    for line in terminal_lines(story, results, "Readiness"):
+        typer.echo(line)
+
+    before_fix = None
+    failing = [r for r in results if not r.passed]
+    if fix and failing:
+        before_fix = results
+        remediations = sorted({r.remediation for r in failing})
+        typer.echo(f"\nFixing: {', '.join(remediations)}")
+        if "reseed" in remediations:
+            run_seed(story, hubspot)
+        # Search (used by the pipeline and rep-feed checks) lags behind writes, so allow a few tries.
+        for attempt in range(1, FIX_RECHECKS + 1):
+            typer.echo(f"Waiting {SEARCH_SETTLE_SECONDS}s for HubSpot search to catch up (try {attempt}/{FIX_RECHECKS})...")
+            time.sleep(SEARCH_SETTLE_SECONDS)
+            results = run_checks(hubspot, fixtures, story_file.golden_paths, owner)
+            if all(r.passed for r in results):
+                break
+        typer.echo("")
+        for line in terminal_lines(story, results, "After fix"):
+            typer.echo(line)
+
+    passed = all(r.passed for r in results)
+    json_path, md_path = write_reports(story, datetime.now(timezone.utc), results, before_fix)
+    ledger.record("check", story, started, ok=passed, counts={
+        "paths": len(results), "passed": sum(r.passed for r in results), "fixed": before_fix is not None,
+    })
+    typer.echo(f"\nReport: {md_path} (and {json_path.name})")
+    if not passed:
+        raise typer.Exit(code=1)
+
+
+@app.command(name="break")
+def break_demo(story: str) -> None:
+    """Deliberately break the first hero deal (wrong stage, overdue), to demo `kit check --fix`."""
+    started = time.monotonic()
+    fixtures = load_valid_fixtures(story)
+    kit_id = break_hero_deal(fixtures, HubSpotClient(), datetime.now(timezone.utc))
+    ledger.record("break", story, started, ok=True, counts={"deals": 1})
+    typer.echo(f"Broke '{kit_id}': stage set to appointmentscheduled, close date 5 days ago.")
+    typer.echo(f"Now run `kit check {story}` to see it caught, then `kit check {story} --fix`.")

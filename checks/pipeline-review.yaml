@@ -1,0 +1,11 @@
+# The rep opens the deals board to show a healthy, believable pipeline.
+id: pipeline-review
+title: Pipeline review
+rep_shows: The deals board with a full, realistic pipeline and nothing overdue.
+scope: pipeline           # the whole deals pipeline, as a rep sees it
+assertions:
+  - { check: min_open_deals, min: 30 }
+  - { check: min_open_stages, min: 4 }
+  - { check: no_overdue_open_deals }
+fallback: fallbacks/{story}/pipeline-review.md
+remediation: reseed       # what `kit check --fix` does when this fails

@@ -1,0 +1,11 @@
+# The rep opens a hero company and shows everything about the account in one place.
+id: account-360
+title: Account 360
+rep_shows: Each hero company with its people, its deals and recent activity linked.
+scope: hero_companies     # checked once per hero company in the story
+assertions:
+  - { check: min_contacts, min: 2 }
+  - { check: min_deals, min: 1 }
+  - { check: newest_activity_within, days: 10 }
+fallback: fallbacks/{story}/account-360.md
+remediation: reseed

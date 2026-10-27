@@ -1,0 +1,13 @@
+# The rep opens each hero deal and walks through who's involved and what's happened.
+id: deal-deep-dive
+title: Deal deep-dive
+rep_shows: Each hero deal at its story stage, with its buying group and a recent, believable timeline.
+scope: hero_deals         # checked once per hero deal in the story
+assertions:
+  - { check: stage_matches_story }
+  - { check: close_date_in_future }
+  - { check: min_contacts, min: 2 }
+  - { check: min_recent_activities, min: 3, within_days: 30 }
+  - { check: newest_activity_within, days: 10 }
+fallback: fallbacks/{story}/deal-deep-dive.md
+remediation: reseed

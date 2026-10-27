@@ -1,0 +1,12 @@
+# Fallback: Pipeline review
+
+**Use when:** the deals board looks thin, has overdue deals, or won't load.
+
+**Show instead:** `screenshots/pipeline-review.png` (deals board, Sales Pipeline, board view). *To be captured.*
+
+**Talk track:**
+> "Here's a typical regional sales book: about forty open opportunities across every stage, from first
+> meetings through contract. Nothing sits past its close date, because the forecast view flags those
+> automatically. Let me show you the deal that's closest to signature."
+
+Then move to the deal deep-dive.

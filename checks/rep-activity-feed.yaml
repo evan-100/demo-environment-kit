@@ -1,0 +1,10 @@
+# The rep shows their own recent work and what's coming up next.
+id: rep-activity-feed
+title: Rep activity feed
+rep_shows: The rep's own activity from the last two weeks, plus upcoming tasks and meetings.
+scope: rep_feed           # activities owned by the demo rep (the record owner)
+assertions:
+  - { check: min_recent_activities, min: 5, within_days: 14 }
+  - { check: min_upcoming, min: 2 }
+fallback: fallbacks/{story}/rep-activity-feed.md
+remediation: reseed

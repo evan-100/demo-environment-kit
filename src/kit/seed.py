@@ -290,3 +290,18 @@ def kit_ids_by_object_type(fixtures: FixtureSet) -> dict[str, list[str]]:
     """Every kit ID in the fixtures, grouped by HubSpot object type. Used by reset."""
     plan = build_plan(fixtures, datetime.now(timezone.utc))
     return {object_type: [r["kit_id"] for r in records] for object_type, records in plan.records.items()}
+
+
+def break_hero_deal(fixtures: FixtureSet, hubspot, now: datetime) -> str:
+    """Deliberately damage the first hero deal: wrong stage, close date in the past.
+
+    Used to show (and test) that `kit check` catches a broken demo and
+    `kit check --fix` repairs it. Returns the deal's kit ID.
+    """
+    hero_company = next(c.kit_id for c in fixtures.companies if c.is_hero)
+    deal = next(d for d in fixtures.deals if d.company_id == hero_company)
+    hubspot.batch_upsert("deals", [{"kit_id": deal.kit_id, "properties": {
+        "dealstage": "appointmentscheduled",
+        "closedate": hubspot_time(now - timedelta(days=5)),
+    }}])
+    return deal.kit_id
