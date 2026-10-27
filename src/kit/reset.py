@@ -5,7 +5,7 @@ How records are found:
 - a direct lookup of every demo_kit_id in the story's fixtures, because search
   can lag a few seconds behind writes and would miss just-seeded records.
 
-The safety rule (SPEC §4.4): before anything is deleted, each record's own
+The safety rule: before anything is deleted, each record's own
 demo_kit_story is checked again. A record without the tag, or with another
 story's tag, is never deleted, even if a lookup returned it by mistake.
 """

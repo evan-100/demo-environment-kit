@@ -10,7 +10,7 @@ __pycache__/
 .pytest_cache/
 *.egg-info/
 
-# Run output (a sample ledger gets committed later, see SPEC §6)
+# Run output (only the sample ledger behind the README metrics is committed)
 runs/*
 !runs/.gitkeep
 !runs/ledger.sample.jsonl

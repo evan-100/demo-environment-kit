@@ -125,7 +125,7 @@ def test_relative_date_needs_exactly_one_field():
 
 
 def test_relative_dates_stay_recent_whatever_day_we_seed():
-    # SPEC §8: data seeded on different days stays "recent".
+    # Data seeded on different days stays "recent".
     when = RelativeDate(days_ago=12)
     for seed_day in [datetime(2026, 11, 1, tzinfo=timezone.utc), datetime(2027, 6, 15, tzinfo=timezone.utc)]:
         assert seed_day - when.resolve(seed_day) == timedelta(days=12)

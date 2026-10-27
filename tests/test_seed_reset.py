@@ -136,7 +136,7 @@ def test_seed_writes_every_record_tagged(fixtures, hubspot):
 
 
 def test_seeding_twice_changes_nothing(fixtures, hubspot):
-    # SPEC §8: "Seeding twice in a row changes nothing".
+    # Seeding twice in a row changes nothing.
     seed(fixtures, hubspot)
     first = hubspot.snapshot()
     seed(fixtures, hubspot, now=NOW + timedelta(hours=2))  # later the same day
@@ -153,7 +153,7 @@ def test_seed_links_hero_deal_to_its_people_and_company(fixtures, hubspot):
 
 
 def test_activity_dates_stay_recent_on_any_seed_day(fixtures):
-    # SPEC §8: data seeded on different days stays "recent".
+    # Data seeded on different days stays "recent".
     def newest_past_activity_age(now):
         plan = build_plan(fixtures, now)
         times = [
@@ -173,7 +173,7 @@ def test_open_deals_never_look_overdue(fixtures):
             assert deal["properties"]["closedate"] > NOW.strftime("%Y-%m-%dT%H:%M:%S")
 
 
-# --- Reset: the safety test (SPEC §4.4) ----------------------------------------------------
+# --- Reset: the safety test (reset never deletes untagged records) ----------------------
 
 
 def test_reset_removes_only_tagged_records(fixtures, hubspot):

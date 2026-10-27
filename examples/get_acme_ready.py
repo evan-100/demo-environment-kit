@@ -1,4 +1,4 @@
-"""Demo: an agent gets a demo ready through the kit's MCP server (SPEC §4.6).
+"""Demo: an agent gets a demo ready through the kit's MCP server.
 
     uv run python examples/get_acme_ready.py
     uv run python examples/get_acme_ready.py "Is the healthcare demo ready?"

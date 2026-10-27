@@ -1,4 +1,4 @@
-"""Measured run for the README metrics (SPEC §8): n rounds per story of reset, seed, check.
+"""Measured run for the README metrics: n rounds per story of reset, seed, check.
 
     KIT_BATCH=readme-2026-10-27 uv run python scripts/measure.py --runs 10 healthcare finserv manufacturing
     uv run kit metrics

@@ -1,4 +1,4 @@
-"""MCP server: lets any MCP-capable agent drive the kit (SPEC §4.6).
+"""MCP server: lets any MCP-capable agent drive the kit.
 
 Each tool calls the same function in actions.py that the CLI uses. Tools
 return plain dicts. Expected failures are raised as ToolError, so the agent

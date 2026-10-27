@@ -6,7 +6,7 @@ Two steps:
 2. apply_plan() writes them: make sure the demo_kit_* properties exist,
    upsert records (create or update, matched on demo_kit_id), then link them.
 
-Why running it twice is safe (SPEC §3.4): records are matched on demo_kit_id,
+Why running it twice is safe: records are matched on demo_kit_id,
 so a second run updates the same records instead of creating copies. And
 dates are worked out from the start of today, so two runs on the same day
 write identical values.

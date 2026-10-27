@@ -10,7 +10,7 @@ import re
 
 from kit.schemas import FixtureSet, Story, find_duplicates
 
-# Absolute dates make demo data go stale (SPEC §3.2), so none may appear in any text.
+# Absolute dates make demo data go stale, so none may appear in any text.
 # Catches "2026-10-12" and "October 12".
 MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
 ABSOLUTE_DATE_PATTERNS = [

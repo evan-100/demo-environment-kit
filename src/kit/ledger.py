@@ -1,4 +1,4 @@
-"""The run ledger: one JSON line per command in runs/ledger.jsonl (SPEC §3.6).
+"""The run ledger: one JSON line per command in runs/ledger.jsonl.
 
 The README's metrics are computed from this file, so every command records
 what it did, how long it took and whether it worked.

@@ -1,4 +1,4 @@
-"""`kit metrics`: the README numbers, computed from the run ledger (SPEC §3.6, §8).
+"""`kit metrics`: the README numbers, computed from the run ledger.
 
 Reports one batch of runs (see ledger.py, KIT_BATCH) per story:
 - seed time p50 / p95 and reset time p50 (successful runs only),

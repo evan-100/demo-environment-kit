@@ -1,4 +1,4 @@
-# Healthcare demo story. Everything here is fictional (SPEC §3.5).
+# Healthcare demo story. Everything here is fictional: invented companies and people, example.com domains, 555-01xx phones.
 # This is the one file a human writes. `kit generate healthcare` turns it into fixtures.
 
 id: healthcare

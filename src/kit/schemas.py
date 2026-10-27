@@ -57,7 +57,7 @@ def is_reserved_domain(domain: str) -> bool:
 def check_reserved_domain(domain: str) -> str:
     if not is_reserved_domain(domain):
         raise ValueError(
-            f"'{domain}' is not a reserved domain. Use something like 'acme.example.com' (SPEC §3.5)."
+            f"'{domain}' is not a reserved domain. Use something like 'acme.example.com', so the data stays fictional."
         )
     return domain.lower()
 

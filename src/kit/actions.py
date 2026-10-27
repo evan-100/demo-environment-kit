@@ -2,7 +2,7 @@
 
 The CLI (cli.py) and the MCP server (mcp_server.py) both call these, so a
 command behaves the same whether a person or an agent runs it. Each action:
-- records a line in the run ledger (SPEC §3.6),
+- records a line in the run ledger,
 - returns a plain dict (easy to print, easy to send to an agent),
 - raises KitError with a plain-language message when something goes wrong.
 

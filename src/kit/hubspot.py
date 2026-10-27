@@ -26,7 +26,7 @@ FIRST_WAIT_SECONDS = 1.0
 BATCH_SIZE = 100
 SEARCH_PAGE_SIZE = 200
 
-# The custom properties every kit record carries (SPEC §3.3).
+# The custom properties every kit record carries. Upsert, reset and checks match on them.
 KIT_ID = "demo_kit_id"
 KIT_STORY = "demo_kit_story"
 
