@@ -17,6 +17,7 @@ rerunning `kit seed` simply finishes the job.
 """
 
 import html
+import os
 import zlib
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
@@ -82,6 +83,10 @@ class SeedPlan:
 class SeedResult:
     counts: dict
     errors: list[str]
+
+
+class SeedError(Exception):
+    pass
 
 
 # --- Dates ------------------------------------------------------------------------------
@@ -162,10 +167,12 @@ def activity_properties(activity: ActivityFixture, today: datetime, now: datetim
     return properties
 
 
-def build_plan(fixtures: FixtureSet, now: datetime) -> SeedPlan:
+def build_plan(fixtures: FixtureSet, now: datetime, owner_id: str | None = None) -> SeedPlan:
+    """Everything to write. `owner_id` is the HubSpot user who owns every record (None in a dry run)."""
     story = fixtures.story_id
     today = start_of_today(now)
     plan = SeedPlan(story=story, records={object_type: [] for object_type in OBJECT_TYPES})
+    owner = {"hubspot_owner_id": owner_id} if owner_id else {}
 
     for company in fixtures.companies:
         plan.records["companies"].append({"kit_id": company.kit_id, "properties": {
@@ -175,7 +182,7 @@ def build_plan(fixtures: FixtureSet, now: datetime) -> SeedPlan:
             "state": company.state,
             "numberofemployees": str(company.employees),
             "description": company.description,
-        } | tags(company.kit_id, story)})
+        } | owner | tags(company.kit_id, story)})
 
     for contact in fixtures.contacts:
         plan.records["contacts"].append({"kit_id": contact.kit_id, "properties": {
@@ -184,7 +191,7 @@ def build_plan(fixtures: FixtureSet, now: datetime) -> SeedPlan:
             "email": contact.email,
             "jobtitle": contact.job_title,
             "phone": contact.phone,
-        } | tags(contact.kit_id, story)})
+        } | owner | tags(contact.kit_id, story)})
         plan.links.append(Link("contacts", contact.kit_id, "companies", contact.company_id, CONTACT_TO_PRIMARY_COMPANY))
 
     for deal in fixtures.deals:
@@ -194,7 +201,7 @@ def build_plan(fixtures: FixtureSet, now: datetime) -> SeedPlan:
             "dealstage": deal.stage,
             "amount": str(deal.amount),
             "closedate": hubspot_time(resolve(deal.close_date, deal.kit_id, today)),
-        } | tags(deal.kit_id, story)})
+        } | owner | tags(deal.kit_id, story)})
         plan.links.append(Link("deals", deal.kit_id, "companies", deal.company_id, DEAL_TO_PRIMARY_COMPANY))
         for contact_id in deal.contact_ids:
             plan.links.append(Link("deals", deal.kit_id, "contacts", contact_id, DEAL_TO_CONTACT))
@@ -203,7 +210,7 @@ def build_plan(fixtures: FixtureSet, now: datetime) -> SeedPlan:
         object_type = ACTIVITY_OBJECT_TYPES[activity.type]
         plan.records[object_type].append({
             "kit_id": activity.kit_id,
-            "properties": activity_properties(activity, today, now) | tags(activity.kit_id, story),
+            "properties": activity_properties(activity, today, now) | owner | tags(activity.kit_id, story),
         })
         link_types = ACTIVITY_LINK_TYPES[object_type]
         targets = [("contacts", contact_id) for contact_id in activity.contact_ids]
@@ -220,19 +227,31 @@ def build_plan(fixtures: FixtureSet, now: datetime) -> SeedPlan:
 # --- Applying the plan -----------------------------------------------------------------------
 
 
+def pick_owner(hubspot) -> str:
+    """The rep who owns the demo records: KIT_OWNER_ID from .env, or else the account's first user.
+
+    HubSpot requires an owner on meetings, and a rep's demo looks wrong with unowned deals.
+    """
+    if os.environ.get("KIT_OWNER_ID"):
+        return os.environ["KIT_OWNER_ID"]
+    people = [o for o in hubspot.owners() if not o.get("archived")]
+    if not people:
+        raise SeedError("the HubSpot account has no users to own the records")
+    return people[0]["id"]
+
+
 def ensure_properties(hubspot) -> None:
     """Create demo_kit_id (unique) and demo_kit_story on every object type, if missing."""
     for object_type in OBJECT_TYPES:
         for name, label, unique in [(KIT_ID, "Demo kit ID", True), (KIT_STORY, "Demo kit story", False)]:
-            if not hubspot.property_exists(object_type, name):
-                hubspot.create_property(object_type, {
-                    "name": name,
-                    "label": label,
-                    "type": "string",
-                    "fieldType": "text",
-                    "groupName": PROPERTY_GROUPS[object_type],
-                    "hasUniqueValue": unique,
-                })
+            hubspot.create_property_if_missing(object_type, {
+                "name": name,
+                "label": label,
+                "type": "string",
+                "fieldType": "text",
+                "groupName": PROPERTY_GROUPS[object_type],
+                "hasUniqueValue": unique,
+            })
 
 
 def apply_plan(plan: SeedPlan, hubspot) -> SeedResult:

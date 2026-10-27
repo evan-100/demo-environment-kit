@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 from kit.fixtures import load_fixtures
 from kit.hubspot import KIT_ID, KIT_STORY
 from kit.reset import reset
-from kit.seed import OBJECT_TYPES, apply_plan, build_plan
+from kit.seed import OBJECT_TYPES, apply_plan, build_plan, pick_owner
 
 load_dotenv()
 
@@ -49,11 +49,11 @@ class FakeHubSpot:
         return {"id": record_id, "kit_id": p.get(KIT_ID), "story": p.get(KIT_STORY)}
 
     # The same methods HubSpotClient has.
-    def property_exists(self, object_type, name):
+    def owners(self):
         self.calls += 1
-        return (object_type, name) in self.properties
+        return [{"id": "77", "archived": False}]
 
-    def create_property(self, object_type, definition):
+    def create_property_if_missing(self, object_type, definition):
         self.calls += 1
         self.properties.add((object_type, definition["name"]))
 
@@ -105,7 +105,7 @@ def hubspot():
 
 
 def seed(fixtures, hubspot, now=NOW):
-    result = apply_plan(build_plan(fixtures, now), hubspot)
+    result = apply_plan(build_plan(fixtures, now, owner_id=pick_owner(hubspot)), hubspot)
     assert result.errors == []
     return result
 
@@ -132,6 +132,7 @@ def test_seed_writes_every_record_tagged(fixtures, hubspot):
     for records in hubspot.records.values():
         for properties in records.values():
             assert properties[KIT_STORY] == "healthcare" and properties[KIT_ID].startswith("hc-")
+            assert properties["hubspot_owner_id"] == "77"
 
 
 def test_seeding_twice_changes_nothing(fixtures, hubspot):
@@ -231,8 +232,9 @@ def test_live_seed_twice_then_reset(fixtures):
     from kit.hubspot import HubSpotClient
 
     live = HubSpotClient()
+    owner = pick_owner(live)
     for _ in range(2):
-        assert apply_plan(build_plan(fixtures, datetime.now(timezone.utc)), live).errors == []
+        assert apply_plan(build_plan(fixtures, datetime.now(timezone.utc), owner), live).errors == []
     ids = {t: sorted(r["id"] for r in live.read_by_kit_ids(t, [k for k in kits])) for t, kits in
            [("companies", [c.kit_id for c in fixtures.companies]), ("deals", [d.kit_id for d in fixtures.deals])]}
     assert len(ids["companies"]) == len(fixtures.companies)  # no duplicates after two seeds

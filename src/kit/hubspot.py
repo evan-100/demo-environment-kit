@@ -105,17 +105,21 @@ class HubSpotClient:
     # The methods below are what seed.py and reset.py use. Tests replace this
     # class with an in-memory fake that has the same methods.
 
-    def property_exists(self, object_type: str, name: str) -> bool:
-        try:
-            self.get(f"/crm/properties/{API_VERSION}/{object_type}/{name}")
-            return True
-        except HubSpotError as error:
-            if error.status_code == 404:
-                return False
-            raise
+    def owners(self) -> list[dict]:
+        """The account's users who can own records (needs crm.objects.owners.read)."""
+        return self.get(f"/crm/owners/{API_VERSION}")["results"]
 
-    def create_property(self, object_type: str, definition: dict) -> None:
-        self.post(f"/crm/properties/{API_VERSION}/{object_type}", definition)
+    def create_property_if_missing(self, object_type: str, definition: dict) -> None:
+        """Create a property; do nothing if it already exists.
+
+        We don't check first with a GET: reading email property settings needs an
+        extra permission (connected-email-data-access) that creating them doesn't.
+        """
+        try:
+            self.post(f"/crm/properties/{API_VERSION}/{object_type}", definition)
+        except HubSpotError as error:
+            if error.status_code != 409:  # 409 = already exists
+                raise
 
     def batch_upsert(self, object_type: str, records: list[dict]) -> list[str]:
         """Create or update records matched on demo_kit_id.

@@ -13,7 +13,7 @@ from kit.generate import GenerateError, generate_fixtures
 from kit.hubspot import HubSpotClient, HubSpotError
 from kit.reset import reset as reset_records
 from kit.schemas import FixtureSet, load_story
-from kit.seed import apply_plan, build_plan
+from kit.seed import SeedError, apply_plan, build_plan, pick_owner
 from kit.validate import validate_fixtures
 
 app = typer.Typer(help="Demo readiness kit: generate, seed, check and reset HubSpot demo data.")
@@ -124,7 +124,11 @@ def load_valid_fixtures(story: str) -> FixtureSet:
 
 def run_seed(story: str, hubspot: HubSpotClient) -> None:
     started = time.monotonic()
-    plan = build_plan(load_valid_fixtures(story), datetime.now(timezone.utc))
+    fixtures = load_valid_fixtures(story)
+    try:
+        plan = build_plan(fixtures, datetime.now(timezone.utc), owner_id=pick_owner(hubspot))
+    except (HubSpotError, SeedError) as error:
+        fail(f"couldn't pick a record owner: {error}")
     typer.echo(f"Seeding '{story}': {plan.counts()}")
     try:
         result = apply_plan(plan, hubspot)
@@ -157,6 +161,7 @@ def seed(
                 if len(records) > 3:
                     typer.echo(f"    ... and {len(records) - 3} more")
         typer.echo(f"links: {len(plan.links)}")
+        typer.echo("(Every record also gets an owner, the HubSpot user picked at seed time.)")
         return
     run_seed(story, HubSpotClient())
 
