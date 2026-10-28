@@ -2,7 +2,7 @@
 
 **Use when:** the deals board looks thin, has overdue deals, or won't load.
 
-**Show instead:** `screenshots/pipeline-review.png` (deals board, Sales Pipeline, board view). *To be captured.*
+**Show instead:** `screenshots/pipeline-review.png` (deals board, Sales Pipeline, filtered to the rep: every open card shows its next step).
 
 **Talk track:**
 > "Here's a typical regional sales book: about forty open opportunities across every stage, from first

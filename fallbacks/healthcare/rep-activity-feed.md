@@ -2,7 +2,7 @@
 
 **Use when:** the rep's activity feed is empty or has nothing upcoming.
 
-**Show instead:** `screenshots/rep-activity-feed.png` (activities filtered to the rep: last two weeks plus upcoming). *To be captured.*
+**Show instead:** `screenshots/rep-activity-feed.png` (Tasks, Upcoming view filtered to the rep: 18 open tasks, the Acme ROI summary open beside them).
 
 **Talk track:**
 > "This is my week. Every open deal in my book has had a touch in the last few weeks and has its next

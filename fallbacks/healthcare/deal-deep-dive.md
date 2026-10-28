@@ -2,7 +2,7 @@
 
 **Use when:** the Acme Regional Health deal is at the wrong stage, missing people, or has an empty timeline.
 
-**Show instead:** `screenshots/deal-deep-dive.png` (deal record: stage, buying group, timeline). *To be captured.*
+**Show instead:** `screenshots/deal-deep-dive.png` (Acme deal at Contract Sent, $185K: the CFO pricing call, Danielle's ROI request and the buying group).
 
 **Talk track:**
 > "Acme Regional Health is at Contract Sent for $185K across three hospitals. The VP of Patient
