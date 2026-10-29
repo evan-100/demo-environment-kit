@@ -1,0 +1,58 @@
+# Written by `kit new` from: "a healthcare demo for Acme Regional Health where the new CFO has frozen the deal until he sees a phased rollout plan"
+# Everything here is fictional: invented companies and people, example.com domains, 555-01xx phones.
+# Read it and adjust anything, then run `uv run kit generate acme-phased-rollout`.
+# Background accounts are reused from 'healthcare', so only the hero accounts are generated.
+
+id: acme-phased-rollout
+id_prefix: apr
+industry: Healthcare provider network
+narrative: >-
+  Acme Regional Health's new CFO has frozen the Brightwell Health Software deal until he sees
+  a phased rollout plan that spreads cost and risk. The demo shows the rep rebuilding the
+  proposal into phases tied to measurable savings, and rallying the clinical champion and
+  IT lead to win the CFO over.
+seller_company:
+  name: Brightwell Health Software
+  domain: brightwell.example.com
+accounts:
+- key: acme
+  name: Acme Regional Health
+  domain: acmeregionalhealth.example.com
+  size: 4200
+  city: Columbus
+  state: OH
+  personas:
+  - key: cfo
+    title: Chief Financial Officer
+    attitude: skeptical
+  - key: champion
+    title: VP of Clinical Operations
+    attitude: champion
+  - key: it-lead
+    title: Director of IT Applications
+    attitude: supporter
+  - key: procurement
+    title: Senior Procurement Manager
+    attitude: neutral
+  deals:
+  - key: deal-01
+    stage: decisionmakerboughtin
+    amount: 685000
+    close_in_days: 60
+  activity_story: >-
+    Six weeks ago the VP of Clinical Operations ran a strong pilot review for two hospital
+    units and the team got verbal agreement on a full-network rollout. Four weeks ago legal
+    and procurement started redlines on the three-year agreement. Two weeks ago a new CFO
+    started and put the whole deal on hold, saying the upfront $685k commitment is too big
+    and too risky without a phased plan. Last week the rep had a 30-minute call with the CFO,
+    who said he wants phases with clear go/no-go gates and savings per phase, and the IT lead
+    offered to help size the integration work. The rep and the champion also drafted a three-phase
+    outline: two hospitals first, then ambulatory clinics, then the rest of the network. Next
+    up is a working session with the champion and IT lead in three days to finalize the phase
+    costs, then a meeting with the CFO the following week to present the plan.
+background: healthcare
+golden_paths:
+- pipeline-review
+- deal-deep-dive
+- account-360
+- rep-activity-feed

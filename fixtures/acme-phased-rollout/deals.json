@@ -1,0 +1,538 @@
+[
+  {
+    "kit_id": "apr-f01-deal-01",
+    "company_id": "apr-f01-company",
+    "contact_ids": [
+      "apr-f01-contact-01"
+    ],
+    "name": "Velloraine Enterprise Intake Rollout",
+    "stage": "decisionmakerboughtin",
+    "amount": 486500,
+    "close_date": {
+      "days_from_now": 75
+    }
+  },
+  {
+    "kit_id": "apr-f01-deal-02",
+    "company_id": "apr-f01-company",
+    "contact_ids": [
+      "apr-f01-contact-01"
+    ],
+    "name": "Velloraine Outpatient Kiosk Add-on",
+    "stage": "qualifiedtobuy",
+    "amount": 92400,
+    "close_date": {
+      "days_from_now": 110
+    }
+  },
+  {
+    "kit_id": "apr-f02-deal-01",
+    "company_id": "apr-f02-company",
+    "contact_ids": [
+      "apr-f02-contact-01"
+    ],
+    "name": "Quillspar Digital Intake Pilot",
+    "stage": "appointmentscheduled",
+    "amount": 38700,
+    "close_date": {
+      "days_from_now": 95
+    }
+  },
+  {
+    "kit_id": "apr-f02-deal-02",
+    "company_id": "apr-f02-company",
+    "contact_ids": [
+      "apr-f02-contact-01"
+    ],
+    "name": "Quillspar Telehealth Forms",
+    "stage": "closedlost",
+    "amount": 14800,
+    "close_date": {
+      "days_ago": 35
+    }
+  },
+  {
+    "kit_id": "apr-f03-deal-01",
+    "company_id": "apr-f03-company",
+    "contact_ids": [
+      "apr-f03-contact-01"
+    ],
+    "name": "Orbintree Imaging Check-in",
+    "stage": "presentationscheduled",
+    "amount": 167300,
+    "close_date": {
+      "days_from_now": 60
+    }
+  },
+  {
+    "kit_id": "apr-f03-deal-02",
+    "company_id": "apr-f03-company",
+    "contact_ids": [
+      "apr-f03-contact-01"
+    ],
+    "name": "Orbintree Specialty Clinics Phase 2",
+    "stage": "contractsent",
+    "amount": 214900,
+    "close_date": {
+      "days_from_now": 21
+    }
+  },
+  {
+    "kit_id": "apr-f04-deal-01",
+    "company_id": "apr-f04-company",
+    "contact_ids": [
+      "apr-f04-contact-01"
+    ],
+    "name": "Tessamoor Registration Modernization",
+    "stage": "qualifiedtobuy",
+    "amount": 128600,
+    "close_date": {
+      "days_from_now": 100
+    }
+  },
+  {
+    "kit_id": "apr-f04-deal-02",
+    "company_id": "apr-f04-company",
+    "contact_ids": [
+      "apr-f04-contact-01"
+    ],
+    "name": "Tessamoor Satellite Clinic Tablets",
+    "stage": "closedwon",
+    "amount": 41250,
+    "close_date": {
+      "days_ago": 48
+    }
+  },
+  {
+    "kit_id": "apr-f05-deal-01",
+    "company_id": "apr-f05-company",
+    "contact_ids": [
+      "apr-f05-contact-01"
+    ],
+    "name": "Zenthrop New Patient Packet Automation",
+    "stage": "presentationscheduled",
+    "amount": 72900,
+    "close_date": {
+      "days_from_now": 45
+    }
+  },
+  {
+    "kit_id": "apr-f05-deal-02",
+    "company_id": "apr-f05-company",
+    "contact_ids": [
+      "apr-f05-contact-01"
+    ],
+    "name": "Zenthrop Pre-Visit Texting",
+    "stage": "appointmentscheduled",
+    "amount": 23400,
+    "close_date": {
+      "days_from_now": 80
+    }
+  },
+  {
+    "kit_id": "apr-f06-deal-01",
+    "company_id": "apr-f06-company",
+    "contact_ids": [
+      "apr-f06-contact-01"
+    ],
+    "name": "Calderwyn Systemwide Intake Platform",
+    "stage": "decisionmakerboughtin",
+    "amount": 742000,
+    "close_date": {
+      "days_from_now": 115
+    }
+  },
+  {
+    "kit_id": "apr-f06-deal-02",
+    "company_id": "apr-f06-company",
+    "contact_ids": [
+      "apr-f06-contact-01"
+    ],
+    "name": "Calderwyn Emergency Dept Pre-Registration",
+    "stage": "closedlost",
+    "amount": 156000,
+    "close_date": {
+      "days_ago": 60
+    }
+  },
+  {
+    "kit_id": "apr-f07-deal-01",
+    "company_id": "apr-f07-company",
+    "contact_ids": [
+      "apr-f07-contact-01"
+    ],
+    "name": "Mirabend Check-in Starter",
+    "stage": "qualifiedtobuy",
+    "amount": 29850,
+    "close_date": {
+      "days_from_now": 70
+    }
+  },
+  {
+    "kit_id": "apr-f07-deal-02",
+    "company_id": "apr-f07-company",
+    "contact_ids": [
+      "apr-f07-contact-01"
+    ],
+    "name": "Mirabend Insurance Verification",
+    "stage": "appointmentscheduled",
+    "amount": 17600,
+    "close_date": {
+      "days_from_now": 55
+    }
+  },
+  {
+    "kit_id": "apr-f08-deal-01",
+    "company_id": "apr-f08-company",
+    "contact_ids": [
+      "apr-f08-contact-01"
+    ],
+    "name": "Pellucid Pre-Op Forms Platform",
+    "stage": "contractsent",
+    "amount": 183700,
+    "close_date": {
+      "days_from_now": 14
+    }
+  },
+  {
+    "kit_id": "apr-f08-deal-02",
+    "company_id": "apr-f08-company",
+    "contact_ids": [
+      "apr-f08-contact-01"
+    ],
+    "name": "Pellucid Consent eSignature",
+    "stage": "closedwon",
+    "amount": 46900,
+    "close_date": {
+      "days_ago": 72
+    }
+  },
+  {
+    "kit_id": "apr-f09-deal-01",
+    "company_id": "apr-f09-company",
+    "contact_ids": [
+      "apr-f09-contact-01"
+    ],
+    "name": "Harrowgate Secure Intake Portal",
+    "stage": "presentationscheduled",
+    "amount": 98300,
+    "close_date": {
+      "days_from_now": 65
+    }
+  },
+  {
+    "kit_id": "apr-f09-deal-02",
+    "company_id": "apr-f09-company",
+    "contact_ids": [
+      "apr-f09-contact-01"
+    ],
+    "name": "Harrowgate Teletherapy Onboarding",
+    "stage": "decisionmakerboughtin",
+    "amount": 34200,
+    "close_date": {
+      "days_from_now": 40
+    }
+  },
+  {
+    "kit_id": "apr-f10-deal-01",
+    "company_id": "apr-f10-company",
+    "contact_ids": [
+      "apr-f10-contact-01"
+    ],
+    "name": "Fenmoray Registration Overhaul",
+    "stage": "qualifiedtobuy",
+    "amount": 64800,
+    "close_date": {
+      "days_from_now": 120
+    }
+  },
+  {
+    "kit_id": "apr-f10-deal-02",
+    "company_id": "apr-f10-company",
+    "contact_ids": [
+      "apr-f10-contact-01"
+    ],
+    "name": "Fenmoray Patient Portal Forms",
+    "stage": "closedlost",
+    "amount": 19500,
+    "close_date": {
+      "days_ago": 22
+    }
+  },
+  {
+    "kit_id": "apr-f11-deal-01",
+    "company_id": "apr-f11-company",
+    "contact_ids": [
+      "apr-f11-contact-01"
+    ],
+    "name": "Kelvanta system-wide intake platform",
+    "stage": "presentationscheduled",
+    "amount": 684500,
+    "close_date": {
+      "days_from_now": 75
+    }
+  },
+  {
+    "kit_id": "apr-f11-deal-02",
+    "company_id": "apr-f11-company",
+    "contact_ids": [
+      "apr-f11-contact-01"
+    ],
+    "name": "Kelvanta kiosk add-on",
+    "stage": "qualifiedtobuy",
+    "amount": 142300,
+    "close_date": {
+      "days_from_now": 105
+    }
+  },
+  {
+    "kit_id": "apr-f12-deal-01",
+    "company_id": "apr-f12-company",
+    "contact_ids": [
+      "apr-f12-contact-01"
+    ],
+    "name": "Dovemarrow digital intake pilot",
+    "stage": "appointmentscheduled",
+    "amount": 38900,
+    "close_date": {
+      "days_from_now": 95
+    }
+  },
+  {
+    "kit_id": "apr-f12-deal-02",
+    "company_id": "apr-f12-company",
+    "contact_ids": [
+      "apr-f12-contact-01"
+    ],
+    "name": "Dovemarrow insurance verification module",
+    "stage": "closedlost",
+    "amount": 21700,
+    "close_date": {
+      "days_ago": 34
+    }
+  },
+  {
+    "kit_id": "apr-f13-deal-01",
+    "company_id": "apr-f13-company",
+    "contact_ids": [
+      "apr-f13-contact-01"
+    ],
+    "name": "Pyrelith patient access platform",
+    "stage": "contractsent",
+    "amount": 296800,
+    "close_date": {
+      "days_from_now": 18
+    }
+  },
+  {
+    "kit_id": "apr-f13-deal-02",
+    "company_id": "apr-f13-company",
+    "contact_ids": [
+      "apr-f13-contact-01"
+    ],
+    "name": "Pyrelith imaging center forms",
+    "stage": "decisionmakerboughtin",
+    "amount": 74600,
+    "close_date": {
+      "days_from_now": 50
+    }
+  },
+  {
+    "kit_id": "apr-f14-deal-01",
+    "company_id": "apr-f14-company",
+    "contact_ids": [
+      "apr-f14-contact-01"
+    ],
+    "name": "Wexlomere pre-registration portal",
+    "stage": "qualifiedtobuy",
+    "amount": 218400,
+    "close_date": {
+      "days_from_now": 88
+    }
+  },
+  {
+    "kit_id": "apr-f14-deal-02",
+    "company_id": "apr-f14-company",
+    "contact_ids": [
+      "apr-f14-contact-01"
+    ],
+    "name": "Wexlomere guardian consent workflow",
+    "stage": "closedwon",
+    "amount": 57250,
+    "close_date": {
+      "days_ago": 27
+    }
+  },
+  {
+    "kit_id": "apr-f15-deal-01",
+    "company_id": "apr-f15-company",
+    "contact_ids": [
+      "apr-f15-contact-01"
+    ],
+    "name": "Ostrenvale ED and clinic check-in",
+    "stage": "presentationscheduled",
+    "amount": 167900,
+    "close_date": {
+      "days_from_now": 64
+    }
+  },
+  {
+    "kit_id": "apr-f15-deal-02",
+    "company_id": "apr-f15-company",
+    "contact_ids": [
+      "apr-f15-contact-01"
+    ],
+    "name": "Ostrenvale payment collection add-on",
+    "stage": "closedlost",
+    "amount": 48300,
+    "close_date": {
+      "days_ago": 58
+    }
+  },
+  {
+    "kit_id": "apr-f16-deal-01",
+    "company_id": "apr-f16-company",
+    "contact_ids": [
+      "apr-f16-contact-01"
+    ],
+    "name": "Thistlebrook tablet intake",
+    "stage": "appointmentscheduled",
+    "amount": 14800,
+    "close_date": {
+      "days_from_now": 45
+    }
+  },
+  {
+    "kit_id": "apr-f17-deal-01",
+    "company_id": "apr-f17-company",
+    "contact_ids": [
+      "apr-f17-contact-01"
+    ],
+    "name": "Granulyth online check-in rollout",
+    "stage": "decisionmakerboughtin",
+    "amount": 112600,
+    "close_date": {
+      "days_from_now": 38
+    }
+  },
+  {
+    "kit_id": "apr-f18-deal-01",
+    "company_id": "apr-f18-company",
+    "contact_ids": [
+      "apr-f18-contact-01"
+    ],
+    "name": "Brindlemoor registration modernization",
+    "stage": "closedwon",
+    "amount": 43700,
+    "close_date": {
+      "days_ago": 14
+    }
+  },
+  {
+    "kit_id": "apr-f19-deal-01",
+    "company_id": "apr-f19-company",
+    "contact_ids": [
+      "apr-f19-contact-01"
+    ],
+    "name": "Cassivane pre-surgical intake",
+    "stage": "contractsent",
+    "amount": 93400,
+    "close_date": {
+      "days_from_now": 21
+    }
+  },
+  {
+    "kit_id": "apr-f20-deal-01",
+    "company_id": "apr-f20-company",
+    "contact_ids": [
+      "apr-f20-contact-01"
+    ],
+    "name": "Umbrelline multilingual intake",
+    "stage": "qualifiedtobuy",
+    "amount": 131200,
+    "close_date": {
+      "days_from_now": 110
+    }
+  },
+  {
+    "kit_id": "apr-f21-deal-01",
+    "company_id": "apr-f21-company",
+    "contact_ids": [
+      "apr-f21-contact-01"
+    ],
+    "name": "Kovelthorne Enterprise Patient Intake Rollout",
+    "stage": "decisionmakerboughtin",
+    "amount": 687400,
+    "close_date": {
+      "days_from_now": 75
+    }
+  },
+  {
+    "kit_id": "apr-f22-deal-01",
+    "company_id": "apr-f22-company",
+    "contact_ids": [
+      "apr-f22-contact-01"
+    ],
+    "name": "Lumivane Digital Check-In Discovery",
+    "stage": "appointmentscheduled",
+    "amount": 38600,
+    "close_date": {
+      "days_from_now": 110
+    }
+  },
+  {
+    "kit_id": "apr-f23-deal-01",
+    "company_id": "apr-f23-company",
+    "contact_ids": [
+      "apr-f23-contact-01"
+    ],
+    "name": "Strivenmoor Bilingual Intake Platform",
+    "stage": "presentationscheduled",
+    "amount": 214900,
+    "close_date": {
+      "days_from_now": 58
+    }
+  },
+  {
+    "kit_id": "apr-f24-deal-01",
+    "company_id": "apr-f24-company",
+    "contact_ids": [
+      "apr-f24-contact-01"
+    ],
+    "name": "Ravenquill Pre-Visit Forms Automation",
+    "stage": "contractsent",
+    "amount": 96250,
+    "close_date": {
+      "days_from_now": 19
+    }
+  },
+  {
+    "kit_id": "apr-f25-deal-01",
+    "company_id": "apr-f25-company",
+    "contact_ids": [
+      "apr-f25-contact-01"
+    ],
+    "name": "Tamarisk Bay Intake Modernization",
+    "stage": "closedlost",
+    "amount": 142300,
+    "close_date": {
+      "days_ago": 24
+    }
+  },
+  {
+    "kit_id": "apr-acme-deal-01",
+    "company_id": "apr-acme-company",
+    "contact_ids": [
+      "apr-acme-cfo",
+      "apr-acme-champion",
+      "apr-acme-it-lead",
+      "apr-acme-procurement"
+    ],
+    "name": "Acme Regional Health - Network-wide Care Coordination Platform",
+    "stage": "decisionmakerboughtin",
+    "amount": 685000,
+    "close_date": {
+      "days_from_now": 60
+    }
+  }
+]

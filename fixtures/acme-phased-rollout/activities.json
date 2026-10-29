@@ -1,0 +1,1226 @@
+[
+  {
+    "kit_id": "apr-f01-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 6
+    },
+    "title": "Ops champion sync",
+    "body": "Lorelei wants check-in under 4 minutes, currently around 11. Casimir is worried about the payback period and a rival pilot at two sites.",
+    "company_id": "apr-f01-company",
+    "contact_ids": [
+      "apr-f01-contact-01"
+    ],
+    "deal_id": "apr-f01-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f01-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 9
+    },
+    "title": "CFO ROI walkthrough",
+    "body": "Present a 3-year cost model with front-desk labor savings to Casimir and his finance team.",
+    "company_id": "apr-f01-company",
+    "contact_ids": [
+      "apr-f01-contact-01"
+    ],
+    "deal_id": "apr-f01-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f01-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 12
+    },
+    "title": "Kiosk specs sent",
+    "body": "Sent kiosk hardware options and ADA requirements. Lorelei will review with facilities.",
+    "company_id": "apr-f01-company",
+    "contact_ids": [
+      "apr-f01-contact-01"
+    ],
+    "deal_id": "apr-f01-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f01-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 5
+    },
+    "title": "Draft kiosk pricing",
+    "body": "Build a pricing tier for 14 outpatient lobbies and send to Lorelei.",
+    "company_id": "apr-f01-company",
+    "contact_ids": [
+      "apr-f01-contact-01"
+    ],
+    "deal_id": "apr-f01-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f02-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 8
+    },
+    "title": "Discovery intro",
+    "body": "Tobias says patients fill out clipboards that staff retype, about 20 hours a week. Wants a demo for his two busiest clinics.",
+    "company_id": "apr-f02-company",
+    "contact_ids": [
+      "apr-f02-contact-01"
+    ],
+    "deal_id": "apr-f02-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f02-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Product demo",
+    "body": "Show tablet check-in and insurance card scan to Tobias and the front desk leads.",
+    "company_id": "apr-f02-company",
+    "contact_ids": [
+      "apr-f02-contact-01"
+    ],
+    "deal_id": "apr-f02-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f02-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 28
+    },
+    "title": "Lost to existing vendor",
+    "body": "Tobias said they will stay with the forms module in their current EHR for now. Revisit next year.",
+    "company_id": "apr-f02-company",
+    "contact_ids": [
+      "apr-f02-contact-01"
+    ],
+    "deal_id": "apr-f02-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f03-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "Requirements call",
+    "body": "Ingrid cites 9% claim denials from bad insurance data at intake. Dominic needs HL7 integration details.",
+    "company_id": "apr-f03-company",
+    "contact_ids": [
+      "apr-f03-contact-01"
+    ],
+    "deal_id": "apr-f03-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f03-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 8
+    },
+    "title": "Technical presentation",
+    "body": "Walk Dominic's team through the integration architecture and security review.",
+    "company_id": "apr-f03-company",
+    "contact_ids": [
+      "apr-f03-contact-01"
+    ],
+    "deal_id": "apr-f03-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f03-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 3
+    },
+    "title": "Contract redlines",
+    "body": "Legal returned minor redlines on data terms. Ingrid expects signature soon.",
+    "company_id": "apr-f03-company",
+    "contact_ids": [
+      "apr-f03-contact-01"
+    ],
+    "deal_id": "apr-f03-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f03-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 4
+    },
+    "title": "Follow up with legal",
+    "body": "Confirm revised BAA language with their counsel.",
+    "company_id": "apr-f03-company",
+    "contact_ids": [
+      "apr-f03-contact-01"
+    ],
+    "deal_id": "apr-f03-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f04-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "Discovery call",
+    "body": "Rosalind says registration lines hit 25 minutes on Monday mornings. Budget decisions happen next quarter.",
+    "company_id": "apr-f04-company",
+    "contact_ids": [
+      "apr-f04-contact-01"
+    ],
+    "deal_id": "apr-f04-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f04-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 7
+    },
+    "title": "Send case study",
+    "body": "Email a case study from a similar-size hospital with wait time results.",
+    "company_id": "apr-f04-company",
+    "contact_ids": [
+      "apr-f04-contact-01"
+    ],
+    "deal_id": "apr-f04-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f04-deal-02-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 20
+    },
+    "title": "Signed verbal approval",
+    "body": "Rosalind confirmed approval for tablets at both satellite clinics. Go-live planned within the month.",
+    "company_id": "apr-f04-company",
+    "contact_ids": [
+      "apr-f04-contact-01"
+    ],
+    "deal_id": "apr-f04-deal-02",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f05-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 9
+    },
+    "title": "Follow-up after demo",
+    "body": "Matilda liked the guardian consent flow but asked about Spanish language support.",
+    "company_id": "apr-f05-company",
+    "contact_ids": [
+      "apr-f05-contact-01"
+    ],
+    "deal_id": "apr-f05-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f05-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 11
+    },
+    "title": "Spanish workflow review",
+    "body": "Show bilingual forms and consent capture to Matilda and two office managers.",
+    "company_id": "apr-f05-company",
+    "contact_ids": [
+      "apr-f05-contact-01"
+    ],
+    "deal_id": "apr-f05-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f05-deal-02-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 4
+    },
+    "title": "Inbound inquiry",
+    "body": "Matilda asked about text-based pre-visit forms to cut no-shows, currently near 14%.",
+    "company_id": "apr-f05-company",
+    "contact_ids": [
+      "apr-f05-contact-01"
+    ],
+    "deal_id": "apr-f05-deal-02"
+  },
+  {
+    "kit_id": "apr-f05-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Schedule intro call",
+    "body": "Book a 30-minute scoping call with Matilda.",
+    "company_id": "apr-f05-company",
+    "contact_ids": [
+      "apr-f05-contact-01"
+    ],
+    "deal_id": "apr-f05-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f06-deal-01-act-1",
+    "type": "meeting",
+    "when": {
+      "days_ago": 7
+    },
+    "title": "Executive review",
+    "body": "Leopold presented our proposal to his leadership team. Procurement wants a competitive bid and references.",
+    "company_id": "apr-f06-company",
+    "contact_ids": [
+      "apr-f06-contact-01"
+    ],
+    "deal_id": "apr-f06-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f06-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 10
+    },
+    "title": "Prepare references",
+    "body": "Line up three hospital references for Beatrix's procurement packet.",
+    "company_id": "apr-f06-company",
+    "contact_ids": [
+      "apr-f06-contact-01"
+    ],
+    "deal_id": "apr-f06-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f06-deal-02-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 25
+    },
+    "title": "Project shelved",
+    "body": "Leopold said the ED project lost funding this year after an EHR upgrade took priority.",
+    "company_id": "apr-f06-company",
+    "contact_ids": [
+      "apr-f06-contact-01"
+    ],
+    "deal_id": "apr-f06-deal-02",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f07-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 10
+    },
+    "title": "Needs discovery",
+    "body": "Evander is concerned about cost and grant-funded budget. Needs a low-priced tier and offline mode.",
+    "company_id": "apr-f07-company",
+    "contact_ids": [
+      "apr-f07-contact-01"
+    ],
+    "deal_id": "apr-f07-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f07-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Send grant-friendly quote",
+    "body": "Prepare a quote with a phased rollout he can attach to a grant application.",
+    "company_id": "apr-f07-company",
+    "contact_ids": [
+      "apr-f07-contact-01"
+    ],
+    "deal_id": "apr-f07-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f07-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 6
+    },
+    "title": "Intro email reply",
+    "body": "Evander replied that eligibility checks eat up front desk time. Open to a short call.",
+    "company_id": "apr-f07-company",
+    "contact_ids": [
+      "apr-f07-contact-01"
+    ],
+    "deal_id": "apr-f07-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f07-deal-02-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 2
+    },
+    "title": "Intro call",
+    "body": "Cover eligibility verification workflow and pricing basics.",
+    "company_id": "apr-f07-company",
+    "contact_ids": [
+      "apr-f07-contact-01"
+    ],
+    "deal_id": "apr-f07-deal-02",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f08-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 4
+    },
+    "title": "Contract check-in",
+    "body": "Cordelia is reviewing the order form with legal. She wants a 60-day implementation window.",
+    "company_id": "apr-f08-company",
+    "contact_ids": [
+      "apr-f08-contact-01"
+    ],
+    "deal_id": "apr-f08-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f08-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Confirm implementation plan",
+    "body": "Send a 60-day implementation timeline for her sign-off.",
+    "company_id": "apr-f08-company",
+    "contact_ids": [
+      "apr-f08-contact-01"
+    ],
+    "deal_id": "apr-f08-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f08-deal-02-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 27
+    },
+    "title": "Closed and kickoff",
+    "body": "Signed after a two-center pilot cut consent paper handling by half. Kickoff scheduled with Cordelia's team.",
+    "company_id": "apr-f08-company",
+    "contact_ids": [
+      "apr-f08-contact-01"
+    ],
+    "deal_id": "apr-f08-deal-02"
+  },
+  {
+    "kit_id": "apr-f09-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 11
+    },
+    "title": "Privacy requirements",
+    "body": "Septimus needs 42 CFR Part 2 handling and granular consent controls. Wants security documentation first.",
+    "company_id": "apr-f09-company",
+    "contact_ids": [
+      "apr-f09-contact-01"
+    ],
+    "deal_id": "apr-f09-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f09-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 12
+    },
+    "title": "Security review",
+    "body": "Walk Septimus through our SOC 2 report and consent model.",
+    "company_id": "apr-f09-company",
+    "contact_ids": [
+      "apr-f09-contact-01"
+    ],
+    "deal_id": "apr-f09-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f09-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "Proposal sent",
+    "body": "Sent a proposal for remote onboarding forms. Septimus is taking it to the clinical director.",
+    "company_id": "apr-f09-company",
+    "contact_ids": [
+      "apr-f09-contact-01"
+    ],
+    "deal_id": "apr-f09-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f09-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 8
+    },
+    "title": "Follow up on director feedback",
+    "body": "Call Septimus to hear the clinical director's questions.",
+    "company_id": "apr-f09-company",
+    "contact_ids": [
+      "apr-f09-contact-01"
+    ],
+    "deal_id": "apr-f09-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f10-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 18
+    },
+    "title": "Initial scoping",
+    "body": "Gideon says staffing is thin and patients drive hours, so pre-arrival forms matter. Broadband at some sites is unreliable.",
+    "company_id": "apr-f10-company",
+    "contact_ids": [
+      "apr-f10-contact-01"
+    ],
+    "deal_id": "apr-f10-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f10-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 13
+    },
+    "title": "Research connectivity options",
+    "body": "Confirm offline sync capability and send technical notes to Gideon.",
+    "company_id": "apr-f10-company",
+    "contact_ids": [
+      "apr-f10-contact-01"
+    ],
+    "deal_id": "apr-f10-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f10-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 16
+    },
+    "title": "Went with in-house build",
+    "body": "Gideon said their IT contractor will build basic forms internally. Left the door open for later.",
+    "company_id": "apr-f10-company",
+    "contact_ids": [
+      "apr-f10-contact-01"
+    ],
+    "deal_id": "apr-f10-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f11-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 6
+    },
+    "title": "Ops champion sync",
+    "body": "Naomi says average check-in runs 14 minutes and wants it under 5. A competitor pilot is live at two campuses, so she asked for a side-by-side metrics comparison.",
+    "company_id": "apr-f11-company",
+    "contact_ids": [
+      "apr-f11-contact-01"
+    ],
+    "deal_id": "apr-f11-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f11-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 8
+    },
+    "title": "CFO ROI walkthrough",
+    "body": "Present the cost model to Warren, who doubts the savings claims. Bring front-desk labor numbers from the ED pilot site.",
+    "company_id": "apr-f11-company",
+    "contact_ids": [
+      "apr-f11-contact-01"
+    ],
+    "deal_id": "apr-f11-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f11-deal-02-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 12
+    },
+    "title": "Kiosk scope discussion",
+    "body": "Naomi wants lobby kiosks at the four busiest clinics, contingent on the main platform decision. Budget not yet approved.",
+    "company_id": "apr-f11-company",
+    "contact_ids": [
+      "apr-f11-contact-01"
+    ],
+    "deal_id": "apr-f11-deal-02"
+  },
+  {
+    "kit_id": "apr-f11-deal-02-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 5
+    },
+    "title": "Send kiosk pricing sheet",
+    "body": "Draft per-kiosk pricing with a three-site pilot option and send to Naomi.",
+    "company_id": "apr-f11-company",
+    "contact_ids": [
+      "apr-f11-contact-01"
+    ],
+    "deal_id": "apr-f11-deal-02",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f12-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 9
+    },
+    "title": "Discovery call",
+    "body": "Jocelyn's staff re-key paper forms for about 120 patients a day. She is open to a pilot at two clinics.",
+    "company_id": "apr-f12-company",
+    "contact_ids": [
+      "apr-f12-contact-01"
+    ],
+    "deal_id": "apr-f12-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f12-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Workflow mapping session",
+    "body": "Walk through front-desk process at the busiest urgent care with two receptionists.",
+    "company_id": "apr-f12-company",
+    "contact_ids": [
+      "apr-f12-contact-01"
+    ],
+    "deal_id": "apr-f12-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f12-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 22
+    },
+    "title": "Lost notice received",
+    "body": "Jocelyn chose to stay with their billing vendor's built-in eligibility checks. Revisit next year if denial rates stay high.",
+    "company_id": "apr-f12-company",
+    "contact_ids": [
+      "apr-f12-contact-01"
+    ],
+    "deal_id": "apr-f12-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f13-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 4
+    },
+    "title": "Contract redlines",
+    "body": "Hollis returned redlines on the SLA uptime clause, asking for 99.9%. Legal reviewing on our side.",
+    "company_id": "apr-f13-company",
+    "contact_ids": [
+      "apr-f13-contact-01"
+    ],
+    "deal_id": "apr-f13-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f13-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Return revised MSA",
+    "body": "Get security addendum and updated uptime terms back to Hollis.",
+    "company_id": "apr-f13-company",
+    "contact_ids": [
+      "apr-f13-contact-01"
+    ],
+    "deal_id": "apr-f13-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f13-deal-02-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 10
+    },
+    "title": "CIO alignment call",
+    "body": "Seraphina is on board if the EHR integration holds up in testing. She wants a reference from another ortho group.",
+    "company_id": "apr-f13-company",
+    "contact_ids": [
+      "apr-f13-contact-01"
+    ],
+    "deal_id": "apr-f13-deal-02",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f13-deal-02-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 9
+    },
+    "title": "Integration technical review",
+    "body": "IT team and our engineer review the HL7 interface and sandbox plan.",
+    "company_id": "apr-f13-company",
+    "contact_ids": [
+      "apr-f13-contact-01"
+    ],
+    "deal_id": "apr-f13-deal-02",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f14-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "Needs review",
+    "body": "Peregrine says parents fill out the same forms at every specialty visit. Wants one pre-visit portal in English and Spanish.",
+    "company_id": "apr-f14-company",
+    "contact_ids": [
+      "apr-f14-contact-01"
+    ],
+    "deal_id": "apr-f14-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f14-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 7
+    },
+    "title": "Share Spanish-language demo",
+    "body": "Record a short demo of the bilingual form flow and send to Peregrine.",
+    "company_id": "apr-f14-company",
+    "contact_ids": [
+      "apr-f14-contact-01"
+    ],
+    "deal_id": "apr-f14-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f14-deal-02-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 18
+    },
+    "title": "Signed order form",
+    "body": "Peregrine returned the signed order. Kickoff set with registration leads for the consent workflow.",
+    "company_id": "apr-f14-company",
+    "contact_ids": [
+      "apr-f14-contact-01"
+    ],
+    "deal_id": "apr-f14-deal-02",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f15-deal-01-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 8
+    },
+    "title": "Stakeholder map",
+    "body": "Lucian is sponsor, but nursing leadership worries about added triage steps. Need an ED nurse in the demo.",
+    "company_id": "apr-f15-company",
+    "contact_ids": [
+      "apr-f15-contact-01"
+    ],
+    "deal_id": "apr-f15-deal-01"
+  },
+  {
+    "kit_id": "apr-f15-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 11
+    },
+    "title": "Product demo for leadership",
+    "body": "Demo to Lucian and the nursing directors, focused on ED registration time.",
+    "company_id": "apr-f15-company",
+    "contact_ids": [
+      "apr-f15-contact-01"
+    ],
+    "deal_id": "apr-f15-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f15-deal-02-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 28
+    },
+    "title": "Declined add-on",
+    "body": "Lucian said copay collection is handled by a separate vendor under contract for two more years.",
+    "company_id": "apr-f15-company",
+    "contact_ids": [
+      "apr-f15-contact-01"
+    ],
+    "deal_id": "apr-f15-deal-02",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f16-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "First conversation",
+    "body": "Odalys wants to drop clipboards. Concerned about older patients and tablets, so asked about text-link options.",
+    "company_id": "apr-f16-company",
+    "contact_ids": [
+      "apr-f16-contact-01"
+    ],
+    "deal_id": "apr-f16-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f16-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 4
+    },
+    "title": "Send small-practice pricing",
+    "body": "Email the per-provider pricing tier and a two-week trial offer.",
+    "company_id": "apr-f16-company",
+    "contact_ids": [
+      "apr-f16-contact-01"
+    ],
+    "deal_id": "apr-f16-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f17-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 3
+    },
+    "title": "Pricing discussion",
+    "body": "Fitzgerald confirmed the CEO supports the rollout. He is pushing for a discount on all fourteen sites signed together.",
+    "company_id": "apr-f17-company",
+    "contact_ids": [
+      "apr-f17-contact-01"
+    ],
+    "deal_id": "apr-f17-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f17-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 10
+    },
+    "title": "Executive review",
+    "body": "Meet Fitzgerald and the CEO to finalize scope and rollout phasing.",
+    "company_id": "apr-f17-company",
+    "contact_ids": [
+      "apr-f17-contact-01"
+    ],
+    "deal_id": "apr-f17-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f18-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 9
+    },
+    "title": "Order confirmed",
+    "body": "Tamsin signed after the grant funding came through. Go-live targeted for early next quarter.",
+    "company_id": "apr-f18-company",
+    "contact_ids": [
+      "apr-f18-contact-01"
+    ],
+    "deal_id": "apr-f18-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f19-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 2
+    },
+    "title": "Proposal follow-up",
+    "body": "Barnaby said the surgeons like the pre-op questionnaire flow. Purchasing needs final pricing by end of month.",
+    "company_id": "apr-f19-company",
+    "contact_ids": [
+      "apr-f19-contact-01"
+    ],
+    "deal_id": "apr-f19-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f19-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 2
+    },
+    "title": "Confirm implementation timeline",
+    "body": "Send Barnaby a six-week go-live plan with training dates.",
+    "company_id": "apr-f19-company",
+    "contact_ids": [
+      "apr-f19-contact-01"
+    ],
+    "deal_id": "apr-f19-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f20-deal-01-act-1",
+    "type": "note",
+    "when": {
+      "days_ago": 16
+    },
+    "title": "Funding and needs",
+    "body": "Rhiannon needs multilingual forms and a low-bandwidth option. Purchase depends on a grant decision next quarter.",
+    "company_id": "apr-f20-company",
+    "contact_ids": [
+      "apr-f20-contact-01"
+    ],
+    "deal_id": "apr-f20-deal-01"
+  },
+  {
+    "kit_id": "apr-f20-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 13
+    },
+    "title": "Site visit planning call",
+    "body": "Plan a visit to the two largest clinics to observe the front-desk flow.",
+    "company_id": "apr-f20-company",
+    "contact_ids": [
+      "apr-f20-contact-01"
+    ],
+    "deal_id": "apr-f20-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f21-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "Pilot comparison call with Annelise",
+    "body": "Annelise says average check-in is 14 minutes and a rival is already piloting at two sites. She wants a side-by-side on kiosk and tablet intake before the CFO review.",
+    "company_id": "apr-f21-company",
+    "contact_ids": [
+      "apr-f21-contact-01"
+    ],
+    "deal_id": "apr-f21-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f21-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 9
+    },
+    "title": "CFO ROI review",
+    "body": "Walk Mortimer through the payback model, which assumes 6 minutes saved per visit and 18 fewer front-desk FTE hours per clinic. Expect pushback on implementation cost.",
+    "company_id": "apr-f21-company",
+    "contact_ids": [
+      "apr-f21-contact-01"
+    ],
+    "deal_id": "apr-f21-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f22-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 8
+    },
+    "title": "Intro email after webinar",
+    "body": "Corvin replied after our intake webinar. Staff spend about two hours a day re-keying forms into the EHR and he wants to see a demo.",
+    "company_id": "apr-f22-company",
+    "contact_ids": [
+      "apr-f22-contact-01"
+    ],
+    "deal_id": "apr-f22-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f22-deal-01-act-2",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 6
+    },
+    "title": "Discovery call",
+    "body": "Map current intake workflow across all five sites and confirm which EHR they use. Ask about budget timing for next fiscal year.",
+    "company_id": "apr-f22-company",
+    "contact_ids": [
+      "apr-f22-contact-01"
+    ],
+    "deal_id": "apr-f22-deal-01",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f23-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 12
+    },
+    "title": "Requirements call",
+    "body": "Ximena needs Spanish-language forms and insurance card scanning. Wait times in the ER lobby are the main complaint, with a target of under 8 minutes at check-in.",
+    "company_id": "apr-f23-company",
+    "contact_ids": [
+      "apr-f23-contact-01"
+    ],
+    "deal_id": "apr-f23-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-f23-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 4
+    },
+    "title": "Prep tailored demo",
+    "body": "Build a demo using Spanish-first intake flow and send the sandbox login to Ximena before the presentation.",
+    "company_id": "apr-f23-company",
+    "contact_ids": [
+      "apr-f23-contact-01"
+    ],
+    "deal_id": "apr-f23-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f24-deal-01-act-1",
+    "type": "email",
+    "when": {
+      "days_ago": 3
+    },
+    "title": "Contract sent for signature",
+    "body": "Sent the order form with the 3-year term. Dashiell is asking legal to review the data-retention clause and wants go-live before the spring surgery rush.",
+    "company_id": "apr-f24-company",
+    "contact_ids": [
+      "apr-f24-contact-01"
+    ],
+    "deal_id": "apr-f24-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-f24-deal-01-act-2",
+    "type": "task",
+    "when": {
+      "days_from_now": 5
+    },
+    "title": "Follow up on legal redlines",
+    "body": "Check in with Dashiell on contract redlines and offer a call with our security team if needed.",
+    "company_id": "apr-f24-company",
+    "contact_ids": [
+      "apr-f24-contact-01"
+    ],
+    "deal_id": "apr-f24-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-f25-deal-01-act-1",
+    "type": "call",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "Loss call with Vesper",
+    "body": "They chose to stay with their current EHR portal module because grant funding covers it this year. Vesper asked us to check back next budget cycle.",
+    "company_id": "apr-f25-company",
+    "contact_ids": [
+      "apr-f25-contact-01"
+    ],
+    "deal_id": "apr-f25-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-acme-act-01",
+    "type": "meeting",
+    "when": {
+      "days_ago": 42
+    },
+    "title": "Pilot review: two hospital units",
+    "body": "Priyanka presented pilot results to the exec group. Both units cut discharge handoff delays and nursing time spent on manual documentation. Group gave verbal agreement to roll out network-wide. Next step: send three-year agreement to legal and procurement.",
+    "company_id": "apr-acme-company",
+    "contact_ids": [
+      "apr-acme-champion",
+      "apr-acme-it-lead",
+      "apr-acme-procurement"
+    ],
+    "deal_id": "apr-acme-deal-01",
+    "duration_minutes": 90
+  },
+  {
+    "kit_id": "apr-acme-act-02",
+    "type": "email",
+    "when": {
+      "days_ago": 40
+    },
+    "title": "Pilot summary and agreement draft sent",
+    "body": "Sent pilot results summary and the draft three-year agreement to Priyanka and Wilhelmina. Asked procurement to start the review and flag any redline areas early.",
+    "company_id": "apr-acme-company",
+    "contact_ids": [
+      "apr-acme-champion",
+      "apr-acme-procurement"
+    ],
+    "deal_id": "apr-acme-deal-01",
+    "direction": "outbound"
+  },
+  {
+    "kit_id": "apr-acme-act-03",
+    "type": "call",
+    "when": {
+      "days_ago": 28
+    },
+    "title": "Redline kickoff with procurement",
+    "body": "Wilhelmina walked through first-round redlines: payment terms, data hosting language and termination for convenience. Nothing blocking. Our legal will turn comments around in about a week. Emmerich confirmed security questionnaire is done.",
+    "company_id": "apr-acme-company",
+    "contact_ids": [
+      "apr-acme-procurement",
+      "apr-acme-it-lead"
+    ],
+    "deal_id": "apr-acme-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 35
+  },
+  {
+    "kit_id": "apr-acme-act-04",
+    "type": "note",
+    "when": {
+      "days_ago": 14
+    },
+    "title": "New CFO put deal on hold",
+    "body": "Priyanka called: Reginald Thackeray started this week as CFO and paused all signatures. His objection is the $685k upfront commitment, which he calls too big and too risky without a phased plan. Redlines stopped. Need to get in front of him quickly and rebuild the proposal around phases.",
+    "company_id": "apr-acme-company",
+    "contact_ids": [
+      "apr-acme-champion"
+    ],
+    "deal_id": "apr-acme-deal-01"
+  },
+  {
+    "kit_id": "apr-acme-act-05",
+    "type": "call",
+    "when": {
+      "days_ago": 7
+    },
+    "title": "Intro call with new CFO",
+    "body": "30 minutes with Reginald. He is skeptical but fair. Wants phases with clear go/no-go gates and a savings figure for each phase, not a single network-wide projection. Said he will not approve anything that cannot be tied to measurable results. Emmerich offered to help size the integration work.",
+    "company_id": "apr-acme-company",
+    "contact_ids": [
+      "apr-acme-cfo",
+      "apr-acme-it-lead"
+    ],
+    "deal_id": "apr-acme-deal-01",
+    "direction": "outbound",
+    "duration_minutes": 30
+  },
+  {
+    "kit_id": "apr-acme-act-06",
+    "type": "meeting",
+    "when": {
+      "days_ago": 5
+    },
+    "title": "Drafted three-phase outline with Priyanka",
+    "body": "Outline: Phase 1 two hospitals (extends the pilot units), Phase 2 ambulatory clinics, Phase 3 rest of the network. Each phase gets a go/no-go gate based on handoff delay and documentation time. Open items: cost per phase, integration effort, savings estimates.",
+    "company_id": "apr-acme-company",
+    "contact_ids": [
+      "apr-acme-champion"
+    ],
+    "deal_id": "apr-acme-deal-01",
+    "duration_minutes": 60
+  },
+  {
+    "kit_id": "apr-acme-act-07",
+    "type": "task",
+    "when": {
+      "days_ago": 4
+    },
+    "title": "Request integration effort estimates from IT",
+    "body": "Asked Emmerich for EHR interface and SSO effort estimates by phase so we can price each phase accurately.",
+    "company_id": "apr-acme-company",
+    "contact_ids": [
+      "apr-acme-it-lead"
+    ],
+    "deal_id": "apr-acme-deal-01",
+    "task_status": "completed"
+  },
+  {
+    "kit_id": "apr-acme-act-08",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 3
+    },
+    "title": "Working session: finalize phase costs",
+    "body": "Work with Priyanka and Emmerich to lock phase costs, integration sizing and savings per phase. Agree on gate metrics and thresholds for the CFO.",
+    "company_id": "apr-acme-company",
+    "contact_ids": [
+      "apr-acme-champion",
+      "apr-acme-it-lead"
+    ],
+    "deal_id": "apr-acme-deal-01",
+    "duration_minutes": 90
+  },
+  {
+    "kit_id": "apr-acme-act-09",
+    "type": "task",
+    "when": {
+      "days_from_now": 5
+    },
+    "title": "Build CFO phased rollout deck",
+    "body": "Turn the finalized numbers into a short deck: cost, savings and go/no-go gate for each phase, plus total exposure if he stops after Phase 1. Send to Priyanka for review beforehand.",
+    "company_id": "apr-acme-company",
+    "contact_ids": [
+      "apr-acme-champion"
+    ],
+    "deal_id": "apr-acme-deal-01",
+    "task_status": "not_started"
+  },
+  {
+    "kit_id": "apr-acme-act-10",
+    "type": "meeting",
+    "when": {
+      "days_from_now": 10
+    },
+    "title": "Present phased plan to CFO",
+    "body": "Present the three-phase plan to Reginald with Priyanka and Emmerich. Goal: agreement to sign Phase 1 and a defined gate review before Phase 2.",
+    "company_id": "apr-acme-company",
+    "contact_ids": [
+      "apr-acme-cfo",
+      "apr-acme-champion",
+      "apr-acme-it-lead"
+    ],
+    "deal_id": "apr-acme-deal-01",
+    "duration_minutes": 45
+  }
+]

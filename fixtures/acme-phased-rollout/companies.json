@@ -1,0 +1,262 @@
+[
+  {
+    "kit_id": "apr-f01-company",
+    "name": "Velloraine Medical Collective",
+    "domain": "vellorainemedicalcollective.example.com",
+    "city": "Columbus",
+    "state": "OH",
+    "employees": 4200,
+    "description": "Eight-hospital nonprofit system running busy emergency and outpatient campuses across central Ohio.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f02-company",
+    "name": "Quillspar Clinics",
+    "domain": "quillsparclinics.example.com",
+    "city": "Boise",
+    "state": "ID",
+    "employees": 210,
+    "description": "Network of six primary care and urgent care clinics serving rural Idaho towns.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f03-company",
+    "name": "Orbintree Health Partners",
+    "domain": "orbintreehealthpartners.example.com",
+    "city": "Tampa",
+    "state": "FL",
+    "employees": 1750,
+    "description": "Physician-owned group of specialty and imaging centers across the Gulf coast.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f04-company",
+    "name": "Tessamoor Community Hospital",
+    "domain": "tessamoorcommunityhospital.example.com",
+    "city": "Duluth",
+    "state": "MN",
+    "employees": 640,
+    "description": "Independent community hospital with a busy outpatient wing and two satellite clinics.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f05-company",
+    "name": "Zenthrop Pediatric Group",
+    "domain": "zenthroppediatricgroup.example.com",
+    "city": "Phoenix",
+    "state": "AZ",
+    "employees": 380,
+    "description": "Pediatric practice group with nine offices and heavy new-patient paperwork.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f06-company",
+    "name": "Calderwyn Health Alliance",
+    "domain": "calderwynhealthalliance.example.com",
+    "city": "Charlotte",
+    "state": "NC",
+    "employees": 5600,
+    "description": "Large multi-county health system with a trauma center and 30 outpatient practices.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f07-company",
+    "name": "Mirabend Family Care",
+    "domain": "mirabendfamilycare.example.com",
+    "city": "Albuquerque",
+    "state": "NM",
+    "employees": 150,
+    "description": "Small network of five family medicine clinics focused on underserved neighborhoods.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f08-company",
+    "name": "Pellucid Surgical Network",
+    "domain": "pellucidsurgicalnetwork.example.com",
+    "city": "Nashville",
+    "state": "TN",
+    "employees": 920,
+    "description": "Ambulatory surgery centers that need fast, accurate pre-op paperwork and consent capture.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f09-company",
+    "name": "Harrowgate Behavioral Wellness",
+    "domain": "harrowgatebehavioralwellness.example.com",
+    "city": "Providence",
+    "state": "RI",
+    "employees": 470,
+    "description": "Outpatient behavioral health provider with privacy-sensitive intake needs.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f10-company",
+    "name": "Fenmoray Rural Health Trust",
+    "domain": "fenmorayruralhealthtrust.example.com",
+    "city": "Billings",
+    "state": "MT",
+    "employees": 310,
+    "description": "Critical access hospital and clinics serving remote communities across eastern Montana.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f11-company",
+    "name": "Kelvanta Health System",
+    "domain": "kelvantahealthsystem.example.com",
+    "city": "Columbus",
+    "state": "OH",
+    "employees": 6200,
+    "description": "A multi-hospital system with eleven campuses and a large outpatient network across central Ohio.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f12-company",
+    "name": "Dovemarrow Clinics",
+    "domain": "dovemarrowclinics.example.com",
+    "city": "Boise",
+    "state": "ID",
+    "employees": 340,
+    "description": "A network of nine primary care and urgent care clinics serving the Treasure Valley.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f13-company",
+    "name": "Pyrelith Medical Group",
+    "domain": "pyrelithmedicalgroup.example.com",
+    "city": "Phoenix",
+    "state": "AZ",
+    "employees": 1450,
+    "description": "A physician-owned multispecialty group with orthopedic, cardiology and imaging centers across the Phoenix metro.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f14-company",
+    "name": "Wexlomere Children's Hospital",
+    "domain": "wexlomerechildrenshospital.example.com",
+    "city": "Nashville",
+    "state": "TN",
+    "employees": 2800,
+    "description": "A freestanding pediatric hospital with several outpatient specialty clinics.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f15-company",
+    "name": "Ostrenvale Health Partners",
+    "domain": "ostrenvalehealthpartners.example.com",
+    "city": "Albany",
+    "state": "NY",
+    "employees": 960,
+    "description": "A regional network of three community hospitals and affiliated walk-in centers in the Capital Region.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f16-company",
+    "name": "Thistlebrook Family Medicine",
+    "domain": "thistlebrookfamilymedicine.example.com",
+    "city": "Burlington",
+    "state": "VT",
+    "employees": 85,
+    "description": "A small independent practice with four physicians and two nurse practitioners.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f17-company",
+    "name": "Granulyth Urgent Care",
+    "domain": "granulythurgentcare.example.com",
+    "city": "Tampa",
+    "state": "FL",
+    "employees": 410,
+    "description": "A chain of fourteen urgent care centers with online wait-time booking.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f18-company",
+    "name": "Brindlemoor Rural Hospital",
+    "domain": "brindlemoorruralhospital.example.com",
+    "city": "Billings",
+    "state": "MT",
+    "employees": 230,
+    "description": "A critical-access hospital serving ranching communities across eastern Montana.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f19-company",
+    "name": "Cassivane Orthopedic Institute",
+    "domain": "cassivaneorthopedicinstitute.example.com",
+    "city": "Denver",
+    "state": "CO",
+    "employees": 620,
+    "description": "A specialty orthopedic and sports medicine practice with six surgery and therapy locations.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f20-company",
+    "name": "Umbrelline Community Health",
+    "domain": "umbrellinecommunityhealth.example.com",
+    "city": "Albuquerque",
+    "state": "NM",
+    "employees": 780,
+    "description": "A federally qualified health center network running twelve sites for underserved neighborhoods.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f21-company",
+    "name": "Kovelthorne Health Network",
+    "domain": "kovelthornehealthnetwork.example.com",
+    "city": "Columbus",
+    "state": "OH",
+    "employees": 4800,
+    "description": "A multi-hospital system with eleven campuses and roughly 40 outpatient sites across central Ohio.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f22-company",
+    "name": "Lumivane Primary Care",
+    "domain": "lumivaneprimarycare.example.com",
+    "city": "Boise",
+    "state": "ID",
+    "employees": 120,
+    "description": "A five-clinic primary care group that still runs most intake on paper clipboards.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f23-company",
+    "name": "Strivenmoor Medical Centers",
+    "domain": "strivenmoormedicalcenters.example.com",
+    "city": "Tucson",
+    "state": "AZ",
+    "employees": 1350,
+    "description": "A regional group of three hospitals and urgent care sites serving southern Arizona with a large bilingual patient base.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f24-company",
+    "name": "Ravenquill Orthopedic Associates",
+    "domain": "ravenquillorthopedicassociates.example.com",
+    "city": "Nashville",
+    "state": "TN",
+    "employees": 310,
+    "description": "An orthopedic and physical therapy practice with eight locations and heavy pre-visit paperwork.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-f25-company",
+    "name": "Tamarisk Bay Community Clinics",
+    "domain": "tamariskbaycommunityclinics.example.com",
+    "city": "Sarasota",
+    "state": "FL",
+    "employees": 560,
+    "description": "A nonprofit network of twelve community clinics serving mostly Medicaid and uninsured patients.",
+    "is_hero": false
+  },
+  {
+    "kit_id": "apr-acme-company",
+    "name": "Acme Regional Health",
+    "domain": "acmeregionalhealth.example.com",
+    "city": "Columbus",
+    "state": "OH",
+    "employees": 4200,
+    "description": "Acme Regional Health is a nonprofit hospital and clinic network based in Columbus, OH, with about 4,200 employees across acute care hospitals, ambulatory clinics and outpatient centers. It is evaluating Brightwell Health Software's care coordination platform to cut manual handoffs and reduce length of stay.",
+    "is_hero": true
+  }
+]

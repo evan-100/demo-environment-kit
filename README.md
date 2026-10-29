@@ -79,6 +79,7 @@ A failing path shows what broke, a **fallback** for the call ([`fallbacks/`](fal
 | `healthcare` | Acme Regional Health, Northfield Family Clinics | patient-intake platform |
 | `finserv` | Quillstone Community Bank, Fernhollow Credit Union | digital account opening and KYC |
 | `manufacturing` | Kilnbrook Precision Castings, Marrowfield Packaging Group | predictive maintenance |
+| `acme-phased-rollout` | Acme Regional Health | made with `kit new` from one sentence; reuses healthcare's background accounts |
 
 Each also has 25 background accounts and 40 deals, so pipeline views look like a real team's book.
 
