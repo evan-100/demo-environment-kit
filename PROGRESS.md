@@ -14,3 +14,4 @@ One line per milestone when it finishes.
 - 2026-10-28: healthcare fallback screenshots captured and linked from the fallback talk tracks.
 - 2026-10-29: `kit new "<description>"` drafts a story file with the LLM; stories can reuse another story's background accounts (`background:`), so generate only writes the heroes (17 s live vs ~3 min). Seed refuses while a story on the same background is loaded. Verified live: new → generate → validate → seed refused → reset healthcare → seed → check 4/4 → healthcare restored.
 - 2026-10-29: `kit stories` is a table: bundled or `kit new`, loaded in HubSpot (read by kit ID), blocked by a loaded story on the same background, last check.
+- 2026-10-29: 92-second video (on-screen text, music by ende.app) rendered and embedded in the README.

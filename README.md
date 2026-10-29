@@ -15,7 +15,9 @@ This kit treats a demo environment like software:
 - **Reset** on command, touching only the records the kit created.
 - **Hand it to an agent** over MCP: *"Get a healthcare demo ready for Acme and tell me if anything's broken."*
 
-▶ **2-minute video:** *(link to be added)*
+▶ **90-second video:** from one sentence to a live, checked demo, then an agent finding and fixing a broken deal.
+
+https://github.com/user-attachments/assets/87068300-c16d-4d5e-8fbf-787ba136fa20
 
 ## Measured results
 
@@ -144,4 +146,4 @@ Python 3.12 · uv · typer · httpx · pydantic · the official MCP Python SDK �
 calls Claude (`claude-opus-5-5` by default, configurable with `KIT_LLM_MODEL`) with structured output.
 HubSpot's dated REST API (`2026-09`).
 
-Built with AI assistance.
+Built with AI assistance. Video music: ende.app, "Happy Beats / Business Moves".

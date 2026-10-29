@@ -1,5 +1,8 @@
 # Video script (about 2 minutes)
 
+> The published video ([in the README](../README.md)) is a 92-second cut with on-screen text instead of narration,
+> built from the clips recorded with this script plus `kit new`. This script is the shot list those clips came from.
+
 Screen recording, terminal on the left, HubSpot on the right. Times are targets.
 
 **Before recording**
