@@ -9,7 +9,7 @@ import sys
 from mcp import ClientSession
 from mcp.client.stdio import StdioServerParameters, stdio_client
 
-EXPECTED_TOOLS = {"list_stories", "generate_story", "seed_story", "check_story", "reset_story", "get_last_report"}
+EXPECTED_TOOLS = {"list_stories", "create_story", "generate_story", "seed_story", "check_story", "reset_story", "get_last_report"}
 
 # Run the server with the same Python as the tests, from any folder (it finds the repo itself).
 SERVER = StdioServerParameters(command=sys.executable, args=["-m", "kit.cli", "mcp"], cwd="/")

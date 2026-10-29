@@ -37,6 +37,11 @@ hide what was broken, so check first.
 Then summarise for the rep: what passed, what was broken and fixed, and for
 anything still failing, the fallback to use on the call.
 reset_story deletes the story's demo records and needs confirm=true.
+
+For a demo that no story covers yet: create_story drafts a story file from a
+description; let the user review it, then generate_story and seed_story.
+Stories that share background accounts can't be loaded at the same time;
+seed_story says which one to reset first.
 """
 
 # Warnings only: the agent's terminal shouldn't fill up with a log line per HubSpot request.
@@ -59,10 +64,25 @@ def list_stories() -> list[dict]:
 
 
 @server.tool()
-def generate_story(story: str) -> dict:
-    """Generate fresh fixtures for a story with the LLM (takes about 2 minutes, costs API credits).
+def create_story(description: str) -> dict:
+    """Draft a new story file from a description of the demo (one LLM call, costs API credits).
 
-    Only needed when the story file changed. Seeding uses the saved fixtures.
+    Writes stories/<id>.yaml only. Show the user what it contains before generating it.
+    If the industry matches an existing story, its background accounts are reused.
+    """
+    try:
+        return actions.new(description)
+    except KitError as error:
+        raise explain(error)
+
+
+@server.tool()
+def generate_story(story: str) -> dict:
+    """Generate fresh fixtures for a story with the LLM (costs API credits).
+
+    About 2 minutes for a story with its own background accounts; much faster when the
+    story reuses another story's background. Only needed when the story file changed.
+    Seeding uses the saved fixtures.
     """
     try:
         return actions.generate(story)

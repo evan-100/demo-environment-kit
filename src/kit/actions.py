@@ -23,6 +23,7 @@ from kit.check import PathResult, run_checks
 from kit.fixtures import FIXTURES_DIR, load_fixtures, load_other_fixture_sets, save_fixtures
 from kit.generate import GenerateError, generate_fixtures
 from kit.hubspot import HubSpotClient, HubSpotError
+from kit.new import new_story
 from kit.report import REPORTS_DIR, latest_report, summary_line, write_reports
 from kit.reset import reset as reset_records
 from kit.schemas import FixtureSet, Story, load_story
@@ -68,6 +69,37 @@ def load_story_file(story: str) -> Story:
         raise KitError(f"stories/{story}.yaml breaks a rule:\n{error}")
 
 
+def stories_sharing_background(story_file: Story) -> set[str]:
+    """The other stories built on the same background accounts as this one.
+
+    A story with `background: healthcare` shares with healthcare, and with every other
+    story whose background is healthcare.
+    """
+    root = story_file.background or story_file.id
+    shared = set()
+    for path in STORIES_DIR.glob("*.yaml"):
+        try:
+            other = load_story(path)
+        except (ValidationError, OSError):
+            continue  # a broken story file is reported when that story is used
+        if other.id != story_file.id and (other.background or other.id) == root:
+            shared.add(other.id)
+    return shared
+
+
+def load_background(story_file: Story) -> FixtureSet | None:
+    """The fixtures this story borrows its background accounts from, if it borrows them."""
+    if story_file.background is None:
+        return None
+    base = load_story_file(story_file.background)
+    if base.background is not None:
+        raise KitError(f"background '{base.id}' borrows its own background; point at '{base.background}' instead")
+    try:
+        return load_fixtures(base.id)
+    except FileNotFoundError:
+        raise KitError(f"story '{base.id}' has no fixtures yet. Run `kit generate {base.id}` first.")
+
+
 def load_valid_fixtures(story: str) -> tuple[Story, FixtureSet]:
     """Load a story and its fixtures, and refuse to continue if they don't pass validation."""
     story_file = load_story_file(story)
@@ -77,7 +109,8 @@ def load_valid_fixtures(story: str) -> tuple[Story, FixtureSet]:
         raise KitError(str(error))
     except ValidationError as error:
         raise KitError(f"a fixture file for '{story}' breaks a rule:\n{error}")
-    problems = validate_fixtures(fixtures, story_file, load_other_fixture_sets(story))
+    problems = validate_fixtures(fixtures, story_file, load_other_fixture_sets(story),
+                                 stories_sharing_background(story_file))
     if problems:
         raise KitError(f"fixtures for '{story}' did not pass validation", problems)
     return story_file, fixtures
@@ -94,6 +127,7 @@ def list_stories() -> list[dict]:
         stories.append({
             "story": story.id,
             "industry": story.industry,
+            "background_from": story.background,
             "hero_accounts": [a.name for a in story.accounts],
             "golden_paths": story.golden_paths,
             "has_fixtures": (FIXTURES_DIR / story.id / "companies.json").exists(),
@@ -105,9 +139,14 @@ def list_stories() -> list[dict]:
 def generate(story: str, say: Say = quiet) -> dict:
     started = time.monotonic()
     story_file = load_story_file(story)
-    say(f"Generating '{story}' ({len(story_file.accounts)} hero accounts + filler)...")
+    background = load_background(story_file)
+    heroes = f"{len(story_file.accounts)} hero account{'s' if len(story_file.accounts) != 1 else ''}"
+    if background is None:
+        say(f"Generating '{story}' ({heroes} + filler)...")
+    else:
+        say(f"Generating '{story}' ({heroes}; background accounts reused from '{story_file.background}')...")
     try:
-        fixtures = generate_fixtures(story_file)
+        fixtures = generate_fixtures(story_file, background=background)
     except GenerateError as error:
         ledger.record("generate", story, started, ok=False, error=str(error))
         raise KitError(str(error))
@@ -115,7 +154,8 @@ def generate(story: str, say: Say = quiet) -> dict:
         ledger.record("generate", story, started, ok=False, error="validation")
         raise KitError(f"the generated data broke a rule, nothing was saved:\n{error}")
 
-    problems = validate_fixtures(fixtures, story_file, load_other_fixture_sets(story))
+    problems = validate_fixtures(fixtures, story_file, load_other_fixture_sets(story),
+                                 stories_sharing_background(story_file))
     if problems:
         ledger.record("generate", story, started, ok=False, counts=counts_of(fixtures), error="validation")
         raise KitError("generated fixtures did not pass validation, nothing was saved. Run generate again.", problems)
@@ -136,11 +176,52 @@ def validate(story: str) -> dict:
     return {"story": story, "valid": True, "counts": counts_of(fixtures)}
 
 
+def new(description: str, say: Say = quiet) -> dict:
+    """Draft stories/<id>.yaml from a one-line description. Nothing is generated or seeded."""
+    started = time.monotonic()
+    existing = [load_story_file(path.stem) for path in sorted(STORIES_DIR.glob("*.yaml"))]
+    say("Drafting a story file from your description...")
+    try:
+        path, data = new_story(description, existing, STORIES_DIR)
+    except GenerateError as error:
+        ledger.record("new", None, started, ok=False, error=str(error))
+        raise KitError(str(error))
+    except ValidationError as error:
+        ledger.record("new", None, started, ok=False, error="validation")
+        raise KitError(f"the drafted story broke a rule, nothing was saved. Try again or reword it:\n{error}")
+    ledger.record("new", data["id"], started, ok=True)
+    return {
+        "story": data["id"],
+        "saved_to": str(path),
+        "hero_accounts": [a["name"] for a in data["accounts"]],
+        "background_from": data.get("background"),
+        "next": f"Review {path}, then run `kit generate {data['id']}`.",
+    }
+
+
 # --- HubSpot ---------------------------------------------------------------------------------
 
 
+def loaded_neighbours(story_file: Story, hubspot) -> list[str]:
+    """Stories sharing this one's background accounts that are in HubSpot right now.
+
+    They share background contacts (same email addresses; HubSpot allows one contact per email)
+    and may feature the same hero account, so only one of these stories can be loaded at a time. Reads by kit ID, which
+    (unlike search) sees records the moment they're written or deleted.
+    """
+    loaded = []
+    for other in sorted(stories_sharing_background(story_file)):
+        try:
+            other_fixtures = load_fixtures(other)
+        except (FileNotFoundError, ValidationError):
+            continue  # never generated, so never seeded
+        if hubspot.read_by_kit_ids("companies", [c.kit_id for c in other_fixtures.companies]):
+            loaded.append(other)
+    return loaded
+
+
 def seed(story: str, dry_run: bool = False, say: Say = quiet, hubspot=None) -> dict:
-    _, fixtures = load_valid_fixtures(story)
+    story_file, fixtures = load_valid_fixtures(story)
     now = datetime.now(timezone.utc)
 
     if dry_run:
@@ -156,6 +237,12 @@ def seed(story: str, dry_run: bool = False, say: Say = quiet, hubspot=None) -> d
     started = time.monotonic()
     hubspot = hubspot or HubSpotClient()
     try:
+        if loaded := loaded_neighbours(story_file, hubspot):
+            names = ", ".join(loaded)
+            raise KitError(
+                f"'{names}' is loaded in HubSpot and shares background accounts with '{story}'. "
+                f"Only one of them can be loaded at a time. Run `kit reset {loaded[0]} --yes` first."
+            )
         plan = build_plan(fixtures, now, owner_id=pick_owner(hubspot))
         say(f"Seeding '{story}': {plan.counts()}")
         result = apply_plan(plan, hubspot)

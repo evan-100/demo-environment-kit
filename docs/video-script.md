@@ -14,10 +14,12 @@ Screen recording, terminal on the left, HubSpot on the right. Times are targets.
 > someone edits a deal, and the rep finds out live, in front of the customer.
 > This kit keeps demo environments realistic, current and verified before every call."
 
-**0:15–0:35 · One story file** *(open `stories/healthcare.yaml`)*
-> "A demo starts as one story file: the industry, the hero accounts, who's the champion, who's skeptical,
-> and what happened over the last six weeks. An LLM turns it into fixture data once. That data is validated
-> and committed, and every date in it is relative, so it never goes stale."
+**0:15–0:35 · One sentence, one story file** *(run `uv run kit new "..."`, open the file it wrote, run `uv run kit generate <id>` and `uv run kit validate <id>`)*
+> "A demo starts as one sentence: who it's for and what's going on in the deal. The kit drafts a story file
+> from it: the hero account, the buying group, who's skeptical, and what happened over the last six weeks.
+> I read it and adjust it. Then an LLM turns it into fixture data once. Healthcare already has a pipeline of
+> background accounts, so only Acme gets generated: fifteen seconds. The data is validated and committed,
+> and every date in it is relative, so it never goes stale."
 
 **0:35–0:50 · Seed** *(run `uv run kit seed healthcare`; switch to HubSpot, open the Acme deal timeline)*
 > "Seeding loads about 190 records into HubSpot in around fifteen seconds. Every record is tagged, so seeding

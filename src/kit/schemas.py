@@ -159,7 +159,12 @@ class Story(StrictModel):
     narrative: str
     seller_company: SellerCompany
     accounts: list[HeroAccount] = Field(min_length=1)
-    volume: Volume
+    # Background accounts come from one of two places:
+    # - volume: generate this many filler accounts and deals with the LLM, or
+    # - background: reuse the filler of another story in the same industry (its story id),
+    #   so a new story only needs its hero accounts generated.
+    volume: Volume | None = None
+    background: str | None = Field(default=None, pattern=KEY_PATTERN)
     # Names of files in checks/ (e.g. "deal-deep-dive" -> checks/deal-deep-dive.yaml).
     golden_paths: list[str] = Field(min_length=1)
 
@@ -170,6 +175,14 @@ class Story(StrictModel):
             if not re.match(KEY_PATTERN, name):
                 raise ValueError(f"golden path '{name}' should look like 'deal-deep-dive'")
         return names
+
+    @model_validator(mode="after")
+    def volume_or_background(self):
+        if (self.volume is None) == (self.background is None):
+            raise ValueError("set either 'volume' (generate background accounts) or 'background' (reuse a story's), not both")
+        if self.background == self.id:
+            raise ValueError("a story can't use itself as its background")
+        return self
 
     @model_validator(mode="after")
     def accounts_are_unique(self):

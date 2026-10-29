@@ -8,7 +8,7 @@ finds out live, in front of the customer.
 
 This kit treats a demo environment like software:
 
-- **Describe** a demo story in one YAML file: industry, hero accounts, who's the champion, who's skeptical, what happened over the last six weeks.
+- **Describe** a demo in one sentence (`kit new "..."`) or one YAML file: industry, hero accounts, who's the champion, who's skeptical, what happened over the last six weeks. Either way, the story file is what a person reviews.
 - **Generate** realistic data that agrees with itself, once, with an LLM. Then validate it and commit it.
 - **Seed** it into a real SaaS product (HubSpot), with every date relative to today, so it never goes stale.
 - **Check** the golden paths a rep will show before every call, with fallbacks and a one-command fix.
@@ -42,6 +42,7 @@ here was run in full afterwards, once background deals had their own histories a
 
 ```mermaid
 flowchart LR
+    ask["kit new<br/>(one sentence)"] -.-> story
     story["stories/*.yaml"] --> gen["kit generate<br/>(LLM, once)"] --> fix["fixtures/*.json<br/>validated, committed"]
     fix --> seed["kit seed"] --> hs[("HubSpot")]
     hs --> check["kit check<br/>golden paths"] --> report["report + fallbacks"]
@@ -81,6 +82,10 @@ A failing path shows what broke, a **fallback** for the call ([`fallbacks/`](fal
 
 Each also has 25 background accounts and 40 deals, so pipeline views look like a real team's book.
 
+A new story in an industry that already has one reuses those background accounts (`background: healthcare`
+in the story file), so `kit generate` only writes its hero accounts: about 15 seconds instead of 3 minutes.
+Stories that share background accounts can't be loaded at the same time; `kit seed` says which to reset first.
+
 ## Quickstart
 
 Needs Python 3.12, [uv](https://docs.astral.sh/uv/), a HubSpot developer test account with a service key
@@ -101,12 +106,15 @@ uv run kit check healthcare --fix     # caught, fixed, checked again
 uv run kit reset healthcare           # remove only what the kit created
 uv run kit reset healthcare --reseed  # after `kit generate`: clears records the new fixtures no longer have
 uv run kit metrics                    # the table above, from the ledger
+
+uv run kit new "a healthcare demo for Acme where the new CFO froze the deal"   # drafts stories/<id>.yaml
+uv run kit generate <id>              # after reviewing the file; reuses healthcare's background accounts
 uv run pytest                         # live HubSpot tests are skipped without a token
 ```
 
 ### With an agent (MCP)
 
-`uv run kit mcp` starts an MCP server with `list_stories`, `generate_story`, `seed_story`, `check_story`,
+`uv run kit mcp` starts an MCP server with `list_stories`, `create_story`, `generate_story`, `seed_story`, `check_story`,
 `reset_story` (needs `confirm=true`) and `get_last_report`. Client setup is in [docs/mcp.md](docs/mcp.md).
 To run the scenario from the video:
 
@@ -118,6 +126,7 @@ uv run python examples/get_acme_ready.py
 
 | Command | What it does |
 |---|---|
+| `kit new "<description>"` | LLM → a story file in `stories/` to review (reuses an existing industry's background) |
 | `kit generate <story>` | LLM → validated fixtures in `fixtures/<story>/` |
 | `kit validate <story>` | Re-check saved fixtures (no LLM, no HubSpot) |
 | `kit seed <story> [--dry-run]` | Load fixtures into HubSpot; safe to repeat |

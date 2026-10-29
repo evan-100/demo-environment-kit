@@ -24,7 +24,8 @@ The server finds the repo and its `.env` by itself, so it works whatever folder 
 | Tool | What it does | Notes |
 |---|---|---|
 | `list_stories` | Stories, whether they have fixtures, last readiness result | read-only |
-| `generate_story(story)` | New fixtures from the story file via the LLM | about 2 min, costs API credits |
+| `create_story(description)` | Drafts `stories/<id>.yaml` from a description of the demo | one LLM call; review before generating |
+| `generate_story(story)` | New fixtures from the story file via the LLM | ~3 min, or ~15 s when reusing a background; costs API credits |
 | `seed_story(story, dry_run)` | Load fixtures into HubSpot | safe to repeat |
 | `check_story(story, fix)` | Run the golden paths, write a report; `fix=true` repairs and rechecks | |
 | `reset_story(story, reseed, confirm)` | Delete the story's kit records (only those) | destructive: needs `confirm=true` |

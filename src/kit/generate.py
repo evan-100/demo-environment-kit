@@ -459,15 +459,64 @@ def filler_activity(kit_id: str, item: FillerActivity, company_id: str, contact_
     )
 
 
-def generate_fixtures(story: Story, ask: AskFunction = ask_claude) -> FixtureSet:
-    """Build the full fixture set for a story: one LLM call per hero account, one for filler."""
+def borrow_background(story: Story, background: FixtureSet) -> FixtureSet:
+    """Copy another story's background (non-hero) records into this story.
+
+    Every kit_id gets this story's prefix ("hc-f01-company" -> "ah-f01-company"), so the copies are
+    tagged, seeded and reset as this story's own records. Names, emails and text stay the same.
+    """
+    def rekey(kit_id: str | None) -> str | None:
+        return kit_id and f"{story.id_prefix}-{kit_id.split('-', 1)[1]}"
+
+    def copy(record, **links):
+        return record.model_copy(update={"kit_id": rekey(record.kit_id), **links})
+
+    company_ids = {c.kit_id for c in background.companies if not c.is_hero}
+    deal_ids = {d.kit_id for d in background.deals if d.company_id in company_ids}
+    return FixtureSet(
+        story_id=story.id,
+        companies=[copy(c) for c in background.companies if c.kit_id in company_ids],
+        contacts=[copy(c, company_id=rekey(c.company_id))
+                  for c in background.contacts if c.company_id in company_ids],
+        deals=[copy(d, company_id=rekey(d.company_id), contact_ids=[rekey(i) for i in d.contact_ids])
+               for d in background.deals if d.kit_id in deal_ids],
+        activities=[copy(a, company_id=rekey(a.company_id), deal_id=rekey(a.deal_id),
+                         contact_ids=[rekey(i) for i in a.contact_ids])
+                    for a in background.activities if a.deal_id in deal_ids],
+    )
+
+
+def generate_fixtures(story: Story, ask: AskFunction = ask_claude, background: FixtureSet | None = None) -> FixtureSet:
+    """Build the full fixture set for a story: one LLM call per hero account, plus filler.
+
+    With `background` (the fixtures named by the story's `background:`), the filler is copied
+    from there instead of generated, so only the hero accounts cost LLM calls.
+    """
     phones = PhoneBook()
     parts = []
     names_taken: list[str] = []
+    if background is not None:
+        parts.append(borrow_background(story, background))
+        names_taken += [f"{c.first_name} {c.last_name}" for c in parts[0].contacts]
+        phones.next_number = len(parts[0].contacts)  # hero numbers carry on after the borrowed ones
     for account in story.accounts:
         draft = ask(hero_prompt(story, account, names_taken), HeroDraft)
         parts.append(build_hero(story, account, draft, phones))
         names_taken += [f"{c.first_name} {c.last_name}" for c in draft.contacts]
+    if background is None:
+        parts.append(generate_filler(story, ask, phones, names_taken))
+
+    return FixtureSet(
+        story_id=story.id,
+        companies=[c for part in parts for c in part.companies],
+        contacts=[c for part in parts for c in part.contacts],
+        deals=[d for part in parts for d in part.deals],
+        activities=[a for part in parts for a in part.activities],
+    )
+
+
+def generate_filler(story: Story, ask: AskFunction, phones: PhoneBook, names_taken: list[str]) -> FixtureSet:
+    """Ask the LLM for the story's filler accounts and deals (story.volume)."""
     # Filler in batches. Each batch is a list of slots ("a company with 2 deals");
     # slots the LLM leaves unfilled are asked for again (see fill_slots).
     counts = deals_per_company(story.volume.filler_accounts, story.volume.filler_deals)
@@ -483,12 +532,4 @@ def generate_fixtures(story: Story, ask: AskFunction = ask_claude) -> FixtureSet
             filler.companies += matched
             names_taken += [f"{p.first_name} {p.last_name}" for c in matched for p in c.contacts]
     # If slots are still open after every try, validation reports the shortfall.
-    parts.append(build_filler(story, filler, phones))
-
-    return FixtureSet(
-        story_id=story.id,
-        companies=[c for part in parts for c in part.companies],
-        contacts=[c for part in parts for c in part.contacts],
-        deals=[d for part in parts for d in part.deals],
-        activities=[a for part in parts for a in part.activities],
-    )
+    return build_filler(story, filler, phones)

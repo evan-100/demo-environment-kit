@@ -2,7 +2,8 @@
 
 ```mermaid
 flowchart LR
-    story["stories/&lt;story&gt;.yaml<br/>(written by a person)"]
+    ask["kit new<br/>(one-sentence description)"]
+    story["stories/&lt;story&gt;.yaml<br/>(reviewed by a person)"]
     gen["kit generate<br/>LLM, structured output"]
     val["validate<br/>(no LLM)"]
     fix["fixtures/&lt;story&gt;/*.json<br/>(committed, relative dates)"]
@@ -15,6 +16,7 @@ flowchart LR
     agent["Any MCP agent"]
     ledger["runs/ledger.jsonl → kit metrics"]
 
+    ask -.-> story
     story --> gen --> val --> fix --> seed --> hs
     hs --> check --> report
     check -- "--fix: reseed" --> seed
@@ -29,7 +31,8 @@ flowchart LR
 | Module | Job |
 |---|---|
 | `schemas.py` | Pydantic models for story files and fixtures. Enforces the fictional-data rules per field. |
-| `generate.py` | One LLM call per hero account plus one for filler, with structured output. The LLM writes the creative text. Code assigns IDs, emails, phone numbers and links between records. |
+| `new.py` | `kit new`: one LLM call turns a description into a story file. Code picks the IDs, domains and record prefix. If an existing story is in the same industry, the new one points at it with `background:`. |
+| `generate.py` | One LLM call per hero account, plus filler in batches of 10 (skipped when the story reuses a background), with structured output. The LLM writes the creative text. Code assigns IDs, emails, phone numbers and links between records. |
 | `validate.py` | Cross-record checks after generation: links point at real records, emails match the company domain, every hero persona exists, no fixed dates in text, no company reused across stories. |
 | `seed.py` | Builds a plan (records + links) from fixtures, then upserts and links. Dates resolve from the start of today, so same-day reseeds write identical values. |
 | `reset.py` | Finds records by search and by direct `demo_kit_id` lookup, then re-checks each record's own story tag before deleting it. |
@@ -45,7 +48,8 @@ flowchart LR
 2. **Relative time.** Fixtures say `days_ago: 12`, never a date. Data seeded months later still looks current (there's a test that seeds 400 days later and checks every golden path).
 3. **Every record is tagged** with `demo_kit_id` and `demo_kit_story`. Upsert, reset and checks match on these tags. Reset never deletes a record without the right tag, even if a lookup returns it by mistake.
 4. **Safe to run twice.** Verified on a live account: a second seed left every record, field and link identical.
-5. **Measured.** Every command writes to the ledger; `kit metrics` turns a labelled batch into the README table.
+5. **Background accounts are shared, hero accounts are not.** A story with `background: <story>` copies that story's filler (re-tagged with its own IDs) and only generates its heroes. Such stories share contacts' email addresses, which HubSpot keeps unique, so `kit seed` refuses while another story on the same background is loaded.
+6. **Measured.** Every command writes to the ledger; `kit metrics` turns a labelled batch into the README table.
 
 ## Adding another CRM (adapter note)
 

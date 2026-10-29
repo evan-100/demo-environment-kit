@@ -42,6 +42,22 @@ def ping() -> None:
 
 
 @app.command()
+def new(description: str = typer.Argument(..., help='What the demo is about, in quotes.')) -> None:
+    """Draft a story file from a description. Review it, then run `kit generate`."""
+    try:
+        result = actions.new(description, say=typer.echo)
+    except KitError as error:
+        fail(error)
+    typer.echo(f"OK: wrote {result['saved_to']}")
+    typer.echo(f"  hero accounts: {', '.join(result['hero_accounts'])}")
+    if result["background_from"]:
+        typer.echo(f"  background accounts: reused from '{result['background_from']}' (only the heroes get generated)")
+    else:
+        typer.echo("  background accounts: new industry, so they'll be generated too")
+    typer.echo(f"Next: {result['next']}")
+
+
+@app.command()
 def generate(story: str) -> None:
     """Generate fixtures for stories/<story>.yaml with the LLM, validate them, and save them."""
     try:

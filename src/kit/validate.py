@@ -20,8 +20,10 @@ ABSOLUTE_DATE_PATTERNS = [
 
 
 def validate_fixtures(
-    fixtures: FixtureSet, story: Story, other_stories: list[FixtureSet] | None = None
+    fixtures: FixtureSet, story: Story, other_stories: list[FixtureSet] | None = None,
+    shares_background_with: set[str] | None = None,
 ) -> list[str]:
+    """All checks. `shares_background_with` names the other stories that use the same background accounts."""
     errors: list[str] = []
     check_ids(fixtures, story, errors)
     check_references(fixtures, errors)
@@ -32,7 +34,7 @@ def validate_fixtures(
     check_people(fixtures, errors)
     check_no_overdue_tasks(fixtures, errors)
     check_no_absolute_dates(fixtures, errors)
-    check_not_reused_across_stories(fixtures, other_stories or [], errors)
+    check_not_reused_across_stories(fixtures, other_stories or [], shares_background_with or set(), errors)
     return errors
 
 
@@ -115,6 +117,8 @@ def check_heroes(fixtures: FixtureSet, story: Story, errors: list[str]) -> None:
 
 
 def check_volume(fixtures: FixtureSet, story: Story, errors: list[str]) -> None:
+    if story.volume is None:
+        return  # background copied from another story, whose own validation checked the counts
     filler_companies = [c for c in fixtures.companies if not c.is_hero]
     filler_ids = {c.kit_id for c in filler_companies}
     filler_deals = [d for d in fixtures.deals if d.company_id in filler_ids]
@@ -160,10 +164,16 @@ def check_no_absolute_dates(fixtures: FixtureSet, errors: list[str]) -> None:
 
 
 def check_not_reused_across_stories(
-    fixtures: FixtureSet, other_stories: list[FixtureSet], errors: list[str]
+    fixtures: FixtureSet, other_stories: list[FixtureSet], shares_background_with: set[str], errors: list[str]
 ) -> None:
-    """Two stories must not share a company name or domain, or seeding one could clash with the other."""
+    """Two stories must not share a company name or domain, or seeding one could clash with the other.
+
+    Stories built on the same background are exempt: they share those accounts on purpose and can
+    even feature the same hero account, because only one of them is loaded at a time (see actions.seed).
+    """
     for other in other_stories:
+        if other.story_id in shares_background_with:
+            continue
         other_names = {c.name.lower() for c in other.companies}
         other_domains = {c.domain for c in other.companies}
         for company in fixtures.companies:
