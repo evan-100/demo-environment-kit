@@ -143,3 +143,16 @@ def test_story_needs_volume_or_background_not_both():
         Story.model_validate(data | {"background": "finserv"})
     with pytest.raises(ValueError, match="either 'volume'"):
         Story.model_validate({k: v for k, v in data.items() if k != "volume"})
+
+
+def test_story_list_shows_what_is_loaded_and_what_is_blocked(tmp_path, monkeypatch, base):
+    shutil.copy(REPO / "stories" / "healthcare.yaml", tmp_path)
+    write_new_story(tmp_path, draft())
+    monkeypatch.setattr(actions, "STORIES_DIR", tmp_path)
+    hubspot = FakeHubSpot()
+    seed(base, hubspot)
+
+    rows = {row["story"]: row for row in actions.list_stories(hubspot)}
+    assert rows["healthcare"]["made_by"] == "bundled" and rows["healthcare"]["in_hubspot"] is True
+    assert rows["acme-price-pushback"]["made_by"] == "kit new"
+    assert rows["acme-price-pushback"]["blocked_by"] == ["healthcare"]

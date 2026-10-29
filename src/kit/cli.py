@@ -148,9 +148,38 @@ def break_demo(story: str) -> None:
 
 
 @app.command()
-def stories() -> None:
-    """List the stories, whether they have fixtures, and their last readiness result."""
-    typer.echo(json.dumps(actions.list_stories(), indent=2))
+def stories(as_json: bool = typer.Option(False, "--json", help="Print the full details as JSON.")) -> None:
+    """List every story: bundled or made with `kit new`, generated or not, loaded in HubSpot or not."""
+    try:
+        rows = actions.list_stories()
+    except KitError as error:
+        fail(error)
+    if as_json:
+        typer.echo(json.dumps(rows, indent=2))
+        return
+
+    def status(row: dict) -> str:
+        if not row["has_fixtures"]:
+            return "not generated"
+        if row["in_hubspot"]:
+            return "LOADED"
+        if row["blocked_by"]:
+            return f"reset {row['blocked_by'][0]} first"
+        return "ready to seed" if row["in_hubspot"] is False else "unknown (no HubSpot)"
+
+    def last_check(row: dict) -> str:
+        # "4/4 golden paths pass" checked at "2026-10-29T00:54..." -> "4/4 pass, 2026-10-29"
+        if not row["last_check"]:
+            return "-"
+        return f"{row['last_check']['summary'].split()[0]} pass, {row['last_check']['checked_at'][:10]}"
+
+    table = [("STORY", "MADE BY", "IN HUBSPOT", "HERO ACCOUNTS", "LAST CHECK")]
+    for row in rows:
+        made_by = row["made_by"] + (f" (background: {row['background_from']})" if row["background_from"] else "")
+        table.append((row["story"], made_by, status(row), ", ".join(row["hero_accounts"]), last_check(row)))
+    widths = [max(len(line[i]) for line in table) for i in range(len(table[0]) - 1)]
+    for line in table:
+        typer.echo("  ".join(cell.ljust(width) for cell, width in zip(line, widths)) + "  " + line[-1])
 
 
 @app.command()

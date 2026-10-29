@@ -119,20 +119,48 @@ def load_valid_fixtures(story: str) -> tuple[Story, FixtureSet]:
 # --- Stories and fixtures ------------------------------------------------------------------
 
 
-def list_stories() -> list[dict]:
+def is_loaded(story: str, hubspot) -> bool | None:
+    """True if the story's records are in HubSpot now; None if fixtures or HubSpot aren't available.
+
+    Reads the story's companies by kit ID, which (unlike search) is up to date the moment
+    records are written or deleted.
+    """
+    try:
+        companies = load_fixtures(story).companies
+        return bool(hubspot.read_by_kit_ids("companies", [c.kit_id for c in companies]))
+    except (FileNotFoundError, ValidationError, HubSpotError):
+        return None
+
+
+def list_stories(hubspot=None) -> list[dict]:
+    """Every story: where it came from, whether it has fixtures, whether it's loaded in HubSpot, last check."""
+    try:
+        hubspot = hubspot or HubSpotClient()
+    except HubSpotError:
+        hubspot = None  # no token: list the stories anyway, just without the HubSpot column
     stories = []
     for path in sorted(STORIES_DIR.glob("*.yaml")):
         story = load_story_file(path.stem)
         report = latest_report(story.id)
         stories.append({
             "story": story.id,
+            "made_by": "kit new" if path.read_text().startswith("# Written by `kit new`") else "bundled",
             "industry": story.industry,
             "background_from": story.background,
             "hero_accounts": [a.name for a in story.accounts],
             "golden_paths": story.golden_paths,
             "has_fixtures": (FIXTURES_DIR / story.id / "companies.json").exists(),
+            "in_hubspot": is_loaded(story.id, hubspot) if hubspot else None,
             "last_check": {"checked_at": report["checked_at"], "summary": report["summary"]} if report else None,
+            "background_group": story.background or story.id,
         })
+    # A story can't be seeded while another story on the same background is loaded (see seed).
+    for row in stories:
+        row["blocked_by"] = [other["story"] for other in stories
+                             if other["in_hubspot"] and other is not row
+                             and other["background_group"] == row["background_group"]]
+    for row in stories:
+        del row["background_group"]
     return stories
 
 

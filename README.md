@@ -133,7 +133,7 @@ uv run python examples/get_acme_ready.py
 | `kit check <story> [--fix]` | Golden paths → terminal table + `reports/*.md` / `.json` |
 | `kit reset <story> \| --all [--reseed]` | Delete kit-tagged records only |
 | `kit break <story>` | Damage the hero deal, to demo `--fix` |
-| `kit stories` | Stories, fixtures and last results |
+| `kit stories [--json]` | Every story (bundled or `kit new`), which one is loaded in HubSpot, last check result |
 | `kit metrics` | README numbers from the ledger |
 | `kit mcp` | MCP server for agents |
 
