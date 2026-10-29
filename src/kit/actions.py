@@ -97,7 +97,7 @@ def load_background(story_file: Story) -> FixtureSet | None:
     try:
         return load_fixtures(base.id)
     except FileNotFoundError:
-        raise KitError(f"story '{base.id}' has no fixtures yet. Run `kit generate {base.id}` first.")
+        raise KitError(f"story '{base.id}' has no fixtures yet. Run `uv run kit generate {base.id}` first.")
 
 
 def load_valid_fixtures(story: str) -> tuple[Story, FixtureSet]:
@@ -195,7 +195,7 @@ def new(description: str, say: Say = quiet) -> dict:
         "saved_to": str(path),
         "hero_accounts": [a["name"] for a in data["accounts"]],
         "background_from": data.get("background"),
-        "next": f"Review {path}, then run `kit generate {data['id']}`.",
+        "next": f"Review {path}, then run `uv run kit generate {data['id']}`.",
     }
 
 
@@ -241,7 +241,7 @@ def seed(story: str, dry_run: bool = False, say: Say = quiet, hubspot=None) -> d
             names = ", ".join(loaded)
             raise KitError(
                 f"'{names}' is loaded in HubSpot and shares background accounts with '{story}'. "
-                f"Only one of them can be loaded at a time. Run `kit reset {loaded[0]} --yes` first."
+                f"Only one of them can be loaded at a time. Run `uv run kit reset {loaded[0]} --yes` first."
             )
         plan = build_plan(fixtures, now, owner_id=pick_owner(hubspot))
         say(f"Seeding '{story}': {plan.counts()}")

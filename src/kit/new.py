@@ -202,7 +202,7 @@ StoryDumper.add_representer(str, long_text_folded)
 HEADER = """\
 # Written by `kit new` from: "{description}"
 # Everything here is fictional: invented companies and people, example.com domains, 555-01xx phones.
-# Read it and adjust anything, then run `kit generate {story_id}`.
+# Read it and adjust anything, then run `uv run kit generate {story_id}`.
 {background_note}
 """
 

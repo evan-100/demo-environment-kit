@@ -30,7 +30,7 @@ def terminal_lines(story: str, results: list[PathResult], heading: str) -> list[
         if not path.passed:
             missing = "" if path.fallback_exists else "  (file missing!)"
             lines.append(f"          fallback: {path.fallback}{missing}")
-            lines.append(f"          fix:      {path.remediation}  (run `kit check {story} --fix`)")
+            lines.append(f"          fix:      {path.remediation}  (run `uv run kit check {story} --fix`)")
     return lines
 
 

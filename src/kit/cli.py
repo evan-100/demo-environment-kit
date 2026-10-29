@@ -144,7 +144,7 @@ def break_demo(story: str) -> None:
     except KitError as error:
         fail(error)
     typer.echo(f"Broke '{result['broke']}': {result['how']}.")
-    typer.echo(f"Now run `kit check {story}` to see it caught, then `kit check {story} --fix`.")
+    typer.echo(f"Now run `uv run kit check {story}` to see it caught, then `uv run kit check {story} --fix`.")
 
 
 @app.command()
@@ -162,7 +162,7 @@ def metrics(batch: str = typer.Option(None, help="Batch label (KIT_BATCH). Defau
     entries = read_entries()
     batch = batch or kit_metrics.latest_batch(entries)
     if not batch:
-        fail(KitError("no labelled runs in the ledger yet. Run scripts/measure.py first."))
+        fail(KitError("no labelled runs in the ledger yet. Run `uv run python scripts/measure.py` first."))
     typer.echo(kit_metrics.markdown_table(batch, kit_metrics.compute(entries, batch)))
 
 

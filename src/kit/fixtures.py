@@ -27,7 +27,7 @@ def load_fixtures(story_id: str, base_dir: Path = FIXTURES_DIR) -> FixtureSet:
     """Load and schema-check one story's fixtures. Raises pydantic.ValidationError if they're wrong."""
     directory = base_dir / story_id
     if not directory.is_dir():
-        raise FileNotFoundError(f"no fixtures for '{story_id}' yet. Run `kit generate {story_id}` first.")
+        raise FileNotFoundError(f"no fixtures for '{story_id}' yet. Run `uv run kit generate {story_id}` first.")
     data = {"story_id": story_id}
     for record_type in RECORD_TYPES:
         data[record_type] = json.loads((directory / f"{record_type}.json").read_text())
